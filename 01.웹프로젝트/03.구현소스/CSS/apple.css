@@ -50,7 +50,7 @@
         nav{
             display: flex;
             justify-content: space-around;
-            margin-top: 7px;
+            margin-top: 8px;
         }
         nav h2{
             font-size: 1.7rem;
@@ -86,26 +86,40 @@
         /****************************** 2페이지 ******************************/
         .pg2{
             position: relative;
+            margin: 0;
+            padding: 0;
         }
         .pg2 img{
             position: relative;
             width: 100%;
         }
-        .pg2 h1{
+        .pg2 img::after{
+            content: '';
+            display: block;
+            background: url(../image/apple/background.png) no-repeat center/cover;
+        }
+        /* .pg2 img:nth-child(2){
+            transform: rotate(180deg);
+        } */
+        .copy2{
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font: bold 10vw sans-serif;
-            background: none;
+            outline: 1px dotted red;
+        }
+
+        .pg2 h1{
+            font-weight: bold;
+            font-size: max(148px,72px);
+            color: #000;
+        }
+        .pg2 h2{
+            font-size: 24px;
             color: #000;
         }
         .pg2 h3{
-            position: absolute;
-            top: 69.5%;
-            left: 49.6%;
-            transform: translateX(-50%);
-            background: none;
+            font-size: 19px;
             color: #000;
         }
         /*************************** 3페이지 ***************************/
