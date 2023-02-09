@@ -4,6 +4,10 @@
 
 
         /* 전체 초기화 */
+        * {
+            box-sizing: border-box;
+        }
+
         html,body,h1,h2,h3,h4,.page{
             margin: 0;
             padding: 0;
@@ -23,8 +27,9 @@
             z-index: 999;
             display: flex;
             justify-content: space-between;
-            background: #121212;
-            height: 5vh;
+            background: #555;
+            /* #121212; */
+            height: 44px;
         }
         .header_left{
             position: relative;
@@ -47,39 +52,50 @@
             left: 50%;
             transform: translateY(-50%);
         }
-        nav{
+        .gnb{
             display: flex;
-            justify-content: space-around;
             margin-top: 8px;
         }
-        nav h2{
+        .gnb ul{
+            display: flex;
+            justify-content: space-around;
+
+        }
+        .gnb li{
             font-size: 1.7rem;
+            list-style: none;
         }
 
-        nav a{
+        .gnb a{
             text-decoration: none;
             color: #fff;
         }
 
         .icon{
-            position: relative;
             display: flex;
+            justify-content: space-evenly;
+            
         }
         .search {
-            position: absolute;
+            height: 30px;
+            overflow: hidden;
+            outline: 1px dashed red;
+            /* position: absolute;
             top: -47px;
-            right: 274px;
+            right: 274px; */
         }
         .bag {
-        position: absolute;
+
+        /* position: absolute;
         top: -3px;
-        right: 130px;
+        right: 130px; */
         }
 
         /****************************** 1페이지 ******************************/
         .pg1 video{
             margin-top: 37px;
             width: 100%;
+            z-index: 1;
         }
 
 
