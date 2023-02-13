@@ -6,20 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>apple</title>
     <style>
-        /***************** 초기화 *****************/
-        /***************** 헤드 *****************/
-        /***************** 페이지 *****************/
-        /***************** 1페이지 *****************/
         /***************** 2페이지 *****************/
         /***************** 3페이지 *****************/
         /***************** 4페이지 *****************/
         /***************** 5페이지 *****************/
         /***************** 6페이지 *****************/
         /***************** Footer *****************/
+        /***************** 초기화 *****************/
         * {
             box-sizing: border-box;
         }
-        html,body{
+        html,body,ul{
             margin: 0;
             padding: 0;
             outline: 1px dashed red;
@@ -27,7 +24,9 @@
         html{
             background: #000;
         }
+        /***************** 헤드 *****************/
         .gnb{
+            display: flex;
             width: 100%;
             margin: 0 auto;
             max-width: 1024px;
@@ -36,10 +35,69 @@
             max-height: 44px;
             outline: 1px dashed red;
         }
+        /******************* 상단왼 *******************/
+        .head_left{
+            width: 15%;
+            outline: 1px dashed red;   
+        }
+
+
+        /****************** 상단메인 ******************/
+        .top{
+            width: 70%;
+            outline: 1px dashed red;   
+            margin: 0 auto;
+        }
+        .top::after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 44px;
+            margin: 0;
+            padding: 0;
+            height: 62px;
+            width: 570px;
+            background: yellow;
+        }
+
+        .top>ul{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            
+        }
+        .top ul li{
+            list-style: none;
+        }
+       
+        .top ul li a{
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        .sub_menu{
+            margin-top: 13px;
+        }
+
+        /******************** 상단오른 ********************/
+        .head_right{
+            width: 15%;
+            outline: 1px dashed red;
+            
+            display: flex; 
+            justify-content: space-evenly;
+
+            overflow: hidden;
+        }
+
+
+        /***************** 페이지 *****************/
+        /***************** 1페이지 *****************/
         .cont{
             min-height: 600px;
             height: 5400px;
-            width: 980px;
+            width: 1024px;
+            padding: 0 22px;
             outline: 1px dashed red;
             margin: 0 auto;
         }
@@ -50,19 +108,103 @@
             outline: 1px dashed red;
             margin: 0 auto;
         }
+        .pg1 video{
+            margin-top: 37px;
+            width: 100%;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
+    <!------------------- 상단 ------------------->
     <div id="globalheader">
         <div class="gnb gnb_cont">
+            <div class="head_left">
+                <a href="#">
+                    <img src="./image/apple/apple_image.svg" alt="애플로고">
+                </a>
+            </div>
             <nav class="top">
-                
+                <ul>
+                    <li>
+                        <a href="#">
+                            Store
+                        </a>
+                        <div class="sub_menu store_list">
+                            <ul>
+                                <li>
+                                    <a href="#">iPhone</a>
+                                </li>
+                                <li>
+                                    <a href="#">iPad</a>
+                                </li>
+                                <li>
+                                    <a href="#">Mac</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Entertainment
+                        </a>
+                        <div class="sub_menu Ent_list">
+                            <ul>
+                                <li>
+                                    <a href="#">Apple One</a>
+                                </li>
+                                <li>
+                                    <a href="#">Apple Music</a>
+                                </li>
+                                <li>
+                                    <a href="#">Apple Tv+</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Support
+                        </a>
+                        <div class="sub_menu Sup_list">
+                            <ul>
+                                <li>
+                                    <a href="#">iPhone</a>
+                                </li>
+                                <li>
+                                    <a href="#">iPad</a>
+                                </li>
+                                <li>
+                                    <a href="#">Mac</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
             </nav>
+            <div class="head_right">
+                <div class="search">
+                    <a href="#">
+                        <img src="./image/apple/globalnav_search_image__cbllq1gkias2_large.svg" alt="서치아이콘">
+                    </a>
+                </div>
+                <div class="bag">
+                    <a href="#">
+                        <img src="./image/apple/globalnav_bag_image__yzte50i47ciu_large.svg" alt="장바구니아이콘">
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="cont">
 
+    <!-------------------- 메인 -------------------->
+    <div class="cont">
+        <pg1>
+            <video src="./image/apple/iPhone 14 Pro(배경동영상).mp4" muted autoplay loop></video>
+        </pg1>
     </div>
+    
+    <!-------------------- 하단 -------------------->
     <div class="info">
 
     </div>
