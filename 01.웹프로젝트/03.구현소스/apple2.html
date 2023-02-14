@@ -16,11 +16,14 @@
         * {
             box-sizing: border-box;
         }
-        html,body,ul{
+        html,body,ul,ol{
             margin: 0;
             padding: 0;
+        }
+        body * {
             outline: 1px dashed red;
         }
+
         html{
             background: #000;
         }
@@ -48,7 +51,7 @@
             outline: 1px dashed red;   
             margin: 0 auto;
         }
-        .top::after{
+        /* .top::after{
             content: '';
             display: block;
             position: absolute;
@@ -56,29 +59,46 @@
             margin: 0;
             padding: 0;
             height: 62px;
-            width: 570px;
+            width: 628px;
             background: yellow;
-        }
+        } */
 
         .top>ul{
             display: flex;
             justify-content: space-around;
-            margin-top: 10px;
+            /* margin-top: 10px; */
+            line-height: 31px;
             
         }
-        .top ul li{
+        .top>ul>li{
             list-style: none;
+            text-align: center;
         }
        
         .top ul li a{
             text-decoration: none;
             color: #fff;
             font-weight: bold;
+            
         }
-        .sub_menu{
-            margin-top: 13px;
+        .sub_menu ol li{
+            text-align: center;
+        }
+        
+        .top ul li ol{
+            display: none;
+            /* 일단 숨기기 */
+            padding: 0;
+        }
+        .top ul li:hover ol{
+            display: block;
         }
 
+        .sub_menu{
+            margin-top: 13px;
+            padding: 0;
+        }
+        
         /******************** 상단오른 ********************/
         .head_right{
             width: 15%;
@@ -128,10 +148,10 @@
                 <ul>
                     <li>
                         <a href="#">
-                            Store
+                            Product
                         </a>
                         <div class="sub_menu store_list">
-                            <ul>
+                            <ol>
                                 <li>
                                     <a href="#">iPhone</a>
                                 </li>
@@ -141,7 +161,7 @@
                                 <li>
                                     <a href="#">Mac</a>
                                 </li>
-                            </ul>
+                            </ol>
                         </div>
                     </li>
                     <li>
@@ -149,7 +169,7 @@
                             Entertainment
                         </a>
                         <div class="sub_menu Ent_list">
-                            <ul>
+                            <ol>
                                 <li>
                                     <a href="#">Apple One</a>
                                 </li>
@@ -159,7 +179,7 @@
                                 <li>
                                     <a href="#">Apple Tv+</a>
                                 </li>
-                            </ul>
+                            </ol>
                         </div>
                     </li>
                     <li>
@@ -167,7 +187,7 @@
                             Support
                         </a>
                         <div class="sub_menu Sup_list">
-                            <ul>
+                            <ol>
                                 <li>
                                     <a href="#">iPhone</a>
                                 </li>
@@ -177,7 +197,7 @@
                                 <li>
                                     <a href="#">Mac</a>
                                 </li>
-                            </ul>
+                            </ol>
                         </div>
                     </li>
                 </ul>
@@ -200,7 +220,7 @@
     <!-------------------- 메인 -------------------->
     <div class="cont">
         <pg1>
-            <video src="./image/apple/iPhone 14 Pro(배경동영상).mp4" muted autoplay loop></video>
+            <!-- <video src="./image/apple/iPhone 14 Pro(배경동영상).mp4" muted autoplay loop></video> -->
         </pg1>
     </div>
     
