@@ -5,140 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>apple</title>
-    <style>
-        /***************** 2페이지 *****************/
-        /***************** 3페이지 *****************/
-        /***************** 4페이지 *****************/
-        /***************** 5페이지 *****************/
-        /***************** 6페이지 *****************/
-        /***************** Footer *****************/
-        /***************** 초기화 *****************/
-        * {
-            box-sizing: border-box;
-        }
-        html,body,ul,ol{
-            margin: 0;
-            padding: 0;
-        }
-        body * {
-            outline: 1px dashed red;
-        }
-
-        html{
-            background: #000;
-        }
-        /***************** 헤드 *****************/
-        .gnb{
-            display: flex;
-            width: 100%;
-            margin: 0 auto;
-            max-width: 1024px;
-            padding: 0 22px;
-            height: 44px;
-            max-height: 44px;
-            outline: 1px dashed red;
-        }
-        /******************* 상단왼 *******************/
-        .head_left{
-            width: 15%;
-            outline: 1px dashed red;   
-        }
-
-
-        /****************** 상단메인 ******************/
-        .top{
-            width: 70%;
-            outline: 1px dashed red;   
-            margin: 0 auto;
-        }
-        /* .top::after{
-            content: '';
-            display: block;
-            position: absolute;
-            top: 44px;
-            margin: 0;
-            padding: 0;
-            height: 62px;
-            width: 628px;
-            background: yellow;
-        } */
-
-        .top>ul{
-            display: flex;
-            justify-content: space-around;
-            /* margin-top: 10px; */
-            line-height: 31px;
-            
-        }
-        .top>ul>li{
-            list-style: none;
-            text-align: center;
-        }
-       
-        .top ul li a{
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-            
-        }
-        .sub_menu ol li{
-            text-align: center;
-        }
-        
-        .top ul li ol{
-            display: none;
-            /* 일단 숨기기 */
-            padding: 0;
-        }
-        .top ul li:hover ol{
-            display: block;
-        }
-
-        .sub_menu{
-            margin-top: 13px;
-            padding: 0;
-        }
-        
-        /******************** 상단오른 ********************/
-        .head_right{
-            width: 15%;
-            outline: 1px dashed red;
-            
-            display: flex; 
-            justify-content: space-evenly;
-
-            overflow: hidden;
-        }
-
-
-        /***************** 페이지 *****************/
-        /***************** 1페이지 *****************/
-        .cont{
-            min-height: 600px;
-            height: 5400px;
-            width: 1024px;
-            padding: 0 22px;
-            outline: 1px dashed red;
-            margin: 0 auto;
-        }
-        .info{
-            min-height: 200px;
-            height: 300px;
-            width: 100%;
-            outline: 1px dashed red;
-            margin: 0 auto;
-        }
-        .pg1 video{
-            margin-top: 37px;
-            width: 100%;
-            z-index: 1;
-        }
-    </style>
+    <link rel="stylesheet" href="./CSS/apple2.css">
 </head>
 <body>
     <!------------------- 상단 ------------------->
     <div id="globalheader">
-        <div class="gnb gnb_cont">
+        <div class="ibx gnb gnb_cont">
             <div class="head_left">
                 <a href="#">
                     <img src="./image/apple/apple_image.svg" alt="애플로고">
@@ -218,15 +90,21 @@
     </div>
 
     <!-------------------- 메인 -------------------->
-    <div class="cont">
-        <pg1>
-            <!-- <video src="./image/apple/iPhone 14 Pro(배경동영상).mp4" muted autoplay loop></video> -->
-        </pg1>
+    <div id="cont">
+        <div id="pg1" class="ibx pg">
+            <video src="./image/apple/iPhone 14 Pro(배경동영상).mp4" autoplay muted></video>
+        </div>
+        <div id="pg2" class="ibx pg"></div>
+        <div id="pg3" class="ibx pg"></div>
+        <div id="pg4" class="ibx pg"></div>
+        <div id="pg5" class="ibx pg"></div>
+        <div id="pg6" class="ibx pg"></div>
     </div>
     
     <!-------------------- 하단 -------------------->
-    <div class="info">
-
+    
+    <div id="info">
+        <footer class="ibx info"></footer>
     </div>
 </body>
 </html>
