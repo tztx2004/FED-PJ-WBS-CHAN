@@ -8,7 +8,7 @@
             box-sizing: border-box;
         }
 
-        html,body,h1,h2,h3,h4,.page,ul{
+        html,body,h1,h2,h3,h4,.page,ul,ol,li{
             margin: 0;
             padding: 0;
             /* outline: 1px dotted yellow; */
@@ -19,17 +19,29 @@
             overflow-x: hidden;
             background-color: #000;
         }
+        body *{
+            outline: 1px dashed red;
+        }
+
+        :root{
+            --bg_c : #1a1a1c;
+        }
 
         /*********************** header부분 ***********************/
-        
+        .top{
+            margin: 0 auto;
+            max-width: 1024px;
+            height: 44px;
+        }
         .header{
             position: fixed;
             z-index: 999;
             display: flex;
             justify-content: space-between;
-            background: #555;
+            background: var(--bg_c);
             /* #121212; */
             height: 44px;
+            min-width: (1024px,500px);
         }
         .header_left{
             position: relative;
@@ -72,7 +84,7 @@
         .icon{
             display: flex;
             justify-content: space-evenly;
-            
+            height: 44px;
         }
         .search {
             height: 30px;
@@ -87,6 +99,18 @@
         /* position: absolute;
         top: -3px;
         right: 130px; */
+        }
+
+        /* 서브메뉴 */
+        .sub_menu {
+            padding: 0;
+            position: relative;
+            z-index: 1;
+        }
+        .sub_menu ol{
+            list-style: none;
+            background-color: var(--bg_c);
+            margin-top: 14px;
         }
 
         /****************************** 1페이지 ******************************/
