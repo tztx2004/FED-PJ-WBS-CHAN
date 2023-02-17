@@ -20,16 +20,18 @@
             background-color: #000;
         }
         body *{
-            outline: 1px dashed red;
+            outline: 1px solid red;
         }
 
         :root{
             --bg_c : #1a1a1c;
+            --logo_size: 14px;
         }
 
         /*********************** header부분 ***********************/
+        /*********************** header공통 ***********************/
         .top{
-            margin: 0 auto;
+            width: 100%;
             max-width: 1024px;
             height: 44px;
         }
@@ -41,31 +43,27 @@
             background: var(--bg_c);
             /* #121212; */
             height: 44px;
-            min-width: (1024px,500px);
         }
+        
+        /******************** header left ********************/
         .header_left{
             position: relative;
             width: 25vw;
         }
-        .header_main{
-            width: 50vw;
-        }
-        .header_right{
-            width: 25vw;
-        }
-
-        :root{
-            --logo_size: 14px;
-        }
-
         .logo img{
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translateY(-50%);
         }
+        
+        /******************** header main ********************/
+        .header_main{
+            width: 50vw;
+        }
         .gnb{
             margin-top: 8px;
+            height: 0;
         }
         .gnb ul{
             display: flex;
@@ -75,12 +73,42 @@
             font-size: 1.7rem;
             list-style: none;
         }
+        .gnb ul li:hover .sub_menu
+        /* .gnb ul li:hover .gnb */
+        {
+            background-color: var(--bg_c);
+            display: block;
+            /* height: 106px; */
+        }
 
         .gnb a{
             text-decoration: none;
             color: #fff;
         }
+        #buy_btn{
+            background-color: #0071e3;
+            border-radius: 10px;
+            width: 45px;
+            height: 24px;
+        }
 
+        /****************** 서브메뉴 ******************/
+        .sub_menu {
+            padding: 0;
+            position: relative;
+            z-index: 1;
+            display: none;
+        }
+        .sub_menu ol{
+            list-style: none;
+            background-color: var(--bg_c);
+            margin-top: 14px;
+        }
+
+        /******************** header right ********************/
+        .header_right{
+            width: 25vw;
+        }
         .icon{
             display: flex;
             justify-content: space-evenly;
@@ -89,29 +117,13 @@
         .search {
             height: 30px;
             overflow: hidden;
-            /* outline: 1px dashed red; */
-            /* position: absolute;
-            top: -47px;
-            right: 274px; */
         }
-        .bag {
-
-        /* position: absolute;
-        top: -3px;
-        right: 130px; */
+        .bag a img{
+            height: 43px;
+        
         }
 
-        /* 서브메뉴 */
-        .sub_menu {
-            padding: 0;
-            position: relative;
-            z-index: 1;
-        }
-        .sub_menu ol{
-            list-style: none;
-            background-color: var(--bg_c);
-            margin-top: 14px;
-        }
+        
 
         /****************************** 1페이지 ******************************/
         .pg1 video{
