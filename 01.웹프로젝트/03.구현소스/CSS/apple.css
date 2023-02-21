@@ -40,24 +40,29 @@ body * {
 /*********************** header부분 ***********************/
 /*********************** header공통 ***********************/
 .top {
+  position: fixed;
+  z-index: 999;
+
   width: 100vw;
   height: 44px;
-  position: fixed;
+
   background: var(--bg_c);
 }
 .header {
   position: fixed;
-  z-index: 999;
-  display: flex;
-  justify-content: space-between;
-  background: var(--bg_c);
-  /* #121212; */
+  top: 0;
+  left: 50%;
+
   height: 44px;
   max-width: 1024px;
   margin: 0 auto;
-  top: 0;
-  left: 50%;
   transform: translateX(-50%);
+
+  background: var(--bg_c);
+  /* #121212; */
+
+  display: flex;
+  justify-content: space-between;
 }
 /******************** header left ********************/
 .header_left {
@@ -67,7 +72,7 @@ body * {
 .logo img {
   position: absolute;
   top: 50%;
-  left: 50%;
+  /* left: 50%; */
   transform: translateY(-50%);
 }
 
@@ -76,19 +81,21 @@ body * {
   width: 50vw;
 }
 .gnb {
-  margin-top: 13px;
+  /* margin-top: 13px; */
+  line-height: 44px;
   height: 0;
 }
 .gnb ul {
   display: flex;
   justify-content: space-around;
+  background: var(--bg_c);
 }
 .gnb ul li {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   list-style: none;
 }
 .gnb ul li:hover .sub_menu
-        /* .gnb ul li:hover .gnb */ {
+/* .gnb ul li:hover .gnb */ {
   background-color: var(--bg_c);
   display: block;
   /* height: 106px; */
@@ -98,12 +105,6 @@ body * {
   text-decoration: none;
   color: #fff;
 }
-#buy_btn {
-  background-color: #0071e3;
-  border-radius: 10px;
-  width: 45px;
-  height: 24px;
-}
 
 /****************** 서브메뉴 ******************/
 .sub_menu {
@@ -111,11 +112,13 @@ body * {
   position: relative;
   z-index: 1;
   display: none;
+  line-height: 35px;
+  transition: 0.2s;
 }
 .sub_menu ol {
   list-style: none;
   background-color: var(--bg_c);
-  margin-top: 14px;
+  /* margin-top: 14px; */
 }
 
 /******************** header right ********************/
@@ -124,8 +127,9 @@ body * {
 }
 .icon {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   height: 44px;
+  gap: 55px;
 }
 .search {
   height: 30px;
@@ -134,9 +138,29 @@ body * {
 .bag a img {
   height: 43px;
 }
+.btn {
+  height: 44px;
+  line-height: 44px;
+}
+#buy_btn {
+  background-color: #0071e3;
+  border-radius: 10px;
+  width: 45px;
+  height: 24px;
+}
+.btn a {
+  text-decoration: none;
+  color: #fff;
+}
 
 /****************************** 1페이지 ******************************/
+.pg1 {
+  position: relative;
+  height: 803px;
+}
+
 .pg1 video {
+  position: absolute;
   margin-top: 44px;
   width: 100%;
   z-index: 1;
@@ -147,13 +171,20 @@ body * {
   position: relative;
   z-index: -1;
 }
+.pg2_wrap{
+  width: 4000px;
+}
 .pg2 img {
   width: 100%;
   overflow: hidden;
 }
+.wrap2{
+  /* transform: scaleY(-1); */
+  transform: rotate(180deg);
+}
 
 .copy2 {
-  position: absolute;
+  position: sticky;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -198,8 +229,8 @@ body * {
 .copy4 {
   margin-top: 10vh;
 }
-.color_img{
-    text-align: center;
+.color_img {
+  text-align: center;
 }
 .copy4 h2 {
   font-size: 5vw;
