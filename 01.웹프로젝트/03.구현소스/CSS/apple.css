@@ -29,7 +29,7 @@ html {
   background-color: #000;
 }
 body * {
-  outline: 1px solid red;
+  outline: 1px dashed red;
 }
 
 :root {
@@ -153,6 +153,13 @@ body * {
   color: #fff;
 }
 
+/****************************** 메인공통 ******************************/
+.mw{
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+
 /****************************** 1페이지 ******************************/
 .pg1 {
   position: relative;
@@ -169,17 +176,18 @@ body * {
 /****************************** 2페이지 ******************************/
 .pg2 {
   position: relative;
+  /* 2페이지 글씨부모 */
   z-index: -1;
 }
 .pg2_wrap{
-  width: 4000px;
+  margin: 0 auto;
+  width: 100vw;
 }
 .pg2 img {
   width: 100%;
   overflow: hidden;
 }
 .wrap2{
-  /* transform: scaleY(-1); */
   transform: rotate(180deg);
 }
 
@@ -208,13 +216,13 @@ body * {
 /*************************** 3페이지 ***************************/
 .pg3 {
   display: flex;
-  gap: 120px;
-
-  /* 아랫공간 임시로 줌 */
-  margin-bottom: 100px;
+  gap: 70px;
 }
 .pg3 .copy {
-  margin-left: 149px;
+  /* margin-left: 149px; */
+}
+.copy3{
+  margin-top: 57px;
 }
 .pg3 h2 {
   font-size: 6.4vw;
@@ -223,6 +231,11 @@ body * {
 .pg3 h3 {
   font-size: 2.4vw;
   color: #cecece;
+}
+
+.padbtn ul{
+  list-style: none;
+  display: flex;
 }
 
 /*************************** 4페이지  ***************************/
@@ -266,4 +279,13 @@ body * {
   display: flex;
   justify-content: space-evenly;
   margin-top: 100px;
+}
+
+/*************************** 6페이지 ***************************/
+.footer_main{
+  max-width: 1024px;
+  margin: 0 auto;
+
+  /* 높이는 임시로 준것 */
+  height: 400px;
 }
