@@ -53,9 +53,11 @@ body * {
   top: 0;
   left: 50%;
 
-  height: 44px;
+  width: 100%;
   max-width: 1024px;
+  height: 44px;
   margin: 0 auto;
+  padding: 0 22px;
   transform: translateX(-50%);
 
   background: var(--bg_c);
@@ -157,6 +159,7 @@ body * {
 .mw{
   max-width: 1024px;
   margin: 0 auto;
+  padding: 0 22px;
 }
 
 
@@ -219,7 +222,7 @@ body * {
   gap: 70px;
 }
 .pg3 .copy {
-  /* margin-left: 149px; */
+  margin-left: 100px;
 }
 .copy3{
   margin-top: 57px;
@@ -232,12 +235,34 @@ body * {
   font-size: 2.4vw;
   color: #cecece;
 }
+.padbtn{
+  
+}
+.graphic{
+  width: 35vw;
+  margin-right: 100px;
+}
+.graphic img{
+  width: 24vw;
+}
 
 .padbtn ul{
   list-style: none;
   display: flex;
+  gap: 40px;
+  
+  /* 임시로 패딩 */
+  padding: 0 55px;
+  margin: 30px 0;
 }
-
+.gbtn{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 25px;
+  background-color: #424245;
+  color: #ccc;
+}
 /*************************** 4페이지  ***************************/
 .copy4 {
   margin-top: 10vh;
