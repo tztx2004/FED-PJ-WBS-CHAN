@@ -229,10 +229,10 @@ body * {
   gap: 70px;
 }
 .copy3{
-  margin-top: 57px;
+  width: 42vw;
 }
 .pg3 h2 {
-  font-size: 5.5vw;
+  font-size: 6.4vw;
   color: #cecece;
   white-space: nowrap;
 }
@@ -240,9 +240,12 @@ body * {
   font-size: 2.4vw;
   color: #cecece;
 }
+.hb3_2{
+  margin-top: 0.8em;
+}
 
 .graphic{
-  width: 35vw;
+  width: 52vw;
   /* margin-right: 100px; */
 }
 .gimg{
