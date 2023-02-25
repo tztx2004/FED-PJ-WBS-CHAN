@@ -27,6 +27,10 @@ html {
   font-size: 10px;
   overflow-x: hidden;
   background-color: #000;
+  /* 폰트 */    
+  font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
 }
 body * {
   outline: 1px dashed red;
@@ -189,9 +193,12 @@ body * {
 .pg2 img {
   width: 100%;
   overflow: hidden;
+  height: 100%;
+  display: flex;
 }
 .wrap2{
   transform: rotate(180deg);
+  height: 100%;
 }
 
 .copy2 {
@@ -269,6 +276,9 @@ body * {
 }
 .color_img {
   text-align: center;
+}
+.color_img img{
+  width: 32vw;
 }
 .copy4 h2 {
   font-size: 5vw;
