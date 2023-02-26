@@ -35,6 +35,13 @@ html {
 body * {
   outline: 1px dashed red;
 }
+a * {
+  text-decoration: none;
+  color: #fff;
+}
+ul,ol,li{
+  list-style: none;
+}
 
 :root {
   --bg_c: #1a1a1c;
@@ -227,9 +234,11 @@ body * {
 .pg3 {
   display: flex;
   gap: 70px;
+  height: 1200px;
 }
 .copy3{
   width: 42vw;
+  margin: auto;
 }
 .pg3 h2 {
   font-size: 6.4vw;
@@ -246,6 +255,7 @@ body * {
 
 .graphic{
   width: 52vw;
+  margin: auto;
   /* margin-right: 100px; */
 }
 .gimg{
@@ -274,8 +284,34 @@ body * {
   color: #ccc;
 }
 /*************************** 4페이지  ***************************/
+.pg4{
+  height: 2200px;
+  padding-top: 250px;
+}
+.pg4_color{
+  position: relative;
+  /* 부모자격: .color_list */
+}
+.color_list{
+  position: absolute;
+  /* 부모: .pg4_color */
+  right: 6vw;
+  top: 50vh;
+}
+.color_list ul>li{
+  margin-top: 20px;
+}
+.color_list li a{
+  color: #424245;
+  font-size: 1.8vw;
+  text-decoration: none;
+}
+
 .copy4 {
   margin-top: 10vh;
+  color: #cecece;
+  width: 43vw;
+  margin: 0 auto;
 }
 .color_img {
   text-align: center;
@@ -284,11 +320,15 @@ body * {
   width: 32vw;
 }
 .copy4 h2 {
-  font-size: 5vw;
+  font-size: 2.8vw;
+}
+.copy4 h2:first-child {
+  margin-top: 9vh;
 }
 .copy4 h2:nth-child(2) {
-  font-size: 4vw;
+  margin-top: 5vh;
 }
+
 /*************************** 5페이지 ***************************/
 .pg5 img {
   text-align: center;
