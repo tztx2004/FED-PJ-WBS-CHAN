@@ -241,16 +241,16 @@ ul,ol,li{
   margin: auto;
 }
 .pg3 h2 {
-  font-size: 6.4vw;
+  font-size: 5vw;
   color: #cecece;
   white-space: nowrap;
 }
 .pg3 h3 {
-  font-size: 2.4vw;
+  font-size: 1.65vw;
   color: #cecece;
 }
 .hb3_2{
-  margin-top: 0.8em;
+  margin-top: 26px;
 }
 
 .graphic{
@@ -262,7 +262,7 @@ ul,ol,li{
   text-align: center;
 }
 .graphic img{
-  width: 24vw;
+  width: 16vw;
 }
 
 .padbtn ul{
@@ -295,32 +295,32 @@ ul,ol,li{
 .color_list{
   position: absolute;
   /* 부모: .pg4_color */
-  right: 6vw;
-  top: 50vh;
+  right: 100px;
+  top: 400px;
 }
 .color_list ul>li{
   margin-top: 20px;
 }
 .color_list li a{
   color: #424245;
-  font-size: 1.8vw;
+  font-size: 21px;
   text-decoration: none;
 }
 
 .copy4 {
   margin-top: 10vh;
   color: #cecece;
-  width: 43vw;
+  width: 25.5vw;
   margin: 0 auto;
 }
 .color_img {
   text-align: center;
 }
 .color_img img{
-  width: 32vw;
+  width: 21.1vw;
 }
 .copy4 h2 {
-  font-size: 2.8vw;
+  font-size: 32px;
 }
 .copy4 h2:first-child {
   margin-top: 9vh;
@@ -330,36 +330,82 @@ ul,ol,li{
 }
 
 /*************************** 5페이지 ***************************/
+.pg5{
+  height: 1500px;
+}
 .pg5 img {
   text-align: center;
   width: 100vw;
 }
 .copy5 h2 {
   font-size: 5vw;
+  color: #cecece;
+  font-weight: 600;
 }
 .copy5 h3 {
+  color: #cecece;
   font-size: 3vw;
+  font-weight: 600;
 }
 .copy5 {
   display: flex;
   justify-content: space-around;
-  margin: 10vh 0;
+  margin: 0 auto;
+  max-width: 1024px;
+  height: 545px;
+  margin-top: 29px;
+}
+.copy5 h2{
+  font-size: 32px;
+}
+.copy5 h3{
+  font-size: 24px;
+  margin-top: 19px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #cecece;
+}
+.copy_main{
+  margin-top: 90px;
+  padding-right: 43px;
+  margin-left: 81px;
+}
+.copy_Telephoto h2{
+  
+}
+.copy_wide{
+  margin-top: 90px;
+  padding-right: 43px;
+  margin-left: 81px;
 }
 /*************************** 6페이지 ***************************/
-.pg6 {
-  height: 1000px;
+.set6{
+  height: 1500px;
+  margin: 0 auto;
+}
+.main>.pg6 {
+  height: 1500px;
+  background: #111111;
+  width: 100vw;
 }
 .pg6 h2 {
   font-size: 4.8rem;
   text-align: center;
+  color: #cecece;
+  font-weight: 600;
 }
 .pg6_img {
   display: flex;
   justify-content: space-evenly;
   margin-top: 100px;
 }
-
-/*************************** 6페이지 ***************************/
+.phone_title{
+  display: flex;
+  justify-content: space-evenly;
+}
+/*************************** footer ***************************/
+.footer{
+  background-color: #111111;
+}
 .footer_main{
   max-width: 1024px;
   margin: 0 auto;
