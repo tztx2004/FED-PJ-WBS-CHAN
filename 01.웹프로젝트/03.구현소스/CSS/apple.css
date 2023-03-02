@@ -20,7 +20,6 @@ li,
 header {
   margin: 0;
   padding: 0;
-  /* outline: 1px dotted yellow; */
   color: #fff;
 }
 html {
@@ -33,7 +32,7 @@ html {
   -webkit-text-size-adjust: 100%
 }
 body * {
-  outline: 1px dashed red;
+  /* outline: 1px dashed red; */
 }
 a * {
   text-decoration: none;
@@ -188,14 +187,35 @@ ul,ol,li{
 }
 
 /****************************** 2페이지 ******************************/
+/* 검은배경 */
+.b_bg{
+  position: static;
+  height: 2000px;
+  background-color: #000;
+}
 .pg2 {
   position: relative;
+  padding: 1px;
+  /* sticky는 부모가 height값 가지고 있어야함 */
+  height: auto;
   /* 2페이지 글씨부모 */
   z-index: -1;
 }
+.copy2 {
+  position: sticky;
+  width: 600px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+}
 .pg2_wrap{
+  /* 사진 사이 가로선 지우기 */
+  display: flex;
+  width: 100%;
   margin: 0 auto;
-  width: 100vw;
+  height: 100%;
 }
 .pg2 img {
   width: 100%;
@@ -207,15 +227,15 @@ ul,ol,li{
   transform: rotate(180deg);
   height: 100%;
 }
-
-.copy2 {
-  position: sticky;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+.wrap2 img{
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
 }
 
+
+/* 글자색은 임시로 주었음 */
 .pg2 h1 {
   font-weight: bold;
   font-size: max(148px, 72px);
