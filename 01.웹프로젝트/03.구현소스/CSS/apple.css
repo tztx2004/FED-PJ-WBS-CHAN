@@ -431,6 +431,7 @@ ul,ol,li{
   text-align: center;
   color: #cecece;
   font-weight: 600;
+  line-height: 160px;
 }
 .pg6_img {
   display: flex;
@@ -452,6 +453,32 @@ ul,ol,li{
 .swatch {
   margin: 0 auto;
 }
+.c_14pro{
+  position: relative;
+  /* 가상요소 부모자격 */
+}
+.c_14pro::before{
+  content: 'New';
+  position: absolute;
+  top: 33px;
+  left: 20px;
+
+  color: #f56300;
+  font-size: 12px;
+}
+.c_14{
+  position: relative;
+  /* 가상요소 부모자격 */
+}
+.c_14::before{
+  content: 'New';
+  position: absolute;
+  top: 33px;
+  left: 30px;
+
+  color: #f56300;
+  font-size: 12px;
+}
 .swatch img{
   height: 14px;
 }
@@ -462,6 +489,7 @@ ul,ol,li{
   /* 가운데정렬 */
   display: block;
   margin: 0 auto;
+  margin-top: 30px;
   height: 20px;
   margin-bottom: 4px;
 }
@@ -473,14 +501,52 @@ ul,ol,li{
   color: #cecece;
   font-weight: 400;
 }
+
+.p_info{
+  margin: 0 auto;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #cecece;
+}
+.price{
+  margin: 0 0 10px 10px;
+}
+.price h3{
+  font-size: 14px;
+  color: #cecece;
+}
+.bbtn{
+  padding: 0 21px;
+}
+.lm{
+  margin-top: 10px;
+}
+.lm a{
+  text-decoration: none;
+}
+.lm h3{
+  color: #2997ff;
+  font-size: 14px;
+}
 /*************************** footer ***************************/
 .footer{
   background-color: #111111;
-}
-.footer_main{
-  max-width: 1024px;
-  margin: 0 auto;
-
   /* 높이는 임시로 준것 */
   height: 400px;
 }
+.footer_main{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  max-width: 1024px;
+  margin: 0 auto;
+
+  outline: 1px dashed red;
+}
+.info{
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  background-color: lightcoral;
+}
+.info_icon{}
