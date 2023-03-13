@@ -723,13 +723,27 @@ font-size: 14px;
     top: 240px;
   }
 
-  
   .pg6 h2{
     font-size: 32px;
+  }
+
+  .info{
+    width: 100px;
+    height: 100px;
+  }
+  .info img{
+    height: 100px;
+  }
+  .info_title h2{
+    font-size: 14px;
   }
 }
 /************************* max: 800 *************************/
 @media screen and (max-width: 650px) {
+  .copy2{
+    transform: translate(3%, -50%);
+  }
+  
   .graphic{
     margin-bottom: 0;
   }
@@ -754,6 +768,13 @@ font-size: 14px;
     margin-top: 5vh;
   }
 
+  .copy5 h2{
+    font-size: 24px;
+  }
+  .copy h3{
+    font-size: 18px;
+  }
+
   .pg6_title h2{
     font-size: 20px;
   }
@@ -761,11 +782,42 @@ font-size: 14px;
 /************************* max: 650 *************************/
 
 @media screen and (max-width: 500px) {
+  .copy2{
+    transform: translate(1%, -50%);
+  }
+  .copy2 h2{
+    font-size: 14px;
+  }
+  .copy2 h3{
+    font-size: 14px;
+  }
+
+  .copy_main{
+    padding-right: 20px;
+    margin-left: 30px;
+  }
+  .copy_wide{
+    margin-left: 20px;
+    margin-right: 0px;
+    padding-right: 10px;
+  }
+
   .main>.pg6{
-    height: 2500px;
+    height: 2800px;
   }
   .pg6_bx{
     flex-basis: 50%;
   }
+  
+  
+  .footer{
+    height: 700px;
+  }
+  .footer_main{
+    grid-template-columns: repeat(1, 3fr);
+  }
+  .info{
+    margin-bottom: 100px;
+  }
 }
-/************************* max: 650 *************************/
+/************************* max: 500 *************************/
