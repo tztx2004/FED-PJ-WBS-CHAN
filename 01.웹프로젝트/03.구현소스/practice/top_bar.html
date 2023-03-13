@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>top_bar</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      .page,
+      ul,
+      ol,
+      li,
+      header {
+        margin: 0;
+        padding: 0;
+        color: #fff;
+      }
+      html {
+        font-size: 10px;
+        overflow-x: hidden;
+        background-color: #000;
+        /* 폰트 */
+        font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+          sans-serif;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+      body * {
+        outline: 1px dashed red;
+      }
+      a * {
+        text-decoration: none;
+        color: #fff;
+      }
+      ul,
+      ol,
+      li {
+        list-style: none;
+      }
+
+      :root {
+        --bg_c: #1a1a1c;
+        --logo_size: 14px;
+      }
+      /************************************ 헤더 ************************************/
+      .header{
+        display: flex;
+        height: 44px;
+        max-width: 1024px;
+        margin: 0 40px;
+      }
+      .header_left{
+        width: 10vw;
+      }
+
+
+      .header_main{
+        width: 65vw;
+        /* flex-shrink: 3; */
+      }
+      .nav>ul{
+        display: flex;
+        justify-content: center;
+        gap: 5vw;
+        height: 44px;
+      }
+      .nav>ul>li>a{
+        text-decoration: none;
+        color: #fff;
+        font-size: 14px;
+        line-height: 3;
+      }
+
+      .header_right{
+        width: 25vw;
+      }
+
+
+      /********************************** scroll **********************************/
+      .aaa{
+        height: 3000px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <header class="header">
+        <div class="header2 header_left">
+          <div class="h_logo"></div>
+        </div>
+
+        <!-- ________________________헤더메인_____________________ -->
+        <div class="header2 header_main">
+          <nav class="nav">
+            <ul>
+              <li>
+                <a href="#">Product</a>
+                <div class="sub_menu">
+                  <div class="smenu">
+                    <ol>
+                      <li>
+                        <a href="#">iPhone</a>
+                      </li>
+                      <li>
+                        <a href="#">iPad</a>
+                      </li>
+                      <li>
+                        <a href="#">Mac</a>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a href="#">Entertainment</a>
+              </li>
+              <li>
+                <a href="#">Support</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- ________________________헤더메인_____________________ -->
+
+        <div class="header2 header_right">
+          <div class="h_icon h_search"></div>
+          <div class="h_icon h_bag"></div>
+          <div class="h_icon h_btn"></div>
+        </div>
+      </header>
+    </div>
+    <div class="aaa"></div>
+  </body>
+</html>
