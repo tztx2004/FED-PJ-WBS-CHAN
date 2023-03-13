@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    * {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+.page,
+ul,
+ol,
+li,
+header {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+html {
+  font-size: 10px;
+  overflow-x: hidden;
+  background-color: #000;
+  /* 폰트 */    
+  font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
+}
+body * {
+  /* outline: 1px dashed red; */
+}
+a * {
+  text-decoration: none;
+  color: #fff;
+}
+ul,ol,li{
+  list-style: none;
+}
+
+:root {
+  --bg_c: #1a1a1c;
+  --logo_size: 14px;
+}
+/* _____________________________________________________ */
+
+.pg6_bx{
+    display: flex;
+    flex-direction: column;
+}
+
+.set6{
+  display: flex;
+  justify-content: center;
+  gap: 5vw;
+
+  height: 1500px;
+  margin: 0 auto;
+}
+
+.main>.pg6 {
+  height: 1500px;
+  background: #111111;
+  width: 100vw;
+}
+.pg6 h2 {
+  font-size: 4.8rem;
+  text-align: center;
+  color: #cecece;
+  font-weight: 600;
+  line-height: 160px;
+  white-space: nowrap;
+}
+.pg6_img {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 100px;
+}
+
+.con_img {
+  margin: 0 auto;
+  margin-bottom: 22px;
+}
+.swatch {
+  margin: 0 auto;
+}
+.c_14pro{
+  position: relative;
+  /* 가상요소 부모자격 */
+}
+.c_14pro::before{
+  content: 'New';
+  position: absolute;
+  top: 33px;
+  left: 20px;
+
+  color: #f56300;
+  font-size: 12px;
+}
+.c_14{
+  position: relative;
+  /* 가상요소 부모자격 */
+}
+.c_14::before{
+  content: 'New';
+  position: absolute;
+  top: 33px;
+  left: 30px;
+
+  color: #f56300;
+  font-size: 12px;
+}
+.swatch img{
+  height: 14px;
+}
+.logo_c{
+  margin: 0 auto;
+}
+.logo_c img{
+  /* 가운데정렬 */
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  height: 20px;
+  margin-bottom: 4px;
+}
+.device_d{
+  margin-top: 7px;
+}
+.logo_c h3{
+  font-size: 17px;
+  color: #cecece;
+  font-weight: 400;
+}
+
+.p_info{
+  margin: 0 auto;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #cecece;
+}
+.price{
+  margin: 0 0 10px 10px;
+}
+.price h3{
+  font-size: 14px;
+  color: #cecece;
+}
+.bbtn{
+  padding: 0 21px;
+}
+.lm{
+  margin-top: 10px;
+}
+.lm a{
+  text-decoration: none;
+}
+.lm h3{
+  color: #2997ff;
+  font-size: 14px;
+}
+    </style>
+</head>
+<body>
+    <div class="page pg6">
+        <div class="pg6_title">
+            <h2>Which iPhone is right for you?</h2>
+        </div>
+        <div class="mw set6">
+            <div class="pg6_bx bx1">
+                <div class="con_img pro_img">
+                    <img src="./image/apple/compare_iphone_14_pro.jpg" alt="" />
+                </div>
+                <div class="swatch c_14pro">
+                    <img src="./image/apple/swatch_iphone_14_pro_small_2x.png" alt="14pro색상"/>
+                </div>
+                <div class="logo_c logo_c_14pro">
+                    <img src="./image/apple/logo_iphone_14_pro.png" alt="14pro logo">
+                    <div class="device_d">
+                        <h3>The ultimate iPhone.</h3>
+                    </div>
+                </div>
+                <div class="p_info">
+                    <div class="price">
+                        <h3>From $999</h3>
+                    </div>
+                    <div class="btn bbtn">
+                        <button id="buy_btn" class="buy_bbtn">
+                            <a href="#">Buy</a>
+                        </button>
+                    </div>
+                    <div class="lm">
+                        <a href="#">
+                            <h3>Learn more &gt;</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pg6_bx bx2">
+                <div class="con_img norm_img">
+                    <img src="./image/apple/compare_iphone_14.jpg" alt="iphone_14" />
+                </div>
+                <div class="swatch c_14">
+                    <img src="./image/apple/swatch_iphone_14_small_2x.png" alt="14색상"/>
+                </div>
+                <div class="logo_c logo_c_14">
+                    <img src="./image/apple/logo_iphone_14.png" alt="14 logo">
+                    <div class="device_d">
+                        <h3>A total powerhouse.</h3>
+                    </div>
+                </div>
+                <div class="p_info">
+                    <div class="price">
+                        <h3>From $799</h3>
+                    </div>
+                    <div class="btn bbtn">
+                        <button id="buy_btn" class="buy_bbtn">
+                            <a href="#">Buy</a>
+                        </button>
+                    </div>
+                    <div class="lm">
+                        <a href="#">
+                            <h3>Learn more &gt;</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pg6_bx bx3">
+                <div class="con_img norm13_img">
+                    <img src="./image/apple/compare_iphone_13.jpg" alt="" />
+                </div>
+                <div class="swatch c_13">
+                    <img src="./image/apple/swatch_iphone_13_small_2x.png" alt="13색상"/>
+                </div>
+                <div class="logo_c logo_c_13">
+                    <img src="./image/apple/logo_iphone_13.png" alt="13 logo">
+                    <div class="device_d">
+                        <h3>As amazing as ever.</h3>
+                    </div>
+                </div>
+                <div class="p_info">
+                    <div class="price">
+                        <h3>From $599</h3>
+                    </div>
+                    <div class="btn bbtn">
+                        <button id="buy_btn" class="buy_bbtn">
+                            <a href="#">Buy</a>
+                        </button>
+                    </div>
+                    <div class="lm">
+                        <a href="#">
+                            <h3>Learn more &gt;</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pg6_bx bx4">
+                <div class="con_img pro_img">
+                    <img src="./image/apple/compare_iphone_se.jpg" alt="iphone_se" />
+                </div>
+                <div class="swatch c_se">
+                    <img src="./image/apple/swatch_iphone_sesmall_2x.png" alt="se색상"/>
+                </div>
+                <div class="logo_c logo_c_14pro">
+                    <img src="./image/apple/logo_iphone_se.png" alt="se logo">
+                    <div class="device_d">
+                        <h3>Serious power. Serious value.</h3>
+                    </div>
+                </div>
+                <div class="p_info">
+                    <div class="price">
+                        <h3>From $429</h3>
+                    </div>
+                    <div class="btn bbtn">
+                        <button id="buy_btn" class="buy_bbtn">
+                            <a href="#">Buy</a>
+                        </button>
+                    </div>
+                    <div class="lm">
+                        <a href="#">
+                            <h3>Learn more &gt;</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
