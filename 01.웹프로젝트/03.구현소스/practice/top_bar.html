@@ -52,6 +52,11 @@
         --logo_size: 14px;
       }
       /************************************ 헤더 ************************************/
+      .top{
+        position: fixed;
+        background-color: gray;
+        width: 100vw;
+      }
       .header{
         display: flex;
         height: 44px;
@@ -79,6 +84,29 @@
         font-size: 14px;
         line-height: 3;
       }
+      .sub_menu{
+        background-color: gray;
+        position: absolute;
+        width: 100%;
+        top: 44px;
+        margin: 0 auto;
+      }
+      .smenu{
+        width: 50vw;
+        display: flex;
+        justify-content: center;
+        gap: 7vw;
+      }
+      ol>li{
+        margin-top: 10px;
+      }
+      ol>li>a{
+        text-decoration: none;
+        color: #fff;
+        font-size: 14px;
+      }
+
+
 
       .header_right{
         width: 25vw;
@@ -104,21 +132,6 @@
             <ul>
               <li>
                 <a href="#">Product</a>
-                <div class="sub_menu">
-                  <div class="smenu">
-                    <ol>
-                      <li>
-                        <a href="#">iPhone</a>
-                      </li>
-                      <li>
-                        <a href="#">iPad</a>
-                      </li>
-                      <li>
-                        <a href="#">Mac</a>
-                      </li>
-                    </ol>
-                  </div>
-                </div>
               </li>
               <li>
                 <a href="#">Entertainment</a>
@@ -136,7 +149,46 @@
           <div class="h_icon h_bag"></div>
           <div class="h_icon h_btn"></div>
         </div>
+
+        
       </header>
+      <div class="sub_menu">
+        <div class="smenu">
+          <ol>
+            <li>
+              <a href="#">iPhone</a>
+            </li>
+            <li>
+              <a href="#">iPad</a>
+            </li>
+            <li>
+              <a href="#">Mac</a>
+            </li>
+          </ol>
+          <ol>
+            <li>
+              <a href="#">iPhone</a>
+            </li>
+            <li>
+              <a href="#">iPad</a>
+            </li>
+            <li>
+              <a href="#">Mac</a>
+            </li>
+          </ol>
+          <ol>
+            <li>
+              <a href="#">iPhone</a>
+            </li>
+            <li>
+              <a href="#">iPad</a>
+            </li>
+            <li>
+              <a href="#">Mac</a>
+            </li>
+          </ol>
+        </div>
+      </div>
     </div>
     <div class="aaa"></div>
   </body>
