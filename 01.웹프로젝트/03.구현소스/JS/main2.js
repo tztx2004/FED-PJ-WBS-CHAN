@@ -8,9 +8,10 @@ window.addEventListener("DOMContentLoaded",()=>{
     // 상단바 배경
     
     for(let x of List){
-        x.style.transition = ".4s";
+        x.style.transition = ".2s";
         x.onmouseover = ()=>{
             top.style.height = "150px";
+            top.style.transition = ".2s";
         }
         x.onmouseleave = ()=>{
             top.style.height = "44px";
@@ -19,7 +20,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     search.addEventListener("click",()=>{
         top.style.height = "150px";
-        top.style.transition = ".4s";
+        top.style.transition = ".2s";
     });/////////////// click //////////////////
 
 
