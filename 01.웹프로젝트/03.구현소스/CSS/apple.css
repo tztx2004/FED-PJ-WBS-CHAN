@@ -105,7 +105,6 @@ ul,ol,li{
   /* margin-top: 13px; */
   line-height: 44px;
   height: 0;
-  transition: .4s;
 }
 .gnb ul {
   display: flex;
@@ -121,7 +120,6 @@ ul,ol,li{
   display: block;
   height: 106px;
 }
-
 .on1{
   position: fixed;
   z-index: 99;
@@ -130,9 +128,7 @@ ul,ol,li{
   height: 149px;
   background-color: #fff;
 }
-.gnb ul li:hover .top_bg{
-  display: block;
-}
+
 .gnb a {
   text-decoration: none;
   color: #fff;
