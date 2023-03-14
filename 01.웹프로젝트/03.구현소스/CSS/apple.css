@@ -109,15 +109,15 @@ ul,ol,li{
 .gnb ul {
   display: flex;
   justify-content: space-around;
-  background: var(--bg_c);
+  /* background: var(--bg_c); */
 }
 .gnb ul li {
   font-size: 1.4rem;
   list-style: none;
 }
 .gnb ul li:hover .sub_menu {
-  background-color: var(--bg_c);
-  display: block;
+  /* background-color: var(--bg_c); */
+  /* display: block; */
   height: 106px;
 }
 .on1{
@@ -139,13 +139,15 @@ ul,ol,li{
   padding: 0;
   position: relative;
   z-index: 1;
-  display: none;
+  /* display: none; */
   line-height: 35px;
+  height: 0;
+  overflow: hidden;
   transition: 0.2s;
 }
 .sub_menu ol {
   list-style: none;
-  background-color: var(--bg_c);
+  /* background-color: var(--bg_c); */
   /* margin-top: 14px; */
 }
 
