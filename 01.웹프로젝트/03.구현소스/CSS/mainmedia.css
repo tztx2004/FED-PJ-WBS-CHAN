@@ -1,0 +1,209 @@
+/************************* 미디어쿼리 *************************/
+@media screen and (max-width: 1600px) {
+    /******************* 2페이지 *******************/
+    .copy2{
+      transform: translate(-40%, -50%);
+    }
+    
+    
+    /******************* 3페이지 *******************/
+    .pg3{
+      gap: 0;
+    }
+    .graphic img{
+      width: max(25vw,250px);
+    }
+  
+    .color_img img {
+      width: 24.1vw;
+    }
+    .copy4{
+      width: 32.2vw;
+    }
+  }
+  /************************* max: 1600 *************************/
+  
+  
+  @media screen and (max-width: 1200px) {
+    .copy2{
+      transform: translate(-30%, -50%);
+    }
+  
+    .copy3{
+      position: relative;
+      left: 70px;
+    }
+  
+    .copy4 h2{
+      font-size: 26px;
+    }
+  }
+  /************************* max: 1200 *************************/
+  
+  
+  @media screen and (max-width: 900px) {
+    /********************* 2페이지 *********************/
+    .b_bg{
+      height: 50vh;
+    }
+    .copy2{
+      transform: translate(-8%, -50%);
+    }
+    .copy2 h1{
+      font-size: 90px;
+    }
+    .copy2 h2{
+      font-size: 20px;
+    }
+    .copy2 h3{
+      font-size: 16px;
+    }
+  
+    .color_img img {
+      width: 28.1vw;
+    }
+    .copy4{
+      width: 50vw;
+    }
+  
+    .set6{
+      flex-wrap: wrap;
+    }
+    .pg6_bx{
+      flex-basis: 35%;
+    }
+  
+  }
+  /************************* max: 900 *************************/
+  
+  
+  @media screen and (max-width: 800px) {
+    .copy2{
+      transform: translate(10%, -50%);
+    }
+    .copy2 h1{
+      font-size: 60px;
+    }
+    
+    .pg3{
+      flex-direction: column-reverse;
+    }
+    .copy3{
+      left: auto;
+    }
+    .graphic img{
+      width: 37vw;
+    }
+    .pg3 h2 {
+      font-size: 8.5vw;
+    }
+    .pg3 h3 {
+      font-size: 2.65vw;
+    }
+    
+    .color_img img {
+      width: 32vw;
+    }
+    .color_list{
+      right: 60px;
+      top: 240px;
+    }
+  
+    .pg6 h2{
+      font-size: 32px;
+    }
+  
+    .info{
+      width: 100px;
+      height: 100px;
+    }
+    .info img{
+      height: 100px;
+    }
+    .info_title h2{
+      font-size: 14px;
+    }
+  }
+  /************************* max: 800 *************************/
+  @media screen and (max-width: 650px) {
+    .copy2{
+      transform: translate(3%, -50%);
+    }
+    
+    .graphic{
+      margin-bottom: 0;
+    }
+    .graphic img{
+      width: 50vw;
+    }
+    
+    .color_img img {
+      width: 38vw;
+    }
+    .color_list{
+      right: 0;
+    }
+    .color_list ul li a{
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .copy4 h2{
+      font-size: 18px;
+    }
+    .copy4 h2:first-child {
+      margin-top: 5vh;
+    }
+  
+    .copy5 h2{
+      font-size: 24px;
+    }
+    .copy h3{
+      font-size: 18px;
+    }
+  
+    .pg6_title h2{
+      font-size: 20px;
+    }
+  }
+  /************************* max: 650 *************************/
+  
+  @media screen and (max-width: 500px) {
+    .copy2{
+      transform: translate(1%, -50%);
+    }
+    .copy2 h2{
+      font-size: 14px;
+    }
+    .copy2 h3{
+      font-size: 14px;
+    }
+  
+    .copy_main{
+      padding-right: 20px;
+      margin-left: 30px;
+    }
+    .copy_wide{
+      margin-left: 20px;
+      margin-right: 0px;
+      padding-right: 10px;
+    }
+  
+    .main>.pg6{
+      height: 2800px;
+    }
+    .pg6_bx{
+      flex-basis: 50%;
+    }
+    
+    
+    .footer{
+      height: 700px;
+    }
+    .footer_main{
+      grid-template-columns: repeat(1, 3fr);
+    }
+    .info{
+      margin-bottom: 100px;
+    }
+  }
+  /************************* max: 500 *************************/
