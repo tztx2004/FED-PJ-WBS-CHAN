@@ -120,7 +120,9 @@
       height: 50vh;
   }
   .copy2 {
-      transform: translate(-8%, -50%);
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%);
   }
   .copy2 h1 {
       font-size: 90px;
@@ -150,8 +152,8 @@
 
 @media screen and (max-width: 800px) {
   .copy2 {
-      transform: translate(10%, -50%);
-  }
+  height: 300px;
+    }
   .copy2 h1 {
       font-size: 60px;
   }
@@ -196,15 +198,22 @@
   }
 }
 /************************* max: 800 *************************/
+@media screen and (max-width: 700px) {
+    .copy2{
+        transform: translate(-38%, -45%);
+    }
+}
+/************************* max: 700 *************************/
+
 @media screen and (max-width: 650px) {
   .logo img {
-    left: 40vw;
+    left: 43vw;
   }  
-
-
   .copy2 {
-        transform: translate(3%, -50%);
-    }
+    width: 50%;
+    transform: translate(-50%, -50%);
+    /* transform: translate(-35%, -50%); */
+}
 
     .graphic {
         margin-bottom: 0;
@@ -243,18 +252,29 @@
 }
 /************************* max: 650 *************************/
 
+@media screen and (max-width: 600px) {
+    .copy2 {
+        transform: translate(4%, -32%);
+    }
+}
+/************************* max: 600 *************************/
+
 @media screen and (max-width: 500px) {
     html{
         overflow-x: hidden;
     }
     .copy2 {
-        transform: translate(1%, -50%);
+        width: 70%;
+        transform: translate(-23%, -50%);
+    }
+    .copy2 h1 {
+        font-size: 15vw;
     }
     .copy2 h2 {
-        font-size: 14px;
+        font-size: 3vw;
     }
     .copy2 h3 {
-        font-size: 14px;
+        font-size: 2.5vw;
     }
 
     .copy_main {

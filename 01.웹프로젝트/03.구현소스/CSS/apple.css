@@ -53,6 +53,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 99;
+  outline: 1px dashed red;
 }
 .pg2_wrap{
   background: url(../image/apple/background.png) no-repeat center/cover;
