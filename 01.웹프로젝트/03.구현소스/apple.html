@@ -11,7 +11,12 @@
     <link rel="stylesheet" href="/v/iphone-14-pro/c/built/styles/main.built.css" type="text/css"/>
     <link rel="stylesheet" href="/v/iphone-14-pro/c/built/styles/overview.built.css" type="text/css"/> -->
     <link rel="icon" href="./image/apple/favi.ico">
+    <!-- searchBar font -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
+    <!-- 메인기능js -->
     <script src="./JS/main.js"></script>
+    <!-- 상단 하단 등 js -->
+    <script src="./JS/core.js"></script>
 </head>
 <body>
     <div class="top">
@@ -78,11 +83,21 @@
             </div>
             <div class="header_right">
                 <div class="icon">
-                    <div class="search">
+                    <form action="" class="search">
+                        <input type="search" class="search_bar" required placeholder="Search"/>
+                        
+                        <div class="search_imgbx">
+                            <img src="./image/apple/globalnav_search_image__cbllq1gkias2_large.svg">
+                        </div>
+
+                        <!-- <i class="fa fa-search"></i> -->
+                        <a href="javascript:void(0)" class="clear-btn">X</a>
+                    </form>
+                    <!-- <div class="search">
                         <a href="#">
                             <img src="./image/apple/globalnav_search_image__cbllq1gkias2_large.svg" alt="서치아이콘">
                         </a>
-                    </div>
+                    </div> -->
                     <div class="bag">
                         <a href="#">
                             <img src="./image/apple/globalnav_bag_image__yzte50i47ciu_large.svg" alt="장바구니아이콘">
@@ -330,6 +345,7 @@
                 </div>
             </div>
         </div>
+    </div>
     <div class="footer">
         <div class="footer_main">
             <div class="info del">

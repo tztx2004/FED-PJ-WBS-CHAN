@@ -23,10 +23,10 @@ window.addEventListener("DOMContentLoaded",()=>{
         }
     } //////////////// for of ////////////////////
 
-    search.addEventListener("click",()=>{
-        top.style.height = "150px";
-        top.style.transition = ".2s";
-    });/////////////// click //////////////////
+    // search.addEventListener("click",()=>{
+    //     top.style.height = "150px";
+    //     top.style.transition = ".2s";
+    // });/////////////// click //////////////////
 
     /////////////////////////// 3pg //////////////////////////////
     let num = 1;
