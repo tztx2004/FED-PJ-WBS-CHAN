@@ -8,14 +8,14 @@
     position: fixed;
     z-index: 999;
 
-    width: 100vw;
+    width: 100%;
     height: 44px;
 
     background: var(--bg_c);
     transition: height .2s;
 }
 .top.on {
-    height: 150px;
+    height: 180px;
 }
 /* .top:after{
     content: '';
@@ -26,28 +26,25 @@
     display: none;
   } */
 
-.header {
+  .header{
     position: fixed;
     top: 0;
     left: 50%;
-
     width: 100%;
     max-width: 1024px;
     height: 44px;
     margin: 0 auto;
     padding: 0 22px;
     transform: translateX(-50%);
-
     background: var(--bg_c);
-    /* #121212; */
-
     display: flex;
     justify-content: space-between;
-}
+  }
+  
 /******************** header left ********************/
-.header_left {
+.header_left{
     position: relative;
-    width: 25vw;
+    flex-basis: 25%;
 }
 .logo img {
     position: absolute;
@@ -57,8 +54,9 @@
 }
 
 /******************** header main ********************/
-.header_main {
-    width: 50vw;
+.header_main{
+    /* width: 26.66vw; */
+    flex-basis: 48%;
     transition: .2s;
     opacity: 1;
 }
@@ -67,28 +65,27 @@
     line-height: 44px;
     height: 0;
 }
-.gnb ul {
+.gnb ul{
     display: flex;
-    justify-content: space-around;
-    /* background: var(--bg_c); */
+    /* background: var(—bg_c); */
+    justify-content: space-between;
 }
 .gnb ul li {
     font-size: 1.4rem;
-    list-style: none;
 }
 .gnb ul li:hover .sub_menu {
     /* background-color: var(--bg_c); */
     /* display: block; */
     height: 106px;
 }
-.on1 {
+/* .on1 {
     position: fixed;
     z-index: 99;
     top: 0;
     width: 100vw;
     height: 149px;
     background-color: #fff;
-}
+} */
 
 .gnb a {
     text-decoration: none;
@@ -113,9 +110,10 @@
 }
 
 /******************** header right ********************/
-.header_right {
-    width: 25vw;
+.header_right{
+    /* width: 25vw; */
     transition: .2s;
+    flex-basis: 30%;
 }
 .icon {
     display: flex;
@@ -149,7 +147,7 @@ form:hover .search_imgbx img {
 form {
     position: absolute;
     top: 50%;
-    right: 20%;
+    right: 19%;
     transform: translateY(-50%);
     transition: all 0.2s;
     width: 40px;
@@ -219,7 +217,7 @@ form:valid{
 }
 form:hover,
 form:valid {
-    width: 150px;
+    width: 132px;
     cursor: pointer;
 }
 
@@ -227,6 +225,7 @@ form:hover input,
 form:valid input {
     display: block;
 }
+
 
 /* form:hover .fa,
 form:valid .fa {
@@ -255,12 +254,14 @@ form:valid .fa {
     line-height: 1.16;
     margin: 12px 0 24px;
     transition: .6s;
+    cursor: default;
 }
 .bag_comment a{
     color: #2997ff;
 }
 .bag_comment h3{
     color: #cecece;
+    cursor: default;
 }
 
 
@@ -270,10 +271,11 @@ form:valid .fa {
     line-height: 44px;
 }
 #buy_btn {
-    background-color: #0071e3;
-    border-radius: 10px;
     width: 45px;
     height: 24px;
+    background-color: #0071e3;
+    border-radius: 10px;
+    border: none;
 }
 .btn a {
     text-decoration: none;
