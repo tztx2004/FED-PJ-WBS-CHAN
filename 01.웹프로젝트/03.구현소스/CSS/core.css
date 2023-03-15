@@ -120,36 +120,33 @@
 }
 
 /* search-bar */
-.search {
-    overflow: hidden;
-}
-.search_imgbx{
+.search_imgbx {
     position: absolute;
     top: -6px;
     z-index: 1;
 }
 
-form:hover .search_imgbx{
+form:hover .search_imgbx {
     position: absolute;
     top: 5px;
-    right: 5px;
+    left: 5px;
 
     width: 22px;
     height: 22px;
     border-radius: 50%;
     background-color: #000;
 }
-form:hover .search_imgbx img{
+form:hover .search_imgbx img {
     position: absolute;
     top: -11px;
     right: 4px;
 }
 form {
-    position: relative;
+    position: absolute;
     top: 50%;
-    left: 0;
+    right: 20%;
     transform: translateY(-50%);
-    transition: all .2s;
+    transition: all 0.2s;
     width: 40px;
     height: 40px;
     background: #1a1a1c;
@@ -157,6 +154,7 @@ form {
     border-radius: 25px;
     border: 4px solid #1a1a1c;
     padding: 5px;
+    overflow: hidden;
 }
 .search_bar {
     position: absolute;
@@ -170,9 +168,9 @@ form {
     display: none;
     font-size: 14px;
     border-radius: 20px;
-    padding: 0 5px;
+    padding: 0 30px;
 }
-.fa {
+/* .fa {
     box-sizing: border-box;
     padding: 10px;
     width: 22px;
@@ -197,7 +195,7 @@ form {
     color: #cecece;
     text-align: center;
     font-size: 14px;
-}
+} */
 .clear-btn {
     display: none;
     position: absolute;
@@ -211,7 +209,7 @@ form {
     width: 100%;
 }
 
-form:valid a {
+form:valid{
     display: block;
 }
 form:hover,
@@ -225,11 +223,11 @@ form:valid input {
     display: block;
 }
 
-form:hover .fa,
+/* form:hover .fa,
 form:valid .fa {
     background: #07051a;
     color: white;
-}
+} */
 
 /* bag */
 .bag a img {

@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded",()=>{
         기능 : 검색바 오버시 gnb 투명해짐
     *****************************************/
     search.onmouseover = ()=>{
-        header_main.style.opacity = 0;
+        // header_main.style.opacity = 0;
         header_right.style.width = "40vw";
     }; /////////////// onmouseover ///////////////////
     search.onmouseleave = ()=>{
@@ -24,9 +24,9 @@ window.addEventListener("DOMContentLoaded",()=>{
             header_right.style.width = "25vw";
             header_main.style.opacity = 1;
         }
+        if(search_bar.value.length > 0) header_main.style.opacity = 0;
     }; /////////////// onmouseleave ///////////////////
     
-    if(search_bar.value.length > 0) header_main.style.opacity = 0;
 
 
     /******************************************* 
