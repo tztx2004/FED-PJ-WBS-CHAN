@@ -35,6 +35,10 @@
     .copy4 h2 {
         font-size: 26px;
     }
+    .pg4 {
+        height: 1600px;
+        padding-top: 100px;
+    }
 }
 /************************* max: 1200 *************************/
 
@@ -114,13 +118,6 @@
     padding: 60px 0;
     font-size: 8vw;
 }
-/* JS용 클래스 */
-.VH{
-    height: 100vh;
-}
-.defaultH{
-    height: 44px;
-}
 
   .b_bg {
       height: 50vh;
@@ -134,7 +131,7 @@
       font-size: 90px;
   }
   .copy2 h2 {
-      font-size: 20px;
+      font-size: 3vw;
   }
   .copy2 h3 {
       font-size: 16px;
@@ -147,6 +144,7 @@
       width: 50vw;
   }
 
+  
   .set6 {
       flex-wrap: wrap;
   }
@@ -171,7 +169,7 @@
       left: auto;
   }
   .graphic img {
-      width: 37vw;
+      width: 50vw;
   }
   .pg3 h2 {
       font-size: 8.5vw;
@@ -228,8 +226,12 @@
         width: 50vw;
     }
 
+    .pg4 {
+        height: 1500px;
+        padding-top: 200px;
+    }
     .color_img img {
-        width: 38vw;
+        width: 43vw;
     }
     .color_list {
         right: 0;
@@ -239,17 +241,20 @@
         font-weight: bold;
     }
     .copy4 h2 {
-        font-size: 18px;
+        font-size: 4.5vw;
     }
     .copy4 h2:first-child {
         margin-top: 5vh;
     }
 
+    .pg5 {
+        height: 1000px;
+    }
     .copy5 h2 {
         font-size: 24px;
     }
     .copy h3 {
-        font-size: 18px;
+        font-size: 2.5vw;
     }
 
     .pg6_title h2 {
@@ -260,7 +265,7 @@
 
 @media screen and (max-width: 600px) {
     .copy2 {
-        transform: translate(4%, -32%);
+        transform: translate(-50%, -40%);
     }
 }
 /************************* max: 600 *************************/
@@ -269,6 +274,7 @@
     html{
         overflow-x: hidden;
     }
+    
     .copy2 {
         width: 70%;
         transform: translate(-23%, -50%);
@@ -280,7 +286,34 @@
         font-size: 3vw;
     }
     .copy2 h3 {
-        font-size: 2.5vw;
+        font-size: 4.5vw;
+    }
+
+    .graphic {
+        width: 75vw;
+    }
+    .graphic img{
+        width: 70vw;
+    }
+    .copy3{
+        width: 70vw;
+    }
+    .pg3 h2{
+        font-size: 10.5vw;
+    }
+    .hb3_2{
+        width: 100%;
+    }
+    .hb3_2 h3{
+        font-size: 3vw;
+    }
+
+    .pg4 {
+        height: 1200px;
+        margin-bottom: 100px;
+    }
+    .color_list ul li a {
+        font-size: 12px;
     }
 
     .copy_main {
