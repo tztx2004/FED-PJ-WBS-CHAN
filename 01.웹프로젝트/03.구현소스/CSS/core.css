@@ -73,9 +73,8 @@
 .gnb ul li {
     font-size: 1.4rem;
 }
-.gnb ul li:hover .sub_menu {
-    /* background-color: var(--bg_c); */
-    /* display: block; */
+
+.top.on .sub_menu{
     height: 106px;
 }
 /* .on1 {

@@ -19,17 +19,23 @@ window.addEventListener("DOMContentLoaded",()=>{
     const bag_c = document.querySelector(".bag_comment");
     const search_imgbx = document.querySelector(".search_imgbx")
 
+    const ham = document.querySelector(".ham");
+
+    const gnb = document.querySelector(".gnb");
     const gnb_a = document.querySelectorAll(".gnb a");
 
     /* gnb 닿을 때 .top으로 배경 채워줌 */
+    
     for(let x of List){
         x.onmouseover = ()=>{
             top.classList.add("on");
+            top.classList.remove("active");
         } //////////// onmouseover //////////////
         x.onmouseleave = ()=>{
             top.classList.remove("on");
             bag_c.classList.remove("on");
         }//////////// onmouseleave ////////////
+
     } //////////////// for of ////////////////////
 
 
@@ -75,9 +81,24 @@ window.addEventListener("DOMContentLoaded",()=>{
     
 
     /******************************************* 
-        기능 : .gnb a 오버 시 약간 커짐
+        함수 : mediaHam
+        기능 : 햄버거 버튼클릭 시 gnb박스등장
     *******************************************/
-    
+    function mediaHam(){
+            ham.onclick = ()=>{
+                console.log("ham!!");
+                // top height 값 늘리고 클래스 active
+                if(top.classList.contains("active")){
+                    top.classList.remove("active");
+                    top.classList.remove("on");
+                } else{
+                    top.classList.add("active");
+                }
+            }////////// onclick ///////////
+        } /////////// mediaHam //////////////
+
+        // mediaHam 임시호출
+        mediaHam();
 
 
 }); ///////////////// 로드구역 ////////////////////////

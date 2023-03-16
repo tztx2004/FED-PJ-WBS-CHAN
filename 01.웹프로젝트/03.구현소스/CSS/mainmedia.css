@@ -39,7 +39,6 @@
 /************************* max: 1200 *************************/
 
 @media screen and (max-width: 900px) {
-/********************* 2페이지 *********************/
 .logo img {
   top: 0;
   left: 45vw;
@@ -78,43 +77,50 @@
   }
 
   /* 햄버거버튼 클릭시 */
-  .top.active {
-      background-color: #052a46;
-  }
-  .top.active .ham {
-      z-index: 9999;
-      color: #fff;
-      transform: scale(1);
-  }
-  .top.active .ham::before {
-      content: "×";
-  }
-  .top.active .gnb {
-      display: block;
-      position: fixed;
-      top: 90px;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: #052a46;
-      z-index: 99;
-  }
-  .top.active .gnb ul {
-      flex-direction: column;
-      text-align: center;
-  }
-  .top.active .gnb ul li {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-      width: 100%;
-      margin: 0;
-      padding: 10px 0;
-  }
-  .top.active .gnb ul li:last-child {
-      display: none;
-  }
-  .top.active .icon {
-      display: none;
-  }
+
+
+
+.top.active {
+    background-color: #1a1a1c;
+    height: 100vh;
+}
+.top.active .ham {
+    z-index: 9999;
+    color: #fff;
+    transform: scale(1);
+}
+.top.active .ham::before {
+    content: "×";
+    font-size: 28px;
+}
+.top.active .gnb {
+    display: block;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+    background-color: #1a1a1c;
+    z-index: 99;
+}
+.top.active .gnb ul {
+    flex-direction: column;
+    text-align: center;
+}
+.top.active .gnb ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    width: 100%;
+    margin: 0;
+    padding: 60px 0;
+    font-size: 8vw;
+}
+/* JS용 클래스 */
+.VH{
+    height: 100vh;
+}
+.defaultH{
+    height: 44px;
+}
 
   .b_bg {
       height: 50vh;
