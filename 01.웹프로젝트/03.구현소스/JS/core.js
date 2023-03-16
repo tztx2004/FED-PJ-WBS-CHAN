@@ -24,16 +24,26 @@ window.addEventListener("DOMContentLoaded",()=>{
     const gnb = document.querySelector(".gnb");
     const gnb_a = document.querySelectorAll(".gnb a");
 
-    /* gnb 닿을 때 .top으로 배경 채워줌 */
+    /***************************************** 
+        기능 : gnb 닿을 때 .top으로 배경 채워줌
+    *****************************************/
     
     for(let x of List){
         x.onmouseover = ()=>{
-            top.classList.add("on");
-            top.classList.remove("active");
+            
+            if(top.classList.contains("active")) {
+                top.classList.remove("on");  
+                sub_menu.forEach(ele=>ele.classList.add("h0"));
+            } else{
+                top.classList.add("on")
+            }
+            // top.classList.remove("active");
         } //////////// onmouseover //////////////
         x.onmouseleave = ()=>{
             top.classList.remove("on");
             bag_c.classList.remove("on");
+            
+
         }//////////// onmouseleave ////////////
 
     } //////////////// for of ////////////////////

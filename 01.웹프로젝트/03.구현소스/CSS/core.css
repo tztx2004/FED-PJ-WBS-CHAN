@@ -17,6 +17,9 @@
 .top.on {
     height: 180px;
 }
+.top.h0 .sub_menu{
+    height: 0;
+}
 /* .top:after{
     content: '';
     display: block;
@@ -73,10 +76,13 @@
 .gnb ul li {
     font-size: 1.4rem;
 }
-
-.top.on .sub_menu{
+.gnb ul li:hover .sub_menu {
     height: 106px;
 }
+.top.on .sub_menu{
+    /* height: 106px; */
+}
+
 /* .on1 {
     position: fixed;
     z-index: 99;

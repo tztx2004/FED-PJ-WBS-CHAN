@@ -43,6 +43,9 @@
 /************************* max: 1200 *************************/
 
 @media screen and (max-width: 900px) {
+.top.on{
+    height: 100vh;
+}
 .logo img {
   top: 0;
   left: 45vw;
@@ -79,6 +82,9 @@
   .btn{
     display: none;
   }
+  .gnb ul li:hover .sub_menu {
+    height: 0;
+    }
 
   /* 햄버거버튼 클릭시 */
 

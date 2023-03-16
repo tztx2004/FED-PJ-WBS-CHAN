@@ -112,14 +112,19 @@
   margin: auto;
   /* margin-right: 100px; */
 }
+.ggimg{
+  display: flex;
+}
 .gimg{
   text-align: center;
 }
 .gimg img{
   transition: .4s;
-}
-.graphic img{
   width: 16vw;
+}
+.gimg2 img{
+  transform: scale(0.7);
+  filter: blur(1px) brightness(0.7);
 }
 
 .padbtn ul{
