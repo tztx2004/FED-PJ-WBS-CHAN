@@ -108,19 +108,30 @@
 }
 
 .graphic{
-  width: 52vw;
+  width: 27vw;
   margin: auto;
+  /* outline: 1px dashed; */
   /* margin-right: 100px; */
 }
 .ggimg{
   display: flex;
 }
+/* 4페이지 사진 두개 */
+/* .ggimg::after{
+  content: '';
+  width: 16vw;
+  background: url(../image/apple/lock_screen_1.jpg) no-repeat center/cover;
+  transform: scale(0.7);
+  filter: blur(1px) brightness(0.7);
+  outline: 1px dashed #fff;
+} */
 .gimg{
   text-align: center;
+  width: 100%;
 }
 .gimg img{
   transition: .4s;
-  width: 16vw;
+  width: 100%;
 }
 .gimg2 img{
   transform: scale(0.7);
@@ -175,6 +186,10 @@
 
 .color_list ul>li{
   margin-top: 20px;
+}
+.color_list ul li:hover a{
+  color: #fff;
+  transition: .4s;
 }
 .color_list li a{
   color: #424245;

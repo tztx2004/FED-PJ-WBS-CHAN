@@ -20,9 +20,9 @@ window.addEventListener("DOMContentLoaded",()=>{
     gimg.innerHTML =`
         <img src="./image/apple/lock_screen_1.jpg" alt="아이폰이미지">
     `;
-    gimg2.innerHTML =`
-        <img src="./image/apple/lock_screen_2.jpg" alt="아이폰이미지">
-    `;
+    // gimg2.innerHTML =`
+    //     <img src="./image/apple/lock_screen_2.jpg" alt="아이폰이미지">
+    // `;
 
     // for(let x of gbtn){
     //     let TT = x.innerText;

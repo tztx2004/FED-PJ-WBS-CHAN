@@ -9,10 +9,6 @@
     .pg3 {
         gap: 0;
     }
-    .graphic img {
-        width: max(25vw, 250px);
-    }
-
     
     .copy4 {
         width: 32.2vw;
@@ -169,11 +165,14 @@
 
   .pg3 {
       flex-direction: column-reverse;
+      height: 1500px;
+      padding-top: 50px;
   }
   .copy3 {
       left: auto;
+      width: 50vw;
   }
-  .graphic img {
+  .graphic{
       width: 50vw;
   }
   .pg3 h2 {
@@ -316,6 +315,9 @@
     .pg4 {
         height: 1200px;
         margin-bottom: 100px;
+    }
+    .color_list{
+        width: 80px;
     }
     .color_list ul li a {
         font-size: 12px;
