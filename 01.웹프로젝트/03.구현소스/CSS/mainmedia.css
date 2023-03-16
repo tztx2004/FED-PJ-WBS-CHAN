@@ -13,9 +13,7 @@
         width: max(25vw, 250px);
     }
 
-    .color_img img {
-        width: 24.1vw;
-    }
+    
     .copy4 {
         width: 32.2vw;
     }
@@ -143,8 +141,9 @@
       font-size: 16px;
   }
 
-  .color_img img {
-      width: 28.1vw;
+  .pg4_color{
+    width: 300px;
+    height: 740px;
   }
   .copy4 {
       width: 50vw;
@@ -184,12 +183,9 @@
       font-size: 2.65vw;
   }
 
-  .color_img img {
-      width: 32vw;
-  }
+ 
   .color_list {
-      right: 60px;
-      top: 240px;
+      top: 500px;
   }
 
   .pg6 h2 {
@@ -236,11 +232,10 @@
         height: 1500px;
         padding-top: 200px;
     }
-    .color_img img {
-        width: 43vw;
-    }
+    
     .color_list {
-        right: 0;
+        width: 98px;
+        height: 158px;
     }
     .color_list ul li a {
         font-size: 14px;
@@ -272,6 +267,10 @@
 @media screen and (max-width: 600px) {
     .copy2 {
         transform: translate(-50%, -40%);
+    }
+    .pg4_color {
+        width: 200px;
+        height: 500px;
     }
 }
 /************************* max: 600 *************************/

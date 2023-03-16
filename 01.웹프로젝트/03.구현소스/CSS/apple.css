@@ -149,19 +149,30 @@
 }
 /*************************** 4페이지  ***************************/
 .pg4{
+  position: relative;
+  /* .color_list 부모 */
   height: 2200px;
   padding-top: 250px;
 }
 .pg4_color{
   position: relative;
   /* 부모자격: .color_list */
+  /* 원본크기 */
+  width: 406px;
+  height: 1022px;
+  overflow: hidden;
+  margin: 0 auto;
 }
-.color_list{
+.color_list {
+  width: 150px;
+  height: 200px;
   position: absolute;
-  /* 부모: .pg4_color */
-  right: 100px;
-  top: 400px;
+  right: 0;
+  top: 50%;
+  /* outline: 1px dashed #fff; */
+  transform: translateY(-50%);
 }
+
 .color_list ul>li{
   margin-top: 20px;
 }
@@ -182,7 +193,7 @@
   text-align: center;
 }
 .color_img img{
-  width: 21.1vw;
+  width: 100%;
 }
 .copy4 h2 {
   font-size: 32px;
