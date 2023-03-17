@@ -87,12 +87,17 @@
 /*************************** 3페이지 ***************************/
 .pg3 {
   display: flex;
-  gap: 70px;
+  justify-content: center;
   height: 1200px;
+
 }
 .copy3{
   width: 42vw;
-  margin: auto;
+  margin-top: 300px;
+  margin-right: 3vw;
+  margin-left: 30px;
+  margin-bottom: 100px;
+
 }
 .pg3 h2 {
   font-size: 5vw;
@@ -103,19 +108,54 @@
   font-size: 1.65vw;
   color: #cecece;
 }
+.hb3{
+}
 .hb3_2{
   margin-top: 26px;
+  width: 80%;
 }
 
 .graphic{
+  position: relative;
+  margin-top: 300px;
+}
+.gimg{
+  position: relative;
+  width: 15vw;
+  height: 30.5vw;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.gimg li{
+  position: absolute;
+  /* opacity: 0; */
+  transition: opacity .6s ease-in-out;
+}
+.gimg li img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+/* .graphic{
+  position: relative;
   width: 27vw;
+  height: 100%;
   margin: auto;
-  /* outline: 1px dashed; */
-  /* margin-right: 100px; */
+  overflow: hidden;
+  outline: 1px dashed; 
+  margin-right: 100px;
 }
 .ggimg{
+  position: relative;
   display: flex;
-}
+  width: 27vw;
+  height: 100%;
+} */
 /* 4페이지 사진 두개 */
 /* .ggimg::after{
   content: '';
@@ -125,27 +165,36 @@
   filter: blur(1px) brightness(0.7);
   outline: 1px dashed #fff;
 } */
-.gimg{
+
+/* .gimg{
   text-align: center;
   width: 100%;
 }
 .gimg img{
-  transition: .4s;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  transition: .4s;
 }
 .gimg2 img{
   transform: scale(0.7);
   filter: blur(1px) brightness(0.7);
-}
+} */
 
+.padbtn{
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+}
 .padbtn ul{
   list-style: none;
   display: flex;
   justify-content: center;
   gap: 40px;
   
-  /* 임시로 패딩 */
-  padding: 0 55px;
   margin: 30px 0;
 }
 .gbtn{
