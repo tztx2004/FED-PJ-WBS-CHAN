@@ -108,8 +108,7 @@
   font-size: 1.65vw;
   color: #cecece;
 }
-.hb3{
-}
+
 .hb3_2{
   margin-top: 26px;
   width: 80%;
@@ -127,8 +126,16 @@
   box-sizing: border-box;
   margin: 0 auto;
 }
+.gimg ul{
+  display: flex;
+  position: relative;
+  left: 0%;
+  width: 800%;
+  overflow: hidden;
+}
 .gimg li{
-  position: absolute;
+  position: relative;
+  flex-basis: 100%;
   /* opacity: 0; */
   transition: opacity .6s ease-in-out;
 }
