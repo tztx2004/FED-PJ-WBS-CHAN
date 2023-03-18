@@ -8,6 +8,9 @@ window.addEventListener("DOMContentLoaded",()=>{
     const gimg = document.querySelector(".gimg");
     const gimg_ul = document.querySelector(".gimg ul");
     let gimg_li = document.querySelectorAll(".gimg li");
+
+    const color_img_li = document.querySelectorAll(".color_img li")
+    const color_list_li = document.querySelectorAll(".color_list ul>li");
     const img_cnt = gimg_li.length;
 
     
@@ -66,7 +69,6 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     const chgSeq = ()=>{
         gimg_li = document.querySelectorAll(".gimg li");
-        // gimg.insertBefore(gimg_li[gimg_li.length-1],gimg_li[0]);
     };
 
     for(let i=0;i<2;i++) chgSeq();
@@ -75,10 +77,12 @@ window.addEventListener("DOMContentLoaded",()=>{
     // 광클금지변수 : 0 - 허용, 1 - 불허용
     let prot = 0;
 
-    let snum = 0;
-    
+    /******************************************************* 
+        함수 : goSlide
+        기능 : 3페이지에서 버튼을 누르면 아이폰 이미지 left가 변경됨
+    *******************************************************/
+
     const goSlide = (seq) => {
-        console.log("번호",seq);
 
         // 광클금지 설정하기 //////
         if (prot) return;
@@ -90,17 +94,10 @@ window.addEventListener("DOMContentLoaded",()=>{
         let gimg_li = gimg_ul.querySelectorAll("li");
 
         if(seq){
-            // snum++;
-            // console.log("오른쪽",snum);
             gimg_ul.style.left ="-100%";
             gimg_ul.style.transition = "left .2s ease-in-out";
     
-            //(2) 슬라이드 이동후!!! (0.4s 후)
             setTimeout(()=>{
-                // (2-1)바깥에 나가있는 첫번째 슬라이드
-                //      li를 잘라서 맨뒤로 보낸다!
-                // 슬라이드li가 잘라내면 매번변경되므로 
-                // 새로읽어서 맨뒤로 이동한다
                 gimg_ul.appendChild(gimg_li[0]);
                 // (2-2)동시에 left값을 0으로 변경한다!
                 gimg_ul.style.left = "0";
@@ -113,8 +110,6 @@ window.addEventListener("DOMContentLoaded",()=>{
             gimg_ul.style.left = "-100%";
             gimg_ul.style.transition = "none";
             
-            // snum--;
-            console.log("왼쪽",snum);
 
             setTimeout(()=>{
                 gimg_ul.style.left ="0";
@@ -122,11 +117,10 @@ window.addEventListener("DOMContentLoaded",()=>{
             },0); ///////////// 타임아웃 ///////////
         }
         
-        // if(snum >= img_cnt-1) snum = 0;
-        // else if(snum < 1) snum = 8;
 
     }; //////////// goSlide /////////////
 
+    /* goSlide 호출 */
     gbtn.forEach((ele,idx)=>{
         ele.onclick = ()=>{
             goSlide(idx);
@@ -137,5 +131,16 @@ window.addEventListener("DOMContentLoaded",()=>{
     function chgimg(obj){
         obj.forEach((ele)=>ele.style.left = "100%");
     }
+
+    /* 4페이지 */
+    const arr = [color_list_li,color_img_li];
+    color_list_li.forEach((ele,idx)=>{
+        ele.onclick = ()=>{
+            event.preventDefault();
+            console.log(idx);
+            ele.classList.add("on")
+        };
+    });
+
 
 }); ////////////////////// 로드구역 ///////////////////////////////////
