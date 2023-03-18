@@ -53,7 +53,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     /* .gimg li에 이미지 삽입 */
     gimg_li.forEach((ele,idx)=>{
         ele.innerHTML =`
-            <img src="./image/apple/lock_screen_${idx}.jpg" alt="아이폰이미지">
+            <img src="./image/apple/lock_screen_${idx+1}.jpg" alt="아이폰이미지">
         `;
     });
 
@@ -86,20 +86,44 @@ window.addEventListener("DOMContentLoaded",()=>{
         setTimeout(() => {
             prot = 0; // 해제!
         }, 400); /// 0.4초후 해제! ///
+        
+        let gimg_li = gimg_ul.querySelectorAll("li");
 
         if(seq){
-            snum++;
-            // gimg.appendChild(clist[0])
-            gimg_ul.style.left = (-100 * snum) + "%";
-            console.log("오른쪽",snum);
+            // snum++;
+            // console.log("오른쪽",snum);
+            gimg_ul.style.left ="-100%";
+            gimg_ul.style.transition = "left .2s ease-in-out";
+    
+            //(2) 슬라이드 이동후!!! (0.4s 후)
+            setTimeout(()=>{
+                // (2-1)바깥에 나가있는 첫번째 슬라이드
+                //      li를 잘라서 맨뒤로 보낸다!
+                // 슬라이드li가 잘라내면 매번변경되므로 
+                // 새로읽어서 맨뒤로 이동한다
+                gimg_ul.appendChild(gimg_li[0]);
+                // (2-2)동시에 left값을 0으로 변경한다!
+                gimg_ul.style.left = "0";
+                // (2-3)트랜지션 없애기
+                gimg_ul.style.transition = "none";
+            },400); ///////////// timeout /////////
         }
         else{
-            snum--;
+            gimg_ul.insertBefore(gimg_li[gimg_li.length-1],gimg_li[0]);
+            gimg_ul.style.left = "-100%";
+            gimg_ul.style.transition = "none";
+            
+            // snum--;
             console.log("왼쪽",snum);
-        }
 
-        if(snum === -1) snum = img_cnt -1;
-        else if(snum === snum) snum = 0;
+            setTimeout(()=>{
+                gimg_ul.style.left ="0";
+                gimg_ul.style.transition = "left .2s ease-in-out";
+            },0); ///////////// 타임아웃 ///////////
+        }
+        
+        // if(snum >= img_cnt-1) snum = 0;
+        // else if(snum < 1) snum = 8;
 
     }; //////////// goSlide /////////////
 

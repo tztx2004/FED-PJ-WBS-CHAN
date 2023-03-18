@@ -132,6 +132,7 @@
   left: 0%;
   width: 800%;
   overflow: hidden;
+  transition: .4s ease-in-out;
 }
 .gimg li{
   position: relative;
