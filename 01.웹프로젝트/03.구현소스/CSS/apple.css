@@ -236,6 +236,15 @@
   transition: opacity .4s;
   opacity: 0;
 }
+/* 첫번째 사진 나와있기 */
+.color_img ul>li:first-of-type{
+  opacity: 1;
+  z-index: 1;
+}
+.color_img ul>li.on{
+  opacity: 1;
+  z-index: 1;
+}
 
 .color_list {
   width: 150px;
@@ -261,8 +270,10 @@
   white-space: nowrap;
   transition: .2s;
 }
+
 .color_list li.on a{
   color: #fff;
+  transition: .4s;
 }
 
 .copy4 {

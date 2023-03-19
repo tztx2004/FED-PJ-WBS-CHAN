@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded",()=>{
-    
+    console.log("main");
     
 
     const gbtn = document.querySelectorAll(".gbtn");
@@ -53,7 +53,6 @@ window.addEventListener("DOMContentLoaded",()=>{
     //     };//////////////////// click /////////////////
     // } ///////////////////// for of ////////////////////////
 
-    /* .gimg li에 이미지 삽입 */
     gimg_li.forEach((ele,idx)=>{
         ele.innerHTML =`
             <img src="./image/apple/lock_screen_${idx+1}.jpg" alt="아이폰이미지">
@@ -124,23 +123,48 @@ window.addEventListener("DOMContentLoaded",()=>{
     gbtn.forEach((ele,idx)=>{
         ele.onclick = ()=>{
             goSlide(idx);
-            // console.log("new",idx)
         };
     }); /////////// forEach /////////////
 
-    function chgimg(obj){
-        obj.forEach((ele)=>ele.style.left = "100%");
-    }
+    
 
-    /* 4페이지 */
-    const arr = [color_list_li,color_img_li];
+    /**************************************************** 
+        함수 : colorList    
+        기능 : 4페이지에서 color_list를 누르면 color_img에 on이
+        들어가면서 색상이 변경됨
+    ****************************************************/
+    let snum = 0;
+
+    const colorList = (seq)=>{
+        console.log("색번호",seq);
+
+        // 광클금지 설정하기 //////
+        if (prot) return;
+        prot = 1; // 잠금!
+        setTimeout(() => {
+            prot = 0; // 해제!
+        }, 400); /// 0.4초후 해제! ///
+
+        snum = seq;
+
+        chgSlide(color_img_li);
+        chgSlide(color_list_li);
+        
+    };///////////////// colorList //////////////////////
+``
     color_list_li.forEach((ele,idx)=>{
         ele.onclick = ()=>{
             event.preventDefault();
-            console.log(idx);
-            ele.classList.add("on")
+            colorList(idx);
         };
     });
+
+    // color_img_li.forEach(ele => ele.classList.add("on"))
+    function chgSlide(obj){ //  obj - 변경대상 노드리스트
+        // 전체초기화
+        obj.forEach((ele)=>ele.classList.remove("on"));
+        obj[snum].classList.add("on");
+    } ///////////// chgSlide ////////////////
 
 
 }); ////////////////////// 로드구역 ///////////////////////////////////
