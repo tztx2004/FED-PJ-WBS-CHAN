@@ -468,3 +468,31 @@ text-decoration: none;
 color: #2997ff;
 font-size: 14px;
 }
+
+.detail_info{
+  outline: 1px dashed #fff;
+  width: 100%;
+  height: 100%;
+  padding: 10%;
+
+  display: flex;
+}
+.row_dynamic{
+  outline: 1px dashed blue;
+  width: 100%;
+  height: 15%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.row_dynamic img{
+  width: 38px;
+  height: 38px;
+  margin: 10px 0;
+}
+.row_dynamic h3{
+  font-size: 14px;
+  font-weight: normal;
+  margin: 50% 0;
+}
