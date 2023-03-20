@@ -21,46 +21,12 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     /////////////////////////// 3pg //////////////////////////////
     
-    
-    // gimg2.innerHTML =`
-    //     <img src="./image/apple/lock_screen_2.jpg" alt="아이폰이미지">
-    // `;
-
-    // for(let x of gbtn){
-    //     let TT = x.innerText;
-    //     x.onclick = ()=>{
-            
-    //         if(TT === ">"){
-    //             num++;
-    //             if(num===9) num=1;
-    //             gimg.innerHTML =`
-    //             <img src="./image/apple/lock_screen_${num}.jpg" alt="아이폰이미지">
-    //             `;
-    //             gimg2.innerHTML =`
-    //             <img src="./image/apple/lock_screen_${num+1}.jpg" alt="아이폰이미지">
-    //             `;
-    //         }/////////////// if ///////////////////
-    //         else if(TT === "<"){
-    //             num--;
-    //             if(num===0) num=8;
-    //             gimg.innerHTML =`
-    //             <img src="./image/apple/lock_screen_${num}.jpg" alt="아이폰이미지">
-    //             `;
-    //             gimg2.innerHTML =`
-    //             <img src="./image/apple/lock_screen_${num+1}.jpg" alt="아이폰이미지">
-    //             `;
-    //         }/////////////// else if ///////////////////
-    //     };//////////////////// click /////////////////
-    // } ///////////////////// for of ////////////////////////
-
     gimg_li.forEach((ele,idx)=>{
         ele.innerHTML =`
             <img src="./image/apple/lock_screen_${idx+1}.jpg" alt="아이폰이미지">
         `;
     });
 
-
-    
 
     gimg_li.forEach((ele,idx)=>{
         ele.setAttribute("data-seq",idx);
@@ -127,7 +93,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     }); /////////// forEach /////////////
 
     
-
+    /************************ 4페이지 ************************/
     /**************************************************** 
         함수 : colorList    
         기능 : 4페이지에서 color_list를 누르면 color_img에 on이
@@ -136,7 +102,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     let snum = 0;
 
     const colorList = (seq)=>{
-        console.log("색번호",seq);
+        // console.log("색번호",seq);
 
         // 광클금지 설정하기 //////
         if (prot) return;

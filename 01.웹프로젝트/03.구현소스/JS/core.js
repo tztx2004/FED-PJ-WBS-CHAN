@@ -16,6 +16,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     const header_right = document.querySelector(".header_right");
     const icon = document.querySelector(".c")
     const bag = document.querySelector(".bag");
+    const bag_a = document.querySelector(".bag>a");
     const bag_c = document.querySelector(".bag_comment");
     const search_imgbx = document.querySelector(".search_imgbx")
 
@@ -48,6 +49,17 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     } //////////////// for of ////////////////////
 
+    /********************** 기본기능 막기 **********************/
+    /* bag눌렀을때 기본기능막기 */
+    bag_a.onclick = ()=>{
+        event.preventDefault();
+    };
+    /* gnb눌렀을때 기본기능 막기 */
+    gnb_a.forEach((ele)=>{
+        ele.onclick = ()=>{
+            event.preventDefault();
+        };
+    });
 
     /***************************************** 
         기능 : 검색바 오버시 검색바 크기에 의해 .search의 right값 수정
