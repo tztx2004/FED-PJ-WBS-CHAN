@@ -14,6 +14,9 @@ window.addEventListener("DOMContentLoaded",()=>{
     const color_list_li = document.querySelectorAll(".color_list ul>li");
     const img_cnt = gimg_li.length;
 
+    const pg5 = document.querySelector(".pg5");
+    const pg5_img = document.querySelector(".pg5>img");
+
     // 화면높이값의 2/3 구하기
     const hv = window.innerHeight/3*2;
     const retVal = ele => ele.getBoundingClientRect().top;
@@ -165,8 +168,20 @@ window.addEventListener("DOMContentLoaded",()=>{
             // console.log("hv",hv);
         });///////////////// scroll ////////////////
     }
+    // 사진효과주기
+    function imgEffect(ele){
+        window.addEventListener("scroll",()=>{
+            // console.log("retval",retVal(ele));
+            if(retVal(ele) < hv*1.6 && retVal(ele) > 0) ele.classList.add("on");
+            else if(retVal(ele) < 0 || retVal(ele) >= hv*1.6) {
+                ele.classList.remove("on");
+            }
+            // console.log("hv",hv);
+        });///////////////// scroll ////////////////
+    }
     fontEffect(copy3);
     fontEffect(copy4);
+    imgEffect(pg5_img);
     fontEffect2(copy5_dsc);
     // 5페이지 글씨 효과
 
