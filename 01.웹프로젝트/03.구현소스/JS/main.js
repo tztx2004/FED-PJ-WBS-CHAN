@@ -1,15 +1,16 @@
 window.addEventListener("DOMContentLoaded",()=>{
     console.log("main");
     
-    const copy3 = document.querySelector(".copy3")
+    const copy3 = document.querySelector(".copy3");
     const gbtn = document.querySelectorAll(".gbtn");
-    const btn_n = document.querySelector(".btn_n")
-    const btn_p = document.querySelector(".btn_p")
+    const btn_n = document.querySelector(".btn_n");
+    const btn_p = document.querySelector(".btn_p");
     const gimg = document.querySelector(".gimg");
     const gimg_ul = document.querySelector(".gimg ul");
     let gimg_li = document.querySelectorAll(".gimg li");
 
-    const color_img_li = document.querySelectorAll(".color_img li")
+    const copy4 = document.querySelector(".copy4");
+    const color_img_li = document.querySelectorAll(".color_img li");
     const color_list_li = document.querySelectorAll(".color_list ul>li");
     const img_cnt = gimg_li.length;
 
@@ -144,9 +145,9 @@ window.addEventListener("DOMContentLoaded",()=>{
     function fontEffect(ele){
         window.addEventListener("scroll",()=>{
             // console.log("retval",retVal(ele));
-            if(retVal(ele) < hv && retVal(ele) > 0) ele.classList.add("on2");
+            if(retVal(ele) < hv && retVal(ele) > 0) ele.classList.add("on");
             else if(retVal(ele) < 0 || retVal(ele) >= hv) {
-                ele.classList.remove("on2");
+                ele.classList.remove("on");
             }
             // console.log("hv",hv);
         });///////////////// scroll ////////////////
@@ -156,15 +157,16 @@ window.addEventListener("DOMContentLoaded",()=>{
         window.addEventListener("scroll",()=>{
             ele.forEach(ele=>{
                 // console.log("retval",retVal(ele));
-                if(retVal(ele) < hv && retVal(ele) > 0) ele.classList.add("on2");
+                if(retVal(ele) < hv && retVal(ele) > 0) ele.classList.add("on");
                 else if(retVal(ele) < 0 || retVal(ele) >= hv) {
-                    ele.classList.remove("on2");
+                    ele.classList.remove("on");
                 }
             }); ////////// forEach //////////
             // console.log("hv",hv);
         });///////////////// scroll ////////////////
     }
     fontEffect(copy3);
+    fontEffect(copy4);
     fontEffect2(copy5_dsc);
     // 5페이지 글씨 효과
 

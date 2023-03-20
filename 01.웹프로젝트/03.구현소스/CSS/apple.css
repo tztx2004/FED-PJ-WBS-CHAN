@@ -102,7 +102,7 @@
   transition: .8s;
   opacity: 0;
 }
-.copy3.on2{
+.copy3.on{
   transform: translateY(0px);
   opacity: 1;
 }
@@ -250,7 +250,6 @@
 }
 .color_img ul>li.on{
   opacity: 1;
-  opacity: 0;
   z-index: 1;
 }
 
@@ -281,7 +280,7 @@
 
 .color_list li.on a{
   color: #fff;
-  opacity: 0;
+  opacity: 1;
   transition: .4s;
 }
 
@@ -290,6 +289,13 @@
   color: #cecece;
   width: 25.5vw;
   margin: 0 auto;
+  transition: .8s;
+  transform: translateY(100px);
+  opacity: 0;
+}
+.copy4.on{
+  opacity: 1;
+  transform: translateY(0);
 }
 .color_img {
   text-align: center;
@@ -347,7 +353,7 @@
   opacity: 0;
 }
 /* 효과 */
-.copy5_dsc.on2{
+.copy5_dsc.on{
   transform: translateY(0);
   opacity: 0;
   opacity: 1;
