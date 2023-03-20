@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded",()=>{
     console.log("main");
     
-
+    const copy3 = document.querySelector(".copy3")
     const gbtn = document.querySelectorAll(".gbtn");
     const btn_n = document.querySelector(".btn_n")
     const btn_p = document.querySelector(".btn_p")
@@ -12,6 +12,10 @@ window.addEventListener("DOMContentLoaded",()=>{
     const color_img_li = document.querySelectorAll(".color_img li")
     const color_list_li = document.querySelectorAll(".color_list ul>li");
     const img_cnt = gimg_li.length;
+
+    // 화면높이값의 2/3 구하기
+    const hv = window.innerHeight/3*2;
+    const retVal = ele => ele.getBoundingClientRect().top;
 
     
     // search.addEventListener("click",()=>{
@@ -131,6 +135,42 @@ window.addEventListener("DOMContentLoaded",()=>{
         obj.forEach((ele)=>ele.classList.remove("on"));
         obj[snum].classList.add("on");
     } ///////////// chgSlide ////////////////
+
+
+    /* 5페이지 */
+    const copy5_dsc = document.querySelectorAll(".copy5_dsc");
+    /* 글자 떠오르는 액션 */
+    // qs할때
+    function fontEffect(ele){
+        window.addEventListener("scroll",()=>{
+            // console.log("retval",retVal(ele));
+            if(retVal(ele) < hv && retVal(ele) > 0) ele.classList.add("on2");
+            else if(retVal(ele) < 0 || retVal(ele) >= hv) {
+                ele.classList.remove("on2");
+            }
+            // console.log("hv",hv);
+        });///////////////// scroll ////////////////
+    }
+    // qsa할때
+    function fontEffect2(ele){
+        window.addEventListener("scroll",()=>{
+            ele.forEach(ele=>{
+                // console.log("retval",retVal(ele));
+                if(retVal(ele) < hv && retVal(ele) > 0) ele.classList.add("on2");
+                else if(retVal(ele) < 0 || retVal(ele) >= hv) {
+                    ele.classList.remove("on2");
+                }
+            }); ////////// forEach //////////
+            // console.log("hv",hv);
+        });///////////////// scroll ////////////////
+    }
+    fontEffect(copy3);
+    fontEffect2(copy5_dsc);
+    // 5페이지 글씨 효과
+
+    /* 사진 떠오르는 액션 */
+
+
 
 
 }); ////////////////////// 로드구역 ///////////////////////////////////

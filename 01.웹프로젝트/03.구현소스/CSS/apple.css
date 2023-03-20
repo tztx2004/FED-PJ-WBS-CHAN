@@ -98,6 +98,13 @@
   margin-left: 30px;
   margin-bottom: 100px;
 
+  transform: translateY(100px);
+  transition: .8s;
+  opacity: 0;
+}
+.copy3.on2{
+  transform: translateY(0px);
+  opacity: 1;
 }
 .pg3 h2 {
   font-size: 5vw;
@@ -243,6 +250,7 @@
 }
 .color_img ul>li.on{
   opacity: 1;
+  opacity: 0;
   z-index: 1;
 }
 
@@ -273,6 +281,7 @@
 
 .color_list li.on a{
   color: #fff;
+  opacity: 0;
   transition: .4s;
 }
 
@@ -329,6 +338,20 @@
   height: 545px;
   margin-top: 29px;
 }
+.copy5_dsc{
+  width: 30%;
+  /* outline: 1px dashed coral; */
+
+  transform: translateY(100px);
+  transition: .8s;
+  opacity: 0;
+}
+/* 효과 */
+.copy5_dsc.on2{
+  transform: translateY(0);
+  opacity: 0;
+  opacity: 1;
+}
 .copy5 h2{
   font-size: 32px;
 }
@@ -338,18 +361,27 @@
   padding-bottom: 30px;
   border-bottom: 1px solid #cecece;
 }
+.copy h4{
+  width: 100%;
+  font-size: 12px;
+  font-weight: normal;
+  color: #cecece;
+  margin-top: 30px;
+  line-height: 1.7;
+  /* outline: 1px dashed #fff; */
+}
 .copy_main{
   margin-top: 90px;
   padding-right: 43px;
   margin-left: 81px;
 }
-.copy_Telephoto h2{
-  
+.copy_Telephoto{
+  padding-right: 43px;
 }
 .copy_wide{
   margin-top: 90px;
   padding-right: 43px;
-  margin-left: 81px;
+  
 }
 /*************************** 6페이지 ***************************/
 .pg6_bx{
@@ -367,7 +399,7 @@ margin: 0 auto;
 }
 
 .main>.pg6 {
-height: 1500px;
+height: 2000px;
 background: #111111;
 width: 100vw;
 }
@@ -491,6 +523,7 @@ font-size: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 5%;
 }
 .row img{
   margin: 10px 0;
@@ -498,6 +531,7 @@ font-size: 14px;
 .row h3{
   font-size: 14px;
   font-weight: normal;
+  line-height: 1.7;
 }
 
 .row_dynamic img{
