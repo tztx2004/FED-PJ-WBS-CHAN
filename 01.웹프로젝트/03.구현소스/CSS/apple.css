@@ -111,7 +111,7 @@
   color: #cecece;
   white-space: nowrap;
 
-  transform: translateY(100px);
+  transform: translateY(100%);
   transition: 1s;
   opacity: 0;
 }
@@ -543,6 +543,7 @@ margin: 0 0 10px 10px;
 .price h3{
 font-size: 14px;
 color: #cecece;
+font-weight: normal;
 }
 .bbtn{
 padding: 0 21px;
