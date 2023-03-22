@@ -83,14 +83,6 @@
     /* height: 106px; */
 }
 
-/* .on1 {
-    position: fixed;
-    z-index: 99;
-    top: 0;
-    width: 100vw;
-    height: 149px;
-    background-color: #fff;
-} */
 
 .gnb a {
     text-decoration: none;
@@ -289,20 +281,63 @@ form:valid .fa {
 
 /* 모바일 햄버거 버튼 */
 .ham {
+    position: fixed;
+    top: 25%;
+    right: 20px;
+    z-index: 999;
+
+    /* transform: translateY(-50%); */
+
     width: 30px;
     height: 30px;
-    background-color: transparent;
+    /* background-color: transparent; */
     border: none;
     font-size: 25px;
-    transform: scaleX(1.5);
+    /* transform: scaleX(1.5); */
+
+    cursor: pointer;
 
     /* 처음에 숨기기 */
     display: none;
 }
 /* 햄버거모양 가상요소넣기 */
-.ham::before {
+/* .ham::before {
     content: "≡";
     color: #fff;
+} */
+.ham span{
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    background-color: #fff;
+    transition: 0.3s;
+}
+.top.active .ham span{
+    background-color: #fff;
+}
+/* 햄버거 span바 초기셋팅 */
+.ham span:nth-child(1) {
+    top: 10%;
+}
+.ham span:nth-child(2) {
+    top: 30%;
+}
+.ham span:nth-child(3) {
+    top: 50%;
+}
+
+/* 클릭이벤트JS처리시 클래스on셋팅 */
+.top.active .ham span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 25%;
+}
+.top.active .ham span:nth-child(2) {
+    width: 0;
+    left: 0%;
+}
+.top.active .ham span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 25%;
 }
 
 /*************************** footer ***************************/
