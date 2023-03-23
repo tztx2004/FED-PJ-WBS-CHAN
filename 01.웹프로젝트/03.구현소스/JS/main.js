@@ -119,19 +119,46 @@ window.addEventListener("DOMContentLoaded",()=>{
             prot = 0; // 해제!
         }, 400); /// 0.4초후 해제! ///
 
-        snum = seq;
+        if(seq === 1){
+            snum++;
+            // console.log("snum",snum)
+        }
 
+        snum = seq;
         chgSlide(color_img_li);
         chgSlide(color_list_li);
-        
+        // 아이폰 사진과 컬러버튼 같이 넘어감
+        autoSlide();
     };///////////////// colorList //////////////////////
-``
+
+    // 색상을 클릭하면 해당 색상의 이미지가 나타남
     color_list_li.forEach((ele,idx)=>{
         ele.onclick = ()=>{
             event.preventDefault();
             colorList(idx);
         };
     });
+
+    const scnt = color_list_li.length;
+    let num1 = 0;
+    
+    function autoSlide(){
+
+        // setInterval에 넣어주는 변수 증감,한계 리턴함
+        let numauto = ()=>{
+            num1++;
+            if(num1 === - 1) num1 = scnt -1;
+            else if(num1 === scnt) num1=0;
+        } //////////// numauto ///////////////
+        
+        numauto();
+        // console.log("num1",num1);
+    } //////////////// autoSlide ////////////////
+    
+    // 자동으로 넘어가게함
+    setInterval(()=>colorList(num1),5000);
+
+
 
     // color_img_li.forEach(ele => ele.classList.add("on"))
     function chgSlide(obj){ //  obj - 변경대상 노드리스트
@@ -141,7 +168,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     } ///////////// chgSlide ////////////////
 
 
-    /* 5페이지 */
+    /********************** 5페이지 **********************/
     const copy5_dsc = document.querySelectorAll(".copy5_dsc");
     /* 글자 떠오르는 액션 */
     // qs할때
@@ -159,7 +186,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     function fontEffect2(ele,num){
         window.addEventListener("scroll",()=>{
             ele.forEach(ele=>{
-                console.log("retval",retVal(ele));
+                // console.log("retval",retVal(ele));
                 if(retVal(ele) < hv*num && retVal(ele) > 0) ele.classList.add("on");
                 else if(retVal(ele) < 0 || retVal(ele) >= hv*num) {
                     ele.classList.remove("on");
@@ -175,6 +202,20 @@ window.addEventListener("DOMContentLoaded",()=>{
     fontEffect2(copy5_dsc,1);
     // 5페이지 글씨 효과
     
+    
+    
+    /************************** 6페이지 **************************/
+    const con_img = document.querySelectorAll(".con_img");
+    const pro_img = document.querySelector(".pro_img");
+    const norm_img = document.querySelector(".norm_img");
+    const norm13_img = document.querySelector(".norm13_img");
+    const se_img = document.querySelector(".se_img");
+
+    const row_camera = document.querySelectorAll(".row_camera");
+    const camera = ["_14_pro_","_14_","_13_","_se_"];
+    const camera_h = ["Pro camera system","Advanced dual-camera system","Dual-camera system","Advanced camera"];
+    
+
     /* 사진 떠오르는 액션 */
     // 사진효과주기
     function imgEffect(ele){
@@ -204,17 +245,8 @@ window.addEventListener("DOMContentLoaded",()=>{
 
 
 
-    /************************** 6페이지 **************************/
+    
 
-    const con_img = document.querySelectorAll(".con_img");
-    const pro_img = document.querySelector(".pro_img");
-    const norm_img = document.querySelector(".norm_img");
-    const norm13_img = document.querySelector(".norm13_img");
-    const se_img = document.querySelector(".se_img");
-
-    const row_camera = document.querySelectorAll(".row_camera");
-    const camera = ["_14_pro_","_14_","_13_","_se_"];
-    const camera_h = ["Pro camera system","Advanced dual-camera system","Dual-camera system","Advanced camera"];
     
     // 사진 올라오는 효과
     imgEffect2(con_img);

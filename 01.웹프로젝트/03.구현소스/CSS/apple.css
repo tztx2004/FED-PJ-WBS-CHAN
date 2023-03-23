@@ -259,13 +259,15 @@
   opacity: 0;
 }
 /* 첫번째 사진 나와있기 */
-.color_img ul>li:first-of-type{
+/* .color_img ul>li:first-of-type{
   opacity: 1;
   z-index: 1;
-}
+  transition: opacity .4s;
+} */
 .color_img ul>li.on{
   opacity: 1;
   z-index: 1;
+  transition: opacity .4s;
 }
 
 .color_list {
