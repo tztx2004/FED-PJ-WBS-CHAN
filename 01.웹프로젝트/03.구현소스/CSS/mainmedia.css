@@ -54,7 +54,7 @@
 
 @media screen and (max-width: 900px) {
     .top.on {
-        height: 100vh;
+        height: 44px;
     }
     .logo img {
         top: 0;
@@ -104,22 +104,28 @@
         top: 44px;
         left: 0;
         width: 100vw;
-        height: 1300px;
+        height: 0px;
         background-color: #1a1a1c;
-        outline: 1px dashed red;
+        /* outline: 1px dashed red; */
     }
     /* 햄버거버튼 클릭시 JS로 처리할 클래스on구현 */
     /* 전체메뉴 위에서 내려오기 */
-    .top.active{
-        height: 100vh;
+    .top.active .gnb{
+        height: 1300px;
+    }
+    .gnb ul{
+        opacity: 0;
     }
     /* gnb ul */
-    .gnb ul {
+    .top.active .gnb ul {
         position: absolute;
         top: 30%;
         left: 50%;
         transform: translate(-50%, -50%);
         list-style: none;
+
+        opacity: 1;
+        flex-direction: column;
         /* background: #fff; */
         /* outline: 1px dashed; */
     }
@@ -137,12 +143,15 @@
     .gnb a {
         display: block;
         transform: translateY(100%);
-        font-size: 10vh;
+        font-size: 10vw;
         text-transform: uppercase;
         line-height: 2;
-        color: #fff;
+        color: #cecece;
         text-decoration: none;
         transition: transform 0.6s ease-out;
+    }
+    .gnb a:hover{
+        color: #fff;
     }
     /* 글자의 등장은 .gnb.on일때 적용! */
     .top.active .gnb a {
