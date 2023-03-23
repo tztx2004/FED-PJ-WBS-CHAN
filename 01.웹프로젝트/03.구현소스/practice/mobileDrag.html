@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>touchDrag</title>
+
+        <style>
+            html,
+            body,
+            div,
+            ul,
+            li,
+            a,
+            img {
+                margin: 0;
+                padding: 0;
+                background-color: #000;
+                outline: 1px dashed #fff;
+            }
+            .main {
+                position: relative;
+                width: 380px;
+                height: 770px;
+                overflow: hidden;
+                margin: 0 auto;
+            }
+            ul {
+                position: absolute;
+                display: flex;
+                /* transition: .4s; */
+            }
+        </style>
+        <script>
+            window.addEventListener("DOMContentLoaded", () => {
+                const slide = document.querySelector(".slide");
+                const slide_li = document.querySelectorAll(".slide>li");
+
+                function mobileDrag(ele){
+                    let m_firstX, m_moveX;
+                    let m_lastX = 0;
+
+                    ele.ontouchstart = (e) => {
+                        event.preventDefault();
+                        // let XX = event.currentTarget.touches[0].clientX;
+                        let startID = event.targetTouches[0].target.id;
+                        let startX = event.changedTouches[0].clientX;
+                        let startY = event.changedTouches[0].clientY;
+                        ele.style.transition ="none";
+                        m_firstX = startX;
+                        console.log("touchstart",startX,startY);
+                    };
+                    ele.ontouchend =(e)=>{
+                        event.preventDefault();
+                        ele.style.transition = ".4s";
+                        let lastX = e.changedTouches[0].clientX;
+                        m_lastX = lastX;
+                        console.log("touchend",m_lastX);
+                    };
+                    ele.ontouchmove =(e)=>{
+                        event.preventDefault();
+                        // let XX = event.currentTarget.touches[0].clientX;
+                        let startID = e.targetTouches[0].target.id;
+                        let moveX = e.changedTouches[0].clientX;
+                        let moveY = e.changedTouches[0].clientY;
+                        m_moveX = moveX - m_firstX + m_lastX;
+                        
+                        ele.style.left = m_moveX + "px";
+                        // if(m_moveX < - 50) ele.style.left = -100 + "px";
+                        // else if(m_moveX > 50 ) ele.style.left = 100 + "px";
+                        // else if(m_moveX < 50 && m_moveX > -50) ele.style.left = 0+ "px";
+                        
+                        console.log("touchmove",m_moveX,moveY);
+                    };
+                    m_firstX = m_lastX
+                    
+
+                    
+                } /////////////////// goDrag //////////////////
+                
+                // 호출
+                mobileDrag(slide);
+            });////////////// 로드구역 ////////////////
+        </script>
+    </head>
+    <body>
+        <div class="main">
+            <ul class="slide">
+                <li>
+                    <img src="../image/apple/lock_screen_0.jpg" alt="이미지" />
+                </li>
+                <li>
+                    <img src="../image/apple/lock_screen_1.jpg" alt="이미지" />
+                </li>
+                <li>
+                    <img src="../image/apple/lock_screen_2.jpg" alt="이미지" />
+                </li>
+                <li>
+                    <img src="../image/apple/lock_screen_3.jpg" alt="이미지" />
+                </li>
+                <li>
+                    <img src="../image/apple/lock_screen_4.jpg" alt="이미지" />
+                </li>
+                <li>
+                    <img src="../image/apple/lock_screen_5.jpg" alt="이미지" />
+                </li>
+                <li>
+                    <img src="../image/apple/lock_screen_6.jpg" alt="이미지" />
+                </li>
+                <li>
+                    <img src="../image/apple/lock_screen_7.jpg" alt="이미지" />
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
