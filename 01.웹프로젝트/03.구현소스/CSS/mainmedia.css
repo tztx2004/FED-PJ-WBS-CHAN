@@ -106,6 +106,8 @@
         width: 100vw;
         height: 0px;
         background-color: #1a1a1c;
+
+        transition: 0.4s;
         /* outline: 1px dashed red; */
     }
     /* 햄버거버튼 클릭시 JS로 처리할 클래스on구현 */
@@ -119,9 +121,9 @@
     /* gnb ul */
     .top.active .gnb ul {
         position: absolute;
-        top: 30%;
+        top: calc(50vh - 44px);
         left: 50%;
-        transform: translate(-50%, -60%);
+        transform: translate(-50%, calc(-50% - 44px));
         list-style: none;
 
         opacity: 1;
@@ -142,7 +144,7 @@
     /* gnb 메뉴 */
     .gnb a {
         display: block;
-        transform: translateY(100%);
+        transform: translateY(-100%);
         font-size: 10vw;
         text-transform: uppercase;
         line-height: 2;
@@ -397,6 +399,9 @@
 @media screen and (max-width: 500px) {
     html {
         overflow-x: hidden;
+    }
+    .gnb a{
+        color: #fff;
     }
 
     .copy2 {

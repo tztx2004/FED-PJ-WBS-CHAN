@@ -282,14 +282,14 @@ form:valid .fa {
 /* 모바일 햄버거 버튼 */
 .ham {
     position: fixed;
-    top: 25%;
+    top: 0%;
     right: 20px;
     z-index: 999;
 
     /* transform: translateY(-50%); */
 
-    width: 30px;
-    height: 30px;
+    width: 23px;
+    height: 100%;
     /* background-color: transparent; */
     border: none;
     font-size: 25px;
@@ -299,6 +299,7 @@ form:valid .fa {
 
     /* 처음에 숨기기 */
     display: none;
+    /* outline: 1px dashed #fff; */
 }
 /* 햄버거모양 가상요소넣기 */
 /* .ham::before {
@@ -307,7 +308,7 @@ form:valid .fa {
 } */
 .ham span{
     position: absolute;
-    width: 80%;
+    width: 100%;
     height: 1px;
     background-color: #fff;
     transition: 0.3s;
@@ -317,19 +318,22 @@ form:valid .fa {
 }
 /* 햄버거 span바 초기셋팅 */
 .ham span:nth-child(1) {
-    top: 10%;
+    top: 35%;
 }
 .ham span:nth-child(2) {
-    top: 30%;
+    top: 50%;
 }
 .ham span:nth-child(3) {
-    top: 50%;
+    top: 66%;
 }
 
 /* 클릭이벤트JS처리시 클래스on셋팅 */
+.top.active .ham{
+    width: 19px;
+}
 .top.active .ham span:nth-child(1) {
     transform: rotate(45deg);
-    top: 25%;
+    top: 47%;
 }
 .top.active .ham span:nth-child(2) {
     width: 0;
@@ -337,7 +341,7 @@ form:valid .fa {
 }
 .top.active .ham span:nth-child(3) {
     transform: rotate(-45deg);
-    top: 25%;
+    top: 47%;
 }
 
 /*************************** footer ***************************/
