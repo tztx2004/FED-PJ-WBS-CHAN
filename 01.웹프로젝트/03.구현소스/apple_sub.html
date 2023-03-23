@@ -3,15 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ApplePay</title>
+    <title>BuyiPhone</title>
+    <!-- css(통합) -->
     <link rel="stylesheet" href="./CSS/apple.css">
     <!-- 미디어쿼리 -->
     <link rel="stylesheet" href="./CSS/mainmedia.css">
+    <!-- 파비콘 -->
+    <link rel="icon" href="./image/apple/favi.ico">
+    <!-- searchBar font -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
+
+
     <!-- <link rel="stylesheet" href="/wss/fonts?families=SF+Pro,v3|SF+Pro+Icons,v3" />
     <link rel="stylesheet" href="/v/iphone-14-pro/c/built/styles/main.built.css" type="text/css"/>
     <link rel="stylesheet" href="/v/iphone-14-pro/c/built/styles/overview.built.css" type="text/css"/> -->
-    <link rel="icon" href="./image/apple/favi.ico">
-    <script src="./JS/main.js"></script>
+    <!--------------------- JS --------------------->
+    <!-- 메인기능js -->
+    <!-- <script src="./JS/main.js"></script> -->
+    <!-- 상단 하단 등 js -->
+    <script src="./JS/core.js"></script>
 </head>
 <body>
     <div class="top">
@@ -78,28 +88,44 @@
             </div>
             <div class="header_right">
                 <div class="icon">
-                    <div class="search">
-                        <a href="#">
-                            <img src="./image/apple/globalnav_search_image__cbllq1gkias2_large.svg" alt="서치아이콘">
-                        </a>
-                    </div>
+                    <form action="" class="search">
+                        <input type="search" class="search_bar" required placeholder="Search"/>
+                        
+                        <div class="search_imgbx">
+                            <img src="./image/apple/globalnav_search_image__cbllq1gkias2_large.svg">
+                        </div>
+
+                        <!-- <i class="fa fa-search"></i> -->
+                        <a href="javascript:void(0)" class="clear-btn">X</a>
+                    </form>
                     <div class="bag">
                         <a href="#">
                             <img src="./image/apple/globalnav_bag_image__yzte50i47ciu_large.svg" alt="장바구니아이콘">
                         </a>
                     </div>
-
                     <div class="btn">
                         <button id="buy_btn">
                             <a href="#">Buy</a>
                         </button>
                     </div>
                 </div>
-                <button class="ham"></button>
+                <!-- <button class="ham"></button> -->
+                <!-- 햄버거버튼 -->
+                <div class="ham">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="bag_comment">
+                <h2>Your Bag is empty.</h2>
+                <h3>
+                    <a href="#">Sign</a> to see if you have any saved items
+                </h3>
             </div>
         </div>
     </div>
-    <div class="main"></div>
+    
     
     <div class="footer">
         <div class="footer_main">
