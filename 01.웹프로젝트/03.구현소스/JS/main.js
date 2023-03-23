@@ -157,7 +157,7 @@ window.addEventListener("DOMContentLoaded",()=>{
             limitNumber();
             colorList(num1)
             num1++;
-        },5000);
+        },3000);
     // 인터발 호출
     // autoSlide;
 
