@@ -128,7 +128,7 @@ window.addEventListener("DOMContentLoaded",()=>{
         chgSlide(color_img_li);
         chgSlide(color_list_li);
         // 아이폰 사진과 컬러버튼 같이 넘어감
-        autoSlide();
+        
     };///////////////// colorList //////////////////////
 
     // 색상을 클릭하면 해당 색상의 이미지가 나타남
@@ -136,28 +136,30 @@ window.addEventListener("DOMContentLoaded",()=>{
         ele.onclick = ()=>{
             event.preventDefault();
             colorList(idx);
+
+            // 클릭되면 autoSlide 멈춤
+            clearInterval(autoSlide);
         };
     });
 
+    //////////////// 인터발 ///////////////////////
     const scnt = color_list_li.length;
     let num1 = 0;
     
-    function autoSlide(){
-
-        // setInterval에 넣어주는 변수 증감,한계 리턴함
-        let numauto = ()=>{
-            num1++;
-            if(num1 === - 1) num1 = scnt -1;
-            else if(num1 === scnt) num1=0;
-        } //////////// numauto ///////////////
-        
-        numauto();
+    // setInterval에 넣어주는 변수 증감,한계 리턴함
+    function limitNumber(){
+        if(num1 === - 1) num1 = scnt -1;
+        else if(num1 === scnt) num1 = 0;
         // console.log("num1",num1);
-    } //////////////// autoSlide ////////////////
-    
+    } //////////////// limitNumber ////////////////
     // 자동으로 넘어가게함
-    setInterval(()=>colorList(num1),5000);
-
+    let autoSlide = setInterval(()=>{
+            limitNumber();
+            colorList(num1)
+            num1++;
+        },5000);
+    // 인터발 호출
+    // autoSlide;
 
 
     // color_img_li.forEach(ele => ele.classList.add("on"))
