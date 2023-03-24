@@ -90,10 +90,10 @@
                         if(m_moveX <= -50) {
                             slide_li.forEach((aa,idx)=>{
                                 // console.log(idx)
-                                ele.appendChild(slide_li[0])
-                                ele.style.left = -100*idx + "%";
-                                ele.style.transition = ".4s";
                             })
+                            ele.appendChild(slide_li[0])
+                            ele.style.left = -100 + "%";
+                            ele.style.transition = ".4s";
                         }
                         else if(m_moveX >= 50) {
                             ele.style.transition = ".4s";
