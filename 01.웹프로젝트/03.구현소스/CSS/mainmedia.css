@@ -61,8 +61,8 @@
         left: 45vw;
         transform: none;
     }
-    .ham {
-        /* position: absolute;
+    /* .ham {
+        position: absolute;
         top: 5px;
         right: 25px;
 
@@ -73,10 +73,10 @@
         font-size: 25px;
         transform: scaleX(1.5);
         color: #fff;
-        cursor: pointer; */
+        cursor: pointer;
 
-        /* display: none; */
-    }
+        display: none;
+    } */
     /* .gnb {
         display: none;
     } */
@@ -250,7 +250,7 @@
         width: 50vw;
     }
 
-    .main>.pg6 {
+    .pg6 {
         height: 2500px;
     }
     .set6 {
@@ -465,7 +465,7 @@
         padding-right: 30px;
     }
 
-    .main > .pg6 {
+    .pg6 {
         height: 4800px;
     }
     .pg6_bx {
