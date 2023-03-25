@@ -80,7 +80,7 @@
                     // m_firstX = m_lastX;
 
                     
-                    let snum = 0;
+                    
                     // 판별
                     function divine(obj) {
                         // let tgLeft = obj.offsetLeft;
@@ -95,8 +95,7 @@
                             ele.style.left = -100*(snum+1) + "%";
                             ele.style.transition = ".4s";
                             console.log("snum",snum);
-                            if(snum>=0) snum++;
-                            else if(snum === 7) snum =0;
+
 
                         }
                         else if(m_moveX >= 50) {
@@ -115,7 +114,9 @@
                     // }
                     
                 } /////////////////// mobileDrag //////////////////
-
+                let snum = 0;
+                if(snum>=0)snum++;
+                
                 // 호출
                 mobileDrag(slide);
             }); ////////////// 로드구역 ////////////////
