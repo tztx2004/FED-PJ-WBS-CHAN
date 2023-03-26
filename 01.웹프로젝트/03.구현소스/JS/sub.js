@@ -1,6 +1,39 @@
 window.addEventListener("DOMContentLoaded",()=>{
     
 /************************** 1페이지 **************************/
+// 1. 대상
+// 타이틀
+const pg1_tit = document.querySelector(".pg1_title>.tit");
+
+// 스티키
+const sticky_imgbx = document.querySelector(".sticky_imgbx");
+
+// 색상
+const palate_img = document.querySelectorAll(".palate>img");
+const palate_copy = document.querySelector(".palate_copy");
+console.log(palate_img.length);
+
+
+
+// 2. html 삽입
+// 2-1. 타이틀삽입
+pg1_tit.innerHTML = `
+    <h4>New</h4>
+    <h2>Buy iPhone 14 Pro</h2>
+    <h3>From $999 or $41.62/mo.per month for 24 mo.months before trade‑in*</h3>
+`;
+
+// 2-2. 스티키대상 이미지 삽입
+
+
+// 2-3. 색상 호버 시 글자삽입
+const palate = ["Deep Purple","Gold","Silver","Space Black"];
+palate_img.forEach((ele,idx)=>{
+    ele.onmouseover = ()=>{
+        palate_copy.innerHTML = `<h2>Color - ${palate[idx]}</h2>`;
+    };/////////// mouseover ////////////
+});///////////// forEach //////////////
+
 
 
 /************************** 2페이지 **************************/

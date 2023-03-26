@@ -31,7 +31,7 @@
     -webkit-text-size-adjust: 100%
   }
   body * {
-    outline: 1px dashed #fff;
+    /* outline: 1px dashed #fff; */
   }
   a * {
     text-decoration: none;
