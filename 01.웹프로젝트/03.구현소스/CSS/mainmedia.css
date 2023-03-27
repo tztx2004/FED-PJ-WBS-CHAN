@@ -117,6 +117,7 @@
     }
     .gnb ul{
         opacity: 0;
+        width: 0;
     }
     /* gnb ul */
     .top.active .gnb ul {
@@ -127,6 +128,7 @@
         list-style: none;
 
         opacity: 1;
+        width: auto;
         flex-direction: column;
         /* background: #fff; */
         /* outline: 1px dashed; */
