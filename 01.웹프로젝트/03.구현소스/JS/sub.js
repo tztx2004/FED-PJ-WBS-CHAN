@@ -16,10 +16,16 @@ const gbtn = document.querySelectorAll(".gbtn");
 // 색상
 const palate_img = document.querySelectorAll(".palate>img");
 const palate_copy = document.querySelector(".palate_copy");
-console.log(palate_img.length);
+// console.log(palate_img.length);
 
 // 색상배열
 const palate = ["Deep Purple","Gold","Silver","Space Black"];
+const palate_s = ["deeppurple","gold","silver","spaceblack"];
+
+// border
+const brick1 = document.querySelectorAll(".brick1");
+
+
 
 // 2. html 삽입
 // 2-1. 타이틀삽입
@@ -31,20 +37,47 @@ pg1_tit.innerHTML = `
 
 // 2-2. 스티키대상 이미지 삽입
 //////////// 색상변경 필요 //////////////
-imgbx_li.forEach((ele,idx)=>{
-    ele.innerHTML = `
-    <img src="./image/sub_buy/fin${idx+1}_iphone-14-pro-deeppurple.jpeg" alt="이미지">
-    `;
-});//////////////// forEach ///////////////////
 
+
+let arr_palate = [palate_img,imgbx_li];
 // 2-2-1. 버튼 클릭 시 이미지 변환
+// arr_palate[0].forEach((ele,idx)=>{
+//     ele.onclick = ()=>{
+//         console.log(idx);
+//         arr_palate[1].forEach((ele2,idx2)=>{
+//             ele2.innerHTML = `
+//                 <img src="./image/sub_buy/fin${idx}_iphone-14-pro-${palate_s[idx2]}.jpeg" alt="이미지">
+//             `;
+//             console.log(idx,idx2);
+//         })
+//     };//////////// onclick //////////////
+// });/////////// forEach ///////////////
+
+let cnum = 0;
+
+
+palate_img.forEach((ele,idx)=>{
+    ele.onclick = ()=>{
+        console.log("palate_img idx",idx)
+        forPal(idx)
+    };////////// click ///////////
+}); /////////////// forEach //////////////
+
+function forPal(seq){
+    imgbx_li.forEach((ele,idx)=>{
+        console.log("seq",seq);
+        ele.innerHTML = `
+            <img src="./image/sub_buy/fin${idx}_iphone-14-pro-${palate_s[seq]}.jpeg" alt="이미지">
+        `;
+    });//////////////// forEach ///////////////////
+}
 
 // 광클금지변수 : 0 - 허용, 1 - 불허용
 let prot = 0;
 
 /******************************************************* 
     함수 : goSlide
-    기능 : 3페이지에서 버튼을 누르면 아이폰 이미지 left가 변경됨
+    기능 : 버튼을 누르면 이미지 left가 변경됨
 *******************************************************/
 
 const goSlide = (seq) => {
@@ -97,13 +130,21 @@ gbtn.forEach((ele,idx)=>{
 
 
 // 2-3. 색상 호버 시 글자삽입
-
 palate_img.forEach((ele,idx)=>{
     ele.onmouseover = ()=>{
         palate_copy.innerHTML = `<h2>Color - ${palate[idx]}</h2>`;
     };/////////// mouseover ////////////
 });///////////// forEach //////////////
 
+
+// 2-4. .brick 클릭되면 border 색상 주기(클래스), 페이지 아래로 이동
+brick1.forEach((ele,idx)=>{
+    ele.onclick = ()=>{
+        console.log(idx);
+        ele.classList.add("on");
+        window.scrollTo(0,700);
+    };
+}); ///////////////// forEach ///////////////////
 
 
 

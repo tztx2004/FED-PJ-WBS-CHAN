@@ -34,7 +34,7 @@ body *{
 .tit h4{
   font-size: 17px;
   line-height: 1.4;
-  color: #bf4800;
+  color: #f56300;
   margin-top: 3px;
 }
 .tit h2{
@@ -192,6 +192,10 @@ body *{
 
   cursor: pointer;
 }
+.brick1.on{
+  border: 2px solid #0071e3;
+}
+
 .brick_left{
   flex-basis: 60%;
   /* 세로중앙정렬 */
