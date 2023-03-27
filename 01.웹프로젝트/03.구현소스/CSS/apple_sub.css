@@ -81,10 +81,10 @@ body *{
 .evt_banner{
   position: absolute;
   height: 44px;
-  width: 300%;
+  width: 100%;
   background-color: #fff;
   top: 100%;
-  left: -100%;
+  left: 0;
 }
 
 .wrap_1pg{
