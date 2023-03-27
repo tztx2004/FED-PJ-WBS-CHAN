@@ -55,11 +55,11 @@ window.addEventListener("DOMContentLoaded",()=>{
         event.preventDefault();
     };
     /* gnb눌렀을때 기본기능 막기 */
-    gnb_a.forEach((ele)=>{
-        ele.onclick = ()=>{
-            event.preventDefault();
-        };
-    });
+    // gnb_a.forEach((ele)=>{
+    //     ele.onclick = ()=>{
+    //         event.preventDefault();
+    //     };
+    // });
 
     /***************************************** 
         기능 : 검색바 오버시 검색바 크기에 의해 .search의 right값 수정
