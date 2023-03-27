@@ -7,7 +7,11 @@ const pg1_tit = document.querySelector(".pg1_title>.tit");
 
 // 스티키
 const sticky_imgbx = document.querySelector(".sticky_imgbx");
+const sticky_imgbx_ul = document.querySelector(".sticky_imgbx ul");
 const sticky_imgbx_li = document.querySelectorAll(".sticky_imgbx ul li");
+
+// 버튼
+const gbtn = document.querySelectorAll(".gbtn");
 
 // 색상
 const palate_img = document.querySelectorAll(".palate>img");
@@ -26,8 +30,12 @@ pg1_tit.innerHTML = `
 `;
 
 // 2-2. 스티키대상 이미지 삽입
-sticky_imgbx_li.forEach((ele,idx)=>{
-    
+
+// 2-2-1. 버튼 클릭 시 이미지 변환
+gbtn.forEach((ele,idx)=>{
+    ele.onclick = ()=>{
+        
+    };/////////// click ////////////
 }); //////////// forEach ///////////////
 
 // 2-3. 색상 호버 시 글자삽입
