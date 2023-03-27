@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./CSS/apple_sub.css">
     <!-- 미디어쿼리 -->
     <link rel="stylesheet" href="./CSS/mainmedia.css">
+    <!-- 서브미디어쿼리 -->
+    <link rel="stylesheet" href="./CSS/submedia.css">
     <!-- 파비콘 -->
     <link rel="icon" href="./image/apple/favi.ico">
     <!-- searchBar font -->
@@ -19,10 +21,10 @@
     <link rel="stylesheet" href="/v/iphone-14-pro/c/built/styles/overview.built.css" type="text/css"/> -->
 
     <!--------------------- JS --------------------->
+    <!-- 서브기능js -->
+    <script src="./JS/sub.js"></script>
     <!-- 상단 하단 등 js -->
     <script src="./JS/core.js"></script>
-    <!-- 메인기능js -->
-    <script src="./JS/sub.js"></script>
 </head>
 <body>
     <div class="top">
@@ -142,11 +144,29 @@
                 </div>
             </div>
 
-            <div class="evt_banner"></div>
+            
             
             <div class="wrap_1pg">
                 <div class="sub_sticky">
-                    <div class="sticky_imgbx"></div>
+                    <div class="sticky_imgbx">
+                        <div class="imgbx">
+                            <ul>
+                                <li><img src="./image/sub_buy/fin1_iphone-14-pro-deeppurple.jpeg" alt="이미지"></li>
+                                <li><img src="./image/sub_buy/fin2_iphone-14-pro-deeppurple.jpeg" alt="이미지"></li>
+                                <li><img src="./image/sub_buy/fin3_iphone-14-pro-deeppurple.jpeg" alt="이미지"></li>
+                            </ul>
+                        </div>
+                        <div class="padbtn">
+                            <ul>
+                                <li>
+                                    <button class="gbtn btn_p" label="previous">&lt;</button>
+                                </li>
+                                <li>
+                                    <button class="gbtn btn_n" label="next">&gt;</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="buy_option">
                     <div class="option model">
@@ -248,11 +268,12 @@
                     </div>
                 </div>
             </div>
+            <div class="evt_banner"></div>
         </div>
         <!---------------------- sub_2pg ---------------------->
-        <div class="sub_2pg mw">
+        <!-- <div class="sub_2pg mw">
             <div class="2pg_grid"></div>
-        </div>
+        </div> -->
     </div>
     
     <!---------------------- 메인 6페이지 ---------------------->

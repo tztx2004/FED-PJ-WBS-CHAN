@@ -45,11 +45,11 @@
                         event.preventDefault();
                         // let XX = event.currentTarget.touches[0].clientX;
                         let startID = event.targetTouches[0].target.id;
-                        let startX = event.changedTouches[0].clientX;
+                        let startX = event.changedTouches[0].pageX;
                         let startY = event.changedTouches[0].clientY;
                         ele.style.transition = "none";
                         m_firstX = startX;
-                        console.log("touchstart", startX, startY);
+                        console.log("touchstart", startX);
                     };
                     ele.ontouchend = (e) => {
                         event.preventDefault();
@@ -73,8 +73,9 @@
                         
                         console.log("touchmove", m_moveX);
                         
-                        divine(ele);
-                        
+                        // divine(ele);
+                        if(m_moveX<-50)
+                        setTimeout(()=>ele.appendChild(slide_li[0]),100)
                         
                     }; //////////// touchmove ////////////
                     // m_firstX = m_lastX;
@@ -92,9 +93,12 @@
                             //     console.log(idx)
                             // })
                             // ele.appendChild(slide_li[0])
-                            ele.style.left = -100*(snum+1) + "%";
+                            // ele.style.left = -100*(snum+1) + "%";
+                            slide_li.forEach((ele,idx)=>{
+                                ele.parentElement.style.left = -100*idx +"%"
+                            });
                             ele.style.transition = ".4s";
-                            console.log("snum",snum);
+                            // console.log("snum",snum);
 
 
                         }
@@ -114,8 +118,8 @@
                     // }
                     
                 } /////////////////// mobileDrag //////////////////
-                let snum = 0;
-                if(snum>=0)snum++;
+                // let snum = 0;
+                // if(snum>=0)snum++;
                 
                 // 호출
                 mobileDrag(slide);

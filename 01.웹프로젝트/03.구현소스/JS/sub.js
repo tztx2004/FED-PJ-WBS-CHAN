@@ -7,13 +7,19 @@ const pg1_tit = document.querySelector(".pg1_title>.tit");
 
 // 스티키
 const sticky_imgbx = document.querySelector(".sticky_imgbx");
+const sticky_imgbx_ul = document.querySelector(".sticky_imgbx ul");
+const sticky_imgbx_li = document.querySelectorAll(".sticky_imgbx ul li");
+
+// 버튼
+const gbtn = document.querySelectorAll(".gbtn");
 
 // 색상
 const palate_img = document.querySelectorAll(".palate>img");
 const palate_copy = document.querySelector(".palate_copy");
 console.log(palate_img.length);
 
-
+// 색상배열
+const palate = ["Deep Purple","Gold","Silver","Space Black"];
 
 // 2. html 삽입
 // 2-1. 타이틀삽입
@@ -25,9 +31,15 @@ pg1_tit.innerHTML = `
 
 // 2-2. 스티키대상 이미지 삽입
 
+// 2-2-1. 버튼 클릭 시 이미지 변환
+gbtn.forEach((ele,idx)=>{
+    ele.onclick = ()=>{
+        
+    };/////////// click ////////////
+}); //////////// forEach ///////////////
 
 // 2-3. 색상 호버 시 글자삽입
-const palate = ["Deep Purple","Gold","Silver","Space Black"];
+
 palate_img.forEach((ele,idx)=>{
     ele.onmouseover = ()=>{
         palate_copy.innerHTML = `<h2>Color - ${palate[idx]}</h2>`;
@@ -36,7 +48,7 @@ palate_img.forEach((ele,idx)=>{
 
 
 
-/************************** 2페이지 **************************/
+
 
 
 /************************** 6페이지 **************************/
