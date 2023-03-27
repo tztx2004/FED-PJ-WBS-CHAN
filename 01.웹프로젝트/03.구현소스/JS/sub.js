@@ -7,8 +7,8 @@ const pg1_tit = document.querySelector(".pg1_title>.tit");
 
 // 스티키
 const sticky_imgbx = document.querySelector(".sticky_imgbx");
-const sticky_imgbx_ul = document.querySelector(".sticky_imgbx ul");
-const sticky_imgbx_li = document.querySelectorAll(".sticky_imgbx ul li");
+const imgbx_ul = document.querySelector(".imgbx ul");
+const imgbx_li = document.querySelectorAll(".imgbx ul li");
 
 // 버튼
 const gbtn = document.querySelectorAll(".gbtn");
@@ -30,13 +30,71 @@ pg1_tit.innerHTML = `
 `;
 
 // 2-2. 스티키대상 이미지 삽입
+//////////// 색상변경 필요 //////////////
+imgbx_li.forEach((ele,idx)=>{
+    ele.innerHTML = `
+    <img src="./image/sub_buy/fin${idx+1}_iphone-14-pro-deeppurple.jpeg" alt="이미지">
+    `;
+});//////////////// forEach ///////////////////
 
 // 2-2-1. 버튼 클릭 시 이미지 변환
+
+// 광클금지변수 : 0 - 허용, 1 - 불허용
+let prot = 0;
+
+/******************************************************* 
+    함수 : goSlide
+    기능 : 3페이지에서 버튼을 누르면 아이폰 이미지 left가 변경됨
+*******************************************************/
+
+const goSlide = (seq) => {
+
+    // 광클금지 설정하기 //////
+    if (prot) return;
+    prot = 1; // 잠금!
+    setTimeout(() => {
+        prot = 0; // 해제!
+    }, 400); /// 0.4초후 해제! ///
+    
+    let imgbx_li = imgbx_ul.querySelectorAll("li");
+
+    if(seq){
+        imgbx_ul.style.left ="-100%";
+        imgbx_ul.style.transition = "left .2s ease-in-out";
+
+        setTimeout(()=>{
+            imgbx_ul.appendChild(imgbx_li[0]);
+            // (2-2)동시에 left값을 0으로 변경한다!
+            imgbx_ul.style.left = "0";
+            // (2-3)트랜지션 없애기
+            imgbx_ul.style.transition = "none";
+        },400); ///////////// timeout /////////
+    }
+    else{
+        imgbx_ul.insertBefore(imgbx_li[imgbx_li.length-1],imgbx_li[0]);
+        imgbx_ul.style.left = "-100%";
+        imgbx_ul.style.transition = "none";
+        
+
+        setTimeout(()=>{
+            imgbx_ul.style.left ="0";
+            imgbx_ul.style.transition = "left .2s ease-in-out";
+        },0); ///////////// 타임아웃 ///////////
+    }
+    
+
+}; //////////// goSlide /////////////
+
+/* goSlide 호출 */
 gbtn.forEach((ele,idx)=>{
     ele.onclick = ()=>{
-        
-    };/////////// click ////////////
-}); //////////// forEach ///////////////
+        goSlide(idx);
+    }; ////////// click ////////////
+}); /////////// forEach /////////////
+
+
+
+
 
 // 2-3. 색상 호버 시 글자삽입
 
