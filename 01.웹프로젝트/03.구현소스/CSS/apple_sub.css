@@ -21,6 +21,9 @@ body *{
 .sub_1pg{
   padding-top: 44px;
   height: 2000px;
+
+  position: relative;
+  /* evt_banner 부모자격 */
 }
 .pg1_title{
   display: flex;
@@ -78,10 +81,10 @@ body *{
 .evt_banner{
   position: absolute;
   height: 44px;
-  width: 100%;
+  width: 300%;
   background-color: #fff;
-  top: 270px;
-  left: 0;
+  top: 100%;
+  left: -100%;
 }
 
 .wrap_1pg{
@@ -240,6 +243,9 @@ margin: 0 auto;
 height: 2000px;
 background: #111111;
 width: 100vw;
+
+/* 서브페이지에서만 */
+margin-top: 44px;
 }
 .pg6 h2 {
 font-size: 4.6rem;
