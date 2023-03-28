@@ -24,8 +24,12 @@ const palate_s = ["deeppurple","gold","silver","spaceblack"];
 
 // border
 const brick1 = document.querySelectorAll(".brick1");
+const brick2 = document.querySelectorAll(".brick2");
+const brick_a = document.querySelectorAll(".brick a");
 
-
+// brightness 변경주기 위한 변수
+const finish_color = document.querySelector(".finish_color");
+const storage = document.querySelector(".storage");
 
 // 2. html 삽입
 // 2-1. 타이틀삽입
@@ -56,16 +60,37 @@ let arr_palate = [palate_img,imgbx_li];
 let cnum = 0;
 
 
+
+/************************************************** 
+    기능: 색상버튼 클릭 시 사진 등장
+**************************************************/
+// 처음에 나와있기
+imgbx_li.forEach((ele,idx)=>{
+    ele.innerHTML = `
+        <img src="./image/sub_buy/fin${idx}_iphone-14-pro-${palate_s[0]}.jpeg" alt="이미지">
+    `;
+});//////////////// forEach ///////////////////
+
+// 클릭 시 이미지 변경
 palate_img.forEach((ele,idx)=>{
     ele.onclick = ()=>{
-        console.log("palate_img idx",idx)
+        // 이미집 삽입
         forPal(idx)
+
+        // 아래로 이동
+        scrollTo({
+            top:1300,
+            behavior:"smooth"
+        });
+
+        // storage brightness 변경
+        storage.style.filter = "brightness(1)";
     };////////// click ///////////
 }); /////////////// forEach //////////////
 
+// 이미지 삽입 함수
 function forPal(seq){
     imgbx_li.forEach((ele,idx)=>{
-        console.log("seq",seq);
         ele.innerHTML = `
             <img src="./image/sub_buy/fin${idx}_iphone-14-pro-${palate_s[seq]}.jpeg" alt="이미지">
         `;
@@ -138,13 +163,45 @@ palate_img.forEach((ele,idx)=>{
 
 
 // 2-4. .brick 클릭되면 border 색상 주기(클래스), 페이지 아래로 이동
-brick1.forEach((ele,idx)=>{
+for (let x of brick1) {
+    x.addEventListener('click', function() {
+        // 클래스on
+        document.querySelectorAll(".brick1").forEach(x => x.classList.remove("on"));
+        this.classList.add("on");
+
+        // brightness 변경
+        finish_color.style.filter = "brightness(1)";
+
+        // 페이지 이동
+        if(window.innerWidth >= 750){
+            window.scrollTo({
+                top:700,
+                behavior:"smooth"
+            }); ////////// scrollTo /////////
+        } ////////////// if ////////////////
+        else if(window.innerWidth < 750){
+            window.scrollTo({
+                top:900,
+                behavior:"smooth"
+            }); ///////////// scrollTo //////////
+        }/////////// else if //////////////
+    })
+  }
+
+  for (let x of brick2) {
+    x.addEventListener('click', function() {
+      document.querySelectorAll(".brick2").forEach(x => x.classList.remove("on"));
+      this.classList.add("on");
+    })////////// click ////////////
+    }//////////// for of /////////////
+
+// a기능 막기
+brick_a.forEach((ele,idx)=>{
     ele.onclick = ()=>{
-        console.log(idx);
-        ele.classList.add("on");
-        window.scrollTo(0,700);
+        event.preventDefault();
     };
-}); ///////////////// forEach ///////////////////
+});
+
 
 
 

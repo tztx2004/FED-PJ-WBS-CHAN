@@ -156,9 +156,15 @@ body *{
 }
 .finish_color{
   flex-basis: 20%;
+
+  /* 클릭 전 덜보이기 */
+  filter: brightness(0.5);
 }
 .storage{
   flex-basis: 35%;
+  
+  /* 클릭 전 덜보이기 */
+  filter: brightness(0.5);
 }
 .option_copy{
   display: flex;
@@ -193,6 +199,9 @@ body *{
   cursor: pointer;
 }
 .brick1.on{
+  border: 2px solid #0071e3;
+}
+.brick2.on{
   border: 2px solid #0071e3;
 }
 

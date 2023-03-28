@@ -25,6 +25,22 @@ window.addEventListener("DOMContentLoaded",()=>{
     const gnb = document.querySelector(".gnb");
     const gnb_a = document.querySelectorAll(".gnb a");
 
+    
+    // 부드러운 스크롤 JS호출!
+    startSS();
+
+    // 만약 스크롤바를 직접 드래그할 경우
+    // mouseup(즉, 스크롤바를 놓는경우)
+    // 이벤트 발생 시 Y축 스크롤바 위치를
+    // pos전역변수에 업데이트한다
+    window.addEventListener("mouseup",()=>{
+        pos = window.scrollY;
+    });////////////// mouseup ////////////////////
+
+
+
+
+
     /***************************************** 
         기능 : gnb 닿을 때 .top으로 배경 채워줌
     *****************************************/
