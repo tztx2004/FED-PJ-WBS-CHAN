@@ -95,14 +95,14 @@
 
                         if (tgLeft <= -winW * 1.1) {
                             // console.log("요기");
-                            obj.style.transition = ".4s";
+                            obj.style.transition = ".2s";
                             obj.style.left = -winW * 2 + "px";
 
                             setTimeout(() => {
                                 obj.appendChild(obj.querySelectorAll("li")[0]);
                                 obj.style.transition = "none";
                                 obj.style.left = "-100%";
-                            }, 400);
+                            }, 200);
                             // slide_li.forEach((aa,idx)=>{
                             //     console.log(idx)
                             // })

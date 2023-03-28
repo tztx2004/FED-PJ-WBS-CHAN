@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* apple css */
+
+/* 외부 CSS 합치기 */
+@import url(./common.css);
+@import url(./core.css);
+/* 공통 css */
+
+/* 수정을 위해 임시로 주었음 */
+body *{
+  outline: 1px dashed #fff;
+}
+/****************************** 메인공통 ******************************/
+.mw{
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
