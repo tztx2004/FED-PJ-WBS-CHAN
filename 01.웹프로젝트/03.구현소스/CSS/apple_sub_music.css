@@ -6,13 +6,106 @@
 @import url(./core.css);
 /* 공통 css */
 
-/* 수정을 위해 임시로 주었음 */
 body *{
   outline: 1px dashed #fff;
 }
-/****************************** 메인공통 ******************************/
+:root {
+  --icon_size: 84px;
+}
+
+/****************************** 뮤직공통 ******************************/
+/* 뮤직페이지 배경 흰색 주기 */
+html{
+  background-color: #f5f5f7;
+  color: #000;
+}
+.top{
+  background-color: #f5f5f7;
+}
+.header{
+  background-color: #f5f5f7;
+}
+.gnb a{
+  color: #000;
+}
+form{
+  background-color: #f5f5f7;
+  border-color: #f5f5f7;
+}
+form:hover .search_imgbx {
+  display: none;
+}
+.bag_comment h2, .bag_comment h3{
+  color: #333336;
+}
+
 .mw{
   max-width: 1024px;
   margin: 0 auto;
   padding: 0 22px;
+}
+
+.cont{
+  height: 2000px;
+}
+.sub_music{
+  padding-top: 44px;
+}
+/****************************** title ******************************/
+.subTitle{
+  display: flex;
+  justify-content: space-between;
+  height: 52px;
+  align-items: center;
+}
+.title a{
+  color: #000;
+  font-size: 21px;
+  text-decoration: none;
+
+}
+.tryBtn a{
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+
+  background-color: #fa243c;
+  border-radius: 18px;
+  
+  width: 122px;
+  height: 24px;
+  padding: 4px 11px;
+}
+.dscBar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  background-color: #dfdfdf;
+}
+.dscBar h2{
+  color: #1d1d1f;
+  font-weight: normal;
+  font-size: 14px;
+}
+.dscBar span{
+  color: #0066cc;
+  font-size: 14px;
+}
+/****************************** pg1 ******************************/
+.music_icon{
+  position: relative;
+  overflow: hidden;
+  width: var(--icon_size);
+  height: var(--icon_size);
+  border-radius: 18px;
+  margin: 0 auto;
+  /* background: url(../image/sub_music/music_icon.png) no-repeat center/cover; */
+}
+.music_icon img{
+  margin: 0 auto;
+  position: absolute;
+  top: -27px;
+  left: -90px;
+  width: 265px;
 }
