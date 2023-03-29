@@ -100,6 +100,7 @@ form:hover .search_imgbx {
   height: var(--icon_size);
   border-radius: 18px;
   margin: 0 auto;
+  margin-top: 80px;
   /* background: url(../image/sub_music/music_icon.png) no-repeat center/cover; */
 }
 .music_icon img{
