@@ -8,7 +8,7 @@
 
 /* 수정을 위해 임시로 주었음 */
 body *{
-  outline: 1px dashed #fff;
+  /* outline: 1px dashed #fff; */
 }
 /****************************** 메인공통 ******************************/
 .mw{
@@ -86,7 +86,7 @@ body *{
   top: 100%;
   left: 0;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-end;
 }
 .evt_banner h2{
@@ -165,12 +165,18 @@ body *{
 
   /* 클릭 전 덜보이기 */
   filter: brightness(0.5);
+
+  /* 처음에 클릭막기 */
+  pointer-events: none;
 }
 .storage{
   flex-basis: 35%;
   
   /* 클릭 전 덜보이기 */
   filter: brightness(0.5);
+
+  /* 처음에 클릭막기 */
+  pointer-events: none;
 }
 .option_copy{
   display: flex;

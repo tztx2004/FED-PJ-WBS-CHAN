@@ -75,7 +75,7 @@ imgbx_li.forEach((ele,idx)=>{
 // 클릭 시 이미지 변경
 palate_img.forEach((ele,idx)=>{
     ele.onclick = ()=>{
-        // 이미집 삽입
+        // 이미지 삽입
         forPal(idx)
 
         // 아래로 이동
@@ -86,6 +86,9 @@ palate_img.forEach((ele,idx)=>{
 
         // storage brightness 변경
         storage.style.filter = "brightness(1)";
+
+        // storage 클릭 가능 하게하기
+        storage.style.pointerEvents = "auto";
     };////////// click ///////////
 }); /////////////// forEach //////////////
 
@@ -178,13 +181,22 @@ for (let x of brick1) {
             top:finish_color.offsetTop - 200,
             behavior:"smooth"
         }); ////////// scrollTo /////////
-    })
-  }
+
+        // 다시 클릭가능 하게 하기
+        finish_color.style.pointerEvents = "auto";
+    }); ////////////////// click /////////////////
+  }; ///////////// for of ///////////////////
 
   for (let x of brick2) {
     x.addEventListener('click', function() {
       document.querySelectorAll(".brick2").forEach(x => x.classList.remove("on"));
       this.classList.add("on");
+
+      // 페이지 이동
+      window.scrollTo({
+        top:evt_banner.offsetTop - 550,
+        behavior:"smooth"
+      })
     })////////// click ////////////
     }//////////// for of /////////////
 
