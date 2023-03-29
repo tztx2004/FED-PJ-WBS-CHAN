@@ -25,6 +25,13 @@
         font-size: 12px;
     }
 }
+
+/******************************* 750px *******************************/
+@media screen and (max-width: 820px) {
+    .sub_1pg {
+        height: 2300px;
+    }
+}
 /******************************* 750px *******************************/
 @media screen and (max-width: 750px) {
     .pg1_title {
@@ -49,5 +56,20 @@
     }
     .option_copy{
         justify-content: normal
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .wrap_1pg{
+        height: 76.2%;
+    }
+    .sub_1pg {
+        height: 2000px;
+    }
+    .option {
+        margin-bottom: 62px;
+    }
+    .buy_option{
+        padding-left: 0;
     }
 }

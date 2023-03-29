@@ -27,7 +27,8 @@ const brick1 = document.querySelectorAll(".brick1");
 const brick2 = document.querySelectorAll(".brick2");
 const brick_a = document.querySelectorAll(".brick a");
 
-// brightness 변경주기 위한 변수
+// brightness 변경주기 위한 변수, scrollTo offsetTop값 주기위한 변수
+const model = document.querySelector(".model");
 const finish_color = document.querySelector(".finish_color");
 const storage = document.querySelector(".storage");
 
@@ -79,7 +80,7 @@ palate_img.forEach((ele,idx)=>{
 
         // 아래로 이동
         scrollTo({
-            top:1300,
+            top:storage.offsetTop - 100,
             behavior:"smooth"
         });
 
@@ -173,18 +174,10 @@ for (let x of brick1) {
         finish_color.style.filter = "brightness(1)";
 
         // 페이지 이동
-        if(window.innerWidth >= 750){
-            window.scrollTo({
-                top:700,
-                behavior:"smooth"
-            }); ////////// scrollTo /////////
-        } ////////////// if ////////////////
-        else if(window.innerWidth < 750){
-            window.scrollTo({
-                top:900,
-                behavior:"smooth"
-            }); ///////////// scrollTo //////////
-        }/////////// else if //////////////
+        window.scrollTo({
+            top:finish_color.offsetTop - 200,
+            behavior:"smooth"
+        }); ////////// scrollTo /////////
     })
   }
 
@@ -202,7 +195,18 @@ brick_a.forEach((ele,idx)=>{
     };
 });
 
-
+/*************************************************** 
+    기능 : evt_banner(total)에 값 넣기
+***************************************************/
+const evt_banner = document.querySelector(".evt_banner");
+const price = ["1099$","1199$","1399$","1599$"];
+brick2.forEach((ele,idx)=>{
+    ele.onclick = ()=>{
+        evt_banner.innerHTML = `
+            <h2>Total : ${price[idx]}</h2>
+        `;
+    };/////////// onclick ///////////
+}); ////////////// forEach ///////////////
 
 
 

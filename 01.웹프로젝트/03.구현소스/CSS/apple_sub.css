@@ -8,7 +8,7 @@
 
 /* 수정을 위해 임시로 주었음 */
 body *{
-  /* outline: 1px dashed #fff; */
+  outline: 1px dashed #fff;
 }
 /****************************** 메인공통 ******************************/
 .mw{
@@ -82,11 +82,17 @@ body *{
   position: absolute;
   height: 44px;
   width: 100%;
-  background-color: #fff;
+  /* background-color: #fff; */
   top: 100%;
   left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
-
+.evt_banner h2{
+  font-size: 24px;
+  color: #cecece;
+}
 .wrap_1pg{
   display: flex;
   width: 100%;
@@ -278,6 +284,15 @@ body *{
   gap: 40px;
   padding: 0 10px;
   /* margin: 30px 0; */
+}
+.padbtn li{
+  position: absolute;
+}
+.padbtn li:first-child{
+  left: 1%;
+}
+.padbtn li:last-child{
+  right: 1%;
 }
 .gbtn{
   width: 40px;
