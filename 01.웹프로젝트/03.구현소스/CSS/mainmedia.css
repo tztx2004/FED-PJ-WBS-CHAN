@@ -27,6 +27,9 @@
 }
 /************************* max: 1400 *************************/
 @media screen and (max-width: 1200px) {
+    .pg1 video {
+        height: 100%;
+    }
     .copy2 {
         transform: translate(-30%, -50%);
     }
