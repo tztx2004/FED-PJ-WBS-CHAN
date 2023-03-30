@@ -1,6 +1,7 @@
 window.addEventListener("DOMContentLoaded",()=>{
     
     console.log("music");
+    
 
     // 1. 대상
     const lockUp = document.querySelectorAll(".lockUp");
@@ -33,5 +34,14 @@ window.addEventListener("DOMContentLoaded",()=>{
         sub_music.style.filter = "brightness(3px)";
     }
 
+
+/////////////// 2pg //////////////////
+const mcp = document.querySelectorAll(".mcp");
+console.log(mcp);
+mcp.forEach((ele,idx)=>{
+  ele.innerHTML = `
+    Play over 100 million songs 
+  `;
+});
 
 }); ////////////////// 로드 구역 ////////////////////////

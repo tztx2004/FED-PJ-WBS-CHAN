@@ -214,3 +214,36 @@ form:hover .search_imgbx {
   border-radius: 40px;
   z-index: 1;
 }
+
+/****************************** pg2 ******************************/
+.pg2{
+  height: 2000px;
+}
+.vdbx{
+  position: sticky;
+  top: 44px;
+  /* 글씨리스트 부모자격 */
+  width: 1000px;
+  margin: 0 auto;
+  border-radius: 18px;
+
+  overflow: hidden;
+}
+.mvd{
+  width: 100%;
+  border-radius: 18px;
+}
+.copybx{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+}
+.copybx ul li{
+  margin: 0 auto;
+  font-size: 64px;
+}
