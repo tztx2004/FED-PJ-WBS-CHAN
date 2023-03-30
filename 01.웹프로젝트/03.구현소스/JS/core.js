@@ -97,7 +97,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     /************************************* 
         검색 클릭 시 검색 창 나옴
     *************************************/
-   const sbar = document.querySelector(".sbar");
+    const sbar = document.querySelector(".sbar");
     search_icon.onclick = ()=>{
         if(top.classList.contains("on")){
             top.classList.remove("on");
