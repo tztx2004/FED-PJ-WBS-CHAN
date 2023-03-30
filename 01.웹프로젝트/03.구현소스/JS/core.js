@@ -11,7 +11,10 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     const top = document.querySelector(".top");
     const search = document.querySelector(".search");
-    const search_bar = document.querySelector(".search_bar");
+    const search_icon = document.querySelector(".search_icon");
+    const search_new = document.querySelector(".search_new");
+
+
     const header_main = document.querySelector(".header_main");
     const header_right = document.querySelector(".header_right");
     const icon = document.querySelector(".c")
@@ -80,15 +83,36 @@ window.addEventListener("DOMContentLoaded",()=>{
     /***************************************** 
         기능 : 검색바 오버시 검색바 크기에 의해 .search의 right값 수정
     *****************************************/
-    search.onmouseover = ()=>{
-        // header_main.style.opacity = 0;
-        search.style.right = "15%";
-    }; /////////////// onmouseover ///////////////////
-    search.onmouseout = ()=>{
-        if(search_bar.value.length === 0) {
-        search.style.right = "19%";
-        } /////////// if /////////////
-    }; /////////////// onmouseout ///////////////////
+    // search.onmouseover = ()=>{
+    //     // header_main.style.opacity = 0;
+    //     search.style.right = "15%";
+    // }; /////////////// onmouseover ///////////////////
+    // search.onmouseout = ()=>{
+    //     if(search_bar.value.length === 0) {
+    //     search.style.right = "19%";
+    //     } /////////// if /////////////
+    // }; /////////////// onmouseout ///////////////////
+    
+    
+    /************************************* 
+        검색 클릭 시 검색 창 나옴
+    *************************************/
+   const sbar = document.querySelector(".sbar");
+    search_icon.onclick = ()=>{
+        if(top.classList.contains("on")){
+            top.classList.remove("on");
+            search_new.classList.remove("on");
+        } ///////////// if ///////////////
+        else{
+            // console.log("검색 눌럿음")
+            top.classList.add("on");
+            setTimeout(()=>{
+                search_new.classList.add("on");
+                sbar.focus();
+            },200); ///// setTimeout //////
+        } ////////// else ///////////
+    }; //////////////// onclick ////////////////
+    // console.log(top.classList.contains("on"));
     
     
     /************************************* 
@@ -100,7 +124,7 @@ window.addEventListener("DOMContentLoaded",()=>{
             bag_c.classList.remove("on");
         } ///////////// if ///////////////
         else{
-            console.log("장바구니 눌럿음")
+            // console.log("장바구니 눌럿음")
             top.classList.add("on");
             setTimeout(()=>{
                 bag_c.classList.add("on");
@@ -114,6 +138,7 @@ window.addEventListener("DOMContentLoaded",()=>{
         // console.log("leave");
         top.classList.remove("on");
         bag_c.classList.remove("on");
+        search_new.classList.remove("on");
     };
     
     

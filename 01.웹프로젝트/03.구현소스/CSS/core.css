@@ -59,9 +59,10 @@
 /******************** header main ********************/
 .header_main{
     /* width: 26.66vw; */
-    flex-basis: 48%;
+    flex-basis: 45%;
     transition: .2s;
     opacity: 1;
+    margin: 0 auto;
 }
 .gnb {
     /* margin-top: 13px; */
@@ -79,9 +80,7 @@
 .gnb ul li:hover .sub_menu {
     height: 106px;
 }
-.top.on .sub_menu{
-    /* height: 106px; */
-}
+
 
 
 .gnb a {
@@ -110,7 +109,7 @@
 .header_right{
     /* width: 25vw; */
     transition: .2s;
-    flex-basis: 30%;
+    flex-basis: 25%;
 }
 .icon {
     display: flex;
@@ -121,9 +120,11 @@
 
 /* search-bar */
 .search_imgbx {
-    position: absolute;
-    top: -6px;
-    z-index: 1;
+
+}
+.search_icon{
+    fill: #fff;
+    cursor: pointer;
 }
 
 form:hover .search_imgbx {
@@ -170,32 +171,7 @@ form {
     border-radius: 20px;
     padding: 0 30px;
 }
-/* .fa {
-    box-sizing: border-box;
-    padding: 10px;
-    width: 22px;
-    height: 22px;
-    position: absolute;
-    top: 5px;
-    right: 4px;
-    border-radius: 50%;
-    color: #cecece;
-    text-align: center;
-    font-size: 14px;
-    transition: all 1s;
-}
 
-.fa-search:before {
-    position: absolute;
-    content: "\f002";
-    top: 3px;
-    right: 4px;
-}
-.fa{
-    color: #cecece;
-    text-align: center;
-    font-size: 14px;
-} */
 .clear-btn {
     display: none;
     position: absolute;
@@ -208,20 +184,50 @@ form {
     text-align: center;
     width: 100%;
 }
-
-form:valid{
-    display: block;
+.search_new{
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    opacity: 0;
 }
-form:hover,
+.search_new.on {
+    opacity: 1;
+}
+.search_new>svg{
+    fill: #fff;
+    position: absolute;
+    top: -25%;
+    left: 10px;
+}
+.sbar{
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 20px;
+
+    width: 300px;
+    height: 30px;
+    /* border-radius: 980px; */
+    padding: 0 40px;
+    outline: none;
+    border: none;
+
+}
+/* form:valid{
+    display: block;
+} */
+/* form:hover,
 form:valid {
     width: 132px;
     cursor: pointer;
-}
+} */
 
-form:hover input,
+/* form:hover input,
 form:valid input {
     display: block;
-}
+} */
 
 
 /* form:hover .fa,

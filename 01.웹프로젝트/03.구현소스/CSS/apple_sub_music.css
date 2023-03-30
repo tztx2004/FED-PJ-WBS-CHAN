@@ -27,6 +27,10 @@ h2,h3,h3{
 .top{
   background-color: #f5f5f7;
 }
+.top.on {
+  height: 180px;
+  border-bottom: 1px solid #000;
+}
 .header{
   background-color: #f5f5f7;
 }
@@ -55,6 +59,13 @@ form:hover .search_imgbx {
 }
 .sub_music{
   padding-top: 44px;
+}
+.search_icon{
+  fill: #000;
+}
+.sbar{
+  color: #000;
+  border: none;
 }
 /****************************** title ******************************/
 .subTitle{
@@ -167,18 +178,36 @@ form:hover .search_imgbx {
 .music_device{
   display: flex;
   justify-content: center;
+  margin: 0 auto;
   margin-top: 80px;
+  width: 1000px;
 }
 .lockUp{
-  width: 300px;
+  width: 270px;
   flex: 1;
   margin-right: 20px;
   margin-left: 20px;
+
+  /* 효과위함 */
+  margin-top: 60px;
 }
+
+/* 짝수번째 기기들만 마진탑 0 -> 효과*/
+.dv2, .dv4{
+  margin-top: 0;
+}
+
 .frame_p{
   position: relative;
 }
 .screen_p img{
+  position: absolute;
+  top: 13px;
+  left: 16px;
+  border-radius: 40px;
+  z-index: 1;
+}
+.screen_vd{
   position: absolute;
   top: 13px;
   left: 16px;

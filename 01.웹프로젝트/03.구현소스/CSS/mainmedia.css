@@ -61,7 +61,7 @@
     }
     .logo img {
         top: 0;
-        left: 45vw;
+        /* left: 45vw; */
         transform: none;
     }
     /* .ham {
@@ -86,7 +86,7 @@
     .ham {
         display: block;
     }
-    .search {
+    .search_icon {
         display: none;
     }
     .bag {
@@ -339,7 +339,7 @@
 
 @media screen and (max-width: 650px) {
     .logo img {
-        left: 42.8vw;
+        /* left: 42.8vw; */
     }
     .copy2 {
         width: 50%;
