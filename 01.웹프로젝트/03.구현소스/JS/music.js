@@ -2,11 +2,29 @@ window.addEventListener("DOMContentLoaded",()=>{
     
     console.log("music");
     
-
+    
     // 1. 대상
     const lockUp = document.querySelectorAll(".lockUp");
     const top = document.querySelector(".top");
     const sub_music = document.querySelector(".sub_music");
+    const music_icon = document.querySelector(".music_icon");
+    const dscBar = document.querySelector(".dscBar");
+
+
+    window.onload = ()=>{
+      music_icon.style.width = "21%"
+      music_icon.style.height = "10%"
+
+      setTimeout(function(){
+        scrollTo(0,0)
+      },100);
+
+      setTimeout(()=>{
+      dscBar.style.backgroundColor = "#dfdfdf";
+      },3000);
+    };
+
+
 
     lockUp.forEach((ele,idx)=>{
         ele.innerHTML = `
@@ -24,7 +42,7 @@ window.addEventListener("DOMContentLoaded",()=>{
             <div class="frame_p">
               <img src="./image/sub_music/frame.png " alt="프레임" />
               <div class="screen_p">
-              <video class="screen_vd" src="./image/sub_music/screen_p.mp4" autoplay muted loop></video>
+              <video class="screen_vd" src="./image/sub_music/screen_p.mp4" muted loop autoplay></video>
               </div>
             </div>
           `;
@@ -40,13 +58,13 @@ window.addEventListener("DOMContentLoaded",()=>{
 
 const pg2_obj = {
   item0 : "Play over 100 million songs <br>and 30,000 playlists ad-free.",
-  item1 : "Experience Spatial Audio for sound that surrounds you.",
-  item2 : "Get curated playlists and&nbsp; live radio.",
-  item3 : "Download your favorite tracks. Play them offline.",
+  item1 : "Experience Spatial Audio for <br>sound that surrounds you.",
+  item2 : "Get curated playlists <br>and&nbsp; live radio.",
+  item3 : "Download your favorite tracks. <br>Play them offline.",
   item4 : "Listen across your devices.",
 }
 const mcp = document.querySelectorAll(".mcp");
-console.log(mcp);
+// console.log(mcp);
 mcp.forEach((ele,idx)=>{
   ele.innerHTML = `
     ${pg2_obj["item"+idx]}
@@ -94,20 +112,53 @@ offer_item.forEach((ele,idx)=>{
 
 const vdbx = document.querySelector(".vdbx");
 
+let windowW = window.innerWidth;
+console.log(windowW);
+const pg2cont = document.querySelector(".pg2cont");
+pg2cont.style.height = windowW +"px";
 
 window.addEventListener("scroll",()=>{
-  let pg2cont = document.querySelector(".pg2cont");
+  let lockUp = document.querySelectorAll(".lockUp");
   let topPoint = pg2cont.getBoundingClientRect().top;
-  console.log(topPoint);
+  let windowH = window.innerHeight;
+  const screen_vd = document.querySelector(".screen_vd");
   
-  //////////// 스크롤 값에 따라 영상 크기 변화 ///////////////
+  // console.log(topPoint);
+  
+
+
+  /////////// 1페이지 스마트폰 기기 화면 이동효과
+  lockUp.forEach((ele,idx)=>{
+    
+    let topPoint_lock = ele.getBoundingClientRect().top;
+    
+    // console.log(topPoint_lock);
+    if(topPoint_lock < windowH /2 && topPoint_lock > 400)  {
+
+      if(idx % 2 === 1){
+        ele.style.transition =".2s";
+        ele.style.marginTop = -topPoint_lock + windowH/2 + "px";
+      } ///////// if ///////////
+      
+    } /////////// if //////////
+    else if(topPoint_lock < 44){
+      ele.style.transition ="1s ease-in";
+      ele.style.marginTop = "0px";
+    }
+
+    }); /////////// forEach ///////////
+
+
+  //////////// 2페이지 스크롤 값에 따라 영상 크기 변화 ///////////////
   if(topPoint < -200 && topPoint > -1100){
-    vdbx.style.width = 2500 + topPoint + "px";
-  }
+    console.log(window.innerWidth+topPoint);
+    vdbx.style.width = window.innerWidth+topPoint + "px";
+    // vdbx.style.transform = `scaleX(${2.1+topPoint/1000})`;
+  } ///////////// if //////////////
   else if(topPoint < -1100){
     vdbx.style.borderRadius = "30px";
     vdbx.style.transition = ".2s";
-  }
+  } //////////// else if ///////////
 
 }); //////////////////// scroll ////////////////////
 
