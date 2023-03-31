@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    body *{
+        outline: 1px dashed red;
+        padding: 0;
+        margin: 0;
+    }
+    .pg1cont{
+        max-width: 1024px;
+        height: 2000px;
+        margin: 0 auto;
+    }
+    .music_device{
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+    .lockUp{
+        position: absolute;
+        top: 0;
+    }
+    .frame_p img{
+        position: absolute;
+    }
+    .framp_p img:last-child{
+        top: 0;
+        left: 0;
+    }
+</style>
+
+</head>
+<body>
+    <section class="pg1">
+        <div class="cont pg1cont">
+            <div class="music_device">
+                <div class="lockUp dv1"></div>
+                <div class="lockUp dv2"></div>
+                <div class="lockUp dv3 svd"></div>
+                <div class="lockUp dv4"></div>
+                <div class="lockUp dv5"></div>
+            </div>
+        </div>
+    </section> 
+    <script defer>
+        console.log("hi")
+        const lockUp = document.querySelectorAll(".lockUp");
+        lockUp.forEach((ele,idx)=>{
+            ele.innerHTML = `
+            <div class="frame_p">
+              <img src="../image/sub_music/frame.png " alt="프레임" />
+              <img src="../image/sub_music/lock${idx}.jpg" alt="폰이미지" />
+              <div class="screen_p">
+              </div>
+            </div>
+            `;//////////// innerHTML ////////////////
+    
+            // 가운데 기기에는 영상이 삽입됨
+            if(idx === 2){
+              ele.innerHTML = `
+                <div class="frame_p">
+                  <img src="../image/sub_music/frame.png " alt="프레임" />
+                  <video class="screen_vd" src="../image/sub_music/screen_p.mp4" muted loop autoplay></video>
+                  <div class="screen_p">
+                  </div>
+                </div>
+              `;
+            }//////////////// if /////////////////
+        }); /////////////// forEach //////////////////////
+    </script>
+</body>
+</html>

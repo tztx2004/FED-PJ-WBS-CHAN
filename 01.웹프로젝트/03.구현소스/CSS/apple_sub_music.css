@@ -7,7 +7,7 @@
 /* 공통 css */
 
 body *{
-  /* outline: 1px dashed #1d1d1f; */
+  outline: 1px dashed #1d1d1f;
 }
 :root {
   --icon_size: 84px;
@@ -225,7 +225,7 @@ form:hover .search_imgbx {
 
 .pg2cont{
   position: relative;
-  /* height: 2350px; */
+  height: 300vh;
 }
 .vdbx{
   position: sticky;
@@ -234,9 +234,14 @@ form:hover .search_imgbx {
   margin: 0 auto;
 
   overflow: hidden;
+
+  display: flex;
+  justify-content: center;
 }
 .mvd{
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .copybx{
   position: absolute;
@@ -245,7 +250,7 @@ form:hover .search_imgbx {
   transform: translateX(-50%);
   margin: 0 auto;
   width: var(--vd_size);
-  height: 100%;
+  height: 80%;
   padding: 0 10px;
 }
 .mcp{

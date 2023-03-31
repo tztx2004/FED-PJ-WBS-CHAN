@@ -3,12 +3,20 @@
 /* music_sub mediaQuery */
 
 
+@media screen and (max-width: 1400px) {
+    .frame_p img{
+        /* width: 100px; */
+    }
+}
 @media screen and (max-width: 1200px) {
     .pg1 video {
         height: auto;
     }
     .pg3 h2 {
         font-size: 28px;
+    }
+    .mvd{
+        width: auto;
     }
 }
 @media screen and (max-width: 1000px) {
@@ -44,3 +52,20 @@
     
 
 } /******************* 900px *******************/
+@media screen and (max-width: 700px) {
+    .music_icon {
+        width: 80%;
+        height: 40%;
+    }
+    .music_copy h2 {
+        font-size: 40px;
+    }
+
+    
+}
+@media screen and (max-width: 500px) {
+    .music_icon {
+        width: 100%;
+        height: 25%;
+    }
+}

@@ -12,9 +12,13 @@ window.addEventListener("DOMContentLoaded",()=>{
 
 
     window.onload = ()=>{
-      music_icon.style.width = "21%"
-      music_icon.style.height = "10%"
-
+      music_icon.style.width = "33%"
+      music_icon.style.height = "12%"
+      
+      if(window.innerWidth < 500){
+        console.log("wow!");
+        music_icon.style.width = "100%"
+      }
       setTimeout(function(){
         scrollTo(0,0)
       },100);
@@ -112,10 +116,14 @@ offer_item.forEach((ele,idx)=>{
 
 const vdbx = document.querySelector(".vdbx");
 
+const copybx = document.querySelector(".copybx");
+
+// console.log(copybx.innerHeight);
+
 let windowW = window.innerWidth;
-console.log(windowW);
+// console.log(windowW);
 const pg2cont = document.querySelector(".pg2cont");
-pg2cont.style.height = windowW +"px";
+pg2cont.style.height = windowW +100 +"px";
 
 window.addEventListener("scroll",()=>{
   let lockUp = document.querySelectorAll(".lockUp");
@@ -150,14 +158,17 @@ window.addEventListener("scroll",()=>{
 
 
   //////////// 2페이지 스크롤 값에 따라 영상 크기 변화 ///////////////
+  // if(topPoint < -200 && topPoint > -1100){
   if(topPoint < -200 && topPoint > -1100){
-    console.log(window.innerWidth+topPoint);
-    vdbx.style.width = window.innerWidth+topPoint + "px";
+    console.log(100 + topPoint/100);
+    vdbx.style.width = 100 + topPoint/100 +"vw";
     // vdbx.style.transform = `scaleX(${2.1+topPoint/1000})`;
   } ///////////// if //////////////
-  else if(topPoint < -1100){
+  else if(topPoint < -800){
     vdbx.style.borderRadius = "30px";
     vdbx.style.transition = ".2s";
+    copybx.style.transition = ".2s";
+    copybx.style.opacity = 0;
   } //////////// else if ///////////
 
 }); //////////////////// scroll ////////////////////
