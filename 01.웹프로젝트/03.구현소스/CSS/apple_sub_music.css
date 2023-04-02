@@ -177,9 +177,9 @@ form:hover .search_imgbx {
   background-color: #fa243c;
   border-radius: 980px;
 
-  width: 200px;
+  /* width: 200px; */
   height: 56px;
-  padding: 18px 31px;
+  padding: 18px 22px;
 }
 
 .wraper{
