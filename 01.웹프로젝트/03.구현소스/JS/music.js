@@ -17,7 +17,6 @@ window.addEventListener("DOMContentLoaded",()=>{
       
       if(window.innerWidth < 500){
         console.log("wow!");
-        music_icon.style.width = "100%"
       }
       setTimeout(function(){
         scrollTo(0,0)
@@ -113,8 +112,10 @@ offer_item.forEach((ele,idx)=>{
   `;
 });////////////// forEach //////////////////
 
-
+// 영상박스
 const vdbx = document.querySelector(".vdbx");
+// 영상
+const mvd = document.querySelector(".mvd");
 
 const copybx = document.querySelector(".copybx");
 
@@ -123,7 +124,7 @@ const copybx = document.querySelector(".copybx");
 let windowW = window.innerWidth;
 // console.log(windowW);
 const pg2cont = document.querySelector(".pg2cont");
-pg2cont.style.height = windowW +100 +"px";
+// pg2cont.style.height = windowW +100 +"px";
 
 window.addEventListener("scroll",()=>{
   let lockUp = document.querySelectorAll(".lockUp");
@@ -160,15 +161,23 @@ window.addEventListener("scroll",()=>{
   //////////// 2페이지 스크롤 값에 따라 영상 크기 변화 ///////////////
   // if(topPoint < -200 && topPoint > -1100){
   if(topPoint < -200 && topPoint > -1100){
-    console.log(100 + topPoint/100);
-    vdbx.style.width = 100 + topPoint/100 +"vw";
+    console.log(-topPoint/100);
+    vdbx.style.padding = -topPoint/100 + "%";
+    
+    
     // vdbx.style.transform = `scaleX(${2.1+topPoint/1000})`;
   } ///////////// if //////////////
-  else if(topPoint < -800){
-    vdbx.style.borderRadius = "30px";
-    vdbx.style.transition = ".2s";
-    copybx.style.transition = ".2s";
-    copybx.style.opacity = 0;
+  else if(topPoint < -1100){
+    mvd.style.borderRadius = "30px";
+    mvd.style.transition = ".2s";
+
+    if(window.innerWidth > 700){
+      vdbx.style.transition = ".8s";
+      vdbx.style.padding = 20 + "%";
+
+    }
+    // copybx.style.transition = ".2s";
+    // copybx.style.opacity = 0;
   } //////////// else if ///////////
 
 }); //////////////////// scroll ////////////////////
