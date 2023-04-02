@@ -176,8 +176,8 @@ window.addEventListener("scroll",()=>{
       vdbx.style.padding = 20 + "%";
 
     }
-    // copybx.style.transition = ".2s";
-    // copybx.style.opacity = 0;
+    copybx.style.transition = ".2s";
+    copybx.style.opacity = 0;
   } //////////// else if ///////////
 
 }); //////////////////// scroll ////////////////////
