@@ -76,8 +76,15 @@
     .music_copy h2 {
         font-size: 40px;
     }
+    .pg3{
+        height: 1200px;
+    }
     .offer{
         gap: 30px;
+        flex-direction: column;
+    }
+    .pg3 h2{
+        margin-top: 50px;
     }
     
 }
@@ -88,10 +95,6 @@
     }
     .mcp{
         font-size: 30px;
-    }
-    .offer_item a {
-        font-size: 12px;
-        border-radius: 18px;
     }
 }
 @media screen and (max-width: 500px) {
@@ -110,5 +113,8 @@
     }
     .mcp{
         font-size: 20px;
+    }
+    .offer_item{
+        padding: 0px 24px;
     }
 }
