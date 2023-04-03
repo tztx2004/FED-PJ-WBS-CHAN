@@ -30,7 +30,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     
     // 부드러운 스크롤 JS호출!
-    startSS();
+    // startSS();
 
     // 만약 스크롤바를 직접 드래그할 경우
     // mouseup(즉, 스크롤바를 놓는경우)
@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 
 
 
-
+    
 
     /***************************************** 
         기능 : gnb 닿을 때 .top으로 배경 채워줌
@@ -53,17 +53,20 @@ window.addEventListener("DOMContentLoaded",()=>{
             
             if(top.classList.contains("active")) {
                 top.classList.remove("on");  
+                bag_c.classList.remove("on");
+                search_new.classList.remove("on");
                 sub_menu.forEach(ele=>ele.classList.add("h0"));
             } else{
                 top.classList.add("on")
+                bag_c.classList.remove("on");
+                search_new.classList.remove("on");
             }
             // top.classList.remove("active");
         } //////////// onmouseover //////////////
         x.onmouseleave = ()=>{
             top.classList.remove("on");
             bag_c.classList.remove("on");
-            
-
+            search_new.classList.remove("on");
         }//////////// onmouseleave ////////////
 
     } //////////////// for of ////////////////////
@@ -102,6 +105,7 @@ window.addEventListener("DOMContentLoaded",()=>{
         if(top.classList.contains("on")){
             top.classList.remove("on");
             search_new.classList.remove("on");
+            bag_c.classList.remove("on");
         } ///////////// if ///////////////
         else{
             // console.log("검색 눌럿음")
@@ -121,6 +125,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     bag.onclick = ()=>{
         if(top.classList.contains("on")){
             top.classList.remove("on");
+            search_new.classList.remove("on");
             bag_c.classList.remove("on");
         } ///////////// if ///////////////
         else{
@@ -133,7 +138,8 @@ window.addEventListener("DOMContentLoaded",()=>{
     }; //////////////// onclick ////////////////
     // console.log(top.classList.contains("on"));
     
-    /* 마우스 벗어나면 장바구니 들어감 */
+    
+    /* 마우스 벗어나면 장바구니,검색창 안보임 */
     top.onmouseleave = ()=>{
         // console.log("leave");
         top.classList.remove("on");
@@ -164,5 +170,16 @@ window.addEventListener("DOMContentLoaded",()=>{
         // mediaHam 임시호출
         mediaHam();
 
+
+    const sub_menu_li = document.querySelectorAll(".sub_menu li");
+
+
+    
+    // sub_menu 에서 넘어가기 금지
+    sub_menu_li.forEach((ele,idx)=>{
+        ele.onclick=()=>{
+            event.preventDefault();
+        }; ////////// click ///////////
+    }); ///////// forEach /////////
 
 }); ///////////////// 로드구역 ////////////////////////

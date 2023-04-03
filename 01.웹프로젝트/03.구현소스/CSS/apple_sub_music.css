@@ -112,6 +112,7 @@ form:hover .search_imgbx {
   color: #0066cc;
   font-size: 14px;
   white-space: nowrap;
+  cursor: pointer;
 }
 /****************************** pg1 ******************************/
 .pg1cont{

@@ -61,6 +61,15 @@ let arr_palate = [palate_img,imgbx_li];
 let cnum = 0;
 
 
+// tsub 기본기능 막기
+const tsub = document.querySelectorAll(".tsub a");
+
+tsub.forEach((ele,idx)=>{
+    ele.onclick = ()=>{
+        event.preventDefault();
+    }; /////////// click /////////////
+}); //////////// forEach ////////////
+
 
 /************************************************** 
     기능: 색상버튼 클릭 시 사진 등장

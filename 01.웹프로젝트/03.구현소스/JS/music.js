@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded",()=>{
       setTimeout(()=>{
       dscBar.style.backgroundColor = "#dfdfdf";
       },3000);
-    };
+    }; ////////////// onload ////////////
 
 
 
@@ -182,5 +182,14 @@ window.addEventListener("scroll",()=>{
 
 }); //////////////////// scroll ////////////////////
 
+
+// a 기본기능 막기
+const offer_item_a = document.querySelectorAll(".offer_item a");
+
+offer_item_a.forEach((ele,idx)=>{
+  ele.onclick = ()=>{
+    event.preventDefault();
+  }; ///////////// click //////////////
+}); ///////////// forEach ////////////
 
 }); ////////////////// 로드 구역 ////////////////////////
