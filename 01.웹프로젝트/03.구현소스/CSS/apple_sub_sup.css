@@ -26,10 +26,16 @@ body *{
 }
 
 h1{
-    font-size: 48px;
-    color: #fff;
-    margin-top: 200px;
-    text-align: center;
+  font-size: 48px;
+  color: #fff;
+  margin-top: 200px;
+  text-align: center;
+
+  transition: .8s;
+  transition-delay: 1s;
+
+  opacity: 0;
+  transform: translateY(100%)
 }
 .sup{
     display: flex;

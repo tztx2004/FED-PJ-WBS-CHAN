@@ -1,8 +1,16 @@
 window.addEventListener("DOMContentLoaded",()=>{
 
+const title_sup = document.querySelector(".title_sup");
+
+window.onload = ()=>{
+    title_sup.style.transform = "translateY(0%) "
+    title_sup.style.opacity = "1"
+}; ////////// onload /////////////
+
+
+
 const sup_item = document.querySelectorAll(".sup_item");
 sup_item.forEach((ele,idx)=>{
-    
     ele.style.background = `
         url(./image/apple/i${idx}.png) no-repeat center/cover
     `;
@@ -13,8 +21,6 @@ const sup_title = document.querySelectorAll(".sup_title");
 const sup_tit = ["iPhone","iPad","Mac"];
 sup_title.forEach((ele,idx)=>{
     ele.innerHTML = `${sup_tit[idx]}`;
-
-    
 }); ///////////// forEach ////////////
 
 
