@@ -30,7 +30,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     
     // 부드러운 스크롤 JS호출!
-    startSS();
+    // startSS();
 
     // 만약 스크롤바를 직접 드래그할 경우
     // mouseup(즉, 스크롤바를 놓는경우)
