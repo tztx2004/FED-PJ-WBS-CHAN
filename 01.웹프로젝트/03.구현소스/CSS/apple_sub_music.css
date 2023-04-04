@@ -223,7 +223,7 @@ form:hover .search_imgbx {
 .screen_p img{
   position: absolute;
   top: 14px;
-  left: 14px;
+  left: 16px;
   border-radius: 40px;
   z-index: 1;
   width: 262px;
