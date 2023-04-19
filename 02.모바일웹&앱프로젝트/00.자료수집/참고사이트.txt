@@ -39,10 +39,11 @@ https://brunswickstreetgallery.com.au/
 https://www.kibun.dk/
 - 메인, 색감, 느낌 가져가기
 
-11. 
+11. "데이터"
 https://www.hvasshannibal.dk/shop/products
 - 데이터
 - 사진데이터 쓸까
+- 배경색 #fbf9fa
 
 12.
 https://www.takearidewith.me/
