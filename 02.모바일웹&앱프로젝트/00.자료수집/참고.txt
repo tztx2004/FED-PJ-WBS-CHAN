@@ -1,0 +1,15 @@
+
+************* 폰트 ****************
+사이트 : 
+https://www.cdnfonts.com/canela-text-trial.font
+
+제목에 사용된 폰트(Canela)
+<link href="https://fonts.cdnfonts.com/css/canela-text-trial" rel="stylesheet">
+
+font-family: 'Canela Text Trial', sans-serif;
+font-family: 'Canela Trial', sans-serif;
+font-family: 'Canela Condensed Trial', sans-serif;
+font-family: 'Canela Deck Trial', sans-serif;
+
+****************************************
+
