@@ -1,9 +1,13 @@
 
+***************** 기타 ******************
+- 배경색 #fbf9fa
+
+****************************************
+
+
 ************* 폰트 ****************
 사이트 : 
 https://www.cdnfonts.com/canela-text-trial.font
-
-- 배경색 #fbf9fa
 
 제목에 사용된 폰트(Canela)
 <link href="https://fonts.cdnfonts.com/css/canela-text-trial" rel="stylesheet">
@@ -15,3 +19,13 @@ font-family: 'Canela Deck Trial', sans-serif;
 
 ****************************************
 
+
+**************** 페이지 ****************
+메인1,3
+https://upperquad.com/
+메인2
+https://www.webling.kr/
+데이터
+https://www.hvasshannibal.dk/shop/products
+
+****************************************
