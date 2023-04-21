@@ -1,3 +1,24 @@
 @charset "utf-8";
 
 /* main.css */
+
+
+.cont_pg2{
+    /* 임시 */
+    width: 100px;
+    height: 100px;
+}
+.pg2_wrap {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+}
+.pg2_containers{
+    display: flex;
+}
+/* 이미지 */
+.pg2_temp{
+    /* 임시 */
+    width: 500px;
+    height: 500px;
+}
