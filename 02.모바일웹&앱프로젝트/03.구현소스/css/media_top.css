@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/* media_top.css */
+
+/* 700px */
+@media screen and (max-width: 700px) {
+    .mob{
+        display: block;
+    }
+    .media_gnb{
+        width: 100vw;
+        height: 100vh;
+    }
+    .m_gnb{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 5%;
+    }
+    .m_gnb li{
+        
+    }
+    .m_gnb a{
+        font-size: 10vw;
+    }
+}

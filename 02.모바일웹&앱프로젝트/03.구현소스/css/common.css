@@ -80,9 +80,22 @@ a{
 }
 .gnb_ol{
     display: flex;
+    /* display: none; */
     gap: 20px;
 }
 
+/* 모바일 안보이기 */
+.mob{
+    display: none;
+}
+
+.ham>span{
+    display: block;
+}
+.ham>span::after{
+    content: 'ㅡ';
+    display: block;
+}
 /*************************** main영역 ***************************/
 
 /*************************** footer영역 ***************************/
