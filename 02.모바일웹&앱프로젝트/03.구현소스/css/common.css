@@ -50,6 +50,7 @@ a{
     height: 50px;
     position: fixed;
     left: 50%;
+    top: 0%;
     transform: translateX(-50%);
     z-index: 1;
 }
