@@ -13,13 +13,15 @@
 .title h1{
     font-size: 10vw;
     background-color: transparent;
+    font-family: 'Tiempos Headline', sans-serif;
 }
 .vdbx{
     position: relative;
-    width: 100vw;
+    /* width: 100vw; */
 }
 .main_vd{
     width: 100%;
+    height: 100%;
 }
 
 
@@ -42,4 +44,43 @@
     /* 임시 */
     width: 500px;
     height: 500px;
+}
+/* pg3 */
+.pg3{
+    background-color: rgb(197, 147, 207);
+}
+.pg3_wrapper{
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.pg3_tit{
+    height: 100%;
+    width: 15%;
+
+    position: relative;
+}
+.pg3_tit h3{
+    font-size: 10vw;
+    position: absolute;
+}
+.pg3_tit1 h3{
+    transform: rotate(-90deg);
+    transform-origin: right;
+    top: 0%;
+    right: 50%;
+}
+.pg3_cont{
+    width: 70%;
+    height: 100%;
+}
+
+.pg3_tit2 h3{
+    transform: rotate(90deg);
+    transform-origin: left;
+    top: 0%;
+    left: 50%;
 }
