@@ -6,6 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <style>
+            body *{
+                outline: 1px dashed #000;
+            }
             .rotate-text {
                 transform: rotate(-90deg);
                 transform-origin: left top;
@@ -15,7 +18,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                height: 100px; /* or any other height */
+                height: 3000px; /* or any other height */
                 position: relative; /* needed for absolute positioning */
             }
 
@@ -27,6 +30,20 @@
                 position: absolute;
                 top: 300%;
                 left: 0;
+                font-size: 50px;
+                outline: 1px dashed;
+                height: 100%; /* fill the container vertically */
+                padding: 0 10px; /* add some padding to avoid clipping */
+                box-sizing: border-box; /* include padding in element's width */
+            }
+            .rotate-text2 {
+                transform: rotate(90deg) rotateX(21deg) translateY(133px);
+                perspective: 476px;
+                transform-origin: top;
+                white-space: nowrap;
+                position: absolute;
+                top: 300%;
+                right: 0;
                 font-size: 50px;
                 outline: 1px dashed;
                 height: 100%; /* fill the container vertically */
@@ -45,7 +62,7 @@
         <div class="flex-container">
             <div class="rotate-text">GOOGLE</div>
             <div>Other content</div>
-            <div class="rotate-text">GOOGLE</div>
+            <div class="rotate-text2">GOOGLE</div>
         </div>
     </body>
 </html>
