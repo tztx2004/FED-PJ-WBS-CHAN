@@ -20,17 +20,26 @@
             }
 
             .rotate-text {
-                transform: rotate(-90deg);
-                transform-origin: left top;
+                transform: rotate(-90deg) rotateX(21deg) translateY(133px);
+                perspective: 476px;
+                transform-origin: top;
                 white-space: nowrap;
                 position: absolute;
-                top: 50%;
+                top: 300%;
                 left: 0;
+                font-size: 50px;
+                outline: 1px dashed;
                 height: 100%; /* fill the container vertically */
                 padding: 0 10px; /* add some padding to avoid clipping */
                 box-sizing: border-box; /* include padding in element's width */
             }
         </style>
+        <!-- 제이쿼리 라이브러리 CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+        <!-- 제이쿼리 UI CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+        <script src="../js/test.js"></script>
     </head>
     <body>
         <div class="flex-container">
