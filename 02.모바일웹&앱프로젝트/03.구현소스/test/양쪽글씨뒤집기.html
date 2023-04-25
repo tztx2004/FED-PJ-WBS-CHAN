@@ -13,6 +13,13 @@
                 transform: rotate(-90deg);
                 transform-origin: left top;
                 white-space: nowrap;
+                transition: 2s;
+            }
+            .rotate-text1.on{
+                transform: rotate(-90deg) rotateX(90deg)  translateY(133px);
+            }
+            .rotate-text2.on{
+                transform: rotate(90deg) rotateX(90deg)  translateY(133px);
             }
             .flex-container {
                 display: flex;
@@ -22,17 +29,17 @@
                 position: relative; /* needed for absolute positioning */
             }
 
-            .rotate-text {
+            .rotate-text1 {
                 transform: rotate(-90deg) rotateX(21deg) translateY(133px);
                 perspective: 476px;
                 transform-origin: top;
                 white-space: nowrap;
                 position: absolute;
-                top: 300%;
+                top: 50%;
                 left: 0;
                 font-size: 50px;
                 outline: 1px dashed;
-                height: 100%; /* fill the container vertically */
+                /* height: 100%; fill the container vertically */
                 padding: 0 10px; /* add some padding to avoid clipping */
                 box-sizing: border-box; /* include padding in element's width */
             }
@@ -42,11 +49,11 @@
                 transform-origin: top;
                 white-space: nowrap;
                 position: absolute;
-                top: 300%;
+                top: 50%;
                 right: 0;
                 font-size: 50px;
                 outline: 1px dashed;
-                height: 100%; /* fill the container vertically */
+                /* height: 100%; fill the container vertically */
                 padding: 0 10px; /* add some padding to avoid clipping */
                 box-sizing: border-box; /* include padding in element's width */
             }
@@ -60,9 +67,9 @@
     </head>
     <body>
         <div class="flex-container">
-            <div class="rotate-text">GOOGLE</div>
+            <div class="rotate-text1 rotate-text">GOOGLE</div>
             <div>Other content</div>
-            <div class="rotate-text2">GOOGLE</div>
+            <div class="rotate-text2 rotate-text">GOOGLE</div>
         </div>
     </body>
 </html>
