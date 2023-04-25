@@ -53,6 +53,7 @@ a{
     top: 0%;
     transform: translateX(-50%);
     z-index: 1;
+    border-bottom: 1px solid #bbb;
 }
 .top_wrap{
     width: 100%;

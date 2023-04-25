@@ -61,7 +61,7 @@
 .pg3_tit{
     height: 100%;
     width: 15%;
-
+    padding-top: 10%;
     position: relative;
 }
 .pg3_tit h3{
@@ -69,12 +69,13 @@
     position: absolute;
 }
 .pg3_tit1 h3{
-    transform: rotate(-90deg) rotateX(0deg);
+    transform: rotate(-90deg) rotateX(0deg) translateY(50%);
     transform-origin: bottom;
     top: 20%;
-    /* position: sticky; */
+    position: sticky;
     left: -50%;
-    width: 300%;
+    display: flex;
+    justify-content: center;
 }
 /* pg3 main */
 .pg3_cont{
@@ -124,7 +125,7 @@
 
 .pg3_tit2 h3{
     position: sticky;
-    transform: rotate(90deg) rotateX(3deg) translateY(50%);
+    transform: rotate(90deg) rotateX(0deg) translateY(50%);
     transform-origin: bottom;
     top: 20%;
     /* left: 31%; */
