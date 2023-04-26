@@ -54,6 +54,10 @@ a{
     transform: translateX(-50%);
     z-index: 1;
     border-bottom: 1px solid #bbb;
+    transition: .6s;
+}
+.top.on{
+    top: -100%;
 }
 .top_wrap{
     width: 100%;
@@ -109,6 +113,7 @@ a{
 .info{
     width: 100%;
     height: 200px;
+    margin-top: 25%;
 
     display: flex;
     align-items: center;
