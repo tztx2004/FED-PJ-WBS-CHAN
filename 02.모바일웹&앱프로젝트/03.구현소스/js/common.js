@@ -14,7 +14,7 @@ $(()=>{
     window.addEventListener('wheel', e => {
         const scrollUp = e.deltaY > 0;
         // console.log(scrollUp)
-        if ( window.scrollY > 100 &&  scrollUp) {// 스크롤다운
+        if (scrollUp) {// 스크롤다운
             $(top).addClass('on');
         } else {// 스크롤 업
             $(top).removeClass('on');

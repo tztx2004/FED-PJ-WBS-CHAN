@@ -12,19 +12,28 @@ window.addEventListener("wheel",()=>{
     pg3_items.each((idx,ele)=>{
         ot = $(ele).offset().top;
         let ws = window.scrollY;
-        console.log(ws)
+        // console.log(ws)
 
-        if(delta&& ws >=ot ){
+        console.log("ot",ot,"ws",ws/10-190)
+        if(delta&& ws >=ot){ // 스크롤 다운하면서 컨텐츠만나면 글씨변함
+            console.log("nay",ws/10-190)
             $(pg3_tit1).css({
                 transform: `rotate(-90deg) rotateX(${ws/10-190}deg) translateY(50%)`,
-                transtition:".6s easeout"
             });
             $(pg3_tit2).css({
                 transform: `rotate(90deg) rotateX(${ws/10-190}deg) translateY(50%)`,
-                transtition:".6s easeout"
             });
+            if(ws/10-190 >= 90){
+                $(pg3_tit).html("TEST");
+                $(pg3_tit1).css({
+                    transform: `rotate(-90deg) rotateX(${ws/10-190-90}deg) translateY(50%)`,
+                });
+                $(pg3_tit2).css({
+                    transform: `rotate(90deg) rotateX(${ws/10-190}deg) translateY(50%)`,
+                });
+            }
         }
-        else{
+        else{ // 스크롤 업하면서 컨텐츠만나면 글씨변함
             $(pg3_tit1).css({
                 transform: `rotate(-90deg) rotateX(${ws/10-190}deg) translateY(50%)`,
                 transtition:".6s easeout"
