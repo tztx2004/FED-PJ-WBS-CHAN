@@ -24,9 +24,9 @@ function rotFont(){ // 글씨회전 함수
     pg3_items.each((idx,ele)=>{
         ot = $(ele).offset().top;
         let ws = window.scrollY;
-        // console.log(ws)
+        // console.log(ot)
 
-        console.log("ot",ot,"ws",ws/10-190)
+        // console.log("ot",ot,"ws",ws)
         if(delta&& ws >=ot){ // 스크롤 다운하면서 컨텐츠만나면 글씨변함
             console.log("nay",ws/10-190)
             $(pg3_tit1).css({
@@ -48,25 +48,32 @@ function rotFont(){ // 글씨회전 함수
         else{ // 스크롤 업하면서 컨텐츠만나면 글씨변함
             $(pg3_tit1).css({
                 transform: `rotate(-90deg) rotateX(${ws/10-190}deg) translateY(50%)`,
-                transtition:".6s easeout"
+                transition:".6s ease-out"
             });
             $(pg3_tit2).css({
                 transform: `rotate(90deg) rotateX(${ws/10-190}deg) translateY(50%)`,
-                transtition:".6s easeout"
+                transition:".6s ease-out"
             });
         } /////////// else ////////////
     });////////////// each ///////////////
 } ////////////////// rotFont_글씨회전 /////////////////
 
 
-
+// 295% : ws = 8 : x
 // 가로스크롤
 function hrScroll(){
-    // 스크롤 변수
-
     const pg2_cont = $(".pg2_containers");
-    pg2_cont.css({
-        left:``
-    })
+    // 스크롤 변수
+    let ws = window.scrollY
+    let ot = $(".pg2_cont");
 
+    ot.each((idx,ele)=>{
+        let oo = $(ele).offset().top;
+        console.log(ele)
+    })
+    
+    pg2_cont.css({
+        left:`${-ws*295/1000}%`
+    })
+    // console.log(-ws*295/1000)
 }/////////////// hrScroll ///////////////////

@@ -58,6 +58,8 @@
     position: absolute;
     left: 25%;
     top: 15%;
+
+    transition:.4s ease-out;
 }
 /* 이미지 */
 .pg2_temp{
