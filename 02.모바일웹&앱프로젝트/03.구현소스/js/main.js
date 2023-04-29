@@ -31,6 +31,7 @@ function rotF(){
 
         if(pos>=ot && pos< ot+ elH){
             cls(pg3_tit1,wds[idx])
+            console.log(idx)
         }
         else if(pos>= ot+ elH){
             rev_on(pg3_tit1)
@@ -46,20 +47,65 @@ function rotF(){
 
 }//////////// rotF //////////////////
 
-// on, on2클래스 줌
+
+async function sleep(time) {
+    return new Promise((resolve, _) => {
+        setTimeout(()=> {
+            resolve();
+        }, time)
+    });
+}
+
+async function promiseCls(cb, t) {
+    await sleep(t).then(_ => cb());
+    return;
+}
+
+// on, on2클래스 주기
 function cls(x,words){
+
     x.css({
         transition:"6s ease-out"
-    });
+    }).html(words).addClass("on").addClass("on2")
+    // x.css({
+    //     transition:"6s ease-out"
+    // }).addClass("on").delay(1000).queue(function(next){
+    //     x.html(words);
+    //     console.log(x)
+    //     next();
+    // }).addClass("on2");
+    
+
+    // x.css({
+    //     transition:"6s ease-out"
+    // })
+    // .addClass("on")
+    // .delay(1000)
+    // .html(words)
+    // .addClass("on2")
 
     // 90도 돌아
-    x.addClass("on")
+        // x.addClass("on").html(words).addClass("on2")
     // 돌고 글자 변경
-    setTimeout(() => {
-        x.html(words);
-    }, 1000);
+        // x.html(words)
     // 360도 회전
-    x.addClass("on2")
+        // x.addClass("on2")
+
+
+    // // 90도 돌아
+    // await promiseCls(() => {
+    //     x.addClass("on")
+    //     console.log(1);
+    // }, 1)
+    // // 돌고 글자 변경
+    // await promiseCls(() => {
+    //     x.html(words)
+    // },2000)
+    // // 360도 회전
+    // await promiseCls(() => {
+    //     x.addClass("on2")
+    //     console.log(3)
+    // }, 1);
 }
 
 // on, on2 클래스 뺌
