@@ -95,6 +95,11 @@ a{
 .gnb_ol li a{
     text-shadow: 1px 1px 1px #333;
 }
+/* 오버하면 색깔 번짐 */
+.gnb_ol li a:hover{
+    font-weight: bold;
+    text-shadow: 1px 1px 10px #313131;
+}
 
 /* 모바일 안보이기 */
 .mob{

@@ -103,6 +103,14 @@
     display: flex;
     justify-content: center;
 }
+.pg3_tit1 h3.on{
+    transform: rotate(-90deg) rotateX(90deg) translateY(50%);
+}
+.pg3_tit1 h3.on2{
+    transform: rotate(-90deg) rotateX(360deg) translateY(50%);
+}
+
+
 /* pg3 main */
 .pg3_cont{
     width: 70%;
@@ -125,7 +133,7 @@
 .pg3_items{
     margin: 0 auto;
     margin-bottom: 5%;
-    width: 50%;    
+    width: 50%;
 
 }
 .main_imgbx img{
