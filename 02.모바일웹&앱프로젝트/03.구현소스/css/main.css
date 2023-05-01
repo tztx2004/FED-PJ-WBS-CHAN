@@ -28,11 +28,39 @@
 
 /* pg2 */
 .pg2{
+    position: relative;
     height: 1400px;
+    background-color: #000;
+}
+.pg2_wrap{
+    position: relative;
 }
 
+.pg2_fontbx{
+    position: sticky;
+    top: 50%;
+    transform: translateY(-50%);
 
+    width: 30%;
+    height: 30%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.pg2_fontbx p{
+    font-size: 30px;
+    font-family: 'Canela Trial', sans-serif;
+}
+.pg2_imgbx{
+    position: sticky;
+    top: 30%;
 
+    width: 35vw;
+    height: 60vw;
+    margin: 0 auto;
+}
+.pg2_imgbx li img{
+    width: 100%;
+}
 
 
 
