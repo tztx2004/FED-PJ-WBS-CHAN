@@ -29,38 +29,44 @@
 /* pg2 */
 .pg2{
     position: relative;
-    height: 1400px;
+    height: 3000px;
     background-color: #000;
 }
 .pg2_wrap{
     position: relative;
+    height: 100%;
 }
 
-.pg2_fontbx{
+/* .pg2_fontbx{
     position: sticky;
-    top: 50%;
-    transform: translateY(-50%);
-
+    top: 5%;
+    background: none;
     width: 30%;
-    height: 30%;
+    height: 5%;
     margin: 0 auto;
-    margin-top: 30px;
+    z-index: 1;
 }
 .pg2_fontbx p{
     font-size: 30px;
     font-family: 'Canela Trial', sans-serif;
+    background: none;
 }
 .pg2_imgbx{
     position: sticky;
-    top: 30%;
-
-    width: 35vw;
+    top: 10%;
+    width: 30vw;
     height: 60vw;
     margin: 0 auto;
 }
 .pg2_imgbx li img{
     width: 100%;
-}
+    border-radius: 30px;
+} */
+
+
+
+
+
 
 
 
