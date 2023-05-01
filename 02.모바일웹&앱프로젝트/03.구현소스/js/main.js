@@ -31,7 +31,6 @@ function rotF(){
 
         if(pos>=ot && pos< ot+ elH){
             cls(pg3_tit1,wds[idx])
-            console.log(idx)
         }
         else if(pos>= ot+ elH){
             rev_on(pg3_tit1)
@@ -66,7 +65,11 @@ function cls(x,words){
 
     x.css({
         transition:"6s ease-out"
-    }).html(words).addClass("on").addClass("on2")
+    })
+    .addClass("on")
+    .html(words)
+    .addClass("on2")
+
     // x.css({
     //     transition:"6s ease-out"
     // }).addClass("on").delay(1000).queue(function(next){
