@@ -36,13 +36,13 @@ a{
 /* 마진고려한 배경높이 */
 .ht_m{
     height: calc(100vh - 50px);
-    background-color: #009688;
+    /* background-color: #009688; */
     padding-top: 50px;
 }
 /* 마진x 배경높이 */
 .ht{
     height: 100vh;
-    background-color: lightsalmon;
+    /* background-color: lightsalmon; */
 }
 
 /*************************** 탑영역 ***************************/

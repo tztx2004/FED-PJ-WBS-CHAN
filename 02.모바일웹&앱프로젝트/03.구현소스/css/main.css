@@ -31,10 +31,31 @@
     position: relative;
     height: 3000px;
     background-color: #000;
+    padding: 5% 0;
 }
 .pg2_wrap{
     position: relative;
     height: 100%;
+}
+
+.pg2_imgbx{
+    position: sticky;
+    top: 9%;
+    margin: 0 auto;
+    width: 29.8%;
+    height: 25.6%;
+}
+.pg2 p{
+    position: absolute;
+    top: 60%;
+    background: none;
+    font-size: 30px;
+    margin: 0 auto;
+    padding: 0 10%;
+}
+.pg2_imgbx li img{
+    width: 100%;
+    border-radius: 30px;
 }
 
 /* .pg2_fontbx{
@@ -62,7 +83,6 @@
     width: 100%;
     border-radius: 30px;
 } */
-
 
 
 
