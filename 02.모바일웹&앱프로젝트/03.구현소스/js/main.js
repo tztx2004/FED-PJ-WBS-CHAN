@@ -7,15 +7,15 @@ const pg3_items = $(".pg3_items");
 const main_imgbx = $(".main_imgbx");
 
 // 휠이벤트 //
-window.addEventListener("wheel",()=>{
+window.addEventListener("scroll",()=>{
     // 글씨회전 함수(현재는 메인 3페이지에서 구현)
     // rotFont();
     
     // 새버전 글씨회전
     rotF();
 
-    // 가로스크롤 (임시로 호출시켜놓음)
-    hrScroll();
+    // 이미지 변화
+    chgImg()
 
 })/////////////// wheel //////////////////
 
@@ -163,24 +163,27 @@ function rotFont(){ // 글씨회전 함수
 } ////////////////// rotFont_글씨회전 /////////////////
 
 
-// 295% : ws = 8 : x
-// 가로스크롤
-function hrScroll(){
-    const pg2_cont = $(".pg2_containers");
-    // 스크롤 변수
-    let ws = window.scrollY
-    let ot = $(".pg2_cont");
-
-    ot.each((idx,ele)=>{
-        let oo = $(ele).offset().top;
-        console.log(ele)
-    })
+let m_img = $(".main_img");
+let cnt=0;
+/// 스크롤 시 이미지 변함
+function chgImg(){
+    m_img.attr("src",`./img/main/pg2/pic${cnt}.jpg`);
     
-    pg2_cont.css({
-        left:`${-ws*295/1000}%`
-    })
-    // console.log(-ws*295/1000)
-}/////////////// hrScroll ///////////////////
+}/////////////////// chgImg ////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -190,20 +193,35 @@ function hrScroll(){
 const tsData = {
     obj:`
         <li>
-            <img src="./img/main/pg2/pic0.jpg" alt="이미지">
+            <img class="main_img" v-bind:src="gsrc" alt="이미지">
         </li>
     `,
     obj2:``
 }
 
+// 숫자증감변수
+let num =0;
+
 Vue.component("test-comp",{
-    template: tsData.obj,
+    template:`
+        <li>
+            <img class="main_img" v-bind:src="gsrc" alt="이미지">
+        </li>
+    `,
+    data:function(){
+        return{
+            gsrc:`./img/main/pg2/pic${this.setNum()}.jpg`,
+        }
+    },
+    methods:{
+        setNum(){
+            num+=1;
+            return num;
+        }
+    }
 });
 
 new Vue({
     el:".pg2",
-    data:{},
-    mounted:function(){
-
-    }
 });
+

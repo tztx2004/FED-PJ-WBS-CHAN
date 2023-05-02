@@ -55,7 +55,7 @@ a{
     transform: translateX(-50%);
     z-index: 1;
     border-bottom: 1px solid #bbb;
-    transition: .6s;
+    transition: .4s ease-out;
 }
 .top.on{
     top: -100%;
