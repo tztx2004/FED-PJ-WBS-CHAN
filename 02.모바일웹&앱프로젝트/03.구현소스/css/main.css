@@ -40,18 +40,19 @@
 
 .pg2_imgbx{
     position: sticky;
-    top: 9%;
+    top: 11%;
     margin: 0 auto;
     width: 29.8%;
-    height: 25.6%;
 }
 .pg2 p{
     position: absolute;
-    top: 60%;
+    top: 40%;
     background: none;
-    font-size: 30px;
     margin: 0 auto;
     padding: 0 10%;
+
+    font-size: 2vw;
+    font-family: 'Canela Trial', sans-serif;
 }
 .pg2_imgbx li img{
     width: 100%;

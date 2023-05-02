@@ -181,3 +181,29 @@ function hrScroll(){
     })
     // console.log(-ws*295/1000)
 }/////////////// hrScroll ///////////////////
+
+
+
+
+
+// test vue
+const tsData = {
+    obj:`
+        <li>
+            <img src="./img/main/pg2/pic0.jpg" alt="이미지">
+        </li>
+    `,
+    obj2:``
+}
+
+Vue.component("test-comp",{
+    template: tsData.obj,
+});
+
+new Vue({
+    el:".pg2",
+    data:{},
+    mounted:function(){
+
+    }
+});
