@@ -30,19 +30,29 @@
 .pg2{
     position: relative;
     height: 3000px;
-    background-color: #000;
     padding: 5% 0;
+    transition: 0.8s;
 }
 .pg2_wrap{
     position: relative;
     height: 100%;
+    transition: 0.8s;
 }
-
+.pg2.on,.pg2_wrap.on{
+    background-color: #000;
+}
 .pg2_imgbx{
     position: sticky;
     top: 11%;
     margin: 0 auto;
     width: 29.8%;
+    border-radius: 30px;
+}
+.imgbx_cont{
+    border-radius: 30px;
+}
+.imgbx_cont li{
+    border-radius: 30px;
 }
 .pg2 p{
     position: absolute;
@@ -50,6 +60,7 @@
     background: none;
     margin: 0 auto;
     padding: 0 10%;
+    opacity: 0;
 
     font-size: 2vw;
     font-family: 'Canela Trial', sans-serif;
@@ -58,7 +69,9 @@
     width: 100%;
     border-radius: 30px;
 }
-
+.main_img{
+    transition: .2s;
+}
 /* .pg2_fontbx{
     position: sticky;
     top: 5%;
@@ -155,7 +168,7 @@
 .pg3_items{
     margin: 0 auto;
     margin-bottom: 5%;
-    width: 50%;
+    width: 60%;
 
 }
 .main_imgbx img{

@@ -10,6 +10,7 @@
     .media_gnb{
         width: 100vw;
         height: 100vh;
+        display: none;
     }
     .m_gnb{
         display: flex;

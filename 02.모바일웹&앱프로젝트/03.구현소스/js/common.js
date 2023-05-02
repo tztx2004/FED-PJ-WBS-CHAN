@@ -22,7 +22,7 @@ gnb_li.each(function (idx, ele) {
 // top영역 스크롤 시 사라짐
 let last_top = 0;
 $(window).scroll(function () {
-    var this_top = $(this).scrollTop();
+    let this_top = $(this).scrollTop();
     if (this_top > last_top) {
         $(".top").addClass("on");
     } else {

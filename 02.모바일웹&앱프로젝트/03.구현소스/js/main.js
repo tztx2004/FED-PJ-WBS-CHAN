@@ -163,13 +163,6 @@ function rotFont(){ // 글씨회전 함수
 } ////////////////// rotFont_글씨회전 /////////////////
 
 
-let m_img = $(".main_img");
-let cnt=0;
-/// 스크롤 시 이미지 변함
-function chgImg(){
-    m_img.attr("src",`./img/main/pg2/pic${cnt}.jpg`);
-    
-}/////////////////// chgImg ////////////////
 
 
 
@@ -187,9 +180,8 @@ function chgImg(){
 
 
 
-
-
-// test vue
+//////////////////////// vue /////////////////////////////
+// test vue, 2페이지 그림사진 줌
 const tsData = {
     obj:`
         <li>
@@ -224,4 +216,32 @@ Vue.component("test-comp",{
 new Vue({
     el:".pg2",
 });
+///////////////////////////////////////////////////////////
+
+let m_img = $(".main_img");
+let cnt=1;
+/// 스크롤 시 이미지 변함
+function chgImg(){
+    const wT = $(window).scrollTop(); // 윈도우 스크롤 위치
+    let imgpos = m_img.offset().top;
+    
+    if(imgpos/50 < 70) cnt = Math.floor(imgpos / 50);
+    m_img.attr("src",`./img/main/pg2/pic${cnt}.jpg`);
+
+    if(imgpos > 1300){
+        $(".imgbx_cont p").animate({
+            opacity:1
+        },2000)
+    }
+
+    if(imgpos > 1100 && imgpos < 3000){
+        $(".pg2 .pg2_wrap").addClass("on")
+    }
+    else{
+        $(".pg2 .pg2_wrap").removeClass("on")
+    }
+
+    console.log(cnt,imgpos);
+    
+}/////////////////// chgImg ////////////////
 
