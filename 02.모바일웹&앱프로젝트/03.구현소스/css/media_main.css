@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/* media_main.css */
+
+/* 700px */
+@media screen and (max-width: 800px) {
+    
+    
+    .pg2_imgbx{
+        width: 65%;
+    }
+    .pg2 p{
+        font-size: 4.5vw;
+    }
+
+    .pg3{
+        height: 300vh;
+    }
+    .pg3_real h2 {
+        font-size: 8vw;
+        white-space: nowrap;
+    }
+    .pg3_items{
+        width: 90%;
+    }
+}/******************** 800 ********************/

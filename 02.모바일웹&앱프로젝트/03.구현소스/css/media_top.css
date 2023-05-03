@@ -3,7 +3,7 @@
 /* media_top.css */
 
 /* 700px */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     .mob{
         display: block;
     }
@@ -11,6 +11,9 @@
         width: 100vw;
         height: 100vh;
         display: none;
+    }
+    .media_gnb.active{
+        display: block;
     }
     .m_gnb{
         display: flex;
@@ -30,4 +33,5 @@
     .ham {
         display: block;
     }
-}/******************** 700 ********************/
+
+}/******************** 800 ********************/

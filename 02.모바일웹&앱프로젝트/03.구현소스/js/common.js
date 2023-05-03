@@ -5,9 +5,18 @@ const top = $(".top");
 const gnb_ol = $(".gnb_ol");
 const gnb_li = $(".gnb_ol li");
 const gnb_arr = ["Product", "Service", "Support", "Contact"];
+const ham = $(".ham");
+const media_gnb = $(".media_gnb");
+const m_gnb = $(".m_gnb li");
 
 // gnb 출력
 gnb_li.each(function (idx, ele) {
+    $(ele).html(`
+        <a href="#">${gnb_arr[idx]}</a>
+    `);
+}); ///////// each ////////////
+
+m_gnb.each(function (idx, ele) {
     $(ele).html(`
         <a href="#">${gnb_arr[idx]}</a>
     `);
@@ -30,3 +39,9 @@ $(window).scroll(function () {
     }
     last_top = this_top;
 }); //////////// scroll //////////////
+
+ham.click(function(){
+    // media_gnb.toggle(400);
+    media_gnb.toggle(400);
+});//////////////// click /////////////////
+
