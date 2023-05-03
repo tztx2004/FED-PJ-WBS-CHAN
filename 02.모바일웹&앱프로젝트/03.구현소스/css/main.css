@@ -17,7 +17,7 @@
 }
 .vdbx{
     position: relative;
-    /* width: 100vw; */
+    height: 100%;
 }
 .main_vd{
     width: 100%;

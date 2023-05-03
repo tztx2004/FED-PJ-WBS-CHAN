@@ -107,13 +107,72 @@ a{
     display: none;
 }
 
-.ham>span{
-    display: block;
+
+
+
+/* 모바일 햄버거 버튼 */
+.ham {
+    position: fixed;
+    top: 10%;
+    right: 10%;
+    z-index: 999;
+
+    transform: translateY(-50%);
+
+    width: 23px;
+    height: 100%;
+    border: none;
+    font-size: 25px;
+
+    cursor: pointer;
+
+    /* 처음에 숨기기 */
+    display: none;
 }
+
+.ham span{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    transition: 0.3s;
+}
+/* 햄버거모양 가상요소넣기 */
 .ham>span::after{
     content: 'ㅡ';
     display: block;
 }
+.top.active .ham span{
+    background-color: #fff;
+}
+/* 햄버거 span바 초기셋팅 */
+.ham span:nth-child(1) {
+    top: 35%;
+}
+.ham span:nth-child(2) {
+    top: 49.2%;
+}
+.ham span:nth-child(3) {
+    top: 62%;
+}
+
+/* 클릭이벤트JS처리시 클래스on셋팅 */
+.top.active .ham{
+    width: 19px;
+}
+.top.active .ham span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 47%;
+}
+.top.active .ham span:nth-child(2) {
+    width: 0;
+    left: 0%;
+}
+.top.active .ham span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 47%;
+}
+
 
 /*************************** footer영역 ***************************/
 .info{

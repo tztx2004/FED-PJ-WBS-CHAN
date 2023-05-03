@@ -21,10 +21,13 @@
         align-items: center;
         gap: 5%;
     }
-    .m_gnb li{
-        
-    }
     .m_gnb a{
         font-size: 10vw;
     }
-}
+    .gnb_ol{
+        display:none;
+    }
+    .ham {
+        display: block;
+    }
+}/******************** 700 ********************/
