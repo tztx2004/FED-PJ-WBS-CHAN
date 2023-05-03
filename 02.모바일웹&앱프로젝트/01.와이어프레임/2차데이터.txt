@@ -1,9 +1,7 @@
 2차 데이터
 
  - 분류
-1. 대분류
-2. 소분류 (4개)
-
-0. 상품사진
-1. 상품명
-2. 상품설명
+1. 대분류 (1개 Product탭) : Limited Edition Art Print
+2. 중분류 (4개 탭 안쪽에 탭) : Screen Prints / Offset Prints / Photogravure
+3. 소분류 (상품 각각 정보) : 상품명 / 상품가격 / 상품사진
+4. 상품 상세페이지 : 상품명 / 상품가격 / 상품정보 / 상품사진

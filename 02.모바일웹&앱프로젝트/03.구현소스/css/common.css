@@ -79,6 +79,9 @@ a{
     font-family: 'Tiempos Headline', sans-serif;
     font-weight: 600;
     text-shadow: 1px 1px 1px #333;
+
+    position: relative;
+    z-index: 99;
 }
 
 .gnb{
@@ -110,68 +113,77 @@ a{
 
 
 
-/* 모바일 햄버거 버튼 */
-.ham {
-    position: fixed;
-    top: 10%;
-    right: 10%;
-    z-index: 999;
 
-    transform: translateY(-50%);
 
-    width: 23px;
-    height: 100%;
-    border: none;
-    font-size: 25px;
 
-    cursor: pointer;
 
-    /* 처음에 숨기기 */
+
+
+
+
+
+
+/* 햄버거버튼 */
+.toggle-button {
+    /* 처음에 안보임 */
     display: none;
-}
-
-.ham span{
     position: absolute;
+    z-index: 99;
+    width: 20px;
+    height: 12px;
+    top: 50%;
+    right: 12%;
+    transform: translate(-20%, -50%);
+}
+.toggle-button:hover {
+    cursor: pointer;
+}
+.toggle-button .menu-bar {
     width: 100%;
-    height: 1px;
-    background-color: #fff;
-    transition: 0.3s;
+    height: 2px;
+    background-color: #555;
+    border-radius: 2px;
+    position: absolute;
+    transition: .5s;
 }
-/* 햄버거모양 가상요소넣기 */
-.ham>span::after{
-    content: 'ㅡ';
-    display: block;
+/* 햄버거 각 막대기 위치 */
+.toggle-button .menu-bar-top {
+    top: 0;
 }
-.top.active .ham span{
-    background-color: #fff;
+.toggle-button .menu-bar-middle {
+    top: 50%;
+    transform: translateY(-50%);
 }
-/* 햄버거 span바 초기셋팅 */
-.ham span:nth-child(1) {
-    top: 35%;
-}
-.ham span:nth-child(2) {
-    top: 49.2%;
-}
-.ham span:nth-child(3) {
-    top: 62%;
+.toggle-button .menu-bar-bottom {
+    bottom: 0;
 }
 
-/* 클릭이벤트JS처리시 클래스on셋팅 */
-.top.active .ham{
-    width: 19px;
-}
-.top.active .ham span:nth-child(1) {
+/* X버튼 */
+.button-open .menu-bar-top {
     transform: rotate(45deg);
-    top: 47%;
+    top: 50%;
 }
-.top.active .ham span:nth-child(2) {
-    width: 0;
-    left: 0%;
+.button-open .menu-bar-middle {
+    transform: translate(-230px);
+    opacity: 0;
+    transition: all .1s ease-in;
 }
-.top.active .ham span:nth-child(3) {
+.button-open .menu-bar-bottom {
     transform: rotate(-45deg);
-    top: 47%;
+    top: 50%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*************************** footer영역 ***************************/

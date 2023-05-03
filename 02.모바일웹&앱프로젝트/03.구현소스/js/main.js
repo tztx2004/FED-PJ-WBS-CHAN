@@ -241,7 +241,7 @@ function chgImg(){
         $(".pg2 .pg2_wrap").removeClass("on")
     }
 
-    console.log(cnt,imgpos);
+    // console.log(cnt,imgpos);
     
 }/////////////////// chgImg ////////////////
 

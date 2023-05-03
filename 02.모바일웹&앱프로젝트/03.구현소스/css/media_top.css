@@ -10,10 +10,14 @@
     .media_gnb{
         width: 100vw;
         height: 100vh;
-        display: none;
+        
+        position: relative;
+        top: -110vh;
+        transition: .6s;
     }
-    .media_gnb.active{
-        display: block;
+    .media_gnb.active,
+    .media_gnb.active .m_gnb a{
+        top:0;
     }
     .m_gnb{
         display: flex;
@@ -24,13 +28,23 @@
         align-items: center;
         gap: 5%;
     }
-    .m_gnb a{
-        font-size: 10vw;
+    .m_gnb li{
+        overflow: hidden;
     }
+    .m_gnb a{
+        position: relative;
+        top: 100%;
+        font-size: 10vw;
+        transition: .8s;
+    }
+    .m_gnb a.on{
+        top: 0;
+    }
+    /* gnb 안보이기 */
     .gnb_ol{
         display:none;
     }
-    .ham {
+    .toggle-button {
         display: block;
     }
 

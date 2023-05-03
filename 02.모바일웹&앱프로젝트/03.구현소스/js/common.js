@@ -8,6 +8,7 @@ const gnb_arr = ["Product", "Service", "Support", "Contact"];
 const ham = $(".ham");
 const media_gnb = $(".media_gnb");
 const m_gnb = $(".m_gnb li");
+const m_gnb_a = $(".m_gnb a");
 
 // gnb 출력
 gnb_li.each(function (idx, ele) {
@@ -40,8 +41,19 @@ $(window).scroll(function () {
     last_top = this_top;
 }); //////////// scroll //////////////
 
-ham.click(function(){
-    // media_gnb.toggle(400);
-    media_gnb.toggle(400);
-});//////////////// click /////////////////
 
+// 모바일 햄버거버튼
+$(document).ready(function() {
+    let $toggleButton = $('.toggle-button');
+    // Hamburger button
+    $toggleButton.on('click', function() {
+        $(this).toggleClass('button-open');
+        $(media_gnb).toggleClass("active");
+        setTimeout(()=>{
+            m_gnb_a.forEach((ele,idx) => {
+                ele.classList.add("on")
+            });
+        },1800)
+
+    });///////////// click ////////////////
+});//////////////// ready ///////////////
