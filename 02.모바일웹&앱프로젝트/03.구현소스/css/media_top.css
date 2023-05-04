@@ -15,8 +15,7 @@
         top: -110vh;
         transition: .6s;
     }
-    .media_gnb.active,
-    .media_gnb.active .m_gnb a{
+    .media_gnb.active{
         top:0;
     }
     .m_gnb{

@@ -8,7 +8,6 @@ const gnb_arr = ["Product", "Service", "Support", "Contact"];
 const ham = $(".ham");
 const media_gnb = $(".media_gnb");
 const m_gnb = $(".m_gnb li");
-const m_gnb_a = $(".m_gnb a");
 
 // gnb 출력
 gnb_li.each(function (idx, ele) {
@@ -43,18 +42,17 @@ $(window).scroll(function () {
 
 
 // 모바일 햄버거버튼
-$(document).ready(function() {
-    let $toggleButton = $('.toggle-button');
-    // Hamburger button
-    $toggleButton.on('click', function() {
-        $(this).toggleClass('button-open');
-        $(media_gnb).toggleClass("active");
+let toggleButton = $('.toggle-button');
+const m_gnb_a = $(".m_gnb li a");
+// Hamburger button
+toggleButton.on('click', function() {
+    $(this).toggleClass('button-open');
+    $(media_gnb).toggleClass("active");
 
-        setTimeout(()=>{
-            $(m_gnb_a).each(function(idx,ele){
-                console.log(idx,ele)
-            })/////////// each /////////////
-        },800); //////////////// setTimeout /////////////
+    setTimeout(()=>{
+        $(m_gnb_a).each(function(idx,ele){
+            $(ele).toggleClass("on")
+        })/////////// each /////////////
+    },800); //////////////// setTimeout /////////////
 
-    });///////////// click ////////////////
-});//////////////// ready ///////////////
+});///////////// click ////////////////
