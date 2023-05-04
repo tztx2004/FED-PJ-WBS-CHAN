@@ -6,6 +6,81 @@ const pg3_tit2 = $(".pg3_tit2 h3");
 const pg3_items = $(".pg3_items");
 const main_imgbx = $(".main_imgbx");
 
+
+
+
+////////////////// main 2pg ///////////////////////
+//////////////////////// vue /////////////////////////////
+// test vue, 2페이지 그림사진 줌
+const tsData = {
+    obj:`
+        <li>
+            <img class="main_img" v-bind:src="gsrc" alt="이미지">
+        </li>
+    `,
+    obj2:``
+}
+
+// 숫자증감변수
+let num =0;
+
+Vue.component("test-comp",{
+    template:`
+        <li>
+            <img class="main_img" v-bind:src="gsrc" alt="이미지">
+        </li>
+    `,
+    data:function(){
+        return{
+            gsrc:`./img/main/pg2/pic${this.setNum()}.jpg`,
+        }
+    },
+    methods:{
+        setNum(){
+            num+=1;
+            return num;
+        }
+    }
+});
+
+new Vue({
+    el:".pg2",
+});
+///////////////////////////////////////////////////////////
+
+let m_img = $(".main_img");
+let cnt=1;
+/// 스크롤 시 이미지 변함
+function chgImg(){
+    const wT = $(window).scrollTop(); // 윈도우 스크롤 위치
+    let imgpos = m_img.offset().top;
+    
+    // 이미지 경로변화 -> 이미지 바뀜
+    cnt = Math.floor(imgpos / 50 -20);
+    if(cnt<70) m_img.attr("src",`./img/main/pg2/pic${cnt}.jpg`);
+    // 사진이 70장있음
+
+
+    if(imgpos > 1350){
+        $(".imgbx_cont p").animate({
+            opacity:1
+        },2000)
+    }
+
+    if(imgpos > 1350 && imgpos < 3600){
+        $(".pg2 .pg2_wrap").addClass("on")
+    }
+    else{
+        $(".pg2 .pg2_wrap").removeClass("on")
+    }
+
+    console.log(cnt,imgpos);
+    
+}/////////////////// chgImg ////////////////
+
+
+
+/////// main 3pg ///////////
 // 휠이벤트 //
 window.addEventListener("scroll",()=>{
     // 글씨회전 함수(현재는 메인 3페이지에서 구현)
@@ -18,6 +93,8 @@ window.addEventListener("scroll",()=>{
     chgImg()
 
 })/////////////// wheel //////////////////
+
+
 
 let wds = ["YaHO","Goooooods","LALALA"]; // pg3에 들어갈 말
 function rotF(){
@@ -180,68 +257,4 @@ function rotFont(){ // 글씨회전 함수
 
 
 
-//////////////////////// vue /////////////////////////////
-// test vue, 2페이지 그림사진 줌
-const tsData = {
-    obj:`
-        <li>
-            <img class="main_img" v-bind:src="gsrc" alt="이미지">
-        </li>
-    `,
-    obj2:``
-}
-
-// 숫자증감변수
-let num =0;
-
-Vue.component("test-comp",{
-    template:`
-        <li>
-            <img class="main_img" v-bind:src="gsrc" alt="이미지">
-        </li>
-    `,
-    data:function(){
-        return{
-            gsrc:`./img/main/pg2/pic${this.setNum()}.jpg`,
-        }
-    },
-    methods:{
-        setNum(){
-            num+=1;
-            return num;
-        }
-    }
-});
-
-new Vue({
-    el:".pg2",
-});
-///////////////////////////////////////////////////////////
-
-let m_img = $(".main_img");
-let cnt=1;
-/// 스크롤 시 이미지 변함
-function chgImg(){
-    const wT = $(window).scrollTop(); // 윈도우 스크롤 위치
-    let imgpos = m_img.offset().top;
-    
-    if(imgpos/50 < 70) cnt = Math.floor(imgpos / 50);
-    m_img.attr("src",`./img/main/pg2/pic${cnt}.jpg`);
-
-    if(imgpos > 1300){
-        $(".imgbx_cont p").animate({
-            opacity:1
-        },2000)
-    }
-
-    if(imgpos > 1100 && imgpos < 3000){
-        $(".pg2 .pg2_wrap").addClass("on")
-    }
-    else{
-        $(".pg2 .pg2_wrap").removeClass("on")
-    }
-
-    // console.log(cnt,imgpos);
-    
-}/////////////////// chgImg ////////////////
 
