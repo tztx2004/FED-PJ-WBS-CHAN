@@ -49,11 +49,12 @@ $(document).ready(function() {
     $toggleButton.on('click', function() {
         $(this).toggleClass('button-open');
         $(media_gnb).toggleClass("active");
+
         setTimeout(()=>{
-            m_gnb_a.forEach((ele,idx) => {
-                ele.classList.add("on")
-            });
-        },1800)
+            $(m_gnb_a).each(function(idx,ele){
+                console.log(idx,ele)
+            })/////////// each /////////////
+        },800); //////////////// setTimeout /////////////
 
     });///////////// click ////////////////
 });//////////////// ready ///////////////
