@@ -1,0 +1,51 @@
+body *{
+    outline: 1px dashed #000;
+}
+.rotate-text {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    white-space: nowrap;
+    transition: 2s;
+}
+.rotate-text1.on{
+    transform: rotate(-90deg) rotateX(90deg)  translateY(133px);
+}
+.rotate-text2.on{
+    transform: rotate(90deg) rotateX(90deg)  translateY(133px);
+}
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3000px; /* or any other height */
+    position: relative; /* needed for absolute positioning */
+}
+
+.rotate-text1 {
+    transform: rotate(-90deg) rotateX(21deg) translateY(133px);
+    perspective: 476px;
+    transform-origin: top;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-size: 50px;
+    outline: 1px dashed;
+    /* height: 100%; fill the container vertically */
+    padding: 0 10px; /* add some padding to avoid clipping */
+    box-sizing: border-box; /* include padding in element's width */
+}
+.rotate-text2 {
+    transform: rotate(90deg) rotateX(21deg) translateY(133px);
+    perspective: 476px;
+    transform-origin: top;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 50px;
+    outline: 1px dashed;
+    /* height: 100%; fill the container vertically */
+    padding: 0 10px; /* add some padding to avoid clipping */
+    box-sizing: border-box; /* include padding in element's width */
+}

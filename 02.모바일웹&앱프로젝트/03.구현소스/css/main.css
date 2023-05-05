@@ -127,7 +127,7 @@
 .pg3_tit h3{
     font-size: 10vw;
     position: absolute;
-    transition: .3s ease-out;
+    transition: 1s ease-out;
 }
 .pg3_tit1 h3{
     transform: rotate(-90deg) rotateX(0deg) translateY(50%);
@@ -138,11 +138,19 @@
     display: flex;
     justify-content: center;
 }
-.pg3_tit1 h3.on{
+/* .pg3_tit1 h3.on{
     transform: rotate(-90deg) rotateX(90deg) translateY(50%);
 }
 .pg3_tit1 h3.on2{
     transform: rotate(-90deg) rotateX(360deg) translateY(50%);
+} */
+.pg3_tit1 h3.on3{
+    transition: 1s ease-out;
+    transform: rotate(-90deg) rotateX(360deg) translateY(50%);
+}
+.pg3_tit2 h3.on3{
+    transition: 1s ease-out;
+    transform: rotate(90deg) rotateX(360deg) translateY(50%);
 }
 
 

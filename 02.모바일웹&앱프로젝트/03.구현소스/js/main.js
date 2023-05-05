@@ -99,18 +99,20 @@ window.addEventListener("scroll",()=>{
 let wds = ["YaHO","Goooooods","LALALA"]; // pg3에 들어갈 말
 function rotF(){
     let delta = event.deltaY>0
-    let ot;
+    let ot; // 그림 위치
     let pos = window.scrollY; // 현재 스크롤위치
 
     main_imgbx.each((idx,ele)=>{
         ot = $(ele).offset().top; // 그림 위치
-        let elH = $(ele).height();
+        let elH = $(ele).height(); // 그림 높이
 
         if(pos>=ot && pos< ot+ elH){
             cls(pg3_tit1,wds[idx])
+            cls(pg3_tit2,wds[idx])
         }
         else if(pos>= ot+ elH){
             rev_on(pg3_tit1)
+            rev_on(pg3_tit2)
         }
         // console.log(pos,ot+elH);
     });/////////////////// each /////////////////////
@@ -123,78 +125,20 @@ function rotF(){
 
 }//////////// rotF //////////////////
 
-
-async function sleep(time) {
-    return new Promise((resolve, _) => {
-        setTimeout(()=> {
-            resolve();
-        }, time)
-    });
-}
-
-async function promiseCls(cb, t) {
-    await sleep(t).then(_ => cb());
-    return;
-}
-
 // on, on2클래스 주기
 function cls(x,words){
 
-    x.css({
-        transition:"6s ease-out"
-    })
-    .addClass("on")
-    .html(words)
-    .addClass("on2")
-
-    // x.css({
-    //     transition:"6s ease-out"
-    // }).addClass("on").delay(1000).queue(function(next){
-    //     x.html(words);
-    //     console.log(x)
-    //     next();
-    // }).addClass("on2");
+    x.addClass("on3")
+    setTimeout(() => {
+        x.html(words)
+    }, 500);
     
-
-    // x.css({
-    //     transition:"6s ease-out"
-    // })
-    // .addClass("on")
-    // .delay(1000)
-    // .html(words)
-    // .addClass("on2")
-
-    // 90도 돌아
-        // x.addClass("on").html(words).addClass("on2")
-    // 돌고 글자 변경
-        // x.html(words)
-    // 360도 회전
-        // x.addClass("on2")
-
-
-    // // 90도 돌아
-    // await promiseCls(() => {
-    //     x.addClass("on")
-    //     console.log(1);
-    // }, 1)
-    // // 돌고 글자 변경
-    // await promiseCls(() => {
-    //     x.html(words)
-    // },2000)
-    // // 360도 회전
-    // await promiseCls(() => {
-    //     x.addClass("on2")
-    //     console.log(3)
-    // }, 1);
 }
 
 // on, on2 클래스 뺌
 function rev_on(x){
-    x.css({
-        transition:"none"
-    })
-    x.removeClass("on");
-    x.removeClass("on2");
+    x.removeClass("on3");
+    // x.removeClass("on");
 }
 
 

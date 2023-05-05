@@ -16,7 +16,9 @@ $(()=>{
         console.log("ws",ws,"tg",tg)
         if(ws > tg-700 && ws +300){
             $(rt).addClass("on")
-            $(rt).html(`school`);
+            setTimeout(()=>{
+                $(rt).html(`school`);
+            },800)
 
 
             // $(rt1).css({
