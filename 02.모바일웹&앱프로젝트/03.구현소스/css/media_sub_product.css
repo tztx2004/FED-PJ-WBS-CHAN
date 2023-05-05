@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+/* 서브 미디어_product.css */
+
+@media screen and (max-width: 800px) {
+    .top_title{
+        font-size: 30px;
+    }
+    .lnb{
+        width: 80%;
+    }
+    .lnb a{
+        white-space: nowrap;
+    }
+}

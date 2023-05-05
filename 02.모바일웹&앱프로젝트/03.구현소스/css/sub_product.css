@@ -1,3 +1,53 @@
 @charset "utf-8";
 
-/* 이름.css */
+
+
+/* sub_product.css */
+.main_sub{
+    height: 200vh;
+}
+.top_area{
+    position: relative;
+
+    width: 100vw;
+    height: 300px;
+    padding-bottom: 10%;
+    overflow: hidden;
+    text-align: center;
+}
+.top_bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.top_bg img{
+    /* position: absolute; */
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.top_title{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100vw;
+    height: 10%;
+    background: none;
+
+    font-size: 50px;
+    color: #fff;
+}
+.lnb_area{
+    width: 100vw;
+    height: 3%;
+}
+.lnb{
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 5%;
+    align-items: center;
+}

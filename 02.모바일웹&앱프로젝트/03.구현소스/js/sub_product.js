@@ -2,7 +2,7 @@
 
 
 
-Vue.component({
+Vue.component("product-com",{
     template:``,
 })
 
