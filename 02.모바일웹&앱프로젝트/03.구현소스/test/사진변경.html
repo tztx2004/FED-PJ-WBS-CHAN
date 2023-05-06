@@ -6,6 +6,9 @@
     <title>사진변경</title>
   </head>
   <style>
+    .wrapper{
+      display: flex;
+    }
     .image-container {
       position: relative;
       width: 500px;
@@ -32,33 +35,36 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
   <script>
     $(document).ready(function () {
-      $(".image-container .image1").hover(
+      console.log($(".image-container"))
+      $(".image-container").find(".image1").hover(
         function () {
+          console.log("start",this)
           // hover 시작
-          $(".image1").fadeOut("slow");
-          $(".image2").fadeIn("slow");
+          $(this).fadeOut("slow");
+          $(this).next().fadeIn("slow");
         },
         function () {
           // hover 종료
-          $(".image2").fadeOut("slow");
-          $(".image1").fadeIn("slow");
+          return 
+          $(this).fadeIn("slow").next().fadeOut("slow");
+          console.log("end",this)
         }
-      );
-    });
+      );//////// hover //////////////
+    });/////////// ready //////////////
   </script>
   <body>
     <div class="wrapper">
         <div class="image-container">
-          <img class="image1" src="../img/main/main-section-01-img-01.png" />
-          <img class="image2" src="../img/main/main-section-01-img-02.png" />
+          <img class="image1 i1" src="../img/main/main-section-01-img-01.png" />
+          <img class="image2 i2" src="../img/main/main-section-01-img-02.png" />
         </div>
         <div class="image-container">
-          <img class="image1" src="../img/main/main-section-01-img-01.png" />
-          <img class="image2" src="../img/main/main-section-01-img-02.png" />
+          <img class="image1 i3" src="../img/main/main-section-01-img-01.png" />
+          <img class="image2 i4" src="../img/main/main-section-01-img-02.png" />
         </div>
         <div class="image-container">
-          <img class="image1" src="../img/main/main-section-01-img-01.png" />
-          <img class="image2" src="../img/main/main-section-01-img-02.png" />
+          <img class="image1 i5" src="../img/main/main-section-01-img-01.png" />
+          <img class="image2 i6" src="../img/main/main-section-01-img-02.png" />
         </div>
   </div>
   </body>
