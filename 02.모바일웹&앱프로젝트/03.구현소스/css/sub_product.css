@@ -68,4 +68,5 @@
 }
 .item_pic img{
     width: 100%;
+    transition: 1s;
 }

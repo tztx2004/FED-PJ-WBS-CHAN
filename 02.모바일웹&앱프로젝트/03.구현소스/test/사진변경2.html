@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사진변경2</title>
+</head>
+<style>
+    .image-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image:not(.active) {
+  display: none;
+}
+</style>
+<!-- 제이쿼리 라이브러리 CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<!-- 제이쿼리 UI CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+<script>
+    $(document).ready(function() {
+  $('.image-container').hover(
+    function() {
+      // hover 시작
+      const $activeImage = $('.image.active');
+      const $nextImage = $activeImage.next('.image').length ? $activeImage.next('.image') : $('.image:first');
+      $activeImage.fadeOut('slow').removeClass('active');
+      $nextImage.fadeIn('slow').addClass('active');
+    },
+    function() {
+      // hover 종료
+      const $activeImage = $('.image.active');
+      const $prevImage = $activeImage.prev('.image').length ? $activeImage.prev('.image') : $('.image:last');
+      $activeImage.fadeOut('slow').removeClass('active');
+      $prevImage.fadeIn('slow').addClass('active');
+    }
+  );
+});
+
+</script>
+<body>
+    <div class="image-container">
+        <img class="image active" src="../img/main/main-section-01-img-01.png">
+        <img class="image" src="../img/main/main-section-01-img-02.png">
+        <img class="image" src="../img/main/main-section-01-img-03.png">
+        <img class="image" src="../img/main/main-section-01-img-04.png">
+    </div>
+</body>
+</html>

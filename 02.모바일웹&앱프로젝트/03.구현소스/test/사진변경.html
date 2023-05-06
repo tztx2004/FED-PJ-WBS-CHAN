@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사진변경</title>
+  </head>
+  <style>
+    .image-container {
+      position: relative;
+      width: 500px;
+      height: 500px;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image2 {
+      display: none;
+    }
+  </style>
+  <!-- 제이쿼리 라이브러리 CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+  <!-- 제이쿼리 UI CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".image-container .image1").hover(
+        function () {
+          // hover 시작
+          $(".image1").fadeOut("slow");
+          $(".image2").fadeIn("slow");
+        },
+        function () {
+          // hover 종료
+          $(".image2").fadeOut("slow");
+          $(".image1").fadeIn("slow");
+        }
+      );
+    });
+  </script>
+  <body>
+    <div class="wrapper">
+        <div class="image-container">
+          <img class="image1" src="../img/main/main-section-01-img-01.png" />
+          <img class="image2" src="../img/main/main-section-01-img-02.png" />
+        </div>
+        <div class="image-container">
+          <img class="image1" src="../img/main/main-section-01-img-01.png" />
+          <img class="image2" src="../img/main/main-section-01-img-02.png" />
+        </div>
+        <div class="image-container">
+          <img class="image1" src="../img/main/main-section-01-img-01.png" />
+          <img class="image2" src="../img/main/main-section-01-img-02.png" />
+        </div>
+  </div>
+  </body>
+</html>
