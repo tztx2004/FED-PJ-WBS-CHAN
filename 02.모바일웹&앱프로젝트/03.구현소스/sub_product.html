@@ -64,6 +64,7 @@
             </ol>
         </div>
     </section>
+
     <section class="main_sub">
         <div id="app">
             <!-- <product-com></product-com> -->
@@ -80,20 +81,20 @@
         </div>
         <div class="lnb_area">
             <ol class="lnb">
-                <li><a href="#">All</a></li>
-                <li><a href="#">Screen Prints</a></li>
-                <li><a href="#">Offset Prints</a></li>
-                <li><a href="#">Risographs</a></li>
+                <li v-for="(items, index) in list_lnb"><a href="#">{{ items }}</a></li>
             </ol>
         </div>
         <div class="cont_area">
             <div class="grid_items">
-                <div class="item">
+                <div class="item" v-for="(v,i) in 50">
                     <div class="item_pic">
                         <img src="./img/sub/sub_product/test.jpeg" alt="이미지">
-                        <!-- <img src="./img/sub/sub_product/test_on.jpeg" alt="이미지"> -->
+                        <img src="./img/sub/sub_product/test_on.jpeg" alt="이미지">
+                        <div class="item_copy">
+                            <span>50$</span>
+                            <h2>TITLE</h2>
+                        </div>
                     </div>
-                    <div class="item_copy"></div>
                 </div>
             </div>
         </div>

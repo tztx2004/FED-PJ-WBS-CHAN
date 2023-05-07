@@ -3,36 +3,33 @@
 
 
 Vue.component("product-com",{
-    template:``,
+    template:`
+    
+    `,
 })
 
 new Vue({
     el:"#app",
-    data:{},
+    data:{
+        list_lnb:["All","Screen Prints","Offset Prints","Risographs"]
+    },
     created(){},
     mounted(){}
 }); ////////////////// vue 인스턴스 ////////////////
 
-// let nuSrc;
-// let oriSrc = $(".item_pic img").each(function(idx,ele){
-//     $(ele).attr("src");
-// })
-// console.log('오리 전',oriSrc);
-// $(".item_pic img").hover(
-//     function(){
-//         nuSrc = `./img/main/sub_product/0ac04533-58e4-4b73-b05c-4e8c66d5ddc7.jpeg`;
-//         $(this).attr("src",nuSrc);
-//         console.log("before",$(this).attr("src"))
-//     },
-//     function(){
-//         console.log("origin 후",oriSrc)
-//         $(this).attr("src",oriSrc);
-//         console.log("after",$(this).attr("src"))
-//     }
-// );////////////////// hover //////////////////
-
-$(".item_pic img").hover(function(){
-    $(this).attr("src", $(this).attr("src").replace(".jpeg", "_on.jpeg")); 
-}, function(){ 
-    $(this).attr("src", $(this).attr("src").replace("_on.jpeg", ".jpeg")); 
-}); 
+// 이미지 높이값을 .item한테 줌(absolute때문에)
+let item_pic_img = $(".item_pic img");
+let item_picH = item_pic_img.height();
+$(".item").css({
+    height: item_picH*1.15 +"px",
+});
+// console.log(item_picH)
+// 그림에 호버하면 사진변경
+item_pic_img.hover(
+    function(){
+        $(this).addClass("on")
+    },
+    function(){
+        $(this).removeClass("on")
+    }
+);///////////// hover //////////////

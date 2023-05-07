@@ -99,10 +99,9 @@ a{
 .gnb_ol li a{
     text-shadow: 1px 1px 1px #333;
 }
-/* 오버하면 색깔 번짐 */
+/* 오버하면 밑줄 - 추후에 js로 수정 */
 .gnb_ol li a:hover{
-    font-weight: bold;
-    text-shadow: 1px 1px 10px #313131;
+    border-bottom: 1px solid #000;
 }
 
 /* 모바일 안보이기 */
