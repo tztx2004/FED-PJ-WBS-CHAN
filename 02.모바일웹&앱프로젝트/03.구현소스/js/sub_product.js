@@ -17,6 +17,15 @@ new Vue({
     mounted(){}
 }); ////////////////// vue 인스턴스 ////////////////
 
+new Vue({
+    el:".lnb_area",
+    data:{
+        list_lnb:["All","Screen Prints","Offset Prints","Risographs"]
+    },
+    created(){},
+    mounted(){}
+})
+
 // 이미지 높이값을 .item한테 줌(absolute때문에)
 let item_pic_img = $(".item_pic img");
 let item_picH = item_pic_img.height();
