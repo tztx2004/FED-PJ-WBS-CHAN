@@ -21,10 +21,10 @@ Vue.component("product-com",{
         </div>
         <div class="cont_area">
             <div class="grid_items">
-                <div class="item" v-for="(v,i) in 50">
+                <div class="item" v-for="n in 10" :key="n">
                     <div class="item_pic">
-                        <img src="./img/sub/sub_product/test.jpeg" alt="이미지">
-                        <img src="./img/sub/sub_product/test_on.jpeg" alt="이미지">
+                        <img src="./img/sub/sub_product/test.jpeg" alt="이미지"></img>
+                        <img src="./img/sub/sub_product/test_on.jpeg" alt="이미지"></img>
                         <div class="item_copy">
                             <span>50$</span>
                             <h2>TITLE</h2>
@@ -34,11 +34,22 @@ Vue.component("product-com",{
             </div>
         </div>
     </div>
-    `,data(){
+    `,
+    data(){
         return{
-            list_lnb:["All","Screen Prints","Offset Prints","Risographs"]
+            list_lnb:["All","Screen Prints","Offset Prints","Risographs"],
+            img_tag:{
+                이미지1:`<img src="./img/sub/sub_product/test.jpeg" alt="이미지"></img>`,
+                이미지2:`<img src="./img/sub/sub_product/test_on.jpeg" alt="이미지"></img>`,
+            }
         }
     },
+    methods:{
+
+    },
+    mounted(){
+
+    }
 })
 
 new Vue({
@@ -46,9 +57,32 @@ new Vue({
     data:{
         list_lnb:["All","Screen Prints","Offset Prints","Risographs"]
     },
-    created(){},
-    mounted(){},
-    methods:{}
+    mounted(){
+        $(window).on("load",function(){
+            // 이미지 높이값을 .item한테 줌(absolute때문에)
+            let item_pic_img = $(".item_pic img");
+            let item_picH = item_pic_img.last().height();
+            $(".item").css({
+                height: item_picH*1.15 +"px",
+            });
+            console.log(item_picH)
+
+            // 그림에 호버하면 사진변경
+            item_pic_img.hover(
+                function(){
+                    $(this).addClass("on")
+                },
+                function(){
+                    $(this).removeClass("on")
+                }
+            );///////////// hover //////////////
+
+        });/////////////////// load /////////////////
+
+    },
+    methods:{
+        
+    }
 }); ////////////////// vue 인스턴스 ////////////////
 
 // new Vue({
@@ -60,22 +94,3 @@ new Vue({
 //     mounted(){}
 // })
 
-function imgHov(){
-    // 이미지 높이값을 .item한테 줌(absolute때문에)
-    let item_pic_img = $(".item_pic img");
-    let item_picH = item_pic_img.height();
-    $(".item").css({
-        height: item_picH*1.15 +"px",
-    });
-    console.log(item_picH)
-    // 그림에 호버하면 사진변경
-    item_pic_img.hover(
-        function(){
-            $(this).addClass("on")
-        },
-        function(){
-            $(this).removeClass("on")
-        }
-    );///////////// hover //////////////
-}
-imgHov();
