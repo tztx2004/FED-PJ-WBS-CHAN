@@ -63,7 +63,7 @@ new Vue({
             let item_pic_img = $(".item_pic img");
             let item_picH = item_pic_img.last().height();
             $(".item").css({
-                height: item_picH*1.15 +"px",
+                height: item_picH*1.1 +"px",
             });
             console.log(item_picH)
 

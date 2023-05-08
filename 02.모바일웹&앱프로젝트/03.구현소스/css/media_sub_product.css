@@ -8,6 +8,7 @@
     }
     .lnb{
         width: 80%;
+        
     }
     .lnb a{
         white-space: nowrap;
@@ -15,5 +16,14 @@
 
     .item{
         flex-basis: 49%;
+    }
+    .item_copy{
+        bottom: -5%;
+    }
+    .item_copy span{
+        font-size: 14px;
+    }
+    .item_copy h2{
+        font-size: 20px;
     }
 }/******************* 800 *******************/
