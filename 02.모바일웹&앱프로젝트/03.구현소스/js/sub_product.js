@@ -1,6 +1,8 @@
 // Product 탭
 
+import rqData from "./rqData.js";
 
+let num=0;
 
 Vue.component("product-com",{
     template:`
@@ -20,7 +22,7 @@ Vue.component("product-com",{
         </div>
         <div class="cont_area">
             <div class="grid_items">
-                <div class="item" v-for="(v,i) in 10" :key="i">
+                <div class="item" v-for="(v,i) in rqData" :key="i">
                     <div class="item_pic">
                         <img :src=img_tag.이미지1 alt="이미지"></img>
                         <img :src=img_tag.이미지2 alt="이미지"></img>
@@ -38,18 +40,20 @@ Vue.component("product-com",{
         return{
             list_lnb:["All","Screen Prints","Offset Prints","Risographs"],
             img_tag:{
-                이미지1:"./img/sub/origin/all2.jpg",
-                이미지2:"./img/sub/origin/all9.jpg",
-            }
+                이미지1:`./img/sub/origin/all${this.sumNum()}.jpg`,
+                이미지2:`./img/sub/origin/all${this.sumNum()+1}.jpg`,
+            },
+            rqData:rqData
         }
     },
     methods:{
         sumNum(){
-            
+            num++;
+            return num
         }
     },
     mounted(){
-
+        console.log()
     }
 })
 
