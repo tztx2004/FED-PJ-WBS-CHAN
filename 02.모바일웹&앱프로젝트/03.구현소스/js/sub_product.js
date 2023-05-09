@@ -5,7 +5,6 @@
 Vue.component("product-com",{
     template:`
     <div>
-        <!-- 템플릿으로 자를예정 -->
         <div class="top_area">
             <div class="top_bg">
                 <img src="./img/main/main_image/0ac04533-58e4-4b73-b05c-4e8c66d5ddc7.jpeg" alt="배경">
@@ -21,10 +20,10 @@ Vue.component("product-com",{
         </div>
         <div class="cont_area">
             <div class="grid_items">
-                <div class="item" v-for="n in 10" :key="n">
+                <div class="item" v-for="(v,i) in 10" :key="i">
                     <div class="item_pic">
-                        <img src="./img/sub/sub_product/test.jpeg" alt="이미지"></img>
-                        <img src="./img/sub/sub_product/test_on.jpeg" alt="이미지"></img>
+                        <img :src=img_tag.이미지1 alt="이미지"></img>
+                        <img :src=img_tag.이미지2 alt="이미지"></img>
                         <div class="item_copy">
                             <span>50$</span>
                             <h2>TITLE</h2>
@@ -39,13 +38,15 @@ Vue.component("product-com",{
         return{
             list_lnb:["All","Screen Prints","Offset Prints","Risographs"],
             img_tag:{
-                이미지1:`<img src="./img/sub/sub_product/test.jpeg" alt="이미지"></img>`,
-                이미지2:`<img src="./img/sub/sub_product/test_on.jpeg" alt="이미지"></img>`,
+                이미지1:"./img/sub/origin/all2.jpg",
+                이미지2:"./img/sub/origin/all9.jpg",
             }
         }
     },
     methods:{
-
+        sumNum(){
+            
+        }
     },
     mounted(){
 
