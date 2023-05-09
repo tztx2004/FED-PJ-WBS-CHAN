@@ -29,11 +29,13 @@
     top: 50%;
     left: 0;
     width: 100vw;
-    height: 10%;
+    height: 15%;
     background: none;
 
     font-size: 50px;
     color: #fff;
+    font-family: 'Canela Trial', sans-serif;
+    text-shadow: 1px 1px 0px #666;
 }
 .lnb_area{
     width: 100%;
@@ -49,6 +51,10 @@
     gap: 5%;
     align-items: center;
     padding: 3%;
+}
+.lnb a{
+    font-family: 'Canela Trial', sans-serif;
+    font-size: 20px;
 }
 .cont_area{
     padding: 3%;

@@ -8,10 +8,10 @@
     }
     .lnb{
         width: 80%;
-        
     }
     .lnb a{
         white-space: nowrap;
+        font-size: 14px;
     }
 
     .item{
