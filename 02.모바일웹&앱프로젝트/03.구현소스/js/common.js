@@ -30,9 +30,18 @@ m_gnb.each(function (idx, ele) {
 
 // top영역 스크롤 시 사라짐
 let last_top = 0;
+
+
 $(window).scroll(function () {
+    // 모바일 변수
+    let mobi = 0;
+    let winW = window.innerWidth;
+    
+    // 모바일 크기에 따라서 변수 달라짐
+    if(winW < 800) mobi =1
+
     let this_top = $(this).scrollTop();
-    if (this_top > last_top) {
+    if (this_top > last_top && mobi===0) {
         $(".top").addClass("on");
     } else {
         $(".top").removeClass("on");
