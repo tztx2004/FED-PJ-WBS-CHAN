@@ -12,7 +12,7 @@ const m_gnb = $(".m_gnb li");
 // gnb 출력
 gnb_li.each(function (idx, ele) {
     $(ele).html(`
-        <a href="#">${gnb_arr[idx]}</a>
+        <a href="#" class="yellow underline">${gnb_arr[idx]}</a>
     `);
 }); ///////// each ////////////
 

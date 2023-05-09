@@ -16,7 +16,7 @@ Vue.component("product-com",{
         </div>
         <div class="lnb_area">
             <ol class="lnb">
-                <li v-for="(items, index) in list_lnb"><a href="#">{{ items }}</a></li>
+                <li v-for="(items, index) in list_lnb"><a href="#" class="yellow underline">{{ items }}</a></li>
             </ol>
         </div>
         <div class="cont_area">
