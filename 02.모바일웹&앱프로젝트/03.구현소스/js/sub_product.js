@@ -27,8 +27,8 @@ Vue.component("product-com",{
                     <img v-bind:src='"./img/sub/origin/ScreenPrints/"+(i+1)+".jpg"' alt="이미지"></img>
                     <img v-bind:src='"./img/sub/origin/ScreenPrints/"+(i+1)+"_on.jpg"' alt="이미지"></img>
                         <div class="item_copy">
-                            <span>{{rqData.pd_imgs[0].all[i].price}}</span>
-                            <h2>{{rqData.pd_imgs[0].all[i].title}}</h2>
+                            <span>{{rqData.pd_imgs[1].sp[i].price}}</span>
+                            <h2>{{rqData.pd_imgs[1].sp[i].title}}</h2>
                         </div>
                     </div>
                 </div>
