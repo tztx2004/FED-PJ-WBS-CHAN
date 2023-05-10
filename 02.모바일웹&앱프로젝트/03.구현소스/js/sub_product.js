@@ -22,13 +22,13 @@ Vue.component("product-com",{
         </div>
         <div class="cont_area">
             <div class="grid_items">
-                <div class="item" v-for="(v,i) in rqData.pd_imgs[0].all" :key="i">
+                <div class="item" v-for="(v,i) in rqData.pd_imgs[1].sp" :key="i">
                     <div class="item_pic">
                     <img v-bind:src='"./img/sub/origin/ScreenPrints/"+(i+1)+".jpg"' alt="이미지"></img>
                     <img v-bind:src='"./img/sub/origin/ScreenPrints/"+(i+1)+"_on.jpg"' alt="이미지"></img>
                         <div class="item_copy">
-                            <span>{{rqData.pd_imgs[1].sp[i].price}}</span>
-                            <h2>{{rqData.pd_imgs[1].sp[i].title}}</h2>
+                            <span>{{rqData.pd_imgs[1].sp[i+1].price}}</span>
+                            <h2>{{rqData.pd_imgs[1].sp[i+1].title}}</h2>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@ Vue.component("product-com",{
         }
     },
     mounted(){
-        console.log(this.data_info.price)
+        
     }
 })
 
