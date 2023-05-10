@@ -22,13 +22,13 @@ Vue.component("product-com",{
         </div>
         <div class="cont_area">
             <div class="grid_items">
-                <div class="item" v-for="(v,i) in rqData.pd_imgs" :key="i">
+                <div class="item" v-for="(v,i) in rqData.pd_imgs[0].all" :key="i">
                     <div class="item_pic">
-                    <img v-bind:src='"./img/sub/origin/ScreenPrints/sp"+(i+1)+"all"+(i+1)+".jpg"' alt="이미지"></img>
-                        <img :src=img_tag.이미지2 alt="이미지"></img>
+                    <img v-bind:src='"./img/sub/origin/ScreenPrints/"+(i+1)+".jpg"' alt="이미지"></img>
+                    <img v-bind:src='"./img/sub/origin/ScreenPrints/"+(i+1)+"_on.jpg"' alt="이미지"></img>
                         <div class="item_copy">
-                            <span>{{this.price}}{{i}}</span>
-                            <h2>TITLE</h2>
+                            <span>{{rqData.pd_imgs[0].all[i].price}}</span>
+                            <h2>{{rqData.pd_imgs[0].all[i].title}}</h2>
                         </div>
                     </div>
                 </div>
@@ -44,8 +44,8 @@ Vue.component("product-com",{
                 이미지2:`./img/sub/origin/all${this.sumNum()+1}.jpg`,
             },
             data_info:{
-                price:rqData.pd_imgs.price,
-                title:rqData.pd_imgs.title,
+                price:rqData.pd_imgs[0].all[1].price,
+                title:rqData.pd_imgs[0].all[1].title,
             },
             rqData:rqData
         }
@@ -57,7 +57,7 @@ Vue.component("product-com",{
         }
     },
     mounted(){
-        console.log()
+        console.log(this.data_info.price)
     }
 })
 
