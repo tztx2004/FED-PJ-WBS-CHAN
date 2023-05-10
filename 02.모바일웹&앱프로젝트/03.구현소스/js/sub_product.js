@@ -22,12 +22,12 @@ Vue.component("product-com",{
         </div>
         <div class="cont_area">
             <div class="grid_items">
-                <div class="item" v-for="(v,i) in rqData" :key="i">
+                <div class="item" v-for="(v,i) in rqData.pd_imgs" :key="i">
                     <div class="item_pic">
-                        <img :src=img_tag.이미지1 alt="이미지"></img>
+                    <img v-bind:src='"./img/sub/origin/ScreenPrints/sp"+(i+1)+"all"+(i+1)+".jpg"' alt="이미지"></img>
                         <img :src=img_tag.이미지2 alt="이미지"></img>
                         <div class="item_copy">
-                            <span>50$</span>
+                            <span>{{this.price}}{{i}}</span>
                             <h2>TITLE</h2>
                         </div>
                     </div>
@@ -42,6 +42,10 @@ Vue.component("product-com",{
             img_tag:{
                 이미지1:`./img/sub/origin/all${this.sumNum()}.jpg`,
                 이미지2:`./img/sub/origin/all${this.sumNum()+1}.jpg`,
+            },
+            data_info:{
+                price:rqData.pd_imgs.price,
+                title:rqData.pd_imgs.title,
             },
             rqData:rqData
         }
