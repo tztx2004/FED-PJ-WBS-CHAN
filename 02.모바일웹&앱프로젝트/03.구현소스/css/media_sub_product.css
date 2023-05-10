@@ -16,6 +16,7 @@
 
     .item{
         flex-basis: 49%;
+        margin-bottom: 20%;
     }
     .item_copy{
         bottom: -5%;

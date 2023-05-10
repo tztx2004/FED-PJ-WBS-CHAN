@@ -27,8 +27,8 @@ Vue.component("product-com",{
                     <img v-bind:src='"./img/sub/origin/ScreenPrints/"+(i+1)+".jpg"' alt="이미지"></img>
                     <img v-bind:src='"./img/sub/origin/ScreenPrints/"+(i+1)+"_on.jpg"' alt="이미지"></img>
                         <div class="item_copy">
-                            <span>{{rqData.pd_imgs[1].sp[i+1].price}}</span>
-                            <h2>{{rqData.pd_imgs[1].sp[i+1].title}}</h2>
+                            <h2>{{rqData.pd_imgs[1].sp[i].title}}</h2>
+                            <span>{{rqData.pd_imgs[1].sp[i].price}}</span>
                         </div>
                     </div>
                 </div>
@@ -50,10 +50,13 @@ Vue.component("product-com",{
         sumNum(){
             num++;
             return num
+        },
+        mer(x,y){ // 
+            return rqData.pd_imgs[x].sp[y]
         }
     },
     mounted(){
-        
+        console.log(this.mer(1,1).price)
     }
 })
 

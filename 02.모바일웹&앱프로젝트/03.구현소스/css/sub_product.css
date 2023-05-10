@@ -99,6 +99,7 @@
 .item_copy span{
     font-size: 20px;
     line-height: 1.7;
+    font-weight: bold;
 }
 .item_copy h2{
     font-size: 30px;
