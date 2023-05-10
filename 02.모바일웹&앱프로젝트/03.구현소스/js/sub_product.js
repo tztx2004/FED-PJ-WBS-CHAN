@@ -43,10 +43,6 @@ Vue.component("product-com",{
                 이미지1:`./img/sub/origin/all${this.sumNum()}.jpg`,
                 이미지2:`./img/sub/origin/all${this.sumNum()+1}.jpg`,
             },
-            data_info:{
-                price:rqData.pd_imgs[0].all[1].price,
-                title:rqData.pd_imgs[0].all[1].title,
-            },
             rqData:rqData
         }
     },
