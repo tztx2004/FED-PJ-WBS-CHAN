@@ -3,7 +3,10 @@
 import rqData from "./rqData.js";
 
 let num=0;
-
+/* 
+    경로함수만들기
+    lnb에 이벤트 걸기
+*/
 Vue.component("product-com",{
     template:`
     <div>
@@ -17,7 +20,7 @@ Vue.component("product-com",{
         </div>
         <div class="lnb_area">
             <ol class="lnb">
-                <li v-for="(items, index) in this.list_lnb2"><a href="#" class="yellow underline">{{ items }}</a></li>
+                <li v-for="(items, index) in this.list_lnb"><a href="#" class="yellow underline" >{{ items }}</a></li>
             </ol>
         </div>
         <div class="cont_area">
@@ -58,6 +61,9 @@ Vue.component("product-com",{
         },
         chgImg(x){
             return rqData.pd_imgs[x].sp
+        },
+        wayImg(){ // 경로함수
+            rqData.pd_imgs[1].sp[i].title
         }
     },
     mounted(){
