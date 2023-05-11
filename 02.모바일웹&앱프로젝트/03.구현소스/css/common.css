@@ -115,7 +115,7 @@ a{
     gap: 20px;
 }
 .gnb_ol li a{
-    text-shadow: 1px 1px 1px #333;
+    font-family: 'Canela Trial', sans-serif;
 }
 
 

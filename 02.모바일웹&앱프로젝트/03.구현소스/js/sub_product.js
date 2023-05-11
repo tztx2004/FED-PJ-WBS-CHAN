@@ -22,7 +22,7 @@ Vue.component("product-com",{
         </div>
         <div class="cont_area">
             <div class="grid_items">
-                <div class="item" v-for="(v,i) in rqData.pd_imgs[1].sp" :key="i">
+                <div class="item" v-for="(v,i) in chgImg(1)" :key="i">
                     <div class="item_pic">
                     <img v-bind:src='"./img/sub/origin/ScreenPrints/"+(i+1)+".jpg"' alt="이미지"></img>
                     <img v-bind:src='"./img/sub/origin/ScreenPrints/"+(i+1)+"_on.jpg"' alt="이미지"></img>
@@ -43,7 +43,8 @@ Vue.component("product-com",{
                 이미지1:`./img/sub/origin/all${this.sumNum()}.jpg`,
                 이미지2:`./img/sub/origin/all${this.sumNum()+1}.jpg`,
             },
-            rqData:rqData
+            rqData:rqData,
+            dataList:["all","sp","op","rg"]
         }
     },
     methods:{
@@ -53,6 +54,9 @@ Vue.component("product-com",{
         },
         mer(x,y){ // 
             return rqData.pd_imgs[x].sp[y]
+        },
+        chgImg(x){
+            return rqData.pd_imgs[x].sp
         }
     },
     mounted(){
@@ -67,13 +71,7 @@ new Vue({
     },
     mounted(){
         $(window).on("load",function(){
-            // 이미지 높이값을 .item한테 줌(absolute때문에)
             let item_pic_img = $(".item_pic img");
-            let item_picH = item_pic_img.last().height();
-            $(".item").css({
-                height: item_picH*1.1 +"px",
-            });
-            console.log(item_picH)
 
             // 그림에 호버하면 사진변경
             item_pic_img.hover(

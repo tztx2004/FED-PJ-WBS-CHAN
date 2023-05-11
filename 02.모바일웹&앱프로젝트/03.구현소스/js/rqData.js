@@ -3,15 +3,15 @@ const rqData = {
         {
             all:[
                 {
-                    price:'$10',
+                    price:'$ 10',
                     title:'test_title1',
                 },
                 {
-                    price:'$20',
+                    price:'$ 20',
                     title:'test_title2',
                 },
                 {
-                    price:'$30',
+                    price:'$ 30',
                     title:'test_title3',
                 },
             ],
@@ -19,7 +19,7 @@ const rqData = {
         {
             sp:[
                 {
-                    price:'$340',
+                    price:'$ 340',
                     title:'Colour Dance',
                     detail:[
                         "An exclusive 9 colour screen print on 250 gsm Fabriano Unica paper",
@@ -31,7 +31,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$340',
+                    price:'$ 340',
                     title:'Suns',
                     detail:[
                         "An exclusive 8 colour screen print on 250 gsm Fabriano Unica paper",
@@ -43,7 +43,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$45',
+                    price:'$ 45',
                     title:'Colour Study #1',
                     detail:[
                         "3 color risograph print on 240 gsm Munken Pure archival paper",
@@ -55,7 +55,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$300',
+                    price:'$ 300',
                     title:'Colour Meditation No. 2',
                     detail:[
                         "An exclusive 6 colour screen print on 250 gsm Fabriano Unica paper",
@@ -67,7 +67,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$300',
+                    price:'$ 300',
                     title:'Colour Meditation No. 3',
                     detail:[
                         "An exclusive 6 colour screen print on 250 gsm Fabriano Unica paper",
@@ -79,7 +79,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$85',
+                    price:'$ 85',
                     title:'Inner Space',
                     detail:[
                         "Signed giclée print on Epson Archival Matte paper 192 gsm",
@@ -88,7 +88,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$300',
+                    price:'$ 300',
                     title:'Moons',
                     detail:[
                         "High quality giclée printed on Somerset Enhanced Fine Art Inkjet Paper 100% cotton, 255g/m²",
@@ -98,7 +98,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$40',
+                    price:'$ 40',
                     title:'Nostalgi',
                     detail:[
                         "Signed A3 offset print on Munken Lynx Rough 170 gsm.",
@@ -106,7 +106,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$300',
+                    price:'$ 300',
                     title:'Colour Meditation No. 1',
                     detail:[
                         "An exclusive 6 colour screen print on 250 gsm Fabriano Unica paper",
@@ -122,7 +122,7 @@ const rqData = {
             op:[
             
                 {
-                    price:'$45',
+                    price:'$ 45',
                     title:'The Power of Two #1 Offset print',
                     detail:[
                         "Signed A2 offset on Munken Lynx Rough 170 gsm paper",
@@ -132,7 +132,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$45',
+                    price:'$ 45',
                     title:'Vaev',
                     detail:[
                         "Signed A2 digital offset print on Munken Lynx Rough 170 gsm paper",
@@ -141,7 +141,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$45',
+                    price:'$ 45',
                     title:'One Month',
                     detail:[
                         "Signed offset printed poster",
@@ -150,7 +150,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$65',
+                    price:'$ 65',
                     title:'Number You! – CHOSE YOUR OWN NUMBERS!',
                     detail:[
                         "Number YOU!",
@@ -158,7 +158,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$85',
+                    price:'$ 85',
                     title:'Random Observations',
                     detail:[
                         "Signed giclée print on Epson Archival Matte paper 192 gsm",
@@ -168,7 +168,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$85',
+                    price:'$ 85',
                     title:'Blue-Green Eclipse',
                     detail:[
                         "Signed giclée print on Epson Archival Matte paper 192 gsm",
@@ -177,7 +177,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$170',
+                    price:'$ 170',
                     title:'Lucky Numbers A1',
                     detail:[
                         "Signed giclée print on Somerset Archival Cotton Paper 330 gsm",
@@ -188,7 +188,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$40',
+                    price:'$ 40',
                     title:'Kauwela',
                     detail:[
                         "Signed A3 offset print on Munken Lynx Rough 170 gsm.",
@@ -196,7 +196,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$300',
+                    price:'$ 300',
                     title:'Rings',
                     detail:[
                         "High quality giclée printed on Somerset Enhanced Fine Art Inkjet Paper 100% cotton, 255g/m²",
@@ -209,14 +209,14 @@ const rqData = {
         {
             rg:[
                 {
-                    price:'$70',
+                    price:'$ 70',
                     title:'Moon Sea',
                     detail:[
 
                     ]
                 },
                 {
-                    price:'$45',
+                    price:'$ 45',
                     title:'Colour Study #3',
                     detail:[
                         "3 color risograph print on 240 gsm Munken Pure archival paper",
@@ -228,7 +228,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$45',
+                    price:'$ 45',
                     title:'Colour Study #4',
                     detail:[
                         "3 color risograph print on 240 gsm Munken Pure archival paper",
@@ -238,7 +238,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$45',
+                    price:'$ 45',
                     title:'Colour Study #2',
                     detail:[
                         "3 color risograph print on 240 gsm Munken Pure archival paper",
@@ -248,7 +248,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$65',
+                    price:'$ 65',
                     title:'Ukraine Support – Masha Foya',
                     detail:[
                         "Giclée print on Epson Archival Matte paper 192 gsm",
@@ -258,7 +258,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$85',
+                    price:'$ 85',
                     title:'Drift No. 1',
                     detail:[
                         "Signed giclée print on Epson Archival Matte paper 192 gsm",
@@ -267,7 +267,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$85',
+                    price:'$ 85',
                     title:'Electrify',
                     detail:[
                         "Originally an illustration for Foresight Magazine issue 11 on the topic of electrification",
@@ -277,7 +277,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$45',
+                    price:'$ 45',
                     title:'Dark Sunshine',
                     detail:[
                         "Signed giclée print on Epson Archival Matte paper 192 gsm.",
@@ -285,7 +285,7 @@ const rqData = {
                     ]
                 },
                 {
-                    price:'$65',
+                    price:'$ 65',
                     title:'Ukraine Support – Iryna Simonchuk',
                     detail:[
                         "Giclée print on Epson Archival Matte paper 192 gsm",

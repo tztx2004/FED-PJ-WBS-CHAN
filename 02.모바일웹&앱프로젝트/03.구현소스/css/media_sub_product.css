@@ -17,9 +17,11 @@
     .item{
         flex-basis: 49%;
         margin-bottom: 20%;
+        height: max(66vw,256px);
     }
     .item_copy{
         bottom: -5%;
+        height: 13%;
     }
     .item_copy span{
         font-size: 14px;
