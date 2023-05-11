@@ -1,7 +1,7 @@
 const rqData = {
     pd_imgs:[
         {
-            all:[
+            All:[
                 {
                     price:'$ 10',
                     title:'test_title1',
@@ -17,7 +17,7 @@ const rqData = {
             ],
         },
         {
-            sp:[
+            ScreenPrints:[
                 {
                     price:'$ 340',
                     title:'Colour Dance',
@@ -119,7 +119,7 @@ const rqData = {
                 },
             ]},
         {
-            op:[
+            OffsetPrints:[
             
                 {
                     price:'$ 45',
@@ -207,7 +207,7 @@ const rqData = {
                 },
         ]},
         {
-            rg:[
+            Risographs:[
                 {
                     price:'$ 70',
                     title:'Moon Sea',
