@@ -5,7 +5,7 @@ import store from "./store.js";
 
 let num=0;
 // 전역변수
-let cnt=0;
+let cnt=1;
 /* 
     경로함수만들기
     lnb에 이벤트 걸기
@@ -32,13 +32,13 @@ Vue.component("product-com",{
         </div>
         <div class="cont_area">
             <div class="grid_items">
-            <div class="item" v-for="(v,i) in chgImg(2)" :key="i">
+            <div class="item" v-for="(v,i) in chgImg($store.state.updateNum)" :key="i">
             <div class="item_pic">
-                <img v-bind:src='"./img/sub/origin/"+dList[readAttr(2)]+"/"+(i+1)+".jpg"' alt="이미지"></img>
-                <img v-bind:src='"./img/sub/origin/"+dList[readAttr(2)]+"/"+(i+1)+"_on.jpg"' alt="이미지"></img>
+                <img v-bind:src='"./img/sub/origin/"+dList[$store.state.updateNum]+"/"+(i+1)+".jpg"' alt="이미지"></img>
+                <img v-bind:src='"./img/sub/origin/"+dList[$store.state.updateNum]+"/"+(i+1)+"_on.jpg"' alt="이미지"></img>
                 <div class="item_copy">
-                    <h2>{{chgImg(readAttr(2))[i].title}}</h2>
-                    <span>{{chgImg(readAttr(2))[i].price}}</span>
+                    <h2>{{chgImg($store.state.updateNum)[i].title}}</h2>
+                    <span>{{chgImg($store.state.updateNum)[i].price}}</span>
                 </div>
             </div>
         </div>
@@ -58,8 +58,8 @@ Vue.component("product-com",{
         }
     },
     computed: {
-        readAfter(y){
-            return this.readAttr(y)
+        readAfter(){
+            return 888
         }
     },
     methods:{
@@ -75,19 +75,20 @@ Vue.component("product-com",{
         },
         readAttr(x){
             console.log(x)
+            cnt = x;
+            this.$store.state.updateNum = x
             return x;
         },
     },
     created(){
+        
         store.commit("initS",{
-            sc1:1,
-            sc2:2,
-            sc3:3,
-            sc4:4,
+            sc:cnt,
         })
     },
     mounted(){
-        console.log()
+        console.log("store")
+        
     }
 }); ///////////////// component(부모) /////////////////
 
