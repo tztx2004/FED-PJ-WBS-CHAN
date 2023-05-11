@@ -17,7 +17,7 @@ Vue.component("product-com",{
         </div>
         <div class="lnb_area">
             <ol class="lnb">
-                <li v-for="(items, index) in list_lnb"><a href="#" class="yellow underline">{{ items }}</a></li>
+                <li v-for="(items, index) in this.list_lnb2"><a href="#" class="yellow underline">{{ items }}</a></li>
             </ol>
         </div>
         <div class="cont_area">
@@ -36,6 +36,7 @@ Vue.component("product-com",{
         </div>
     </div>
     `,
+    props:['list_lnb2'],
     data(){
         return{
             list_lnb:["All","Screen Prints","Offset Prints","Risographs"],
@@ -44,7 +45,7 @@ Vue.component("product-com",{
                 이미지2:`./img/sub/origin/all${this.sumNum()+1}.jpg`,
             },
             rqData:rqData,
-            dataList:["all","sp","op","rg"]
+            dataList:["all","sp","op","rg"],
         }
     },
     methods:{
@@ -52,7 +53,7 @@ Vue.component("product-com",{
             num++;
             return num
         },
-        mer(x,y){ // 
+        mer(x,y){
             return rqData.pd_imgs[x].sp[y]
         },
         chgImg(x){
@@ -60,14 +61,14 @@ Vue.component("product-com",{
         }
     },
     mounted(){
-        console.log(this.mer(1,1).price)
+        console.log()
     }
 })
 
 new Vue({
     el:"#app",
     data:{
-        list_lnb:["All","Screen Prints","Offset Prints","Risographs"]
+        list_lnb2:["All","Screen Prints","Offset Prints","Risographs"]
     },
     mounted(){
         $(window).on("load",function(){
