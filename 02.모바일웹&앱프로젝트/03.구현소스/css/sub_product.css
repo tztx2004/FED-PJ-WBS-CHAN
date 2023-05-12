@@ -81,6 +81,7 @@
     position: absolute;
     width: 100%;
     transition: 1s;
+    box-shadow: 0 0 5px #777;
 }
 
 .item_pic img:nth-child(2).on{
@@ -130,7 +131,7 @@
     font-size: 20px;
 }
 .detail_cont{
-    width: 500px;
+    width: 400px;
     height: 80%;
     margin: 0 auto;
     text-align: center;
@@ -141,6 +142,7 @@
 }
 .de_pic img{
     width: 100%;
+    box-shadow: 0 0 10px #333;
 }
 .de_info{
     height: 10%;
@@ -152,4 +154,25 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.de_title{
+    line-height: 1.7;
+}
+.de_price{
+    line-height: 1.7;
+}
+
+.addBtn{
+    display: flex;
+    width: 100px;
+    height: 60px;
+    margin-bottom: 10px;
+    padding-top: 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+    background-color: #f47d00;
+    color: #fff;
+    font-size: 1.05rem;
+    border: none;
 }

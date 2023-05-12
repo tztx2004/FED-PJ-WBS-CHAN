@@ -94,23 +94,6 @@ Vue.component("product-com",{
 
 
 
-Vue.component("item_comp",{
-    props:['index','data'],
-    template:`
-    <div class="item" v-for="(v,i) in chgImg(2)" :key="i">
-        <div class="item_pic">
-            <img v-bind:src='"./img/sub/origin/"+dList[readAttr(2)]+"/"+(i+1)+".jpg"' alt="이미지"></img>
-            <img v-bind:src='"./img/sub/origin/"+dList[readAttr(2)]+"/"+(i+1)+"_on.jpg"' alt="이미지"></img>
-            <div class="item_copy">
-                <h2>{{chgImg(readAttr(2))[i].title}}</h2>
-                <span>{{chgImg(readAttr(2))[i].price}}</span>
-            </div>
-        </div>
-    </div>
-    `,
-});///////////////// component(자식) /////////////////////
-
-
 
 new Vue({
     el:"#app",
@@ -139,13 +122,3 @@ new Vue({
         
     }
 }); ////////////////// vue 인스턴스 ////////////////
-
-// new Vue({
-//     el:".lnb_area",
-//     data:{
-//         list_lnb:["All","Screen Prints","Offset Prints","Risographs"]
-//     },
-//     created(){},
-//     mounted(){}
-// })
-
