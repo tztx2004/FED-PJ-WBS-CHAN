@@ -24,7 +24,7 @@ Vue.component("product-com",{
         <div class="lnb_area">
             <ol class="lnb">
                 <li v-for="(items, index) in this.dList" :key="index">
-                    <a href="#" class="yellow underline" @click="readAttr(index)">
+                    <a href="#" class="yellow underline" @click.prevent="readAttr(index)">
                         {{ items }}
                     </a>
                 </li>
@@ -32,18 +32,19 @@ Vue.component("product-com",{
         </div>
         <div class="cont_area">
             <div class="grid_items">
-            <div class="item" v-for="(v,i) in chgImg($store.state.updateNum)" :key="i">
-            <div class="item_pic">
-                <img v-bind:src='"./img/sub/origin/"+dList[$store.state.updateNum]+"/"+(i+1)+".jpg"' alt="이미지"></img>
-                <img v-bind:src='"./img/sub/origin/"+dList[$store.state.updateNum]+"/"+(i+1)+"_on.jpg"' alt="이미지"></img>
-                <div class="item_copy">
-                    <h2>{{chgImg($store.state.updateNum)[i].title}}</h2>
-                    <span>{{chgImg($store.state.updateNum)[i].price}}</span>
+                <div class="item" v-for="(v,i) in chgImg($store.state.updateNum)" :key="i">
+                    <div class="item_pic">
+                        <img v-bind:src='"./img/sub/origin/"+dList[$store.state.updateNum]+"/"+(i+1)+".jpg"' alt="이미지"></img>
+                        <img v-bind:src='"./img/sub/origin/"+dList[$store.state.updateNum]+"/"+(i+1)+"_on.jpg"' alt="이미지"></img>
+                        <div class="item_copy">
+                            <h2>{{chgImg($store.state.updateNum)[i].title}}</h2>
+                            <span>{{chgImg($store.state.updateNum)[i].price}}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-            </div>
-        </div>
+        
     </div>
     `,
     data(){
@@ -74,7 +75,7 @@ Vue.component("product-com",{
 
         },
         readAttr(x){
-            console.log(x)
+            // console.log(x)
             cnt = x;
             this.$store.state.updateNum = x
             return x;
@@ -87,8 +88,7 @@ Vue.component("product-com",{
         })
     },
     mounted(){
-        console.log("store")
-        
+        console.log()
     }
 }); ///////////////// component(부모) /////////////////
 

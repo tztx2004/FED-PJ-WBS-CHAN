@@ -70,6 +70,7 @@
     position: relative;
     margin-bottom: 15%;
     height: max(44vw,256px);
+    cursor: pointer;
 }
 .item_pic{
     width: 100%;
@@ -108,3 +109,47 @@
 
 
 
+/* detail */
+.detail_wrap{
+    position: fixed;
+    width: 90%;
+    height: 100vh;
+    top: 0px;
+    left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.closedBtn{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border: none;
+    font-size: 20px;
+}
+.detail_cont{
+    width: 500px;
+    height: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+.de_pic{
+    width: 100%;
+    margin: 0 auto;
+}
+.de_pic img{
+    width: 100%;
+}
+.de_info{
+    height: 10%;
+    padding: 3%;
+}
+.de_payInfo{
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
