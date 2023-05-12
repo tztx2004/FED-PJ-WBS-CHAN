@@ -5,7 +5,7 @@ import store from "./store.js";
 
 let num=0;
 // 전역변수
-let cnt=1;
+let cnt=0;
 /* 
     경로함수만들기
     lnb에 이벤트 걸기
@@ -59,7 +59,7 @@ Vue.component("product-com",{
     },
     computed: {
         readAfter(){
-            return 888
+            
         }
     },
     methods:{
