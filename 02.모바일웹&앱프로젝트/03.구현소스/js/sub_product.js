@@ -6,6 +6,7 @@ import store from "./store.js";
 let num=0;
 // 전역변수
 let cnt=0;
+let upDet=0;
 /* 
     경로함수만들기
     lnb에 이벤트 걸기
@@ -32,7 +33,7 @@ Vue.component("product-com",{
         </div>
         <div class="cont_area">
             <div class="grid_items">
-                <div class="item" v-for="(v,i) in chgImg($store.state.updateNum)" :key="i">
+                <div class="item" v-for="(v,i) in chgImg($store.state.updateNum)" :key="i" @click="popDetail(), readItem()">
                     <div class="item_pic">
                         <img v-bind:src='"./img/sub/origin/"+dList[$store.state.updateNum]+"/"+(i+1)+".jpg"' alt="이미지"></img>
                         <img v-bind:src='"./img/sub/origin/"+dList[$store.state.updateNum]+"/"+(i+1)+"_on.jpg"' alt="이미지"></img>
@@ -44,7 +45,56 @@ Vue.component("product-com",{
                 </div>
             </div>
         </div>
-        
+        <div class="detail_area">
+            <div class="detail_wrap">
+                <button class="closedBtn" @click="closedDetail">X</button>
+                <div class="detail_cont">
+                    <div class="de_pic">
+                        {{}}
+                    </div>
+                    <div class="de_info">
+                        <div class="de_title">
+                            <h2>Test Picture</h2>
+                        </div>
+                        <div class="de_price">
+                            <h3>$ 350</h3>
+                        </div>
+                        <div class="de_payInfo">
+                            <h4>Quantity</h4>
+                            <input type="text">
+                            <label for="1"></label>
+                            <button class="addBtn">Add to Cart</button>
+                            <div class="picInfo">
+                                test is the test
+                                97cm x 100cm
+                                test is the test
+                                97cm x 100cm
+                                test is the test
+                                97cm x 100cm
+                                test is the test
+                                97cm x 100cm
+                                test is the test
+                                97cm x 100cm
+                                test is the test
+                                97cm x 100cm
+                                test is the test
+                                97cm x 100cm
+                                test is the test
+                                97cm x 100cm
+                                test is the test
+                                97cm x 100cm
+                                test is the test
+                                97cm x 100cm
+                                test is the test
+                                97cm x 100cm
+                                test is the test
+                                97cm x 100cm
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     `,
     data(){
@@ -80,15 +130,32 @@ Vue.component("product-com",{
             this.$store.state.updateNum = x
             return x;
         },
+        popDetail(){ // 상세정보창 출력
+            $(".detail_wrap").addClass("on");
+            $(".top_area, .lnb_area, .cont_area, .top").addClass("fil")
+            
+        },
+        closedDetail(){
+            $(".detail_wrap").removeClass("on")
+            $(".top_area, .lnb_area, .cont_area, .top").removeClass("fil")
+        },
+        readItem(e){
+            let xx = event.target
+            upDet = xx;
+            return xx
+        }
     },
     created(){
-        
         store.commit("initS",{
             sc:cnt,
         })
+
+        store.commit("updateE",{
+            upDet:upDet,
+        })
     },
     mounted(){
-        console.log()
+        console.log(upDet)
     }
 }); ///////////////// component(부모) /////////////////
 

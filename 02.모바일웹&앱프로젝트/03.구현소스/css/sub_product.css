@@ -116,25 +116,43 @@
     width: 90%;
     height: 100vh;
     top: 0px;
-    left: 10%;
+    left: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
+    border-left: 1px solid #888;
+    transition: .4s;
 }
+.detail_wrap.on{
+    left: 10%;
+}
+.top_area.fil,
+.lnb_area.fil,
+.cont_area.fil,
+.top.fil{
+    filter: brightness(.5);
+}
+
 .closedBtn{
     position: absolute;
-    top: 50px;
+    top: 0px;
     left: 0;
     width: 50px;
     height: 50px;
     border: none;
     font-size: 20px;
+    cursor: pointer;
 }
 .detail_cont{
-    width: 400px;
+    width: 700px;
     height: 80%;
     margin: 0 auto;
     text-align: center;
+
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
 }
 .de_pic{
     width: 100%;
@@ -145,15 +163,17 @@
     box-shadow: 0 0 10px #333;
 }
 .de_info{
-    height: 10%;
-    padding: 3%;
+    width: 66%;
+    height: 90%;
+    padding: 1%;
+    margin-right: 50px;
 }
 .de_payInfo{
-    height: 10%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    margin-top: 15px;
 }
 .de_title{
     line-height: 1.7;
@@ -164,15 +184,17 @@
 
 .addBtn{
     display: flex;
-    width: 100px;
+    width: 145px;
     height: 60px;
-    margin-bottom: 10px;
-    padding-top: 12px;
+    margin-top: 24px;
     justify-content: center;
     align-items: center;
-    border-radius: 0;
+    border-radius: 20px;
     background-color: #f47d00;
     color: #fff;
     font-size: 1.05rem;
     border: none;
+}
+.picInfo{
+    margin-top: 10%;
 }
