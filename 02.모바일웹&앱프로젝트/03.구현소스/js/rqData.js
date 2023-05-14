@@ -2,7 +2,6 @@ const rqData = {
     pd_imgs:[
         {
             All:[
-                
                 {
                     price:'$ 340',
                     title:'Colour Dance',

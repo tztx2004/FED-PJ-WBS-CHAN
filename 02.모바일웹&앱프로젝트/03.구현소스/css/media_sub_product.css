@@ -29,4 +29,23 @@
     .item_copy h2{
         font-size: 20px;
     }
+
+    .detail_wrap{
+        align-items: normal;
+        padding-top: 45px;
+    }
+    .closedBtn{
+        background: none;
+    }
+    .detail_cont{
+        flex-direction: column;
+        width: 300px;
+    }
+    .de_info{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .addBtn{
+        height: 40px;
+    }
 }/******************* 800 *******************/

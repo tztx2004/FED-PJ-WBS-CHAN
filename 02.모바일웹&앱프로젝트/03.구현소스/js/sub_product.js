@@ -33,7 +33,7 @@ Vue.component("product-com",{
         </div>
         <div class="cont_area">
             <div class="grid_items">
-                <div class="item" v-for="(v,i) in chgImg($store.state.updateNum)" :key="i" @click="popDetail(), readItem()">
+                <div class="item" v-for="(v,i) in chgImg($store.state.updateNum)" :key="i" @click="popDetail(), readItem(), test(chgImg($store.state.updateNum)[i].detail[i])">
                     <div class="item_pic">
                         <img v-bind:src='"./img/sub/origin/"+dList[$store.state.updateNum]+"/"+(i+1)+".jpg"' alt="이미지"></img>
                         <img v-bind:src='"./img/sub/origin/"+dList[$store.state.updateNum]+"/"+(i+1)+"_on.jpg"' alt="이미지"></img>
@@ -50,7 +50,7 @@ Vue.component("product-com",{
                 <button class="closedBtn" @click="closedDetail">X</button>
                 <div class="detail_cont">
                     <div class="de_pic">
-                        {{}}
+                    <img src="./img/sub/origin/All/1.jpg" alt="이미지">
                     </div>
                     <div class="de_info">
                         <div class="de_title">
@@ -65,30 +65,7 @@ Vue.component("product-com",{
                             <label for="1"></label>
                             <button class="addBtn">Add to Cart</button>
                             <div class="picInfo">
-                                test is the test
-                                97cm x 100cm
-                                test is the test
-                                97cm x 100cm
-                                test is the test
-                                97cm x 100cm
-                                test is the test
-                                97cm x 100cm
-                                test is the test
-                                97cm x 100cm
-                                test is the test
-                                97cm x 100cm
-                                test is the test
-                                97cm x 100cm
-                                test is the test
-                                97cm x 100cm
-                                test is the test
-                                97cm x 100cm
-                                test is the test
-                                97cm x 100cm
-                                test is the test
-                                97cm x 100cm
-                                test is the test
-                                97cm x 100cm
+                            {{rqData.pd_imgs[0].All[0].detail[0]}}
                             </div>
                         </div>
                     </div>
@@ -121,9 +98,6 @@ Vue.component("product-com",{
         chgImg(x){
             return rqData.pd_imgs[x][this.dList[x]]
         },
-        wayImg(x,y,z){ // 경로함수
-
-        },
         readAttr(x){
             // console.log(x)
             cnt = x;
@@ -140,22 +114,40 @@ Vue.component("product-com",{
             $(".top_area, .lnb_area, .cont_area, .top").removeClass("fil")
         },
         readItem(e){
-            let xx = event.target
-            upDet = xx;
-            return xx
-        }
+            let tg = event.target
+            let srcT = $(tg).attr("src")
+
+            let tgTit = $(tg).parent().find(".item_copy>h2")
+            let tgT = $(tgTit).html();
+
+            let tgPrice = $(tg).parent().find(".item_copy>span")
+            let tgP = $(tgPrice).html();
+
+            // 출력
+            // 사진 속성변경
+            $(".de_pic>img").attr("src",srcT)
+            // 그림 제목
+            $(".de_title>h2").html(tgT)
+            // 그림 가격
+            $(".de_price>h3").html(tgP)
+
+            console.log(tgP)
+            return tg
+        },
+        test(x){
+            console.log(x)
+        },
     },
     created(){
         store.commit("initS",{
             sc:cnt,
         })
 
-        store.commit("updateE",{
-            upDet:upDet,
-        })
     },
     mounted(){
-        console.log(upDet)
+        $(()=>{
+            
+        });
     }
 }); ///////////////// component(부모) /////////////////
 
