@@ -33,13 +33,14 @@ Vue.component("product-com",{
         </div>
         <div class="cont_area">
             <div class="grid_items">
-                <div class="item" v-for="(v,i) in chgImg($store.state.updateNum)" :key="i" @click="popDetail(), readItem(), test(chgImg($store.state.updateNum)[i].detail[i])">
+                <div class="item" v-for="(v,i) in chgImg($store.state.updateNum)" :key="i" @click="popDetail(), readItem()">
                     <div class="item_pic">
                         <img v-bind:src='"./img/sub/origin/"+dList[$store.state.updateNum]+"/"+(i+1)+".jpg"' alt="이미지"></img>
                         <img v-bind:src='"./img/sub/origin/"+dList[$store.state.updateNum]+"/"+(i+1)+"_on.jpg"' alt="이미지"></img>
                         <div class="item_copy">
                             <h2>{{chgImg($store.state.updateNum)[i].title}}</h2>
                             <span>{{chgImg($store.state.updateNum)[i].price}}</span>
+                            <h4 class="pInfo" v-html="chgImg($store.state.updateNum)[i].detail"></h4>
                         </div>
                     </div>
                 </div>
@@ -65,7 +66,7 @@ Vue.component("product-com",{
                             <label for="1"></label>
                             <button class="addBtn">Add to Cart</button>
                             <div class="picInfo">
-                            {{rqData.pd_imgs[0].All[0].detail[0]}}
+                            <h4></h4>
                             </div>
                         </div>
                     </div>
@@ -123,6 +124,9 @@ Vue.component("product-com",{
             let tgPrice = $(tg).parent().find(".item_copy>span")
             let tgP = $(tgPrice).html();
 
+            let tgPin = $(tg).parent().find(".item_copy>h4")
+            let tgPI = $(tgPin).html();
+
             // 출력
             // 사진 속성변경
             $(".de_pic>img").attr("src",srcT)
@@ -130,12 +134,10 @@ Vue.component("product-com",{
             $(".de_title>h2").html(tgT)
             // 그림 가격
             $(".de_price>h3").html(tgP)
+            $(".picInfo>h4").html(tgPI)
 
-            console.log(tgP)
+            
             return tg
-        },
-        test(x){
-            console.log(x)
         },
     },
     created(){
