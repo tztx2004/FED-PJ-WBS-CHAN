@@ -11,6 +11,33 @@ let upDet=0;
     경로함수만들기
     lnb에 이벤트 걸기
 */
+
+// Vue.component("",{
+//     template:`
+//     <div class="de_pic">
+//         <swiper-container class="mySwiper" effect="cards" grab-cursor="true">
+//             <swiper-slide><img src="./img/sub/origin/All/1-1.jpg" alt="이미지"></swiper-slide>
+//         </swiper-container>
+//     </div>
+//     `
+// })
+
+// ///// 상세정보창에서의 사진리스트
+// Vue.component("imgList-com",{
+//     template:`
+//         <div class="de_pic">
+//             <swiper-container class="mySwiper" effect="cards" grab-cursor="true">
+//                 <swiper-slide"><img src="./img/sub/origin/All/1-1.jpg" alt="이미지"></swiper-slide>
+//             </swiper-container>
+//         </div>
+//     `,
+
+//     mounted(){
+//         console.log()
+//     }
+// })
+
+let upImg='./img/sub/origin/All/1';
 Vue.component("product-com",{
     template:`
     <div>
@@ -50,15 +77,21 @@ Vue.component("product-com",{
             <div class="detail_wrap">
                 <button class="closedBtn" @click="closedDetail">X</button>
                 <div class="detail_cont">
-                    <div class="de_pic">
-                    <img src="./img/sub/origin/All/1.jpg" alt="이미지">
-                    </div>
+                
+                <div class="de_pic">
+                    <swiper-container class="mySwiper" effect="cards" grab-cursor="true">
+                        <swiper-slide v-for="val in 3">
+                            <img :src="$store.state.upImg+'-'+val+'.jpg'" alt="이미지">
+                        </swiper-slide>
+                    </swiper-container>
+                </div>
+
                     <div class="de_info">
                         <div class="de_title">
-                            <h2>Test Picture</h2>
+                            <h2></h2>
                         </div>
                         <div class="de_price">
-                            <h3>$ 350</h3>
+                            <h3></h3>
                         </div>
                         <div class="de_payInfo">
                             <h4>Quantity</h4>
@@ -84,6 +117,7 @@ Vue.component("product-com",{
             },
             rqData:rqData,
             cnt:cnt,
+            
         }
     },
     computed: {
@@ -117,19 +151,23 @@ Vue.component("product-com",{
         readItem(e){
             let tg = event.target
             let srcT = $(tg).attr("src")
-
             let tgTit = $(tg).parent().find(".item_copy>h2")
             let tgT = $(tgTit).html();
-
+            
             let tgPrice = $(tg).parent().find(".item_copy>span")
             let tgP = $(tgPrice).html();
-
+            
             let tgPin = $(tg).parent().find(".item_copy>h4")
             let tgPI = $(tgPin).html();
-
+            
+            
+            store.state.upImg = srcT.split("_on")[0]
+            console.log(upImg,srcT)
+            
             // 출력
             // 사진 속성변경
-            $(".de_pic>img").attr("src",srcT)
+            // $(".de_pic img").attr("src",srcT)
+
             // 그림 제목
             $(".de_title>h2").html(tgT)
             // 그림 가격
@@ -144,6 +182,9 @@ Vue.component("product-com",{
         store.commit("initS",{
             sc:cnt,
         })
+        store.commit("updateE",{
+            upImg:upImg,
+        })
 
     },
     mounted(){
@@ -152,6 +193,8 @@ Vue.component("product-com",{
         });
     }
 }); ///////////////// component(부모) /////////////////
+
+
 
 
 
@@ -179,7 +222,25 @@ new Vue({
         });/////////////////// load /////////////////
 
     },
+    // components:{
+    //     'imglist-com':`
+    //     <div class="de_pic">
+    //         <swiper-container class="mySwiper" effect="cards" grab-cursor="true">
+    //             <swiper-slide><img src="./img/sub/origin/All/1-1.jpg" alt="이미지"></swiper-slide>
+    //             <swiper-slide><img src="./img/sub/origin/All/1-2.jpg" alt="이미지"></swiper-slide>
+    //             <swiper-slide><img src="./img/sub/origin/All/2-1.jpg" alt="이미지"></swiper-slide>
+    //             <swiper-slide><img src="./img/sub/origin/All/2-2.jpg" alt="이미지"></swiper-slide>
+    //         </swiper-container>
+    //     </div>
+    // `
+    // },
     methods:{
         
     }
 }); ////////////////// vue 인스턴스 ////////////////
+
+
+
+// new Vue({
+//     el:".de_pic",
+// })

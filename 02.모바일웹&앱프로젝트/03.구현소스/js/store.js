@@ -1,15 +1,17 @@
 const store = new Vuex.Store({
     state:{
         updateNum:"",
-        updateEle:""
+        updateEle:"",
+        upImg:"",
     },
     mutations:{
         initS(state,pm){
             state.updateNum = pm.sc
         },
         updateE(state, pm){
-            state.updateEle = pm.upDet
-        }
+            state.upImg = pm.upImg
+        },
+        
     },
     actions:{},
 })
