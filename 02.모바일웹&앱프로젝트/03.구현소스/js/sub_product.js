@@ -3,39 +3,12 @@
 import rqData from "./rqData.js";
 import store from "./store.js";
 
+
 let num=0;
 // 전역변수
 let cnt=0;
 let upDet=0;
-/* 
-    경로함수만들기
-    lnb에 이벤트 걸기
-*/
 
-// Vue.component("",{
-//     template:`
-//     <div class="de_pic">
-//         <swiper-container class="mySwiper" effect="cards" grab-cursor="true">
-//             <swiper-slide><img src="./img/sub/origin/All/1-1.jpg" alt="이미지"></swiper-slide>
-//         </swiper-container>
-//     </div>
-//     `
-// })
-
-// ///// 상세정보창에서의 사진리스트
-// Vue.component("imgList-com",{
-//     template:`
-//         <div class="de_pic">
-//             <swiper-container class="mySwiper" effect="cards" grab-cursor="true">
-//                 <swiper-slide"><img src="./img/sub/origin/All/1-1.jpg" alt="이미지"></swiper-slide>
-//             </swiper-container>
-//         </div>
-//     `,
-
-//     mounted(){
-//         console.log()
-//     }
-// })
 
 let upImg='./img/sub/origin/All/1';
 Vue.component("product-com",{
@@ -43,7 +16,7 @@ Vue.component("product-com",{
     <div>
         <div class="top_area">
             <div class="top_bg">
-                <img src="./img/main/main_image/0ac04533-58e4-4b73-b05c-4e8c66d5ddc7.jpeg" alt="배경">
+                <img :src="'./img/main/main_image/'+$store.state.updateNum+'.jpeg'" alt="배경">
             </div>
             <div class="top_title">
                 Limited Edition Art Prints
@@ -60,10 +33,10 @@ Vue.component("product-com",{
         </div>
         <div class="cont_area">
             <div class="grid_items">
-                <div class="item" v-for="(v,i) in chgImg($store.state.updateNum)" :key="i" @click="popDetail(), readItem()">
+                <div class="item" v-for="(v,i) in chgImg($store.state.updateNum)" :key="i" @click="readItem()">
                     <div class="item_pic">
-                        <img v-bind:src='"./img/sub/origin/"+dList[$store.state.updateNum]+"/"+(i+1)+".jpg"' alt="이미지"></img>
-                        <img v-bind:src='"./img/sub/origin/"+dList[$store.state.updateNum]+"/"+(i+1)+"_on.jpg"' alt="이미지"></img>
+                        <img v-bind:src='"./img/sub/origin/"+dList[$store.state.updateNum]+"/"+(i+1)+".jpg"' @click="popDetail()" alt="이미지"></img>
+                        <img v-bind:src='"./img/sub/origin/"+dList[$store.state.updateNum]+"/"+(i+1)+"_on.jpg"' @click="popDetail()" alt="이미지"></img>
                         <div class="item_copy">
                             <h2>{{chgImg($store.state.updateNum)[i].title}}</h2>
                             <span>{{chgImg($store.state.updateNum)[i].price}}</span>
@@ -75,12 +48,12 @@ Vue.component("product-com",{
         </div>
         <div class="detail_area">
             <div class="detail_wrap">
-                <button class="closedBtn" @click="closedDetail">X</button>
+                <button class="closedBtn" @click="closedDetail(), initSwiper()">X</button>
                 <div class="detail_cont">
                 
                 <div class="de_pic">
                     <swiper-container class="mySwiper" effect="cards" grab-cursor="true">
-                        <swiper-slide v-for="val in 3">
+                        <swiper-slide v-for="val in 3" :key="val">
                             <img :src="$store.state.upImg+'-'+val+'.jpg'" alt="이미지">
                         </swiper-slide>
                     </swiper-container>
@@ -136,6 +109,7 @@ Vue.component("product-com",{
         readAttr(x){
             // console.log(x)
             cnt = x;
+            console.log(cnt)
             this.$store.state.updateNum = x
             return x;
         },
@@ -147,6 +121,10 @@ Vue.component("product-com",{
         closedDetail(){
             $(".detail_wrap").removeClass("on")
             $(".top_area, .lnb_area, .cont_area, .top, .info").removeClass("fil")
+
+            // 초기화
+            $(".de_payInfo input").val(1)
+            
         },
         readItem(e){
             let tg = event.target
@@ -161,8 +139,11 @@ Vue.component("product-com",{
             let tgPI = $(tgPin).html();
             
             
-            store.state.upImg = srcT.split("_on")[0]
-            console.log(upImg,srcT)
+            if(srcT!==undefined){
+                store.state.upImg = srcT.split("_on")[0]
+            }
+            
+            console.log(srcT)
             
             // 출력
             // 사진 속성변경
@@ -177,6 +158,9 @@ Vue.component("product-com",{
             
             return tg
         },
+        initSwiper(){
+            $(".mySwiper").init()
+        }
     },
     created(){
         store.commit("initS",{
@@ -222,25 +206,8 @@ new Vue({
         });/////////////////// load /////////////////
 
     },
-    // components:{
-    //     'imglist-com':`
-    //     <div class="de_pic">
-    //         <swiper-container class="mySwiper" effect="cards" grab-cursor="true">
-    //             <swiper-slide><img src="./img/sub/origin/All/1-1.jpg" alt="이미지"></swiper-slide>
-    //             <swiper-slide><img src="./img/sub/origin/All/1-2.jpg" alt="이미지"></swiper-slide>
-    //             <swiper-slide><img src="./img/sub/origin/All/2-1.jpg" alt="이미지"></swiper-slide>
-    //             <swiper-slide><img src="./img/sub/origin/All/2-2.jpg" alt="이미지"></swiper-slide>
-    //         </swiper-container>
-    //     </div>
-    // `
-    // },
     methods:{
         
     }
 }); ////////////////// vue 인스턴스 ////////////////
 
-
-
-// new Vue({
-//     el:".de_pic",
-// })

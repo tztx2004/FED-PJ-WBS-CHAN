@@ -70,7 +70,7 @@
     position: relative;
     margin-bottom: 15%;
     height: max(44vw,256px);
-    cursor: pointer;
+    cursor: default;
 }
 .item_pic{
     width: 100%;
@@ -82,6 +82,7 @@
     width: 100%;
     transition: 1s;
     box-shadow: 0 0 5px #777;
+    cursor: pointer;
 }
 
 .item_pic img:nth-child(2).on{
