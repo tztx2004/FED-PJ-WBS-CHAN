@@ -95,7 +95,7 @@ Vue.component("product-com",{
                         </div>
                         <div class="de_payInfo">
                             <h4>Quantity</h4>
-                            <input type="text">
+                            <input type="number" value="1" min="1" inputmode="numeric">
                             <label for="1"></label>
                             <button class="addBtn">Add to Cart</button>
                             <div class="picInfo">
@@ -141,12 +141,12 @@ Vue.component("product-com",{
         },
         popDetail(){ // 상세정보창 출력
             $(".detail_wrap").addClass("on");
-            $(".top_area, .lnb_area, .cont_area, .top").addClass("fil")
+            $(".top_area, .lnb_area, .cont_area, .top, .info").addClass("fil")
             
         },
         closedDetail(){
             $(".detail_wrap").removeClass("on")
-            $(".top_area, .lnb_area, .cont_area, .top").removeClass("fil")
+            $(".top_area, .lnb_area, .cont_area, .top, .info").removeClass("fil")
         },
         readItem(e){
             let tg = event.target

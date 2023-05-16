@@ -135,6 +135,7 @@
 .top_area.fil,
 .lnb_area.fil,
 .cont_area.fil,
+.info.fil,
 .top.fil{
     filter: brightness(.5);
 }
@@ -180,6 +181,15 @@
     flex-direction: column;
     align-items: center;
     margin-top: 15px;
+}
+.de_payInfo input{
+    text-align: center;
+    border: none;
+    width: 65px;
+    margin-top: 10px;
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 5px 15px;
 }
 .de_title{
     line-height: 1.7;
