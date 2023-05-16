@@ -1,4 +1,49 @@
-<div class="spacer s1"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	    <!-- 제이쿼리 라이브러리 CDN -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+		<!-- 제이쿼리 UI CDN -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+	<script>
+		$(()=>{
+
+		
+		// make a variable to store the mouse pos.
+		var mouseTopPerc = 0;
+		// function to be used to retrieve variable
+		function getMousePos() {
+			return (mouseTopPerc * 400) + 10;
+		}
+		// update variable on mouse move
+		$("body").on("mousemove", function (e) {
+			mouseTopPerc = e.clientY/$(this).innerHeight();
+		});							
+	
+		// init controller
+		var controller = new ScrollMagic.Controller();
+	
+		// build tween
+		var tween = TweenMax.to("#animate", 0.5, {rotationY: 180});
+	
+		// build scene and supply getMousePos function as duration
+		var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: getMousePos})
+						// .setTween(tween)
+						// .addIndicators() // add indicators (requires plugin)
+						// .addTo(controller);
+		})
+	</script>
+	
+</head>
+<body>
+	<div class="spacer s1"></div>
 <div class="spacer s1" id="trigger"></div>
 <div class="spacer s0"></div>
 <div id="animate" class="box1 blue">
@@ -6,27 +51,6 @@
 	<a href="#" class="viewsource">view source</a>
 </div>
 <div class="spacer s2"></div>
-<script>
-	// make a variable to store the mouse pos.
-	var mouseTopPerc = 0;
-	// function to be used to retrieve variable
-	function getMousePos() {
-		return (mouseTopPerc * 400) + 10;
-	}
-	// update variable on mouse move
-	$("body").on("mousemove", function (e) {
-		mouseTopPerc = e.clientY/$(this).innerHeight();
-	});							
 
-	// init controller
-	var controller = new ScrollMagic.Controller();
-
-	// build tween
-	var tween = TweenMax.to("#animate", 0.5, {rotationY: 180});
-
-	// build scene and supply getMousePos function as duration
-	var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: getMousePos})
-					// .setTween(tween)
-					// .addIndicators() // add indicators (requires plugin)
-					// .addTo(controller);
-</script>
+</body>
+</html>

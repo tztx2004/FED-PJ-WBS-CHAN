@@ -61,13 +61,13 @@ function chgImg(){
     // 사진이 70장있음
 
 
-    if(imgpos > 1350){
+    if(imgpos > 1360){
         $(".imgbx_cont p").animate({
             opacity:1
         },2000)
     }
 
-    if(imgpos > 1350 && imgpos < 3600){
+    if(imgpos > 1360 && imgpos < 3500){
         $(".pg2 .pg2_wrap").addClass("on")
     }
     else{
@@ -86,27 +86,34 @@ window.addEventListener("scroll",()=>{
     // 글씨회전 함수(현재는 메인 3페이지에서 구현)
     // rotFont();
     
-    // 새버전 글씨회전
-    rotF();
-
     // 이미지 변화
     chgImg()
+
+    // 새버전 글씨회전
+    rotF();
 
 })/////////////// wheel //////////////////
 
 
 
-let wds = ["YaHO","Goooooods","LALALA"]; // pg3에 들어갈 말
+let wds = ["SCREEN","OFFSET","RISOGRAPHS"]; // pg3에 들어갈 말
+let prot = 0; // 1-불허용, 0-허용
+
 function rotF(){
+    if (prot) return;
+    prot = 1; //잠금!
+    setTimeout(() => prot = 0);
     let delta = event.deltaY>0
     let ot; // 그림 위치
     let pos = window.scrollY; // 현재 스크롤위치
+    let cz = 0;
 
     main_imgbx.each((idx,ele)=>{
         ot = $(ele).offset().top; // 그림 위치
         let elH = $(ele).height(); // 그림 높이
 
         if(pos>=ot && pos< ot+ elH){
+            console.log(idx)
             cls(pg3_tit1,wds[idx])
             cls(pg3_tit2,wds[idx])
         }

@@ -1,10 +1,66 @@
 // JS
 console.log("common");
+
+Vue.component("top-com",{
+    template:`
+    <div class= "top">
+        <div class="top_wrap">
+            <div class="logo">
+                <a href="#">MUSIUM</a>
+            </div>
+            <nav class="gnb">
+                <ol class="gnb_ol">
+                    <li></li>
+                    <li class="cart"></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+                <!-- 햄버거버튼 -->
+                <div class="toggle-button">
+                    <div class="menu-bar menu-bar-top"></div>
+                    <div class="menu-bar menu-bar-middle"></div>
+                    <div class="menu-bar menu-bar-bottom"></div>
+                </div>
+            </nav>
+        </div>
+        <!-- 미디어쿼리에서만 보임 -->
+        <div class="media_gnb mob">
+            <ol class="m_gnb">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+        <div class="cartBox">
+            <h2>Cart</h2>
+            <span>X</span>
+            <ul>
+                <li class="cart_pic"></li>
+                <li class="cart_tit"></li>
+                <li class="cart_cnt"></li>
+            </ul>
+            <div class="subtotal_part">
+                <span>Subtotal</span>
+                <span class="cart_price">$300</span>
+            </div>
+            <button>CheckOut</button>
+        </div>
+    </div>
+    `,
+})
+
+new Vue({
+    el:".top",
+})
+
+
+
 // 대상
 const top = $(".top");
 const gnb_ol = $(".gnb_ol");
 const gnb_li = $(".gnb_ol li");
-const gnb_arr = ["Product", "Service", "Support", "Contact"];
+const gnb_arr = ["Product", "Cart", "Support", "Contact"];
 const ham = $(".ham");
 const media_gnb = $(".media_gnb");
 const m_gnb = $(".m_gnb li");
@@ -65,3 +121,4 @@ toggleButton.on('click', function() {
     },800); //////////////// setTimeout /////////////
 
 });///////////// click ////////////////
+

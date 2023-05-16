@@ -79,6 +79,9 @@ Vue.component("product-com",{
                 </div>
             </div>
         </div>
+        <div class="basket_area">
+            <div></div>
+        </div>
     </div>
     `,
     data(){
