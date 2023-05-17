@@ -32,20 +32,8 @@ Vue.component("top-com",{
                 <li></li>
             </ol>
         </div>
-        <div class="cartBox">
-            <h2>Cart</h2>
-            <span>X</span>
-            <ul>
-                <li class="cart_pic"></li>
-                <li class="cart_tit"></li>
-                <li class="cart_cnt"></li>
-            </ul>
-            <div class="subtotal_part">
-                <span>Subtotal</span>
-                <span class="cart_price">$300</span>
-            </div>
-            <button>CheckOut</button>
-        </div>
+
+        
     </div>
     `,
 })

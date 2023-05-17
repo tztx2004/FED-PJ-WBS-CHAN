@@ -125,10 +125,77 @@ a{
 }
 
 
-
-
-
-
+/* 장바구니 */
+.cartBox{
+    position: fixed;
+    width: 500px;
+    height: 100vh;
+    right: 0;
+    top: 0;
+    border-left: 1px solid #bbb;
+    z-index: 1;
+}
+.cart_top{
+    display: flex;
+    padding: 10%;
+    justify-content: space-between;
+    
+}
+.cart_top span{
+    cursor: pointer;
+}
+.cart_main{
+    width: 90%;
+    padding: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+.cart_pic{
+    width: 15%;
+}
+.cart_pic img{
+    width: 100%;
+}
+.cart_tit{
+    width: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+}
+.cart_cnt{
+    width: 10%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart_Mx{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    
+}
+.subtotal_part{
+    position: absolute;
+    bottom: 15%;
+    padding: 10%;
+    width: 80%;
+    display: flex;
+    justify-content: space-between
+}
+.chkout{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 50px;
+    background-color: rgb(244, 125, 0);
+    color: #fff;
+}
 
 
 

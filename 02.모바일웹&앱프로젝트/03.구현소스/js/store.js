@@ -3,6 +3,10 @@ const store = new Vuex.Store({
         updateNum:"",
         updateEle:"",
         upImg:"",
+        cart_pic:"",
+        cart_tit:"",
+        cart_price:"",
+        cart_cnt:"",
     },
     mutations:{
         initS(state,pm){

@@ -69,8 +69,7 @@ Vue.component("product-com",{
                         <div class="de_payInfo">
                             <h4>Quantity</h4>
                             <input type="number" value="1" min="1" inputmode="numeric">
-                            <label for="1"></label>
-                            <button class="addBtn">Add to Cart</button>
+                            <button class="addBtn" @click="addTocart(), btnClick('.addBtn')">Add to Cart</button>
                             <div class="picInfo">
                             <h4></h4>
                             </div>
@@ -79,8 +78,29 @@ Vue.component("product-com",{
                 </div>
             </div>
         </div>
-        <div class="basket_area">
-            <div></div>
+        <div class="cartBox">
+            <div class="cart_top">
+                <h2>Cart</h2>
+                <span>X</span>
+            </div>
+            <ul class="cart_main">
+                <li class="cart_pic">
+                    <img :src="$store.state.cart_pic" alt="이미지">
+                </li>
+                <li class="cart_tit">
+                    {{$store.state.cart_tit}}<br>
+                    {{$store.state.cart_price}}
+                </li>
+                <li class="cart_cnt">
+                    1
+                </li>
+                <li class="cart_Mx">x</li>
+            </ul>
+            <div class="subtotal_part">
+                <span>Subtotal</span>
+                <span class="cart_price">{{$store.state.cart_price}}</span>
+            </div>
+            <button class="chkout">CheckOut</button>
         </div>
     </div>
     `,
@@ -163,6 +183,28 @@ Vue.component("product-com",{
         },
         initSwiper(){
             $(".mySwiper").init()
+        },
+        addTocart(){
+            store.state.cart_pic= $("swiper-slide img").first().attr("src")
+            store.state.cart_tit= $(".de_title h2").html()
+            store.state.cart_price= $(".de_price h3").html()
+            console.log(store.state.cart_price)
+        },
+        btnHover(x){
+            $(x).hover(function(){
+                $(this).animate({
+                    backgroundColor:'#777#F8CD07 40%'
+                },200)
+            },function(){
+                $(this).animate({
+                    backgroundColor:'#f47d00'
+                },200)
+            })
+        },
+        btnClick(x){
+            $(x).css({
+                backgroundColor:'#777#F8CD07 40%'
+            })
         }
     },
     created(){
@@ -172,12 +214,10 @@ Vue.component("product-com",{
         store.commit("updateE",{
             upImg:upImg,
         })
-
     },
     mounted(){
-        $(()=>{
-            
-        });
+        this.btnHover(".addBtn")
+        this.btnHover(".chkout")
     }
 }); ///////////////// component(부모) /////////////////
 
