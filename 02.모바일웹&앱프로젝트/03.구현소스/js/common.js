@@ -11,7 +11,7 @@ Vue.component("top-com",{
             <nav class="gnb">
                 <ol class="gnb_ol">
                     <li></li>
-                    <li class="cart"></li>
+                    <li class="cart" @click.prevent="openCart"></li>
                     <li></li>
                     <li></li>
                 </ol>
@@ -36,6 +36,12 @@ Vue.component("top-com",{
         
     </div>
     `,
+    methods:{
+        openCart(){
+            $(".cartBox").addClass("open")
+            $(".top_area, .lnb_area, .cont_area, .top, .info").addClass("fil")
+        }
+    }
 })
 
 new Vue({

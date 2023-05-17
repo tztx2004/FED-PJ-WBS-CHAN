@@ -8,6 +8,7 @@ let num=0;
 // 전역변수
 let cnt=0;
 let upDet=0;
+let prot =0
 
 
 let upImg='./img/sub/origin/All/1';
@@ -25,7 +26,7 @@ Vue.component("product-com",{
         <div class="lnb_area">
             <ol class="lnb">
                 <li v-for="(items, index) in this.dList" :key="index">
-                    <a href="#" class="yellow underline" @click.prevent="readAttr(index)">
+                    <a href="#" class="yellow underline" @click.prevent="readAttr(index), lnbClick">
                         {{ items }}
                     </a>
                 </li>
@@ -78,10 +79,11 @@ Vue.component("product-com",{
                 </div>
             </div>
         </div>
+
         <div class="cartBox">
             <div class="cart_top">
                 <h2>Cart</h2>
-                <span>X</span>
+                <span @click="clsBtn()">X</span>
             </div>
             <ul class="cart_main">
                 <li class="cart_pic">
@@ -92,13 +94,13 @@ Vue.component("product-com",{
                     {{$store.state.cart_price}}
                 </li>
                 <li class="cart_cnt">
-                    1
+                    {{$store.state.inVal}}
                 </li>
                 <li class="cart_Mx">x</li>
             </ul>
             <div class="subtotal_part">
                 <span>Subtotal</span>
-                <span class="cart_price">{{$store.state.cart_price}}</span>
+                <span class="cart_price">{{'$'+Number($store.state.cart_price.replace("$",""))*$store.state.inVal}}</span>
             </div>
             <button class="chkout">CheckOut</button>
         </div>
@@ -130,10 +132,9 @@ Vue.component("product-com",{
             return rqData.pd_imgs[x][this.dList[x]]
         },
         readAttr(x){
-            // console.log(x)
             cnt = x;
-            console.log(cnt)
             this.$store.state.updateNum = x
+            $(".lnb li").eq(x).find("a").addClass("on").parent().siblings().find("a").removeClass("on")
             return x;
         },
         popDetail(){ // 상세정보창 출력
@@ -143,6 +144,7 @@ Vue.component("product-com",{
         },
         closedDetail(){
             $(".detail_wrap").removeClass("on")
+            $(".cartBox").removeClass("open")
             $(".top_area, .lnb_area, .cont_area, .top, .info").removeClass("fil")
 
             // 초기화
@@ -151,6 +153,8 @@ Vue.component("product-com",{
         },
         readItem(e){
             let tg = event.target
+            
+            console.log(store.state.tg)
             let srcT = $(tg).attr("src")
             let tgTit = $(tg).parent().find(".item_copy>h2")
             let tgT = $(tgTit).html();
@@ -188,9 +192,20 @@ Vue.component("product-com",{
             store.state.cart_pic= $("swiper-slide img").first().attr("src")
             store.state.cart_tit= $(".de_title h2").html()
             store.state.cart_price= $(".de_price h3").html()
-            console.log(store.state.cart_price)
+            store.state.inVal = $(".de_payInfo input").val()
+            $(".cart_Mx").css({opacity:1})
+
+            console.log(Number(store.state.cart_price.replace("$",""))*store.state.inVal)
+            if(store.state.cart_tit!=="We're sure you can find something you like."){
+                console.log(store.state.cart_tit)
+                $(".cart a").addClass("on");
+            }
         },
         btnHover(x){
+            prot=1
+            setTimeout(()=>{
+                prot =0
+            },100)
             $(x).hover(function(){
                 $(this).animate({
                     backgroundColor:'#777#F8CD07 40%'
@@ -205,8 +220,17 @@ Vue.component("product-com",{
             $(x).css({
                 backgroundColor:'#777#F8CD07 40%'
             })
+        },
+        clsBtn(){
+            console.log($(".cart_tit").text().length)
+            $(".cartBox").removeClass("open")
+            $(".top_area, .lnb_area, .cont_area, .top, .info").removeClass("fil")
+        },
+        lnbClick(){
+            console.log(this)
         }
     },
+
     created(){
         store.commit("initS",{
             sc:cnt,
@@ -218,6 +242,8 @@ Vue.component("product-com",{
     mounted(){
         this.btnHover(".addBtn")
         this.btnHover(".chkout")
+        $(".lnb li").first().find("a").addClass("on")
+        
     }
 }); ///////////////// component(부모) /////////////////
 
