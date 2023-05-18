@@ -102,7 +102,7 @@ Vue.component("product-com",{
                 <span>Subtotal</span>
                 <span class="cart_price">{{'$'+Number($store.state.cart_price.replace("$",""))*$store.state.inVal}}</span>
             </div>
-            <button class="chkout">CheckOut</button>
+            <button class="chkout" @click="chkbox">CheckOut</button>
         </div>
     </div>
     `,
@@ -135,6 +135,11 @@ Vue.component("product-com",{
             cnt = x;
             this.$store.state.updateNum = x
             $(".lnb li").eq(x).find("a").addClass("on").parent().siblings().find("a").removeClass("on")
+            
+            $(".item").removeClass("on")
+            setTimeout(() => {
+                $(".item").addClass("on")
+            }, 800);
             return x;
         },
         popDetail(){ // 상세정보창 출력
@@ -228,7 +233,11 @@ Vue.component("product-com",{
         },
         lnbClick(){
             console.log(this)
-        }
+        },
+        chkbox(){
+            alert("Sorry! No Service Yet!")
+        },
+
     },
 
     created(){

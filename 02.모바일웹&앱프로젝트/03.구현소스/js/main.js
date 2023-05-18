@@ -48,34 +48,40 @@ new Vue({
 });
 ///////////////////////////////////////////////////////////
 
+setTimeout(() => {
+    $(".title h1").addClass("on")
+    let vd = document.querySelector(".main_vd")
+    vd.autoplay=true
+    vd.load()
+}, 1000);
+
 let m_img = $(".main_img");
 let cnt=1;
 /// 스크롤 시 이미지 변함
 function chgImg(){
     const wT = $(window).scrollTop(); // 윈도우 스크롤 위치
     let imgpos = m_img.offset().top;
-    
+    let pg2_top = $(".pg2_wrap").offset().top
+    let pg2_h =$(".pg2_wrap").height()
     // 이미지 경로변화 -> 이미지 바뀜
-    cnt = Math.floor(imgpos / 50 -20);
-    if(cnt<70) m_img.attr("src",`./img/main/pg2/pic${cnt}.jpg`);
+    cnt = Math.floor((imgpos-pg2_top)/40);
+    // console.log("ip",imgpos,pg2_top,cnt)
+    if(cnt<70 && cnt>0) m_img.attr("src",`./img/main/pg2/pic${cnt}.jpg`);
     // 사진이 70장있음
 
 
-    if(imgpos > 1360){
+    if(imgpos > pg2_top){
         $(".imgbx_cont p").animate({
             opacity:1
         },2000)
     }
 
-    if(imgpos > 1360 && imgpos < 3500){
+    if(imgpos > pg2_top && imgpos < (pg2_top+pg2_h)*0.8){
         $(".pg2 .pg2_wrap").addClass("on")
     }
     else{
         $(".pg2 .pg2_wrap").removeClass("on")
     }
-
-    console.log(cnt,imgpos);
-    
 }/////////////////// chgImg ////////////////
 
 
@@ -113,7 +119,7 @@ function rotF(){
         let elH = $(ele).height(); // 그림 높이
 
         if(pos>=ot && pos< ot+ elH){
-            console.log(idx)
+            // console.log(idx)
             cls(pg3_tit1,wds[idx])
             cls(pg3_tit2,wds[idx])
         }

@@ -11,9 +11,13 @@
     background-color: transparent;
 }
 .title h1{
-    font-size: 10vw;
+    font-size: 23vw;
     background-color: transparent;
     font-family: 'Tiempos Headline', sans-serif;
+    transition: .4s;
+}
+.title h1.on{
+    font-size: 10vw;
 }
 .vdbx{
     position: relative;

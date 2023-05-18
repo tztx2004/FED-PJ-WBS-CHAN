@@ -82,12 +82,20 @@
     margin-bottom: 15%;
     height: max(44vw,256px);
     cursor: default;
+    transition: .8s;
+    transform: translateY(100%);
+    opacity: 0;
+}
+.item.on{
+    transform: translateY(0%);
+    opacity: 1;
 }
 .item_pic{
     width: 100%;
     height: 100%;
     position: relative;
 }
+
 .item_pic img{
     position: absolute;
     width: 100%;
