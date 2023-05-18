@@ -1,4 +1,133 @@
 // main
+
+////////////////// main 2pg ///////////////////////
+//////////////////////// vue /////////////////////////////
+// test vue, 2페이지 그림사진 줌
+// const tsData = {
+//     obj:`
+//         <li>
+//             <img class="main_img" v-bind:src="gsrc" alt="이미지">
+//         </li>
+//     `,
+//     obj2:``
+// }
+
+// 숫자증감변수
+let num =0;
+
+// Vue.component("test-comp",{
+//     template:`
+//         <li>
+//             <img class="main_img" v-bind:src="gsrc" alt="이미지">
+//         </li>
+//     `,
+//     data(){
+//         return{
+//             gsrc:`./img/main/pg2/pic${this.setNum()}.jpg`,
+//         }
+//     },
+//     methods:{
+//         setNum(){
+//             num+=1;
+//             return num;
+//         }
+//     }
+// });
+
+// new Vue({
+//     el:".pg2",
+// });
+
+
+
+
+
+
+Vue.component("main-com",{
+    template:`
+    <div class="main">
+    <div class="pg pg1 ht_m">
+            <div class="vdbx">
+                <video class="main_vd" src="./img/main/main_ani.webm" muted loop></video>
+                <div class="title">
+                    <h1>Musium</h1>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pg pg2">
+            <div class="pg2_wrap">
+                <!-- <div class="pg2_fontbx">
+                </div> -->
+                <div class="pg2_imgbx">
+                    <ul class="imgbx_cont">
+                        <p>You can enjoy many pictures and content on this page. Also, you can buy a painting if you like it. Feel healing with reasonable cost and beautiful pictures!</p>
+                        <li>
+                            <img class="main_img" v-bind:src="gsrc" alt="이미지">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pg pg3 ht">
+            <div class="pg3_wrapper">
+                <div class="pg3_tit pg3_tit1">
+                    <h3>MUSIUM</h3>
+                </div>
+                <div class="pg3_cont">
+                    <div class="pg3_real">
+                        <h2>OUR WORK</h2>
+                    </div>
+                    <div class="pg3_items">
+                        <div class="main_imgbx">
+                            <img src="./img/sub/origin/All/1.jpg" alt="테스트이미지">
+                        </div>
+                        <div class="img_dsc">
+                            <h3>An exclusive 9 colour screen print on 250 gsm Fabriano Unica paper</h3>
+                        </div>
+                    </div>
+                    <div class="pg3_items">
+                        <div class="main_imgbx">
+                            <img src="./img/sub/origin/All/10.jpg" alt="테스트이미지">
+                        </div>
+                        <div class="img_dsc">
+                            <h3>Signed A2 offset on Munken Lynx Rough 170 gsm paper</h3>
+                        </div>
+                    </div>
+                    <div class="pg3_items">
+                        <div class="main_imgbx">
+                            <img src="./img/sub/origin/All/19.jpg" alt="테스트이미지">
+                        </div>
+                        <div class="img_dsc">
+                            <h3>4 color risograph print on 240 gsm Munken Pure archival paper</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="pg3_tit pg3_tit2">
+                    <h3>MUSIUM</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    `,
+    data(){
+        return{
+            gsrc:`./img/main/pg2/pic${this.setNum()}.jpg`,
+        }
+    },
+    methods:{
+        setNum(){
+            num+=1;
+            return num;
+        },
+    }
+})
+
+new Vue({
+    el:".main_real",
+})
+///////////////////////////////////////////////////////////
 const pg3_tit = $(".pg3_tit h3");
 const pg3_tit1 = $(".pg3_tit1 h3");
 const pg3_tit2 = $(".pg3_tit2 h3");
@@ -9,44 +138,7 @@ const main_imgbx = $(".main_imgbx");
 
 
 
-////////////////// main 2pg ///////////////////////
-//////////////////////// vue /////////////////////////////
-// test vue, 2페이지 그림사진 줌
-const tsData = {
-    obj:`
-        <li>
-            <img class="main_img" v-bind:src="gsrc" alt="이미지">
-        </li>
-    `,
-    obj2:``
-}
 
-// 숫자증감변수
-let num =0;
-
-Vue.component("test-comp",{
-    template:`
-        <li>
-            <img class="main_img" v-bind:src="gsrc" alt="이미지">
-        </li>
-    `,
-    data:function(){
-        return{
-            gsrc:`./img/main/pg2/pic${this.setNum()}.jpg`,
-        }
-    },
-    methods:{
-        setNum(){
-            num+=1;
-            return num;
-        }
-    }
-});
-
-new Vue({
-    el:".pg2",
-});
-///////////////////////////////////////////////////////////
 
 setTimeout(() => {
     $(".title h1").addClass("on")
@@ -91,7 +183,7 @@ function chgImg(){
 window.addEventListener("scroll",()=>{
     // 글씨회전 함수(현재는 메인 3페이지에서 구현)
     // rotFont();
-    
+
     // 이미지 변화
     chgImg()
 
@@ -113,13 +205,15 @@ function rotF(){
     let ot; // 그림 위치
     let pos = window.scrollY; // 현재 스크롤위치
     let cz = 0;
-
-    main_imgbx.each((idx,ele)=>{
+    $(()=>{
+        
+    console.log($(".main_imgbx").length)
+        $(".main_imgbx").each((idx,ele)=>{
+        console.log("sss")
         ot = $(ele).offset().top; // 그림 위치
         let elH = $(ele).height(); // 그림 높이
-
         if(pos>=ot && pos< ot+ elH){
-            // console.log(idx)
+            console.log(idx)
             cls(pg3_tit1,wds[idx])
             cls(pg3_tit2,wds[idx])
         }
@@ -130,7 +224,7 @@ function rotF(){
         // console.log(pos,ot+elH);
     });/////////////////// each /////////////////////
 
-    
+})
     // 1. 내 위치를 구한다
     // 2. 각 사진의 offset().top값을 구한다
     // 3. 내 위치가 offset().top값을 넘어가면 클레스를 준다
@@ -140,8 +234,9 @@ function rotF(){
 
 // on, on2클래스 주기
 function cls(x,words){
-
-    x.addClass("on3")
+    
+    // x.addClass("on3")
+    // x.classList.add("on")
     setTimeout(() => {
         x.html(words)
     }, 500);

@@ -8,7 +8,7 @@ let num=0;
 // 전역변수
 let cnt=0;
 let upDet=0;
-let prot =0
+let prot =1
 
 
 let upImg='./img/sub/origin/All/1';
@@ -69,7 +69,7 @@ Vue.component("product-com",{
                         </div>
                         <div class="de_payInfo">
                             <h4>Quantity</h4>
-                            <input type="number" value="1" min="1" inputmode="numeric">
+                            <input type="number" value="1" min="1" max="9">
                             <button class="addBtn" @click="addTocart(), btnClick('.addBtn')">Add to Cart</button>
                             <div class="picInfo">
                             <h4></h4>
@@ -133,12 +133,13 @@ Vue.component("product-com",{
         },
         readAttr(x){
             cnt = x;
-            this.$store.state.updateNum = x
+            
             $(".lnb li").eq(x).find("a").addClass("on").parent().siblings().find("a").removeClass("on")
             
             $(".item").removeClass("on")
             setTimeout(() => {
                 $(".item").addClass("on")
+                this.$store.state.updateNum = x
             }, 800);
             return x;
         },
@@ -207,19 +208,22 @@ Vue.component("product-com",{
             }
         },
         btnHover(x){
-            prot=1
+            if(prot){
+            prot = 0
             setTimeout(()=>{
-                prot =0
+                prot =1
             },100)
             $(x).hover(function(){
-                $(this).animate({
+                $(this).stop().animate({
                     backgroundColor:'#777#F8CD07 40%'
                 },200)
             },function(){
-                $(this).animate({
+                $(this).stop().animate({
                     backgroundColor:'#f47d00'
                 },200)
             })
+            
+        }
         },
         btnClick(x){
             $(x).css({
@@ -237,7 +241,6 @@ Vue.component("product-com",{
         chkbox(){
             alert("Sorry! No Service Yet!")
         },
-
     },
 
     created(){
@@ -252,6 +255,10 @@ Vue.component("product-com",{
         this.btnHover(".addBtn")
         this.btnHover(".chkout")
         $(".lnb li").first().find("a").addClass("on")
+
+        setTimeout(() => {
+            $(".item").addClass("on")
+        }, 800);
         
     }
 }); ///////////////// component(부모) /////////////////

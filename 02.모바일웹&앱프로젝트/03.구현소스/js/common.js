@@ -6,7 +6,7 @@ Vue.component("top-com",{
     <div class= "top">
         <div class="top_wrap">
             <div class="logo">
-                <a href="#">MUSIUM</a>
+                <a href="./index.html">MUSIUM</a>
             </div>
             <nav class="gnb">
                 <ol class="gnb_ol">
@@ -49,6 +49,26 @@ new Vue({
 })
 
 
+
+Vue.component("info-com",{
+    template:`
+    <div class="info">
+        <div class="info_logo">
+            <h2><a href="#">MUSIUM</a></h2>
+        </div>
+        <div class="info_cont">
+            <h3>INFO@MUSIUM</h3>
+        </div>
+        <div class="privacy">
+            <h3>Privacy&terms</h3>
+        </div>
+    </div>
+    `,
+})
+
+new Vue({
+    el:'.info_real',
+})
 
 // 대상
 const top = $(".top");

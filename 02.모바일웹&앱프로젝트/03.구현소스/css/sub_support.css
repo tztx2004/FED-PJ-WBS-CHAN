@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+/* support.css */
+/********************* support *********************/
+.support{
+    margin-top: 50px;
+    height: 1000px;
+}
+.sup_tit{
+    position: relative;
+    width: 50%;
+    height: 200px;
+    line-height: 2;
+}
+.sup_tit h2{
+    font-size: 150px;
+}
+.sup_cont{
+    top: 350px;
+    position: absolute;
+    width: 80%;
+    padding: 0 40px;
+    right: 0;
+}
+.cont{
+    margin: 50px 0;
+}
+h3{
+    font-size: 32px;
+}
+p{
+    font-size: 26px;
+}
