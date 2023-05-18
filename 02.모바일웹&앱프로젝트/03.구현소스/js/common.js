@@ -1,5 +1,5 @@
 // JS
-console.log("common");
+
 
 Vue.component("top-com",{
     template:`
@@ -32,8 +32,6 @@ Vue.component("top-com",{
                 <li></li>
             </ol>
         </div>
-
-        
     </div>
     `,
     methods:{
@@ -84,19 +82,18 @@ gnb_li.each(function (idx, ele) {
     $(ele).html(`
         <a href="#" class="yellow underline">${gnb_arr[idx]}</a>
     `);
+
 }); ///////// each ////////////
+
+$(".gnb li a").eq(0).attr("href","./sub_product.html")
+$(".gnb li a").eq(2).attr("href","./sub_support.html")
+
 
 m_gnb.each(function (idx, ele) {
     $(ele).html(`
         <a href="#">${gnb_arr[idx]}</a>
     `);
 }); ///////// each ////////////
-
-// addEventListener("scroll",(e)=>{
-//     const direction = e.deltaY > 0 ? "Scroll Down" : "Scroll Up";
-//     // 방향과 현 스크롤 위치
-//     console.log(direction, window.scrollY);
-// });
 
 // top영역 스크롤 시 사라짐
 let last_top = 0;
@@ -135,4 +132,3 @@ toggleButton.on('click', function() {
     },800); //////////////// setTimeout /////////////
 
 });///////////// click ////////////////
-

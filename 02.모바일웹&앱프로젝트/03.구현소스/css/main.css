@@ -186,6 +186,7 @@
 .main_imgbx{
     overflow: hidden;
     border-radius: 40px;
+    box-shadow: 0 0 5px #777;
 }
 .main_imgbx img{
     width: 100%;

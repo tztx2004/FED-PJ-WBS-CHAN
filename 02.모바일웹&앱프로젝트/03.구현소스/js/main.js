@@ -1,47 +1,7 @@
 // main
 
-////////////////// main 2pg ///////////////////////
-//////////////////////// vue /////////////////////////////
-// test vue, 2페이지 그림사진 줌
-// const tsData = {
-//     obj:`
-//         <li>
-//             <img class="main_img" v-bind:src="gsrc" alt="이미지">
-//         </li>
-//     `,
-//     obj2:``
-// }
-
 // 숫자증감변수
 let num =0;
-
-// Vue.component("test-comp",{
-//     template:`
-//         <li>
-//             <img class="main_img" v-bind:src="gsrc" alt="이미지">
-//         </li>
-//     `,
-//     data(){
-//         return{
-//             gsrc:`./img/main/pg2/pic${this.setNum()}.jpg`,
-//         }
-//     },
-//     methods:{
-//         setNum(){
-//             num+=1;
-//             return num;
-//         }
-//     }
-// });
-
-// new Vue({
-//     el:".pg2",
-// });
-
-
-
-
-
 
 Vue.component("main-com",{
     template:`
@@ -206,25 +166,23 @@ function rotF(){
     let pos = window.scrollY; // 현재 스크롤위치
     let cz = 0;
     $(()=>{
-        
-    console.log($(".main_imgbx").length)
         $(".main_imgbx").each((idx,ele)=>{
-        console.log("sss")
-        ot = $(ele).offset().top; // 그림 위치
-        let elH = $(ele).height(); // 그림 높이
-        if(pos>=ot && pos< ot+ elH){
-            console.log(idx)
-            cls(pg3_tit1,wds[idx])
-            cls(pg3_tit2,wds[idx])
-        }
-        else if(pos>= ot+ elH){
-            rev_on(pg3_tit1)
-            rev_on(pg3_tit2)
-        }
-        // console.log(pos,ot+elH);
-    });/////////////////// each /////////////////////
+            ot = $(ele).offset().top; // 그림 위치
+            let elH = $(ele).height(); // 그림 높이
 
-})
+            if(pos>=ot +150 && pos< ot+ elH - 150){
+                console.log(idx)
+                cls(pg3_tit1,wds[idx])
+                cls(pg3_tit2,wds[idx])
+            }
+            else if(pos>= ot+ elH){
+                rev_on(pg3_tit1)
+                rev_on(pg3_tit2)
+            }
+            // console.log(pos,ot+elH);
+        });/////////////////// each /////////////////////
+
+    })
     // 1. 내 위치를 구한다
     // 2. 각 사진의 offset().top값을 구한다
     // 3. 내 위치가 offset().top값을 넘어가면 클레스를 준다
@@ -234,9 +192,7 @@ function rotF(){
 
 // on, on2클래스 주기
 function cls(x,words){
-    
-    // x.addClass("on3")
-    // x.classList.add("on")
+    x.addClass("on3")
     setTimeout(() => {
         x.html(words)
     }, 500);
@@ -290,23 +246,4 @@ function rotFont(){ // 글씨회전 함수
         } /////////// else ////////////
     });////////////// each ///////////////
 } ////////////////// rotFont_글씨회전 /////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
