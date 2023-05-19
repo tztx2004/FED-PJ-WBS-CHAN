@@ -5,15 +5,18 @@
 .support{
     margin-top: 50px;
     height: 1000px;
+    background: url(../img/main/main-section-01-img-05.png) no-repeat center;
 }
 .sup_tit{
     position: relative;
     width: 50%;
     height: 200px;
     line-height: 2;
+    background: none;
 }
 .sup_tit h2{
     font-size: 150px;
+    background: none;
 }
 .sup_cont{
     top: 350px;
@@ -21,13 +24,17 @@
     width: 80%;
     padding: 0 40px;
     right: 0;
+    background: none;
 }
 .cont{
     margin: 50px 0;
+    background: none;
 }
 .cont h3{
     font-size: 32px;
+    background: none;
 }
 p{
     font-size: 26px;
+    background: none;
 }
