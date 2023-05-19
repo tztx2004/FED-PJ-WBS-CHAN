@@ -87,6 +87,7 @@ gnb_li.each(function (idx, ele) {
 
 $(".gnb li a").eq(0).attr("href","./sub_product.html")
 $(".gnb li a").eq(2).attr("href","./sub_support.html")
+$(".gnb li a").eq(3).attr("href","./sub_contact.html")
 
 
 m_gnb.each(function (idx, ele) {
