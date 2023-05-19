@@ -160,7 +160,7 @@ Vue.component("product-com",{
         readItem(e){
             let tg = event.target
             
-            console.log(store.state.tg)
+            // console.log(store.state.tg)
             let srcT = $(tg).attr("src")
             let tgTit = $(tg).parent().find(".item_copy>h2")
             let tgT = $(tgTit).html();
@@ -176,7 +176,7 @@ Vue.component("product-com",{
                 store.state.upImg = srcT.split("_on")[0]
             }
             
-            console.log(srcT)
+            // console.log(srcT)
             
             // 출력
             // 사진 속성변경

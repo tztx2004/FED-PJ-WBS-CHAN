@@ -18,7 +18,7 @@ html,body,ol,ul,li,h1,h2,h3,h4,div,span,a{
 
 /* 표시 */
 html *{
-    outline: 1px dashed #000;
+    /* outline: 1px dashed #000; */
     background-color: #fbf9fa;
     font-family: 'Canela Trial', sans-serif;
 }

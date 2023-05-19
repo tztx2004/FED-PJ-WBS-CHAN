@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+/* sub_contact.css */
+
+.contact{
+    margin-top: 50px;
+    background: url(../img/main/main-section-01-img-02.png) no-repeat center;
+    height: 100vh;
+}
+.origin{
+    width: 50%;
+    font-size: 30px;
+    background: none;
+    transform: translate(30%, 100%);
+}
+.show{
+    width: 50%;
+    font-size: 30px;
+    margin-top: 30px;
+    background: none;
+    transform: translate(30%, 200%);
+}
+.bg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    filter: brightness(.8);
+    z-index: -1;
+}
