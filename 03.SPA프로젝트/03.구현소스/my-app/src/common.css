@@ -1,0 +1,45 @@
+@charset "utf-8";
+/********************** 초기세팅 **********************/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: #f2f3f5;
+}
+html{
+    font-size: 16px;
+}
+ul, ol {
+    list-style: none;
+}
+a {
+    text-decoration: none
+}
+
+
+/************************ 헤더 ************************/
+.header{
+    width: 100%;
+    text-align: center;
+}
+.nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-around
+}
+.nav_text{
+    font-size: 2rem;/* 32px */
+    cursor: pointer;
+}
+.limitWidth{
+    width: 100%;
+    padding: 0 5%;
+}
+
+.Main{
+    display: flex;
+    flex-direction: column;
+}
+.header_text{
+    width: 100%;
+}
