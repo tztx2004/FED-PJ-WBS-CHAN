@@ -3,8 +3,25 @@ import "../css/main.css";
 // moveBox 마우스 따라다니게 하기
 const moveBox = document.querySelector(".moveBox");
 const ma_1pg_imgs = document.querySelectorAll(".ma_1pg_imgs");
-let xx = event.offsetX
-console.log(xx)
+// let xx = event.offsetX
+// console.log(xx)
+
+// 연습
+// class prc{
+//     constructor({$target}){
+//         this.$target = $target;
+//         this.setState();
+//     }
+//     setState(){
+//         this.render();
+//     }
+//     render(){
+//         // 인자를 전달할 때 키값을 고정해서 변수이름을 유지한다
+//         new prc({$target:"하하하"})
+//     }
+// }
+// console.log(new prc)
+
 
 
 // 메인 1페이지 컴포넌트
