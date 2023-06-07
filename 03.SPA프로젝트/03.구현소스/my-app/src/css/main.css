@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+.ma_1pg_img1_wrapper{
+    width: 80vw;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    height: 80vw;
+}
+.ma_1pg_img1{
+    width: 100%;
+    border: 1px solid #000;
+}
+
+
+.ma_1pg_imgs{
+    /* width: 60vw; */
+    margin: 0 auto;
+    position: absolute;
+}
+.ma_1pg_imgs img{
+    width: 100%;
+}
+.ma_1pg_base{
+    z-index: 10;
+}
+
+.moveBox{
+    width: 10vw;
+    height: 10vw;
+    border: 2px solid #fff;
+    position: relative;
+    z-index: 11;
+    background: none;
+}

@@ -21,12 +21,17 @@ a {
 .header{
     width: 100%;
     text-align: center;
+
+    border-bottom: 1px solid #ccc;
 }
 .nav{
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+.nav a{
+    color: #000;
 }
 .nav_text{
     font-size: 2rem;/* 32px */
