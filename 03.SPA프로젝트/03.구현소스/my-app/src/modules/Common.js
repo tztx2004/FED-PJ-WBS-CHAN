@@ -9,7 +9,7 @@ function Common() {
       <header className='header'>
         <nav className='nav limitWidth'>
           <Link to={"/MODELS"}>
-            <span className='Modles nav_text'>MODLES</span>
+            <span className='Models nav_text'>MODLES</span>
           </Link>
           <Link to={"/Main"}>
             <span className='Main nav_text'>AI MODELS</span></Link>
