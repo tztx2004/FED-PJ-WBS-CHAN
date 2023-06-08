@@ -9,16 +9,33 @@ $(()=>{
     const ma_1pg_base = document.querySelector(".ma_1pg_base");
     const ma_1pg_imgs = document.querySelectorAll(".ma_1pg_imgs");
     
-    ma_1pg_base.addEventListener("mousemove",function(e){
-        let x = e.offsetX + 30;
-        let y = e.offsetY + 30;
-        moveBox.css({
-            left:x,
-            top:y,
-        })
-        console.log(x,y)
-            
-    }) //// mousemove ////
+    // 박스 움직이게 만들기 (배경,움직이는요소)
+    function move(bg,tg){
+        bg.addEventListener("mousemove",function(e){
+            let x = e.offsetX + 30;
+            let y = e.offsetY + 30;
+            tg.css({
+                left:x,
+                top:y,
+            })
+            console.log(x,y)
+                
+        }) //// mousemove ////
+    }
+    // 포기하면 실행
+    // move(ma_1pg_base,moveBox);
+
+    let bg = $(".bg")
+    let pr = $(".pr")
+    $(".ma_1pg_base")
+    .mouseover(
+    function(){
+        pr.css({zIndex:999})
+    }).mouseout(
+    function(){
+        pr.css({zIndex:9})
+    })
+
     
     // console.log(ma_1pg_imgs)
 })
@@ -29,9 +46,23 @@ function Main1pg(props){
 
     return(
         <>
+        <picture>
+                    <source srcset="https://www.ai-model.jp/wp/wp-content/themes/aimodel/images/kv_base_pc.jpg" media="(min-width: 600px)" width="1312" height="808"/>
+                    <img class="kv__img" imagemask="img" src="https://www.ai-model.jp/wp/wp-content/themes/aimodel/images/kv_base_sp.jpg" alt="" width="360" height="514" data-src-sp="https://www.ai-model.jp/wp/wp-content/themes/aimodel/images/kv_a_sp.jpg,https://www.ai-model.jp/wp/wp-content/themes/aimodel/images/kv_b_sp.jpg,https://www.ai-model.jp/wp/wp-content/themes/aimodel/images/kv_c_sp.jpg" data-src-pc="https://www.ai-model.jp/wp/wp-content/themes/aimodel/images/kv_a_pc.jpg,https://www.ai-model.jp/wp/wp-content/themes/aimodel/images/kv_b_pc.jpg,https://www.ai-model.jp/wp/wp-content/themes/aimodel/images/kv_c_pc.jpg" loading="" loadingdata=""/>
+                </picture>
+
             <div className="ma_1pg_img1_wrapper">
                 <div className="ma_1pg_base ma_1pg_imgs">
-                    <img src="./images/main/kv_base_pc.jpg"/>
+                    {/* <img src="./images/main/kv_base_pc.jpg"/> */}
+
+                    {/* <img className="bg" src="./images/main/kv_base_pc.jpg"/>
+                    <img className="pr" src="./images/main/kv_b_pc.jpg"/> */}
+
+
+                
+
+
+
                 </div>
                 <ol className="ma_1pg_bg">
                     <li className="ma_1pg_a ma_1pg_imgs">
@@ -44,12 +75,13 @@ function Main1pg(props){
                         <img data-seq="3" src="./images/main/kv_c_pc.jpg"/>
                     </li>
                     <div className="moveBox"></div>
-                </ol>
 
-                {/* <picture>
-                    <source srcset="./images/main/kv_base_pc.jpg" />
-                    <img imagemask="img" src="./images/main/kv_a_pc.jpg" width="360" height="514" data-src-pc="./images/main/kv_a_pc.jpg,./images/main/kv_b_pc.jpg,./images/main/kv_c_pc.jpg"  />
-                </picture> */}
+                    {/* <div>
+                        <div><img className="pr" src="./images/main/kv_b_pc.jpg"/></div>
+                        <img className="bg" src="./images/main/kv_c_pc.jpg"/>
+                        <div className="mv"></div>
+                    </div> */}
+                </ol>
             </div>
             <div className="ma_pg1_copy">
                 <span className="numb">00</span>

@@ -5,7 +5,7 @@ import data from "../data/main_data";
 
 // 각 페이지 모듈
 import Main1pg from "../components/main1pg";
-import Practice from "../components/practice";
+
 
 
 
