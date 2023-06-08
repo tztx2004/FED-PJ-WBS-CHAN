@@ -1,56 +1,72 @@
 import "../css/main.css";
+import $ from 'jquery';
+import main_data from '../data/main_data'
 
-// moveBox 마우스 따라다니게 하기
-const moveBox = document.querySelector(".moveBox");
-const ma_1pg_imgs = document.querySelectorAll(".ma_1pg_imgs");
-// let xx = event.offsetX
-// console.log(xx)
 
-// 연습
-// class prc{
-//     constructor({$target}){
-//         this.$target = $target;
-//         this.setState();
-//     }
-//     setState(){
-//         this.render();
-//     }
-//     render(){
-//         // 인자를 전달할 때 키값을 고정해서 변수이름을 유지한다
-//         new prc({$target:"하하하"})
-//     }
-// }
-// console.log(new prc)
-
+$(()=>{
+    // moveBox 마우스 따라다니게 하기
+    const moveBox = $(".moveBox")
+    const ma_1pg_base = document.querySelector(".ma_1pg_base");
+    const ma_1pg_imgs = document.querySelectorAll(".ma_1pg_imgs");
+    
+    ma_1pg_base.addEventListener("mousemove",function(e){
+        let x = e.offsetX + 30;
+        let y = e.offsetY + 30;
+        moveBox.css({
+            left:x,
+            top:y,
+        })
+        console.log(x,y)
+            
+    }) //// mousemove ////
+    
+    // console.log(ma_1pg_imgs)
+})
 
 
 // 메인 1페이지 컴포넌트
-function Main1pg(){
+function Main1pg(props){
+
     return(
         <>
             <div className="ma_1pg_img1_wrapper">
                 <div className="ma_1pg_base ma_1pg_imgs">
                     <img src="./images/main/kv_base_pc.jpg"/>
                 </div>
-                <ol>
+                <ol className="ma_1pg_bg">
                     <li className="ma_1pg_a ma_1pg_imgs">
-                        <img src="./images/main/kv_a_pc.jpg"/>
+                        <img data-seq="1" src="./images/main/kv_a_pc.jpg"/>
                     </li>
                     <li className="ma_1pg_b ma_1pg_imgs">
-                        <img src="./images/main/kv_b_pc.jpg"/>
+                        <img data-seq="2" src="./images/main/kv_b_pc.jpg"/>
                     </li>
                     <li className="ma_1pg_c ma_1pg_imgs">
-                        <img src="./images/main/kv_c_pc.jpg"/>
+                        <img data-seq="3" src="./images/main/kv_c_pc.jpg"/>
                     </li>
+                    <div className="moveBox"></div>
                 </ol>
-                <div className="moveBox"></div>
+
+                {/* <picture>
+                    <source srcset="./images/main/kv_base_pc.jpg" />
+                    <img imagemask="img" src="./images/main/kv_a_pc.jpg" width="360" height="514" data-src-pc="./images/main/kv_a_pc.jpg,./images/main/kv_b_pc.jpg,./images/main/kv_c_pc.jpg"  />
+                </picture> */}
             </div>
-            {/* <picture className="ma_1pg_img1_wrapper">
-                <source srcset="./images/main/kv_base_pc.jpg" media="(min-width:600px)" width="1312" height="808"/>
-                <img className="ma_1pg_img1" src="./images/main/kv_a_pc.jpg, ./images/main/kv_b_pc.jpg, ./images/main/kv_c_pc.jpg," width="360" height="514" alt="테스트이미지" />
-            </picture> */}
+            <div className="ma_pg1_copy">
+                <span className="numb">00</span>
+                <div className="ma_pg1_copy_part">
+                    <h2 className="ma_pg1_title">
+                        {main_data.pg1.title}
+                    </h2>
+                    <h3 className="ma_pg1_font">
+                        {main_data.pg1.font.split("^")[0]}<br/>
+                        {main_data.pg1.font.split("^")[1]}
+                    </h3>
+                </div>
+            </div>
         </>
-    );
-}
+    );///// return /////
+} ///// Main1pg /////
+
 
 export default Main1pg;
+

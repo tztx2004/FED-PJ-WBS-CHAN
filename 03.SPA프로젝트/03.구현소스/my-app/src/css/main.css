@@ -5,7 +5,8 @@
     text-align: center;
     margin: 0 auto;
     position: relative;
-    height: 80vw;
+    height: 49vw;
+    overflow: hidden;
 }
 .ma_1pg_img1{
     width: 100%;
@@ -14,7 +15,7 @@
 
 
 .ma_1pg_imgs{
-    /* width: 60vw; */
+    width: 100%;
     margin: 0 auto;
     position: absolute;
 }
@@ -26,10 +27,40 @@
 }
 
 .moveBox{
-    width: 10vw;
-    height: 10vw;
+    width: 300px;
+    height: 300px;
     border: 2px solid #fff;
     position: relative;
     z-index: 11;
     background: none;
+    left: 0px;
+    top: 0px;
+    background: url(../../public/images/main/kv_b_pc.jpg) no-repeat;
+    background-size: 80vw;
+    background-attachment:fixed;
+    background-position:center center;
+    /* transition: .1s ease-in; */
+}
+
+
+.ma_pg1_copy{
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    padding: 100px 0;
+}
+.numb{
+    margin-right: 10%;
+    font-size: 11px;
+}
+.ma_pg1_copy_part{
+    width: 80%;
+}
+.ma_pg1_title{
+    font-size: 3vw;
+    margin-bottom: 50px;
+}
+.ma_pg1_font{
+    font-size: 1.2vw;
+    line-height: 20px;
 }
