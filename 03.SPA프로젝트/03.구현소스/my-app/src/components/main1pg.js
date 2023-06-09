@@ -23,18 +23,19 @@ $(()=>{
         }) //// mousemove ////
     }
     // 포기하면 실행
-    // move(ma_1pg_base,moveBox);
+    move(ma_1pg_base,moveBox);
 
-    let bg = $(".bg")
-    let pr = $(".pr")
-    $(".ma_1pg_base")
-    .mouseover(
-    function(){
-        pr.css({zIndex:999})
-    }).mouseout(
-    function(){
-        pr.css({zIndex:9})
-    })
+    // 호버 시 사진 변화
+    // let bg = $(".bg")
+    // let pr = $(".pr")
+    // $(".ma_1pg_base")
+    // .mouseover(
+    // function(){
+    //     pr.css({zIndex:999})
+    // }).mouseout(
+    // function(){
+    //     pr.css({zIndex:9})
+    // })
 
     
     // console.log(ma_1pg_imgs)
@@ -46,26 +47,13 @@ function Main1pg(props){
 
     return(
         <>
-        <picture>
-                    <source srcset="https://www.ai-model.jp/wp/wp-content/themes/aimodel/images/kv_base_pc.jpg" media="(min-width: 600px)" width="1312" height="808"/>
-                    <img class="kv__img" imagemask="img" src="https://www.ai-model.jp/wp/wp-content/themes/aimodel/images/kv_base_sp.jpg" alt="" width="360" height="514" data-src-sp="https://www.ai-model.jp/wp/wp-content/themes/aimodel/images/kv_a_sp.jpg,https://www.ai-model.jp/wp/wp-content/themes/aimodel/images/kv_b_sp.jpg,https://www.ai-model.jp/wp/wp-content/themes/aimodel/images/kv_c_sp.jpg" data-src-pc="https://www.ai-model.jp/wp/wp-content/themes/aimodel/images/kv_a_pc.jpg,https://www.ai-model.jp/wp/wp-content/themes/aimodel/images/kv_b_pc.jpg,https://www.ai-model.jp/wp/wp-content/themes/aimodel/images/kv_c_pc.jpg" loading="" loadingdata=""/>
-                </picture>
-
+            
             <div className="ma_1pg_img1_wrapper">
                 <div className="ma_1pg_base ma_1pg_imgs">
-                    {/* <img src="./images/main/kv_base_pc.jpg"/> */}
-
-                    {/* <img className="bg" src="./images/main/kv_base_pc.jpg"/>
-                    <img className="pr" src="./images/main/kv_b_pc.jpg"/> */}
-
-
-                
-
-
-
+                    <img src="./images/main/kv_base_pc.jpg"/>
                 </div>
                 <ol className="ma_1pg_bg">
-                    <li className="ma_1pg_a ma_1pg_imgs">
+                    {/* <li className="ma_1pg_a ma_1pg_imgs">
                         <img data-seq="1" src="./images/main/kv_a_pc.jpg"/>
                     </li>
                     <li className="ma_1pg_b ma_1pg_imgs">
@@ -73,14 +61,13 @@ function Main1pg(props){
                     </li>
                     <li className="ma_1pg_c ma_1pg_imgs">
                         <img data-seq="3" src="./images/main/kv_c_pc.jpg"/>
-                    </li>
-                    <div className="moveBox"></div>
+                    </li> */}
 
-                    {/* <div>
-                        <div><img className="pr" src="./images/main/kv_b_pc.jpg"/></div>
-                        <img className="bg" src="./images/main/kv_c_pc.jpg"/>
-                        <div className="mv"></div>
-                    </div> */}
+                    <div className="moveBox mv1"></div>
+                    {/* <div className="moveBox mv2"></div>
+                    <div className="moveBox mv3"></div> */}
+
+                    
                 </ol>
             </div>
             <div className="ma_pg1_copy">
