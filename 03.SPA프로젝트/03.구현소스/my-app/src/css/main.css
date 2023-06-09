@@ -83,3 +83,30 @@
     font-size: 1.2vw;
     line-height: 20px;
 }
+
+
+
+
+/* 메인 2페이지 */
+.about{
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 100%;
+    /* aspect-ratio: 21/10; */
+    /* background: url(../../public/images/main/aboutA_pc@1.5x.jpg) no-repeat; */
+}
+.about img{
+    width: 100%;
+    border: none;
+}
+.about_cover{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    outline: 3px dashed #000;
+}
+.about_cover img{
+    visibility: hidden;
+}
