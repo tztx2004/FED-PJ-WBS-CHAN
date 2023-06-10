@@ -3,7 +3,7 @@ const main_data = [
         psrc:"https://tztx2004.github.io./FED-PJ-WBS-CHAN/01.%EC%9B%B9%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/03.%EA%B5%AC%ED%98%84%EC%86%8C%EC%8A%A4/apple.html",
         pimg:"./images/apple.png",
         ptit:"Apple iPhone14 pro",
-        pinfo:`애플사의 아이폰을 주제로 웹페이지를 제작하였습니다${<br/>}
+        pinfo:`애플사의 아이폰을 주제로 웹페이지를 제작하였습니다.
         사용된 언어는 JavaScript이며, 다양한 효과를 입히는 것에 노력했습니다!
         `,
     },
@@ -11,8 +11,8 @@ const main_data = [
         psrc:"https://tztx2004.github.io./FED-PJ-WBS-CHAN/04.%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/solarsystem/main.html",
         pimg:"./images/nasa.png",
         ptit:"NASA",
-        pinfo:`nasa를 주제로 여러 행성들을 소개하는 페이지 입니다.${<br/>}
-        팀프로젝트로 진행하였으며, 메인페이지와 Mars페이지를 제작하였습니다.${<br/>}
+        pinfo:`nasa를 주제로 여러 행성들을 소개하는 페이지 입니다.
+        팀프로젝트로 진행하였으며, 메인페이지와 Mars페이지를 제작하였습니다.
         사용된 언어는 JavaScript입니다.
         `,
     },
