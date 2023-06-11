@@ -19,6 +19,7 @@ a {
 /* *********************** */
 header{
   display: flex;
+  top: 0;
   padding: 1% 10%;
   justify-content: space-between;
   position: fixed;
@@ -38,12 +39,13 @@ nav a{
   margin: 0 10px;
   color: #000;
 }
+
+
 .pg1{
   width: 100%;
-  outline: 1px solid;
-  background-image: url(../애플로고회색.png);
-  background-size: 100px 100px;
-  background-position: center;
+  height: 100%;
+  
+  margin-top: 100px;
 }
 .pg1_wrap{
   padding: 10% 14% 10% 14%;
@@ -51,12 +53,19 @@ nav a{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  background: url(../../public/images/macImage.jpg) no-repeat;
+  background-size: 100%;
+  background-position: center;
+  
 }
 .my_pic{
   width: 40%;
   padding: 3vw;
   box-shadow: 0 0 2px #555;
   border-radius: 20px;
+  background: url(../../public/images/이력서사진3.jpg) no-repeat;
+  background-size: 100%;
+  background-position: 0 -200px;
 }
 .my_pic img{
   width: 100%;
@@ -112,11 +121,13 @@ strong{
 
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 .portTitle{
   font-size: 2vw;
   text-align: center;
   margin-bottom: 30px;
+  margin-top: 30px;
   font-weight: bold;
 }
 .portInfo{
@@ -125,6 +136,7 @@ strong{
 .pg2Title{
   text-align: center;
   margin-top: 100px;
+  font-size: 64px;
 }
 
 @media (max-width:800px) {
