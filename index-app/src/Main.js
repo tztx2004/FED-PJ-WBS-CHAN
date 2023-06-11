@@ -1,8 +1,27 @@
 import './css/App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import {Link} from 'react-router-dom'
-
+import $ from 'jquery'
 import main_data from './main_data';
+
+$(()=>{
+  document.querySelectorAll("nav a").forEach((x,i)=>{
+    // 페이지 이동함수
+    function mvPage(i){
+      let pg = document.querySelector(`.pg${i}`);
+      window.scrollTo({
+        left: 0,
+        top: pg.offsetTop-50,
+        behavior: "smooth",
+      });
+    }
+    
+    x.addEventListener("click",function(){
+      mvPage(i+1)
+    })
+  })
+})//
+
 
 function App() {
   return (
@@ -18,7 +37,7 @@ function App() {
             <div></div>
           </Link> */}
           <Link to="#2">
-            <div>PORTFOLIO</div>
+              <div>PORTFOLIO</div>
           </Link>
         </nav>
 
@@ -41,7 +60,8 @@ function App() {
             </div>
           </div>
         </section>
-        <section id='2' className='pg2'>
+        <section id='2' className='pg2' name="#2">
+            <h2 className='pg2Title'>PORTFOLIO</h2>
           <div className='pg2_wrap'>
             {
               main_data.map((x,i)=>

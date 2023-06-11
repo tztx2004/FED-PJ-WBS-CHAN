@@ -5,9 +5,16 @@
     text-align: center;
     margin: 0 auto;
     position: relative;
-    height: 49vw;
+    /* height: 44vw; */
     overflow: hidden;
-    margin-top: 100px;
+    margin-top: 50px;
+
+    aspect-ratio: 164/101;
+    background: transparent no-repeat fixed;
+    background-position: center;
+    background-size: 80%;
+
+    outline: 1px dashed red;
 }
 .ma_1pg_img1{
     width: 100%;
@@ -36,8 +43,8 @@
 }
 
 .moveBox{
-    width: 300px;
-    height: 300px;
+    width: 15vw;
+    height: 15vw;
     border: 2px solid #fff;
     position: relative;
     z-index: 11;
@@ -45,15 +52,22 @@
     /* left: 0px; */
     /* top: 0px; */
 
-    background: url(../../public/images/main/kv_a_pc.jpg) no-repeat;
+    background: url(../../public/images/main/kv_a_pc.jpg) no-repeat fixed;
+    background-position: center;
     background-size: 80vw;
-    background-attachment:fixed;
-    background-position: 50% 50%;
     /* transition: .1s ease-in; */
+
+    /* animation: rotateBx 3s linear infinite; */
+    /* transform-origin: 100px 100px; */
 }
 
-.mv1{
-    /* background-attachment:fixed; */
+@keyframes rotateBx {
+    0%{
+        transform: rotate(0deg) translate(-10%, -10%) ;
+    }
+    100%{
+        transform: rotate(360deg) translate(-10%, -10%) ;
+    }
 }
 
 

@@ -13,16 +13,6 @@ function Main1pg(props){
                 <div className="cover"></div>
                 <div className="moveBox mv1"></div>
             </div>
-            {/* <div className="ma_1pg_img1_wrapper">
-                <div className="ma_1pg_base ma_1pg_imgs">
-                    <img src="./images/main/kv_base_pc.jpg"/>
-                </div>
-                <div className="cover"></div>
-                <ol className="ma_1pg_bg">
-                    <div className="moveBox mv1"></div>
-                </ol>
-            </div> */}
-            {/* <div className=""></div> */}
 
             <div className="ma_pg1_copy">
                 <span className="numb">00</span>
@@ -55,11 +45,11 @@ $(function(){
     // 박스 움직이게 만들기 (배경,움직이는요소)
     function move(bg,tg){
         bg.addEventListener("mousemove",function(e){
-            let x = e.offsetX + 30;
-            let y = e.offsetY + 30;
+            let x = e.offsetX;
+            let y = e.offsetY;
             tg.css({
-                left:x,
-                top:y,
+                left:x +30,
+                top:y +30,
             })
             console.log(x,y)
                 
@@ -67,22 +57,29 @@ $(function(){
     }
 
     move(ma_1pg_base,moveBox);
-
-    // // 호버 시 사진 변화
-    // let bg = $(".bg")
-    // let pr = $(".pr")
-    // $(".ma_1pg_base")
-    // .mouseover(
-    // function(){
-    //     pr.css({zIndex:999})
-    // }).mouseout(
-    // function(){
-    //     pr.css({zIndex:9})
-    // })
-
     
-    console.log(ma_1pg_imgs)
+    // console.log(ma_1pg_imgs)
 
+
+
+    // background position 위치보정 함수
+    function calc(){
+        let bgtop = $(".ma_1pg_base").offset().top - $(window).scrollTop();
+        let bgleft = $(".ma_1pg_base").offset().left;
+
+        $(".ma_1pg_base").css({
+            backgroundPosition: bgleft + "px " +
+                bgtop + "px"
+        }); ////// css ////////
+        $(".moveBox").css({
+            backgroundPosition: bgleft + "px " +
+                bgtop + "px"
+        }); ////// css ////////
+        
+        console.log(bgtop, bgleft)
+    }//////////// calc /////////////
+
+    // calc()
 
 
 
