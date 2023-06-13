@@ -62,21 +62,25 @@ $(()=>{
         let pg2W = pg2.width();
         // console.log("sss",pg2W)
         pg2.css({
-            height:`${pg2W * (cover.length-3.5)}px`
+            
+            height:`min(4500px,${pg2W * (cover.length-1)}px)`
         }) //// css /////
 
-        if(curSc > start2pg && curSc < pg2.height()){
-            let mp = Math.ceil(curSc - start2pg);
+        let mp = Math.ceil(curSc - start2pg);
+        if(curSc > start2pg && mp/20 <150){
             // console.log("mp",mp)
             // console.log("start2pg",start2pg,"cr",curSc)
             // sticky, translate 맞추기
             // filterImg 움직이기
             // console.log(curSc/10)
             
-            console.log(-50-mp/10)
+            console.log(-mp/20);
             cover.css({
                 transform:`translateX(${-mp/10}%)`,
             })/// css ///
+            cover.each((i,x)=>{
+                // console.log(i,x)
+            })
             cv1.css({
                 backgroundPosition:`${-mp/20}% 0`,
             })
@@ -108,13 +112,26 @@ const Main2pg = function(){
             <div className="ma2_2pg_about">
                 <div className="ma_2pg_img">
                     <div className="about">
-                        <div className="about_cover cv1"></div>
-                        <div className="about_cover cv2"></div>
-                        <div className="about_cover cv3"></div>
-                        <div className="about_cover cv4"></div>
-                        <div className="about_cover cv5"></div>
-                        <div className="about_cover cv6"></div>
+                        <div className="about_cover cv1">
+                            <img src="./images/main/aboutC_name.png" alt="이미지" />
+                        </div>
+                        <div className="about_cover cv2">
+                            <img src="./images/main/aboutA_name.png" alt="이미지" />
+                        </div>
+                        <div className="about_cover cv3">
+                            <img src="./images/main/aboutB_name.png" alt="이미지" />
+                        </div>
+                        <div className="about_cover cv4">
+                            <img src="./images/main/aboutC_name.png" alt="이미지" />
+                        </div>
+                        <div className="about_cover cv5">
+                            <img src="./images/main/aboutA_name.png" alt="이미지" />
+                        </div>
+                        <div className="about_cover cv6">
+                            <img src="./images/main/aboutB_name.png" alt="이미지" />
+                        </div>
                     </div>
+
                     <div className="about1"></div>
                     <div className="about2"></div>
                     <div className="about3"></div>

@@ -204,5 +204,8 @@
     background:url(../../public/images/main/aboutB_pc@1.5x.jpg) no-repeat;
 }
 .about_cover img{
-    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
 }
