@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function Teacher(name,age,subject){
+            this.name = name;
+            this.age = age
+            this.subject  = subject
+            this.teach = function(student){
+                console.log(`${student}에게 ${this.subject}를 가르칩니다`)
+            }
+        }
+        const jay = new Teacher("jay",30,"javascript")
+        console.log(jay)
+        jay.teach("fran")
+
+        console.log(jay.constructor)
+        console.log(jay instanceof Teacher)
+
+        const jay2 = Teacher("jay",30,"Javascript")
+        console.log(jay2)
+        console.log(age)
+    </script>
+</body>
+</html>
