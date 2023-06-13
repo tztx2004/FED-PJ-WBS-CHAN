@@ -13,6 +13,11 @@ $(()=>{
     const cv4 =$(".cv4")
     const cv5 =$(".cv5")
     const cv6 =$(".cv6")
+
+    const pg2_line = $(".pg2_line");
+    const numb = $(".numb");
+    const ma_2pg_copy = $(".ma_2pg_copy");
+
     cover.css({
         backgroundSize:"300%",
         backgroundAttachment:"fixed"
@@ -61,10 +66,10 @@ $(()=>{
         let pg2 = $(".ma2_2pg_about")
         let pg2W = pg2.width();
         // console.log("sss",pg2W)
-        pg2.css({
-            
-            height:`min(4500px,${pg2W * (cover.length-1)}px)`
-        }) //// css /////
+
+        // pg2.css({
+        //     height:`min(4500px,${pg2W * (cover.length-1)}px)`
+        // }) //// css /////
 
         let mp = Math.ceil(curSc - start2pg);
         if(curSc > start2pg && mp/20 <150){
@@ -74,7 +79,7 @@ $(()=>{
             // filterImg 움직이기
             // console.log(curSc/10)
             
-            console.log(-mp/20);
+            // console.log(-mp/20);
             cover.css({
                 transform:`translateX(${-mp/10}%)`,
             })/// css ///
@@ -101,6 +106,23 @@ $(()=>{
             })
             
         } /// if ///
+
+        // 라인 애니메이션
+        let numb_top = numb.offset().top
+        let ts = ma_2pg_copy.offset().top
+
+        if(mp > numb_top){
+            pg2_line.css({
+                width:"100%",
+            })
+        }
+        else{
+            pg2_line.css({
+                width:"0%",
+            })
+        }
+        
+
     }) /// scroll ///
 
 
@@ -139,14 +161,13 @@ const Main2pg = function(){
             </div>
             <div className="ma_2pg_copy">
                 <div className="ma_2pg_title">
-                    THE MODELS
+                    THE<br/> MODELS
                 </div>
                 <div className="ma_2pg_cont">
                     <span className="numb">01</span>
-                    <div className="ma_2pg_copy">
-                        <h2>{main_data.pg2.title}</h2>
-                        <h3>{main_data.pg2.font}</h3>
-                    </div>
+                    <h2>{main_data.pg2.title}</h2>
+                    <div className="pg2_line"></div>
+                    <h3>{main_data.pg2.font}</h3>
                 </div>
             </div>
 

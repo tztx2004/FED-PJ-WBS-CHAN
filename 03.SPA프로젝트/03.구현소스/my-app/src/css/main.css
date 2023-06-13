@@ -209,3 +209,37 @@
     transform: translateY(-50%);
     background: none;
 }
+
+
+/* 글씨부분 */
+.ma_2pg_copy{
+    display: flex;
+    padding: 1vw;
+    margin-bottom: 100px;
+}
+.ma_2pg_title{
+    margin-left: 3vw;
+    font-size: 17vw;
+}
+.ma_2pg_cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.ma_2pg_cont h2{
+    font-size: 1vw;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+.ma_2pg_cont h3{
+    font-size: 0.8vw;
+    font-weight: normal;
+}
+.pg2_line{
+    width: 0%;
+    background: #000;
+    height: 1px;
+    margin-bottom: 20px;
+    transition: .4s;
+}
