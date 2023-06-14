@@ -11,7 +11,9 @@ function Main1pg(props){
             <div className="ma_1pg_img1_wrapper">
                 <div className="ma_1pg_base ma_1pg_imgs"></div>
                 <div className="cover"></div>
-                <div className="moveBox mv1"></div>
+                <div className="mvbg">
+                    <div className="moveBox mv1"></div>
+                </div>
             </div>
 
             <div className="ma_pg1_copy">
@@ -50,7 +52,13 @@ $(function(){
             tg.css({
                 left:x +30,
                 top:y +30,
+                backgroundPositionX: x,
+                backgroundPositionY: y,
+                
             })
+            // .animate({
+            // })
+            
             console.log(x,y)
                 
         }) //// mousemove ////
