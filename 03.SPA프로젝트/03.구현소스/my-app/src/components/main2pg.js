@@ -66,7 +66,8 @@ $(()=>{
         let pg2 = $(".ma2_2pg_about")
         let pg2W = pg2.width();
         // console.log("sss",pg2W)
-
+        
+        // 실행 시 주석해제
         // pg2.css({
         //     height:`min(4500px,${pg2W * (cover.length-1)}px)`
         // }) //// css /////
