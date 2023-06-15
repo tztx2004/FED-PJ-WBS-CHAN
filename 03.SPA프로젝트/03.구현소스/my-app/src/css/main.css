@@ -230,6 +230,7 @@
 .ma_2pg_title{
     margin-left: 3vw;
     font-size: 17vw;
+    letter-spacing: -10px;
 }
 .ma_2pg_cont{
     display: flex;
@@ -263,6 +264,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    margin-bottom: 100px;
 }
 .ma_3pg_line{
     height: 1px;
@@ -276,7 +278,7 @@
     align-items: center;
     overflow: hidden;
     transition: 1s linear;
-    animation: headAni linear 10s infinite;
+    /* animation: headAni linear 10s infinite; */
 }
 @keyframes headAni {
     from{
