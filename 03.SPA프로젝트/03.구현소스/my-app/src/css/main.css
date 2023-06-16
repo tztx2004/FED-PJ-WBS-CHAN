@@ -258,7 +258,7 @@
 
 /* 3페이지 */
 .ma_3pg{
-    margin-top: 100px;
+    margin-top: 30%;
 }
 .ma_3pg_copy{
     display: flex;
@@ -278,7 +278,8 @@
     align-items: center;
     overflow: hidden;
     transition: 1s linear;
-    /* animation: headAni linear 10s infinite; */
+    animation: headAni linear 10s infinite;
+    letter-spacing: -5px;
 }
 @keyframes headAni {
     from{
@@ -300,6 +301,9 @@
 }
 .ma_3pg_font2{
     width: 30vw;
+}
+.ma_3pg_line{
+    transition: .8s;
 }
 
 
@@ -343,19 +347,19 @@
 }
 
 .wi3_2{
-    left: 50%;
-    display: none;
+    left: -50%;
 }
 .wi3_2 img{
-    transform: translateX(10%);
     /* display: none; */
+    transform: translateX(50%);
+    transition: .8s;
 }
 
 .wi3_3{
-    left: 0;
-    display: none;
+    right: -50%;
 }
 .wi3_3 img{
     /* display: none; */
-    transform: translateX(-10%);
+    transform: translateX(-50%);
+    transition: .8s;
 }

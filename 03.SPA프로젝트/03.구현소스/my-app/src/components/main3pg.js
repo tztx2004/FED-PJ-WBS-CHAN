@@ -10,9 +10,9 @@ $(()=>{
         let curSc = window.scrollY // 스크롤 당 100씩
 
         if(curSc > start3pg-300){
-            ma_3pg_line.animate({
+            ma_3pg_line.css({
                 width:"80%"
-            },800)
+            })
         }
     })
 
