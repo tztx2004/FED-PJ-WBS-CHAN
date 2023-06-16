@@ -1,6 +1,7 @@
 // 템플릿
 import Common from "../modules/Common";
 import Info from "../modules/Footer";
+import $ from "jquery"
 
 function Contact(){
     return(

@@ -2,24 +2,59 @@ import main_data from "../data/main_data";
 import "../css/main.css";
 import $ from 'jquery';
 
+
 $(()=>{
     const ma_3pg_line = $(".ma_3pg_line");
+    const wi3_2 = $(".wi3_2 img")
+    const wi3_3 = $(".wi3_3 img")
+
 
     window.addEventListener("scroll",function(){
-        let start3pg = $(".ma_3pg").offset().top
+        let start3pg = $(".ma_3pg").offset()?$(".ma_3pg").offset().top:0;
         let curSc = window.scrollY // 스크롤 당 100씩
+        let dif = curSc-start3pg // 3페이지에서부터 현재 스크롤값
+        let ma_3pg_img_part = $(".ma_3pg_img_part")
+        let picTop = ma_3pg_img_part.offset()?ma_3pg_img_part.offset().top:0
+        
+        ma_3pg_img_part.css({
+            height:`${wi3_2.height()*2.5}px`
+        })
 
+        // console.log(curSc,picTop-400, 50-dif/70)
+
+        // line 애니메이션
         if(curSc > start3pg-300){
             ma_3pg_line.css({
                 width:"80%"
             })
         }
+
+        // 사진애니메이션(분신술)
+        if(curSc > picTop-400 && 50-dif/70 >= 30 && 50-dif/70 <= 50){
+            wi3_2.css({
+                transform:`translateX(${50-dif/70}%)`
+            })
+            wi3_3.css({
+                transform:`translateX(${-50+dif/70}%)`
+            })
+        }
+        // (수정필요) 
+        else if(50-dif/70 < 30 || 50-dif/70 > 50){
+            wi3_2.css({
+                transform:`translateX(50%)`
+            })
+            wi3_3.css({
+                transform:`translateX(-50%)`
+            })
+        }
+
     })
-
-
 })
 
 
+
+
+    
 
 const Main3pg = function(){
     return(
@@ -50,6 +85,12 @@ const Main3pg = function(){
                             <img src="./images/main/fusion_right_pc.webp" alt=""/>
                         </div>
                     </div>
+                </div>
+                <div className="vidBx">
+                    <div className="vidBg"></div>
+                    <video className="video" preload="auto" autoPlay loop="loop" muted="muted" volume="0">
+                        <source src="./images/main/reel.mp4" type="video/mp4"/>
+                    </video>
                 </div>
             </div>
         </>

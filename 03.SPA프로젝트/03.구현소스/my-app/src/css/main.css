@@ -7,7 +7,7 @@
     position: relative;
     /* height: 44vw; */
     overflow: hidden;
-    margin-top: 70px;
+    margin-top: 85px;
 
     aspect-ratio: 164/101;
     background: transparent no-repeat fixed;
@@ -280,13 +280,18 @@
     transition: 1s linear;
     animation: headAni linear 10s infinite;
     letter-spacing: -5px;
+    background: none;
+}
+.features_heading span,
+.features_heading h2{
+    background: none;
 }
 @keyframes headAni {
     from{
-        transform: translateX(-100%);
+        transform: translateX(100%);
     }
     to{
-        transform: translateX(100%);
+        transform: translateX(-100%);
     }
 }
 .ma_3pg_cont{
@@ -310,12 +315,16 @@
 .ma_3pg_img_part{
     width: 100%;
     padding: 0 10vw;
+    /* height: 2000px; */
+    background: url(../../public/images/main/reel.mp4) no-repeat center/cover;
+    background-size: 100vw 100vh;
 }
 .ma_3pg_img{
     width: 100%;
     margin: 0 auto;
-    position: relative;
-    aspect-ratio: 1/1;
+    position: sticky;
+    top: 10%;
+    aspect-ratio: 1441/800;
     display: flex;
     overflow: hidden;
 }
@@ -333,8 +342,6 @@
     position: absolute;
     background: none;
     width: 100%;
-    /* left: 50%;
-    transform: translateX(-50%); */
 }
 .wi3_1 img{
     opacity: 0.8;
@@ -352,7 +359,7 @@
 .wi3_2 img{
     /* display: none; */
     transform: translateX(50%);
-    transition: .8s;
+    transition: .4s;
 }
 
 .wi3_3{
@@ -361,5 +368,22 @@
 .wi3_3 img{
     /* display: none; */
     transform: translateX(-50%);
-    transition: .8s;
+    transition: .4s;
+}
+
+.vidBx{
+    overflow: hidden;
+}
+.vidBg{
+    position: fixed;
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+    background: #000;
+    /* display: none; */
+}
+video{
+    display: none;
 }

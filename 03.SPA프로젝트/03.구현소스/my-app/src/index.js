@@ -17,7 +17,6 @@ root.render(
           <Route path="Models" element={<Models/>} ></Route>
           <Route path="Main" element={<Main/>}></Route>
           <Route path="Contact" element={<Contact/>}></Route>
-            {/* <Common /> */}
       </Routes>
     </BrowserRouter>
   </>

@@ -2,6 +2,10 @@ import main_data from "../data/main_data";
 import "../css/main.css";
 import $ from 'jquery';
 
+
+
+
+
 $(()=>{
 
     let arr = ["A","B","C"];
@@ -59,7 +63,9 @@ $(()=>{
 
     // 스크롤 이벤트
     window.addEventListener("scroll",function(){
-        let start2pg = $(".ma2_2pg_about").offset().top // 2페이지 시작점
+
+        // console.log($(".ma2_2pg_about").offset());
+        let start2pg = $(".ma2_2pg_about").offset()?$(".ma2_2pg_about").offset().top:0 // 2페이지 시작점
         let curSc = window.scrollY // 스크롤 당 100씩
         
         // 높이 설정(sticky)
@@ -129,6 +135,8 @@ $(()=>{
 
 }) //// jQB ////
 
+
+
 const Main2pg = function(){
     return(
         <>
@@ -171,7 +179,6 @@ const Main2pg = function(){
                     <h3>{main_data.pg2.font}</h3>
                 </div>
             </div>
-
         </>
     )
 }
