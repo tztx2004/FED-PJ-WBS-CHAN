@@ -2,6 +2,7 @@ import main_data from "../data/main_data";
 import "../css/main.css";
 import $ from 'jquery';
 
+const Main3pg = function(){
 
 $(()=>{
     const ma_3pg_line = $(".ma_3pg_line");
@@ -48,15 +49,10 @@ $(()=>{
             })
         }
 
-    })
-})
+    })// scroll
+})// jQB //
 
 
-
-
-    
-
-const Main3pg = function(){
     return(
         <>
             <div className="ma_3pg">
