@@ -22,6 +22,8 @@
 }
 
 
+
+
 .ma_1pg_imgs{
     width: 100%;
     margin: 0 auto;
@@ -34,13 +36,14 @@
     width: 100%;
     z-index: 10;
     aspect-ratio: 164/101;
-    background: url(../../public/images/main/kv_base_pc.jpg) no-repeat fixed;
+    background: url(../../public/images/main/kv_base_pc.jpg) no-repeat;
     background-position: center;
-    background-size: 80%;
+    background-size: 100%;
 }
 .ma_1pg_bg{
     width: 100%;
 }
+
 
 .moveBox{
     width: 15vw;
@@ -48,37 +51,42 @@
     border: 2px solid #fff;
     position: relative;
     z-index: 11;
-    background: none;
     /* left: 0px; */
     /* top: 0px; */
     
-    background: url(../../public/images/main/kv_a_pc.jpg) no-repeat fixed;
+    background: url(../../public/images/main/kv_a_pc.jpg) no-repeat;
     /* background-position: center; */
     background-size: 80vw;
     /* transition: .1s ease-in; */
-
+    /* display: none; */
     /* animation: rotateBx 3s linear infinite; */
     /* transform-origin: 100px 100px; */
+    /* animation: rotateBx 3s linear infinite; */
+    transform: rotate(360deg);
 }
 .mvbg{
-    outline: 1px dashed red;
+    outline: 2px dashed red;
     width: 10vw;
     height: 10vw;
     position: relative;
     z-index: 11;
     top: 0%;
     left: 0%;
-    border-radius: 50%;
-    background: none;
-    animation: rotateBx 3s linear infinite;
+    background: url(../../public/images/main/kv_b_pc.jpg) no-repeat;
+    background-size: 80vw;
+    /* animation: rotateBx 3s linear infinite; */
+    transform-origin: center center;
+
 }
 
 @keyframes rotateBx {
     0%{
-        transform: rotate(0deg) translate(-10%, -10%) rotate(0);
+        transform-origin: center center;
+        transform: rotate(0deg) translate(-20%, -20%) rotate(0);
     }
     100%{
-        transform: rotate(360deg) translate(-10%, -10%) rotate(-360deg) ;
+        transform-origin: center center;
+        transform: rotate(360deg) translate(-20%, -20%) rotate(-360deg) ;
     }
 }
 

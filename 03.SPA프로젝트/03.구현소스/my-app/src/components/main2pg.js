@@ -1,12 +1,16 @@
+import { useEffect, useRef, useState } from 'react';
 import main_data from "../data/main_data";
 import "../css/main.css";
 import $ from 'jquery';
+import { getToPathname } from '@remix-run/router';
 
 
 
 
 
-$(()=>{
+
+function jQb2(){
+    $(()=>{
 
     let arr = ["A","B","C"];
 
@@ -62,6 +66,8 @@ $(()=>{
     let cupImg = $(".cupImg")
 
     // 스크롤 이벤트
+
+    
     window.addEventListener("scroll",function(){
 
         // console.log($(".ma2_2pg_about").offset());
@@ -132,8 +138,8 @@ $(()=>{
 
     }) /// scroll ///
 
-
 }) //// jQB ////
+}// jqb2
 
 
 
@@ -179,6 +185,7 @@ const Main2pg = function(){
                     <h3>{main_data.pg2.font}</h3>
                 </div>
             </div>
+            {jQb2()}
         </>
     )
 }

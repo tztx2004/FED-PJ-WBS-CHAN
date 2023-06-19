@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react';
+import {useLocation} from 'react-router-dom';
 import "../css/main.css";
 import $ from 'jquery';
 import main_data from '../data/main_data'
@@ -10,28 +12,36 @@ function jqb(){
     $(function(){
             // moveBox 마우스 따라다니게 하기
             const moveBox = $(".moveBox")
+            const mvbg = $(".mvbg")
             const ma_1pg_base = document.querySelector(".ma_1pg_base");
+            const ma_1pg_img1_wrapper = document.querySelector(".ma_1pg_img1_wrapper");
             const ma_1pg_imgs = document.querySelectorAll(".ma_1pg_imgs");
             
+            // const { pathname } = useLocation();
             // 박스 움직이게 만들기 (배경,움직이는요소)
-            function move(bg,tg){
-                bg.addEventListener("mousemove",function(e){
-                    let x = e.offsetX;
-                    let y = e.offsetY;
-                    tg.css({
-                        left:x +30,
-                        top:y +30,
-                        backgroundPositionX: x,
-                        backgroundPositionY: y,
+            function move(bg,tg,cg){
+                // useEffect(()=>{
+                    bg.addEventListener("mousemove",function(e){
+                        let x = e.offsetX;
+                        let y = e.offsetY;
+                        // 회전도와주는 박스
+                        tg.css({
+                            left:x,
+                            top:y,
+                            backgroundPositionX: -x,
+                            backgroundPositionY: -y,
+                        })
+                        // 실질적으로 움직이는 박스
+                        // cg.css({
+                        //     backgroundPositionX: -x,
+                        //     backgroundPositionY: -y,
+                        // })
                         
-                    })
-                    // .animate({
-                    // })
-                    
-                    console.log(x,y)
-                        
-                }) //// mousemove ////
-            }
+                        console.log(x,y)
+                            
+                    }) //// mousemove ////
+                // },[pathname])
+            }// move
         
             move(ma_1pg_base,moveBox);
             
@@ -61,7 +71,8 @@ function jqb(){
         
         
     })////// jQB ////////
-}
+}// jqb
+
 // 메인 1페이지 컴포넌트
 function Main1pg(props){
         
@@ -72,9 +83,9 @@ function Main1pg(props){
             <div className="ma_1pg_img1_wrapper">
                 <div className="ma_1pg_base ma_1pg_imgs"></div>
                 <div className="cover"></div>
-                <div className="mvbg">
+                {/* <div className="mvbg"> */}
                     <div className="moveBox mv1"></div>
-                </div>
+                {/* </div> */}
             </div>
 
             <div className="ma_pg1_copy">
