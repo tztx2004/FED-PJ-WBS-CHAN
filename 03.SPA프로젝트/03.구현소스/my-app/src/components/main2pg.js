@@ -80,9 +80,9 @@ function jQb2(){
         // console.log("sss",pg2W)
         
         // 실행 시 주석해제
-        // pg2.css({
-        //     height:`min(4500px,${pg2W * (cover.length-1)}px)`
-        // }) //// css /////
+        pg2.css({
+            height:`min(4500px,${pg2W * (cover.length-1)}px)`
+        }) //// css /////
 
         let mp = Math.ceil(curSc - start2pg);
         if(curSc > start2pg && mp/20 <150){
@@ -145,46 +145,47 @@ function jQb2(){
 
 const Main2pg = function(){
     return(
-        <>
-            <div className="ma2_2pg_about">
-                <div className="ma_2pg_img">
-                    <div className="about">
-                        <div className="about_cover cv1">
-                            <img src="./images/main/aboutC_name.png" alt="이미지" />
+        <><div>
+            
+                <div className="ma2_2pg_about">
+                    <div className="ma_2pg_img">
+                        <div className="about">
+                            <div className="about_cover cv1">
+                                <img src="./images/main/aboutC_name.png" alt="이미지" />
+                            </div>
+                            <div className="about_cover cv2">
+                                <img src="./images/main/aboutA_name.png" alt="이미지" />
+                            </div>
+                            <div className="about_cover cv3">
+                                <img src="./images/main/aboutB_name.png" alt="이미지" />
+                            </div>
+                            <div className="about_cover cv4">
+                                <img src="./images/main/aboutC_name.png" alt="이미지" />
+                            </div>
+                            <div className="about_cover cv5">
+                                <img src="./images/main/aboutA_name.png" alt="이미지" />
+                            </div>
+                            <div className="about_cover cv6">
+                                <img src="./images/main/aboutB_name.png" alt="이미지" />
+                            </div>
                         </div>
-                        <div className="about_cover cv2">
-                            <img src="./images/main/aboutA_name.png" alt="이미지" />
-                        </div>
-                        <div className="about_cover cv3">
-                            <img src="./images/main/aboutB_name.png" alt="이미지" />
-                        </div>
-                        <div className="about_cover cv4">
-                            <img src="./images/main/aboutC_name.png" alt="이미지" />
-                        </div>
-                        <div className="about_cover cv5">
-                            <img src="./images/main/aboutA_name.png" alt="이미지" />
-                        </div>
-                        <div className="about_cover cv6">
-                            <img src="./images/main/aboutB_name.png" alt="이미지" />
-                        </div>
+                        <div className="about1"></div>
+                        <div className="about2"></div>
+                        <div className="about3"></div>
                     </div>
-
-                    <div className="about1"></div>
-                    <div className="about2"></div>
-                    <div className="about3"></div>
                 </div>
-            </div>
-            <div className="ma_2pg_copy">
-                <div className="ma_2pg_title">
-                    THE<br/> MODELS
+                <div className="ma_2pg_copy">
+                    <div className="ma_2pg_title">
+                        THE<br/> MODELS
+                    </div>
+                    <div className="ma_2pg_cont">
+                        <span className="numb">01</span>
+                        <h2>{main_data.pg2.title}</h2>
+                        <div className="pg2_line"></div>
+                        <h3>{main_data.pg2.font}</h3>
+                    </div>
                 </div>
-                <div className="ma_2pg_cont">
-                    <span className="numb">01</span>
-                    <h2>{main_data.pg2.title}</h2>
-                    <div className="pg2_line"></div>
-                    <h3>{main_data.pg2.font}</h3>
-                </div>
-            </div>
+        </div>
             {jQb2()}
         </>
     )
