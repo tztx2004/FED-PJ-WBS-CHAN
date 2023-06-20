@@ -6,33 +6,32 @@ import "../css/main.css";
 import $ from 'jquery';
 
 
-function jqb3(){
 
+const Main3pg = function(){
 
-$(()=>{
-    const ma_3pg_line = $(".ma_3pg_line");
-    const wi3_2 = $(".wi3_2 img")
-    const wi3_3 = $(".wi3_3 img")
-    const vidbg = $(".vidbg")
-    const vidBx = $(".vidBx")
-    const video = $(".video")
-    // let ma_3pg_img_part = $(".ma_3pg_img_part")
-
+    // 메인 3페이지 스크롤 이벤트
     function scr3pg(){
-        
+
+        const ma_3pg_line = $(".ma_3pg_line");
+        const wi3_2 = $(".wi3_2 img")
+        const wi3_3 = $(".wi3_3 img")
+        const vidbg = $(".vidbg")
+        const vidBx = $(".vidBx")
+        const video = $(".video")
+    
         let start3pg = $(".ma_3pg").offset()?$(".ma_3pg").offset().top:0;
         let curSc = window.scrollY // 스크롤 당 100씩
         let dif = curSc-start3pg // 3페이지에서부터 현재 스크롤값
         let ma_3pg_img_part = $(".ma_3pg_img_part")
         let picTop = ma_3pg_img_part.offset()? ma_3pg_img_part.offset().top:0
-        
+
         ma_3pg_img_part
         .css({
             height:`${wi3_2.height()*3}px`
         })
         
 
-        // console.log(curSc,picTop-400, 50-dif/70)
+        // console.log(start3pg,curSc)
 
         // line 애니메이션
         if(curSc > start3pg-300){
@@ -40,7 +39,7 @@ $(()=>{
                 width:"80%"
             })
         }
-        console.log(50-dif/70)
+        // console.log(50-dif/70)
         // 사진애니메이션(분신술)
         if(curSc > picTop-400 && 50-dif/70 >= 30 && 50-dif/70 <= 50){
             wi3_2.css({
@@ -75,18 +74,21 @@ $(()=>{
             vidbg.removeClass("on2")
             vidBx.removeClass("on")
         }
-
     }
-    useEffect(() => {
-        window.addEventListener("scroll",scr3pg)// scroll
-        return () => {
-            window.removeEventListener("scroll",scr3pg)// scroll
-        }
-    });
-})// jQB //
-}
 
-const Main3pg = function(){
+    
+
+    useEffect(() => {
+        console.log("컴포넌트 나타남");
+        
+        window.addEventListener("scroll",scr3pg)
+        
+        return () => {
+            console.log("cleanUp 함수");
+            window.removeEventListener("scroll",scr3pg)
+        };
+    });
+
     return(
         <>
             <div className="ma_3pg">

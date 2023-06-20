@@ -2,7 +2,7 @@ import '../css/common.css';
 import { BrowserRouter, Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 
 
-console.log("ggg")
+// console.log("ggg")
 
 
 function Common() {

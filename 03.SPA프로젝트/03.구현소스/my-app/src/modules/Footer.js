@@ -6,7 +6,7 @@ function Info(){
         <div className="info_wrapper">
             <div className="Info">
                 <div className="infoBan">
-                    <span className="italic_text">CARRERS</span>
+                    <span className="italic_text">CARRERS / </span>
                     <span className="bold_text">CARRERS</span>
                 </div>
                 <div className="officeInfo">

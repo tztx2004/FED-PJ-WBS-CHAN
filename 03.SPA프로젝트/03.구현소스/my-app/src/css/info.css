@@ -8,4 +8,34 @@
     text-align: center;
     
     border-top: 1px solid #ccc;
+    overflow: hidden;
+}
+.infoBan{
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+    height: 30%;
+    width: 100%;
+
+    animation: spanAni 10s linear infinite;
+}
+.infoBan span{
+    font-size: 2vw;
+}
+
+@keyframes spanAni {
+    from{
+        left:-100%;
+    }
+    to{
+        left:100%;
+    }
+}
+
+.italic_text{
+    font-style: italic;
+}
+.bold_text{
+    font-weight: bold;
 }
