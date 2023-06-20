@@ -82,7 +82,7 @@ $(()=>{
         return () => {
             window.removeEventListener("scroll",scr3pg)// scroll
         }
-    },[]);
+    });
 })// jQB //
 }
 
