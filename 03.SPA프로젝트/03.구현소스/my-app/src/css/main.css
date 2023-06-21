@@ -165,7 +165,9 @@
 
 
 /* 메인 2페이지 */
-
+.ma2_2pg_about{
+    height: 4500px;
+}
 .ma_2pg_img{
     position: sticky;
     top: 10%;
@@ -187,7 +189,7 @@
 }
 .about_cover{
     width: 33.33%;
-    aspect-ratio: 10/13.3;
+    aspect-ratio: 10/13.33;
 
     position: absolute;
     transform: translateX(0%);
@@ -264,6 +266,9 @@
 }
 
 
+
+
+
 /* 3페이지 */
 .ma_3pg{
     margin-top: 30%;
@@ -323,11 +328,12 @@
 .ma_3pg_img_part{
     width: 100%;
     padding: 0 10vw;
-    /* height: 2000px; */
+    height: 2000px;
     background: url(../../public/images/main/reel.mp4) no-repeat center/cover;
     background-size: 100vw 100vh;
 }
 .ma_3pg_img{
+    outline: 1px dashed red;
     width: 100%;
     margin: 0 auto;
     position: sticky;

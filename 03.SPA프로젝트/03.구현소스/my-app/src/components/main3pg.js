@@ -9,9 +9,16 @@ import $ from 'jquery';
 
 const Main3pg = function(){
 
-    
+    // 쓰로틀
+    let prot = 0
     // 메인 3페이지 스크롤 이벤트
     function scr3pg(){
+        if(prot) return
+        prot =1
+        setTimeout(()=>{
+            prot = 0
+            // console.log("3pg 쓰로틀")
+        
         const ma_3pg_line = $(".ma_3pg_line");
         const wi3_2 = $(".wi3_2 img")
         const wi3_3 = $(".wi3_3 img")
@@ -39,7 +46,9 @@ const Main3pg = function(){
                 width:"80%"
             })
         }
+        // 기준 확인
         // console.log(50-dif/70)
+
         // 사진애니메이션(분신술)
         if(curSc > picTop-400 && 50-dif/70 >= 30 && 50-dif/70 <= 50){
             wi3_2.css({
@@ -60,7 +69,12 @@ const Main3pg = function(){
         }
         
     
-        if(50-dif/70 <= 30){
+        if(50-dif/70 > 30){
+            vidbg.removeClass("on")
+            vidbg.removeClass("on2")
+            vidBx.removeClass("on")
+        }
+        else if(50-dif/70 <= 30){
             vidbg.addClass("on")
             this.setTimeout(()=>{
                 vidbg.delay(400).addClass("on2")
@@ -69,24 +83,16 @@ const Main3pg = function(){
                 vidBx.addClass("on")
             },400)
         }
-        else{
-            vidbg.removeClass("on")
-            vidbg.removeClass("on2")
-            vidBx.removeClass("on")
-        }
-    }
+        },200)
+    }// scr3pg
 
 
-
+    
     useEffect(() => {
-
-        console.log("컴포넌트 나타남");
-        
-
+        console.log("3pg 스크롤");
         window.addEventListener("scroll",scr3pg,{passive:true})
-        
         return () => {
-            console.log("cleanUp 함수");
+            console.log("3pg 스크롤 cleanUp");
             window.removeEventListener("scroll",scr3pg)
         };
     });

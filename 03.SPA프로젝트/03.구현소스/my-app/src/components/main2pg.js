@@ -28,21 +28,20 @@ const Main2pg = function(){
         const pg2_line = $(".pg2_line");
         const numb = $(".numb");
         const ma_2pg_copy = $(".ma_2pg_copy");
-    
+        
         cover.css({
             backgroundSize:"300%",
             backgroundAttachment:"fixed"
         })
-        
     
         // 사진 필터링
         function filterImg(ty){ // ty - pc나 sp(type)
             
             cover.css({
-                // background:`url(./images/main/aboutA_pc@1.5x.jpg) no-repeat`,
                 backgroundSize:"300%",
                 backgroundAttachment:"fixed"
             })
+
             cv1.css({
                 backgroundPosition:'0% 0',
             })
@@ -64,12 +63,6 @@ const Main2pg = function(){
         }
         
     
-        // 실험
-        let cup = $(".cup")
-        let cupImg = $(".cupImg")
-
-        
-        
         
         // 스크롤 이벤트
         // window.addEventListener("scroll",function(){
@@ -84,29 +77,28 @@ const Main2pg = function(){
             // console.log("sss",pg2W)
             
             // 실행 시 주석해제
-            pg2.css({
-                height:`min(4500px,${pg2W * (cover.length-1)}px)`
-            }) //// css /////
+            // pg2.css({
+            //     height:`min(4500px,${pg2W * (cover.length-1)}px)`
+            // }) //// css /////
     
             let mp = Math.ceil(curSc - start2pg);
+            // console.log(mp/20,curSc, start2pg)
             // 최초 호출
             if(mp/20<0) filterImg("pc");
 
-            if(curSc > start2pg && mp/20 <150){
-                console.log(mp/20)
-                // console.log("mp",mp)
-                // console.log("start2pg",start2pg,"cr",curSc)
-                // sticky, translate 맞추기
-                // filterImg 움직이기
-                // console.log(curSc/10)
-                
-                // console.log(-mp/20);
+            if(curSc > start2pg && mp/20 <190){
+                $(".ma_2pg_img").css({
+                    position: "fixed",
+                    top: "10%",
+                    zIndex: "9",
+                    width: "100%",
+                });
+    
+                if (curSc > start2pg && mp / 20 < 150) {
                 cover.css({
                     transform:`translateX(${-mp/10}%)`,
                 })/// css ///
-                cover.each((i,x)=>{
-                    // console.log(i,x)
-                })
+                
                 cv1.css({
                     backgroundPosition:`${-mp/20}% 0`,
                 })
@@ -126,8 +118,15 @@ const Main2pg = function(){
                     backgroundPosition:`${250-mp/20}% 0`,
                 })
                 
-            } /// if ///
-    
+                } /// if ///
+            }
+        else if(mp/20 < 390) {
+            $(".ma_2pg_img").css({
+                // position: "sticky",
+                top:"-105%"
+            });
+        }
+
             // 라인 애니메이션
             let numb_top = numb.offset().top
             let ts = ma_2pg_copy.offset().top
@@ -149,13 +148,32 @@ const Main2pg = function(){
 
     }
 
+    // 쓰로틀
+    const throttle = (callback,delay)=>{
+        console.log("throttle")
+        let timer
+        return ()=>{
+            timer = setTimeout(()=>{
+                callback();
+                timer = null
+            },delay)
+        }
+    }
+    let [thr,setThr] = useState(throttle)
 
+    // scroll 상태변수
+    const [isScr,setIsScr] = useState(false)
+
+    // scroll 제어
+    const handleScr = throttle(scr2pg,100)
+
+    // scroll watch
     useEffect(() => {
         // console.log("컴포넌트 나타남");
-        window.addEventListener("scroll",scr2pg)
+        window.addEventListener("scroll",handleScr)
         return () => {
         //   console.log("cleanUp 함수");
-            window.removeEventListener("scroll",scr2pg)
+            window.removeEventListener("scroll",handleScr)
         };
     });
     
