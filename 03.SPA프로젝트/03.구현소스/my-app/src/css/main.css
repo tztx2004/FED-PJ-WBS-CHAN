@@ -328,7 +328,7 @@
 .ma_3pg_img_part{
     width: 100%;
     padding: 0 10vw;
-    height: 2000px;
+    height: 3000px;
     background: url(../../public/images/main/reel.mp4) no-repeat center/cover;
     background-size: 100vw 100vh;
 }
@@ -336,12 +336,15 @@
     outline: 1px dashed red;
     width: 100%;
     margin: 0 auto;
-    position: sticky;
+    position: fixed;
     top: 10%;
     aspect-ratio: 1441/800;
     display: flex;
     overflow: hidden;
     z-index: 1;
+    
+    opacity: 0;
+    transition: .4s;
 }
 .ma_3pg_imgwrap{
     /* position: absolute;
@@ -423,4 +426,28 @@ video{
     height: 100%;
     width: 100%;
     transform: scale(1.2);
+}
+
+.font3pg{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50px;
+    width: 60%;
+    /* outline: 1px dashed red; */
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.font3pg span{
+    margin: 0 auto;
+    background: none;
+    color: #fff;
+    font-size: 50px;
+
+    transition: .4s;
+    transform: translateY(100%);
 }

@@ -31,14 +31,20 @@ const Main3pg = function(){
         let dif = curSc-start3pg // 3페이지에서부터 현재 스크롤값
         let ma_3pg_img_part = $(".ma_3pg_img_part")
         let picTop = ma_3pg_img_part.offset()? ma_3pg_img_part.offset().top:0
+        let ma_3pg_img = $(".ma_3pg_img")
+        let span3 = $(".font3pg span")
 
-        ma_3pg_img_part
-        .css({
-            height:`${wi3_2.height()*3}px`
-        })
+        // sticky 높이값
+        // ma_3pg_img_part
+        // .css({
+        //     height:`${wi3_2.height()*3}px`
+        // })
         
 
         // console.log(start3pg,curSc)
+
+
+        
 
         // line 애니메이션
         if(curSc > start3pg-300){
@@ -46,20 +52,51 @@ const Main3pg = function(){
                 width:"80%"
             })
         }
-        // 기준 확인
-        // console.log(50-dif/70)
 
+
+        // 모아짐
+        // 배경 1 2 들어옴
+        // 그림 높이 줄어듦
+        // 글씨 딸려 들어옴
+        // 글씨 가운데로 오면서 그림 완전히 사라짐
+        // 5페이지 시작
+
+        // 기준 확인
+        let scrSt = 50-dif/70;
+        console.log(scrSt)
+
+        // 구간 밖에서 초기화
+        if(scrSt> 44 || scrSt <15){
+            ma_3pg_img.css({
+                // display:"none",
+                // top:"-100%",
+                opacity:"0",
+                width:"100%",
+                // position: "sticky",
+            })
+        }
+        // 구간안에서 펼쳐짐
+        else if(scrSt <= 44 &&  scrSt >= 15){
+            ma_3pg_img.css({
+                width:"80%",
+                // top:"10%",
+                display:"flex",
+                opacity:"1",
+                // position: "fixed",
+                transition: ".4s"
+            }).fadeIn()
+        }
         // 사진애니메이션(분신술)
-        if(curSc > picTop-400 && 50-dif/70 >= 30 && 50-dif/70 <= 50){
+        if(curSc > picTop-400 && scrSt >= 30 && scrSt <= 50){
             wi3_2.css({
-                transform:`translateX(${50-dif/70}%)`
+                transform:`translateX(${scrSt}%)`
             })
             wi3_3.css({
                 transform:`translateX(${-50+dif/70}%)`
             })
         }
         // (수정필요) 
-        else if(50-dif/70 < 30 || 50-dif/70 > 50){
+        else if(scrSt < 30 || scrSt > 50){
             wi3_2.css({
                 transform:`translateX(50%)`
             })
@@ -69,12 +106,18 @@ const Main3pg = function(){
         }
         
     
-        if(50-dif/70 > 30){
+        // 초기화(스크롤 거꾸로 했을때)
+        if(scrSt > 30){
             vidbg.removeClass("on")
             vidbg.removeClass("on2")
             vidBx.removeClass("on")
-        }
-        else if(50-dif/70 <= 30){
+            ma_3pg_img.css({
+                aspectRatio:"1441/800"
+            })
+        }/// if ///
+
+        // 비디오영상 등장
+        else if(scrSt <= 30){
             vidbg.addClass("on")
             this.setTimeout(()=>{
                 vidbg.delay(400).addClass("on2")
@@ -82,8 +125,35 @@ const Main3pg = function(){
             this.setTimeout(()=>{
                 vidBx.addClass("on")
             },400)
-        }
-        },200)
+
+
+            // 이미지 줄어듦
+            // console.log(scrSt)
+            ma_3pg_img.css({
+                aspectRatio:`1441/${800-dif/3}`,
+            })
+            
+
+            // 영상 들어온 후 글씨효과
+            document.querySelectorAll(".font3pg span").forEach((x,i)=>{
+                setTimeout(()=>{
+                    x.style.transform = "translateY(0%)"
+                },i*100)// setTimeout //
+                // 구간에서 벗어나면 사라짐
+                if(scrSt <= 13 || scrSt > 23){
+                    setTimeout(()=>{
+                        x.style.transform = "translateY(-100%)"
+                    },i*100)// setTimeout //
+                }
+            }) // forEach
+
+            // 이미지 사라짐
+            if(scrSt <= 23){
+                ma_3pg_img.fadeOut()
+            }
+
+        } // else if //
+        },250) // setTimeout //
     }// scr3pg
 
 
@@ -131,6 +201,16 @@ const Main3pg = function(){
                         </video>
                     </div>
                     <div className="vidbg"></div>
+                    <div className='font3pg'>
+                        <span>S</span>
+                        <span>H</span>
+                        <span>O</span>
+                        <span>W</span>
+                        <span>R</span>
+                        <span>E</span>
+                        <span>E</span>
+                        <span>L</span>
+                    </div>
                 </div>
             </div>
             {/* {jqb3()} */}
