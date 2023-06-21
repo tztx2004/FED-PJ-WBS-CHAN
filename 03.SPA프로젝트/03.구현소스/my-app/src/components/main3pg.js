@@ -9,9 +9,9 @@ import $ from 'jquery';
 
 const Main3pg = function(){
 
+    
     // 메인 3페이지 스크롤 이벤트
     function scr3pg(){
-
         const ma_3pg_line = $(".ma_3pg_line");
         const wi3_2 = $(".wi3_2 img")
         const wi3_3 = $(".wi3_3 img")
@@ -76,12 +76,14 @@ const Main3pg = function(){
         }
     }
 
-    
+
 
     useEffect(() => {
+
         console.log("컴포넌트 나타남");
         
-        window.addEventListener("scroll",scr3pg)
+
+        window.addEventListener("scroll",scr3pg,{passive:true})
         
         return () => {
             console.log("cleanUp 함수");
