@@ -488,7 +488,7 @@ video{
     aspect-ratio: 1033/650;
     overflow: hidden;
 
-    outline: 1px dashed red;
+    /* outline: 1px dashed red; */
 }
 .wear_imgbx{
     position: absolute;
@@ -508,3 +508,19 @@ video{
     transform: scale(1.01);
 }
 
+.ibFont{
+    /* outline: 1px dashed #fff; */
+    width: 30%;
+    height: 5%;
+    border-top: 1px solid #fff;
+
+    position: absolute;
+    z-index: 1;
+    background: none;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    font-size: 3vw;
+    color: #fff;
+    text-align: center;
+}

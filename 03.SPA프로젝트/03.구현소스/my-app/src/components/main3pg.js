@@ -41,7 +41,7 @@ const Main3pg = function(){
             // })
             
 
-            // console.log(start3pg,curSc)
+            console.log(start3pg,curSc)
 
 
         

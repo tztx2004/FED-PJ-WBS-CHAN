@@ -14,9 +14,10 @@ const Main4pg = function(){
     
 
     // ma_4pg.style.background = "#000"
-
+    
     // 스크롤 함수
     function onScroll(){
+        
         const ma_4pg = document.querySelector(".ma_4pg");
         const curSc =window.scrollY
         const start4pg = ma_4pg.offsetTop
@@ -29,15 +30,13 @@ const Main4pg = function(){
         let ib3 = document.querySelector(".ib3")
         let ib4 = document.querySelector(".ib4")
         let ib5 = document.querySelector(".ib5")
+        let arr = ["SHIRT","TROUSERS","JACKET","MODEL","OVERCOAT"]
+
+        let ibfont = document.querySelectorAll(".ibFont")
+
 
 
         if(dif4pg>=0){
-
-            // imgbx.forEach((x,i)=>{
-            //     console.log(x)
-            //     x.style.clipPath = `inset(0 0 ${dif4pg/10-i*50}%)`
-            // })
-            
             ib0.style.clipPath = `inset(0 0 ${dif4pg/10}%)`
             ib1.style.clipPath = `inset(0 0 ${dif4pg/10-50}%)`
             ib2.style.clipPath = `inset(0 0 ${dif4pg/10-100}%)`
@@ -49,19 +48,28 @@ const Main4pg = function(){
                 ib5.style.transition = ".4s"
                 ib5.style.clipPath = `inset(0 0 100%)`
             }
+            ibfont.forEach((x,i)=>{
+                let num = 50*i - dif4pg/10+100
+                x.innerHTML = arr[i]
+                if(num>0) x.append(" "+Math.floor(100-num)+"%")
+                x.style.top = num +"%"
+            })
+            // ibfont.style.top = 100 - dif4pg/10 +"%"
 
         } // if //
-        console.log("현재 스크롤",dif4pg/10)
+
+
+        // console.log("스크롤",dif4pg/10)
 
     
     } /// onScroll ///
 
     // 이벤트 감시
+    // throttle 필요!!!!!
     useEffect(() => {
         console.log("4pg 컴포넌트 나타남");
         window.addEventListener("scroll",onScroll)
 
-        
         return () => {
             console.log("4pg cleanUp 함수");
             window.removeEventListener("scroll",onScroll)
@@ -74,6 +82,11 @@ const Main4pg = function(){
             <div className="ma_4pg">
                 <div className="wear_wrap">
                     <div className="wearbx">
+                        <div className="ibFont"></div>
+                        <div className="ibFont"></div>
+                        <div className="ibFont"></div>
+                        <div className="ibFont"></div>
+                        <div className="ibFont"></div>
                         <div className="wear_imgbx ib5">
                             <img src="./images/main/fit2Sub.jpg" alt="이미지"/>
                         </div>
