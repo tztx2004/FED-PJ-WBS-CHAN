@@ -10,11 +10,8 @@ import { getToPathname } from '@remix-run/router';
 
 const Main2pg = function(){
 
-    
-
-
     function scr2pg(){
-
+        // 대상
         let arr = ["A","B","C"];
 
         const cover = $(".about_cover");
@@ -29,10 +26,11 @@ const Main2pg = function(){
         const numb = $(".numb");
         const ma_2pg_copy = $(".ma_2pg_copy");
         
-        cover.css({
-            backgroundSize:"300%",
-            backgroundAttachment:"fixed"
-        })
+        // 최초에 화면 보이기
+        // cover.css({
+        //     backgroundSize:"300%",
+        //     backgroundAttachment:"fixed"
+        // }) // css // 
     
         // 사진 필터링
         function filterImg(ty){ // ty - pc나 sp(type)
@@ -60,41 +58,40 @@ const Main2pg = function(){
             cv6.css({
                 backgroundPosition:'250% 0',
             })
-        }
+        }/// filterImg ///
         
     
         
         // 스크롤 이벤트
-        // window.addEventListener("scroll",function(){
-    
-            // console.log($(".ma2_2pg_about").offset());
-            let start2pg = $(".ma2_2pg_about").offset()?$(".ma2_2pg_about").offset().top:0 // 2페이지 시작점
-            let curSc = window.scrollY // 스크롤 당 100씩
-            
-            // 높이 설정(sticky)
-            let pg2 = $(".ma2_2pg_about")
-            let pg2W = pg2.width();
-            // console.log("sss",pg2W)
-            
-            // 실행 시 주석해제
-            // pg2.css({
-            //     height:`min(4500px,${pg2W * (cover.length-1)}px)`
-            // }) //// css /////
-    
-            let mp = Math.ceil(curSc - start2pg);
-            // console.log(mp/20,curSc, start2pg)
-            // 최초 호출
-            if(mp/20<0) filterImg("pc");
+        // console.log($(".ma2_2pg_about").offset());
+        let start2pg = $(".ma2_2pg_about").offset()?$(".ma2_2pg_about").offset().top:0 // 2페이지 시작점
+        let curSc = window.scrollY // 스크롤 당 100씩
+        
+        // 높이 설정(sticky)
+        let pg2 = $(".ma2_2pg_about")
+        let pg2W = pg2.width();
+        // console.log("sss",pg2W)
+        
+        // 실행 시 주석해제
+        // pg2.css({
+        //     height:`min(4500px,${pg2W * (cover.length-1)}px)`
+        // }) //// css /////
 
-            if(curSc > start2pg && mp/20 <190){
-                $(".ma_2pg_img").css({
-                    position: "fixed",
-                    top: "10%",
-                    zIndex: "9",
-                    width: "100%",
-                });
-    
-                if (curSc > start2pg && mp / 20 < 150) {
+        let mp = Math.ceil(curSc - start2pg);
+        // console.log(mp/20,curSc, start2pg)
+
+        // 최초 호출
+        if(mp/20<0) filterImg("pc");
+
+        if(curSc > start2pg && mp/20 <190){
+            $(".ma_2pg_img").css({
+                position: "fixed",
+                top: "10%",
+                zIndex: "9",
+                width: "100%",
+            });// css //
+
+            if (curSc > start2pg && mp / 20 < 150) {
                 cover.css({
                     transform:`translateX(${-mp/10}%)`,
                 })/// css ///
@@ -117,36 +114,33 @@ const Main2pg = function(){
                 cv6.css({
                     backgroundPosition:`${250-mp/20}% 0`,
                 })
-                
-                } /// if ///
-            }
+            
+            } /// if ///
+        } // if // 
+        
         else if(mp/20 < 390) {
             $(".ma_2pg_img").css({
                 // position: "sticky",
                 top:"-105%"
             });
-        }
+        }// else if //
 
-            // 라인 애니메이션
-            let numb_top = numb.offset().top
-            let ts = ma_2pg_copy.offset().top
-    
-            if(mp > numb_top){
-                pg2_line.css({
-                    width:"100%",
-                })
-            }
-            else{
-                pg2_line.css({
-                    width:"0%",
-                })
-            }
-            
-    
-        // }) /// scroll ///
-    
+        // 라인 애니메이션
+        let numb_top = numb.offset().top
+        let ts = ma_2pg_copy.offset().top
 
-    }
+        if(mp > numb_top){
+            pg2_line.css({
+                width:"100%",
+            })
+        } /// if ///
+        else{
+            pg2_line.css({
+                width:"0%",
+            })
+        } /// else ///
+        
+    } //// scr2pg ////
 
     // 쓰로틀
     const throttle = (callback,delay)=>{
@@ -158,19 +152,22 @@ const Main2pg = function(){
                 timer = null
             },delay)
         }
-    }
-    let [thr,setThr] = useState(throttle)
+    }/// throttle ///
+
+    // let [thr,setThr] = useState(throttle)
 
     // scroll 상태변수
-    const [isScr,setIsScr] = useState(false)
+    // const [isScr,setIsScr] = useState(false)
 
     // scroll 제어
     const handleScr = throttle(scr2pg,100)
 
+
+
     // scroll watch
     useEffect(() => {
         // console.log("컴포넌트 나타남");
-        window.addEventListener("scroll",handleScr)
+        window.addEventListener("scroll",handleScr,{passive:true})
         return () => {
         //   console.log("cleanUp 함수");
             window.removeEventListener("scroll",handleScr)

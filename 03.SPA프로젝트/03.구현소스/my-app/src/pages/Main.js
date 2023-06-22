@@ -7,6 +7,7 @@ import data from "../data/main_data";
 import Main1pg from "../components/main1pg";
 import Main2pg from "../components/main2pg";
 import Main3pg from "../components/main3pg";
+import Main4pg from "../components/main4pg";
 
 
 
@@ -20,6 +21,7 @@ function Main(){
             <Main1pg/>
             <Main2pg/>
             <Main3pg/>
+            <Main4pg/>
             <Info/>
             {/* <Practice/> */}
         </>
