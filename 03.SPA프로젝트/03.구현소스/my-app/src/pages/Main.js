@@ -8,6 +8,7 @@ import Main1pg from "../components/main1pg";
 import Main2pg from "../components/main2pg";
 import Main3pg from "../components/main3pg";
 import Main4pg from "../components/main4pg";
+import Main5pg from "../components/main5pg";
 
 
 
@@ -22,6 +23,7 @@ function Main(){
             <Main2pg/>
             <Main3pg/>
             <Main4pg/>
+            <Main5pg/>
             <Info/>
             {/* <Practice/> */}
         </>

@@ -127,6 +127,24 @@ function Main1pg(props) {
     const ma_1pg_imgs = document.querySelectorAll(".ma_1pg_imgs");
 
     const { x, y, handleMouseMove } = useMove();
+
+
+    function test(){
+        const test = document.querySelector(".test");
+        const test2 =$(".test")
+        // let ttt = test2.offsetX()
+        // console.log("test",ttt)
+    }
+    test()
+
+    useEffect(()=>{
+        console.log("1pg effect")
+
+        return ()=>{
+            console.log("1pg clear")
+        }
+
+    },[])
     return (
         <>
             <div className="ma_1pg_img1_wrapper">
@@ -135,6 +153,7 @@ function Main1pg(props) {
                 {/* <div className="mvbg"> */}
                 <div className="moveBox mv1"></div>
                 {/* </div> */}
+                {/* <div className="test"></div> */}
             </div>
 
             <div className="ma_pg1_copy">

@@ -32,6 +32,7 @@ const Main3pg = function(){
             let ma_3pg_img_part = $(".ma_3pg_img_part")
             let picTop = ma_3pg_img_part.offset()? ma_3pg_img_part.offset().top:0
             let ma_3pg_img = $(".ma_3pg_img")
+            let font3pg = document.querySelector(".font3pg")
             let span3 = $(".font3pg span")
 
             // sticky 높이값
@@ -41,15 +42,16 @@ const Main3pg = function(){
             // })
             
 
-            console.log(start3pg,curSc)
-
-
-        
 
             // line 애니메이션
-            if(curSc > start3pg-300){
+            if(dif>-300){
                 ma_3pg_line.css({
                     width:"80%"
+                })
+            }
+            else if(dif <= -300){
+                ma_3pg_line.css({
+                    width:"0%"
                 })
             }
 
@@ -60,31 +62,33 @@ const Main3pg = function(){
             // 글씨 딸려 들어옴
             // 글씨 가운데로 오면서 그림 완전히 사라짐
             // 5페이지 시작
+            // scrSt
+            // >44 : 영역밖
+            // 44~30 : 분신술
+            // 30~10 : 동영상
+            // <10 : 영역밖
 
             // 기준 확인
             let scrSt = 50-dif/70;
             // console.log(scrSt)
+            // console.log(dif, scrSt)
 
             // 구간 밖에서 초기화
-            if(scrSt> 44 || scrSt <15){
+            if(scrSt> 44 || scrSt <10){
                 ma_3pg_img.css({
-                    // display:"none",
-                    // top:"-100%",
-                    opacity:"0",
                     width:"100%",
-                    // position: "sticky",
+                    position: "sticky",
+                    transition:"none"
                 })
             }
             // 구간안에서 펼쳐짐
-            else if(scrSt <= 44 &&  scrSt >= 15){
+            else if(scrSt <= 44 &&  scrSt >= 10){
                 ma_3pg_img.css({
-                    width:"80%",
-                    // top:"10%",
+                    top:"10%",
                     display:"flex",
-                    opacity:"1",
-                    // position: "fixed",
-                    transition: ".4s"
-                }).fadeIn()
+                    width:"80%",
+                    position: "fixed",
+                })
             }
             // 사진애니메이션(분신술)
             if(curSc > picTop-400 && scrSt >= 30 && scrSt <= 50){
@@ -92,10 +96,10 @@ const Main3pg = function(){
                     transform:`translateX(${scrSt}%)`
                 })
                 wi3_3.css({
-                    transform:`translateX(${-50+dif/70}%)`
+                    transform:`translateX(${-scrSt}%)`
                 })
             }
-            // (수정필요) 
+            // 
             else if(scrSt < 30 || scrSt > 50){
                 wi3_2.css({
                     transform:`translateX(50%)`
@@ -104,20 +108,29 @@ const Main3pg = function(){
                     transform:`translateX(-50%)`
                 })
             }
-            
-        
+
             // 초기화(스크롤 거꾸로 했을때)
             if(scrSt > 30 || scrSt <7){
+                // 비디오 사라짐
                 vidbg.removeClass("on")
                 vidbg.removeClass("on2")
                 vidBx.removeClass("on")
                 ma_3pg_img.css({
-                    aspectRatio:"1441/800"
+                    transition:"none"
                 })
+                // 비율유지
+                if(scrSt > 30){
+                    ma_3pg_img.css({
+                        aspectRatio:"1441/800",
+                    })
+                }
             }/// if ///
 
             // 비디오영상 등장
             else if(scrSt <= 30){
+                ma_3pg_img.css({
+                    transition:".4s"
+                })
                 vidbg.addClass("on")
                 this.setTimeout(()=>{
                     vidbg.delay(400).addClass("on2")
@@ -126,9 +139,9 @@ const Main3pg = function(){
                     vidBx.addClass("on")
                 },400)
                 
-                // 비디오 사라짐
                 
-                console.log(scrSt)
+                
+                // console.log(scrSt)
                 // 이미지 줄어듦
                 // console.log(scrSt)
                 ma_3pg_img.css({
@@ -140,20 +153,24 @@ const Main3pg = function(){
                 document.querySelectorAll(".font3pg span").forEach((x,i)=>  {
                         setTimeout(()=>{
                             x.style.transform = "translateY(0%)"
+                            font3pg.style.display = "flex"
                         },i*100)// setTimeout //
 
                         // 구간에서 벗어나면 사라짐
                         if(scrSt <= 13 || scrSt > 23){
                             setTimeout(()=>{
                                 x.style.transform = "translateY(-100%)"
+                                font3pg.style.display = "none"
                             },i*100)// setTimeout //
                         }
                     }) // forEach
 
                 // 이미지 사라짐
-                if(scrSt <= 23){
-                    ma_3pg_img.fadeOut().css({
-                        position:"sticky"
+                if(scrSt <= 15){
+                    ma_3pg_img.css({
+                        aspectRatio:0
+                        // display:"none",
+                        // position:"sticky"
                     })
                 }
                 
