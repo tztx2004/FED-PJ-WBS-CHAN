@@ -128,7 +128,7 @@ const Main2pg = function(){
         let numb_top = numb.offset().top
         let ts = ma_2pg_copy.offset().top
         let numb_t = document.querySelector(".numb").offsetTop
-        console.log(curSc-ts)
+        // console.log(curSc-ts)
 
         if(curSc-ts>0){
             pg2_line.css({

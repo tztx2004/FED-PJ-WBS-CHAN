@@ -3,155 +3,53 @@ import { useLocation } from "react-router-dom";
 import "../css/main.css";
 import $ from "jquery";
 import main_data from "../data/main_data";
-// import JQB_1 from "../modules/main1";
-
-function jqb() {
-    $(function () {
-        // moveBox 마우스 따라다니게 하기
-        const moveBox = $(".moveBox");
-        const mvbg = $(".mvbg");
-        const ma_1pg_base = document.querySelector(".ma_1pg_base");
-        const ma_1pg_img1_wrapper = document.querySelector(".ma_1pg_img1_wrapper");
-        const ma_1pg_imgs = document.querySelectorAll(".ma_1pg_imgs");
-
-        // const { pathname } = useLocation();
-        // 박스 움직이게 만들기 (배경,움직이는요소)
-        function move(bg, tg, cg) {
-            // useEffect(()=>{
-            bg.addEventListener("mousemove", function (e) {
-                let x = e.offsetX;
-                let y = e.offsetY;
-                // 회전도와주는 박스
-                tg.css({
-                    left: x,
-                    top: y,
-                    backgroundPositionX: -x,
-                    backgroundPositionY: -y,
-                });
-                // 실질적으로 움직이는 박스
-                // cg.css({
-                //     backgroundPositionX: -x,
-                //     backgroundPositionY: -y,
-                // })
-
-                console.log(x, y);
-            }); //// mousemove ////
-            // },[pathname])
-        } // move
-
-        // move(ma_1pg_base,moveBox);
-
-        // console.log(ma_1pg_imgs)
-
-        // background position 위치보정 함수
-        function calc() {
-            let bgtop = $(".ma_1pg_base").offset().top - $(window).scrollTop();
-            let bgleft = $(".ma_1pg_base").offset().left;
-
-            $(".ma_1pg_base").css({
-                backgroundPosition: bgleft + "px " + bgtop + "px",
-            }); ////// css ////////
-            $(".moveBox").css({
-                backgroundPosition: bgleft + "px " + bgtop + "px",
-            }); ////// css ////////
-
-            console.log(bgtop, bgleft);
-        } //////////// calc /////////////
-
-        // calc()
-    }); ////// jQB ////////
-} // jqb
-
-
-
-const useMove = () => {
-    const [state, setState] = useState({ x: 0, y: 0 });
-
-    const handleMouseMove = (e) => {
-        e.persist();
-        setState((state) => ({ ...state, x: e.clientX, y: e.clientY }));
-        console.log(state.x, state.y);
-    };
-    const moveBox = $(".moveBox");
-
-    moveBox.css({
-        left: state.x,
-        top: state.y,
-        backgroundPositionX: -state.x,
-        backgroundPositionY: -state.y,
-    });
-
-    return {
-        x: state.x,
-        y: state.y,
-        handleMouseMove,
-    };
-};
-
-
-
-
-function move(e) {
-        const moveBox = $(".moveBox");
-    // useEffect(()=>{
-        let x = e.offsetX;
-        let y = e.offsetY;
-        // 회전도와주는 박스
-        moveBox.css({
-            left: x,
-            top: y,
-            backgroundPositionX: -x,
-            backgroundPositionY: -y,
-        });
-        // 실질적으로 움직이는 박스
-        // cg.css({
-        //     backgroundPositionX: -x,
-        //     backgroundPositionY: -y,
-        // })
-
-        console.log(x, y);
-    // },[pathname])
-} // move
-
-
-
 
 
 // 메인 1페이지 컴포넌트
 function Main1pg(props) {
-    // moveBox 마우스 따라다니게 하기
-    const moveBox = $(".moveBox");
-    const mvbg = $(".mvbg");
-    const ma_1pg_base = document.querySelector(".ma_1pg_base");
-    const ma_1pg_img1_wrapper = document.querySelector(".ma_1pg_img1_wrapper");
-    const ma_1pg_imgs = document.querySelectorAll(".ma_1pg_imgs");
+    
+    // const moveBox = useRef()
+    
+    // 가로로 흘러가는 박스
+    function mvbox2(){
+        const mv1 = document.querySelector(".mv1")
+        const mv2 = document.querySelector(".mv2")
+        const mv3 = document.querySelector(".mv3")
 
-    const { x, y, handleMouseMove } = useMove();
+        // setTimeout(()=>{
+        //     mv1.classList.add("on")
+        // },1000)
+        // setTimeout(()=>{
+        //     mv2.classList.add("on")
+        // },1500)
+        // setTimeout(()=>{
+        //     mv3.classList.add("on")
+        // },2000)
 
 
-    function test(){
-        const test = document.querySelector(".test");
-        const test2 =$(".test")
-        // let ttt = test2.offsetX()
-        // console.log("test",ttt)
-    }
-    test()
+    }/// movebox ///
+
 
     useEffect(()=>{
-        console.log("1pg effect")
-
+        // console.log("1p",moveBox)
+        mvbox2()
         return ()=>{
             console.log("1pg clear")
         }
 
     },[])
+    
     return (
         <>
             <div className="ma_1pg_img1_wrapper">
-                <div className="ma_1pg_base ma_1pg_imgs" onMouseMove={handleMouseMove}></div>
+                <div className="ma_1pg_base ma_1pg_imgs"></div>
                 <div className="cover"></div>
                 {/* <div className="mvbg"> */}
-                <div className="moveBox mv1"></div>
+                <div className="movebox_wrap">
+                    <div className="moveBox mv1" ></div>
+                    <div className="moveBox mv2" ></div>
+                    <div className="moveBox mv3" ></div>
+                </div>
                 {/* </div> */}
                 {/* <div className="test"></div> */}
             </div>
@@ -167,7 +65,6 @@ function Main1pg(props) {
                     </h3>
                 </div>
             </div>
-            {/* {jqb()} */}
         </>
     ); ///// return /////
 } ///// Main1pg /////

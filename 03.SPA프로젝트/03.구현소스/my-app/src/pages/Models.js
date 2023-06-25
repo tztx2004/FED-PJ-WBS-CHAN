@@ -1,4 +1,5 @@
 // 템플릿
+import Model from "../components/modelpg";
 import Common from "../modules/Common";
 import Info from "../modules/Footer";
 
@@ -7,8 +8,8 @@ function Models(){
     return(
         <>
             <Common/>
-            <h1>Models</h1>
-            <Info/>
+            <Model/>
+            {/* <Info/> */}
         </>
     )
 }

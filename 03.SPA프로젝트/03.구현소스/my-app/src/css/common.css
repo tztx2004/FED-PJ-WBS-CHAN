@@ -23,7 +23,7 @@ a {
     width: 100%;
     text-align: center;
     top: 0;
-    z-index: 99;
+    z-index: 999;
     background: none;
 }
 .nav{

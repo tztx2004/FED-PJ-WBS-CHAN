@@ -56,32 +56,84 @@
     width: 100%;
 }
 
-
+.movebox_wrap{
+    width: 100%;
+    height: 100%;
+    outline: 1px dashed red;
+    position: absolute;
+    z-index: 99;
+    background: none;
+}
 .moveBox{
     width: 15vw;
-    height: 15vw;
+    height: 33.33%;
     border: 2px solid #fff;
     position: relative;
     z-index: 11;
-    /* left: 0px; */
-    /* top: 0px; */
-    
-    background: url(../../public/images/main/kv_a_pc.jpg) no-repeat;
-    /* background-position: center; */
-    background-size: 80vw;
-    /* transition: .1s ease-in; */
-    /* display: none; */
-    animation: testAni linear 3s infinite;
-    transform-origin: 100px 100px;
-    /* animation: rotateBx 3s linear infinite; */
+    left: 0%;
 
+    transition: 1s linear;
 }
-@keyframes testAni {
+.mv1{
+    background: url(../../public/images/main/kv_b_pc.jpg) no-repeat;
+    background-size: 80vw;
+    top: 0%;
+    background-position: 0% 0%;
+    animation: mv1Ani 3s linear infinite alternate;
+}
+.mv2{
+    background: url(../../public/images/main/kv_c_pc.jpg) no-repeat;
+    background-size: 80vw;
+    top: 0%;
+    background-position: 0% 50%;
+    animation: mv2Ani 3s linear 1.5s infinite alternate;
+}
+.mv3{
+    background: url(../../public/images/main/kv_a_pc.jpg) no-repeat;
+    background-size: 80vw;
+    top: 0%;
+    background-position: 0% 100%;
+    animation: mv3Ani 3s linear 3s infinite alternate;
+}
+
+/* .mv1.on{
+    left: 100%;
+    background-position: 120% 0;
+}
+.mv2.on{
+    left: 100%;
+    background-position: 120% 50%;
+}
+.mv3.on{
+    left: 100%;
+    background-position: 120% 100%;
+} */
+
+@keyframes mv1Ani {
     from{
-        transform: rotate(0deg) translate(-50%, -50%) rotate(360deg);
+        background-position: 0% 0%;
     }
     to{
-        transform: rotate(360deg) translate(-50%, -50%) rotate(0deg);
+        left: 100%;
+        background-position: 120% 0;
+    }
+}
+@keyframes mv2Ani {
+    from{
+        background-position: 0% 50%;
+    }
+    to{
+        left: 100%;
+        background-position: 120% 50%;
+    }
+}
+@keyframes mv3Ani {
+    from{
+        background-position: 0% 100%;
+    }
+    to{
+        left: 100%;
+        background-position: 120% 100%;
     }
 }
 .mvbg{
@@ -111,6 +163,95 @@
 }
 
 
+
+
+
+
+
+
+.pg1 {
+    height: 1300px;
+}
+
+.wrap {
+    position: absolute;
+    top: calc(50% - 808px / 2);
+    left: calc(50% - 1312px / 2);
+    /* transform: translate(-50%, -50%); */
+    width: 1312px;
+    height: 808px;
+    outline: 1px solid #ccc;
+    overflow: hidden;
+    /*바깥으로 나가는 #mask박스 숨기기*/
+}
+
+/*가장 아래 깔리는 박스*/
+#bg {
+    position: absolute;
+    width: 1312px;
+    aspect-ratio: 1312/808;
+    background: url(../../public/images/main/kv_base_pc.jpg) no-repeat fixed center/1312px;
+    z-index: 9;
+}
+
+/*마스크 효과 box*/
+#mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+
+    /*트랜지션:속시이지*/
+    transition: top 0.4s ease-out, left 0.4s ease-out;
+}
+.com {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    z-index: 9;
+
+    /*트랜지션:속시이지*/
+    transition: top 0.4s ease-out, left 0.4s ease-out;
+}
+.com::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid white;
+    border-radius: 2px;
+    z-index: 999;
+}
+.ag{
+    background: url(../../public/images/main/kv_a_pc.jpg) no-repeat fixed center/1312px;
+}
+.bg{
+    background: url(../../public/images/main/kv_b_pc.jpg) no-repeat fixed center/1312px;
+}
+.cg{
+    background: url(../../public/images/main/kv_c_pc.jpg) no-repeat fixed center/1312px;
+}
+
+/*이벤트가 적용되는 box*/
+#cover {
+    position: absolute;
+    width: 1312px;
+    height: 808px;
+    background: none;
+    z-index: 9;
+}
+
+
+
+
+
+
 .ma_pg1_copy{
     width: 80vw;
     margin: 0 auto;
@@ -134,29 +275,27 @@
 }
 
 
-.wrap {
+/* .wrap {
     position: absolute;
     top: calc(50% - 590px/2);
     left: calc(50% - 500px/2);
-    /* transform: translate(-50%, -50%); */
     width: 590px;
     height: 500px;
     outline: 1px solid #ccc;
     overflow: hidden;
-    /*바깥으로 나가는 #mask박스 숨기기*/
-}
+} */
 
 /*가장 아래 깔리는 박스*/
-#bg {
+/* #bg {
     position: absolute;
     width: 590px;
     height: 500px;
     background: url(../../public/images/main/kv_base_pc.jpg) no-repeat fixed;
     z-index: 9;
-}
+} */
 
 /*마스크 효과 box*/
-#mask {
+/* #mask {
     position: absolute;
     top: 0;
     left: 0;
@@ -165,19 +304,14 @@
 
     background: url(../../public/images/main/kv_b_pc.jpg) no-repeat fixed;
     z-index: 99;
-    /*border: 5px dotted red;*/
-
-    /*트랜지션:속시이지*/
-    /* transition: top .4s ease-out,
-        left .4s ease-out; */
-}
+} */
 
 /*이벤트가 적용되는 box*/
-#cover {
+/* #cover {
     position: absolute;
     width: 590px;
     height: 500px;
-}
+} */
 
 
 

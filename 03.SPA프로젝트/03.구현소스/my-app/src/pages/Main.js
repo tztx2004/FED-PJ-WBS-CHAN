@@ -10,6 +10,8 @@ import Main3pg from "../components/main3pg";
 import Main4pg from "../components/main4pg";
 import Main5pg from "../components/main5pg";
 
+import MainPpg from "../components/mainpp";
+
 
 
 
@@ -20,6 +22,7 @@ function Main(){
         <>
             <Common/>
             <Main1pg/>
+            {/* <MainPpg/> */}
             <Main2pg/>
             <Main3pg/>
             <Main4pg/>
