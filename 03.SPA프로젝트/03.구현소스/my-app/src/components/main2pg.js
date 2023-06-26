@@ -11,6 +11,7 @@ import { getToPathname } from '@remix-run/router';
 const Main2pg = function(){
 
     function scr2pg(){
+        
         // 대상
         let arr = ["A","B","C"];
 
@@ -21,7 +22,8 @@ const Main2pg = function(){
         const cv4 =$(".cv4")
         const cv5 =$(".cv5")
         const cv6 =$(".cv6")
-    
+        
+        if(!cv1) return
         const pg2_line = $(".pg2_line");
         const numb = $(".numb");
         const ma_2pg_copy = $(".ma_2pg_copy");
@@ -59,7 +61,7 @@ const Main2pg = function(){
                 backgroundPosition:'250% 0',
             })
         }/// filterImg ///
-        
+        filterImg("pc")
     
         
         // 스크롤 이벤트
@@ -81,7 +83,7 @@ const Main2pg = function(){
 
         // 최초 호출(실행 전 후)
         // if(mp/20<0 || mp/20 > 190) filterImg("pc");
-        filterImg("pc")
+        
 
         // 실행 구간
         if(mp>0 && mp/20 <150){
@@ -125,9 +127,9 @@ const Main2pg = function(){
 
         
         // 라인 애니메이션
-        let numb_top = numb.offset().top
-        let ts = ma_2pg_copy.offset().top
-        let numb_t = document.querySelector(".numb").offsetTop
+        // let numb_top = numb.offset().top
+        let ts = ma_2pg_copy.offset()?ma_2pg_copy.offset().top:0
+        // let numb_t = document.querySelector(".numb").offsetTop
         // console.log(curSc-ts)
 
         if(curSc-ts>0){
@@ -173,7 +175,7 @@ const Main2pg = function(){
         //   console.log("cleanUp 함수");
             window.removeEventListener("scroll",handleScr)
         };
-    });
+    },[handleScr]);
     
     return(
         <><div>

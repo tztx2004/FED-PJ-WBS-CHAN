@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 .models{
-    height: 3000px;
+    height: 3400px;
     position: relative;
     top: 80px;
 }
@@ -12,12 +12,16 @@
     transform: translate(-50%, -50%);
     white-space: nowrap;
     background: none;
+    overflow: hidden;
 }
 .model_word span{
+    display: inline-block;
     font-size: 18vw;
     font-weight: 200;
     font-style: italic;
     background: none;
+    transform: translateY(100%);
+    transition: .4s;
 }
 .model_sort{
     position: fixed;
@@ -25,8 +29,11 @@
     left: 0;
     width: 200px;
     height: 50px;
-    outline: 1px dashed red;
-
+    z-index: 1;
+}
+.model_sort a{
+    display: flex;
+    justify-content: space-between;
 }
 .modelSort{
     display: flex;
@@ -46,7 +53,7 @@
 }
 .model_item{
     width: 25%;
-    height: 400px;
+    height: 500px;
 
     position: fixed;
     top: 20%;

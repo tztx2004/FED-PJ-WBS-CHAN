@@ -181,7 +181,7 @@ const Main3pg = function(){
             // 3페이지 마지막 라인 대상
             let detail_3pg = $(".detail_3pg")
             let line_3pg = $(".line_3pg")
-            let dtt = detail_3pg.offset().top
+            let dtt = detail_3pg.offset()?detail_3pg.offset().top:0
             
             // 3페이지 마지막 라인애니메이션
             if(curSc>dtt*0.95){

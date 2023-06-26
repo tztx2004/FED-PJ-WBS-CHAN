@@ -20,9 +20,9 @@ const Main4pg = function(){
         
         const ma_4pg = document.querySelector(".ma_4pg");
         const curSc =window.scrollY
-        const start4pg = ma_4pg.offsetTop
+        const start4pg = ma_4pg?ma_4pg.offsetTop:0
         const dif4pg = curSc - start4pg;
-
+        if(!ma_4pg) return
         const imgbx = document.querySelectorAll(".wear_imgbx")
         let ib0 = document.querySelector(".ib0")
         let ib1 = document.querySelector(".ib1")
@@ -68,8 +68,10 @@ const Main4pg = function(){
     // throttle 필요!!!!!
     useEffect(() => {
         console.log("4pg 컴포넌트 나타남");
-        window.addEventListener("scroll",onScroll)
+        const ma_4pg = document.querySelector(".ma_4pg");
 
+        window.addEventListener("scroll",onScroll)
+        if(!ma_4pg) window.removeEventListener("scroll",onScroll)
         return () => {
             console.log("4pg cleanUp 함수");
             window.removeEventListener("scroll",onScroll)

@@ -12,7 +12,7 @@ const Main5pg = function(){
         const cbg1 = document.querySelectorAll(".cbg1")
         const cbg2 = document.querySelectorAll(".cbg2")
         const cbg3 = document.querySelectorAll(".cbg3")
-
+        if(!ma_5pg) return
         const ci1 = document.querySelectorAll(".ci1")
         const ci2 = document.querySelectorAll(".ci2")
         const ci3 = document.querySelectorAll(".ci3")

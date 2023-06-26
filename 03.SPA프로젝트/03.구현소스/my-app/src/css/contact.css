@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+.contact{
+    height: 100vh;
+}
+.contact_font{
+    position: relative;
+    width: 80%;
+    height: 30%;
+
+    top: 30%;
+    left: 10%;
+    white-space: wrap;
+    overflow: hidden;
+}
+.contact_font span{
+    font-size: 12vw;
+    font-weight: 400;
+    font-style: italic;
+
+    position: relative;
+    top: 100%;
+    left: 0%;
+    transition: .4s;
+}
+.input_part{
+    width: 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+.input_part input{
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+}

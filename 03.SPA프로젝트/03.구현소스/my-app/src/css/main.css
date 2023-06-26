@@ -14,14 +14,14 @@
     background-position: center;
     background-size: 80%;
 
-    outline: 1px dashed red;
+    /* outline: 1px dashed red; */
 }
 .ma_1pg_img1{
     width: 100%;
     border: 1px solid #000;
 }
 .test{
-    outline: 1px dashed red;
+    /* outline: 1px dashed red; */
     width: 300px;
     height: 300px;
     position: absolute;
@@ -79,21 +79,21 @@
     background-size: 80vw;
     top: 0%;
     background-position: 0% 0%;
-    animation: mv1Ani 3s linear infinite alternate;
+    animation: mv1Ani 2s linear 1 forwards;
 }
 .mv2{
     background: url(../../public/images/main/kv_c_pc.jpg) no-repeat;
     background-size: 80vw;
     top: 0%;
     background-position: 0% 50%;
-    animation: mv2Ani 3s linear 1.5s infinite alternate;
+    animation: mv2Ani 2s linear 1.5s 1 forwards;
 }
 .mv3{
     background: url(../../public/images/main/kv_a_pc.jpg) no-repeat;
     background-size: 80vw;
     top: 0%;
     background-position: 0% 100%;
-    animation: mv3Ani 3s linear 3s infinite alternate;
+    animation: mv3Ani 2s linear 3s 1 forwards;
 }
 
 /* .mv1.on{
@@ -326,8 +326,9 @@
     
     top: 10%;
     overflow: hidden;
-    
+    position: sticky;
     transition: .4s;
+    background: none;
 }
 .ma_2pg_img.on{
     position: fixed;
@@ -357,7 +358,7 @@
     transform: translateX(0%);
     z-index: 9;
     
-    outline: 3px dashed #000;
+    /* outline: 3px dashed #000; */
 
 
 }
