@@ -2,16 +2,15 @@ import React, { useEffect, useRef, useState } from 'react';
 import main_data from "../data/main_data";
 import "../css/main.css";
 import $ from 'jquery';
-import { getToPathname } from '@remix-run/router';
+import { throttle } from 'lodash';
 
 
 
 
 
 const Main2pg = function(){
-
     function scr2pg(){
-        
+        // console.log("쓰로틀확인")
         // 대상
         let arr = ["A","B","C"];
 
@@ -27,6 +26,7 @@ const Main2pg = function(){
         const pg2_line = $(".pg2_line");
         const numb = $(".numb");
         const ma_2pg_copy = $(".ma_2pg_copy");
+        const ma_2pg_title = $(".ma_2pg_title")
         
         // 최초에 화면 보이기
         // cover.css({
@@ -76,7 +76,7 @@ const Main2pg = function(){
         // console.log(dif2pg)
 
         let mp = Math.ceil(curSc - start2pg);
-        // console.log(mp/20)
+        console.log(mp/20)
         
 
         
@@ -136,46 +136,38 @@ const Main2pg = function(){
             pg2_line.css({
                 width:"100%",
             })
+            ma_2pg_title.css({
+                transform:"translateY(0%)"
+            })
         } /// if ///
         else{
             pg2_line.css({
                 width:"0%",
             })
+            ma_2pg_title.css({
+                transform:"translateY(100%)"
+            })
         } /// else ///
         
     } //// scr2pg ////
 
-    // 쓰로틀
-    const throttle = (callback,delay)=>{
-        console.log("throttle")
-        let timer
-        return ()=>{
-            timer = setTimeout(()=>{
-                callback();
-                timer = null
-            },delay)
-        }
-    }/// throttle ///
-
-    // let [thr,setThr] = useState(throttle)
-
-    // scroll 상태변수
-    // const [isScr,setIsScr] = useState(false)
-
-    // scroll 제어
-    const handleScr = throttle(scr2pg,100)
 
 
 
     // scroll watch
     useEffect(() => {
+            const handleScr = throttle(()=>{
+                scr2pg()
+            },20)
+
         // console.log("컴포넌트 나타남");
-        window.addEventListener("scroll",handleScr,{passive:true})
+            window.addEventListener("scroll",handleScr,{passive:true})
+            
         return () => {
         //   console.log("cleanUp 함수");
             window.removeEventListener("scroll",handleScr)
         };
-    },[handleScr]);
+    },[]);
     
     return(
         <><div>

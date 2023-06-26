@@ -2,6 +2,7 @@ import main_data from "../data/main_data";
 import "../css/main.css";
 import $ from 'jquery';
 import { useEffect, useState } from "react";
+import { throttle } from "lodash";
 
 // 사진 6장이 깔려있음
 // 위에서 부터 clip-path가 100%될때까지 올라감
@@ -12,11 +13,9 @@ const Main4pg = function(){
     // 대상
     const ma_4pg = document.querySelector(".ma_4pg");
     
-
-    // ma_4pg.style.background = "#000"
-    
     // 스크롤 함수
     function onScroll(){
+        // console.log("4pg쓰로틀!")
         
         const ma_4pg = document.querySelector(".ma_4pg");
         const curSc =window.scrollY
@@ -54,12 +53,8 @@ const Main4pg = function(){
                 if(num>0) x.append(" "+Math.floor(100-num)+"%")
                 x.style.top = num +"%"
             })
-            // ibfont.style.top = 100 - dif4pg/10 +"%"
 
         } // if //
-
-
-        // console.log("스크롤",dif4pg/10)
 
     
     } /// onScroll ///
@@ -67,14 +62,15 @@ const Main4pg = function(){
     // 이벤트 감시
     // throttle 필요!!!!!
     useEffect(() => {
-        console.log("4pg 컴포넌트 나타남");
-        const ma_4pg = document.querySelector(".ma_4pg");
-
-        window.addEventListener("scroll",onScroll)
-        if(!ma_4pg) window.removeEventListener("scroll",onScroll)
+        // console.log("4pg 컴포넌트 나타남");
+        const handleScroll = throttle(()=>{
+            onScroll()
+        },15)
+        window.addEventListener("scroll",handleScroll)
+        
         return () => {
             console.log("4pg cleanUp 함수");
-            window.removeEventListener("scroll",onScroll)
+            window.removeEventListener("scroll",handleScroll)
         };
     },[]);
 

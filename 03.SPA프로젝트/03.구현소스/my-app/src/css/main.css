@@ -399,11 +399,14 @@
     display: flex;
     padding: 1vw;
     margin-bottom: 100px;
+    overflow: hidden;
 }
 .ma_2pg_title{
     margin-left: 3vw;
     font-size: 17vw;
     letter-spacing: -10px;
+    transition: .8s;
+    transform: translateY(100%);
 }
 .ma_2pg_cont{
     display: flex;

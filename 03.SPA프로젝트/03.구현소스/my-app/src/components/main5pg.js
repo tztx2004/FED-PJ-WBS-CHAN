@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import main_data from "../data/main_data";
 import "../css/main.css";
 import $ from 'jquery';
+import { throttle } from "lodash";
 
 const Main5pg = function(){
     
@@ -127,12 +128,13 @@ const Main5pg = function(){
     }//// onScr ////
 
     useEffect(() => {
-        console.log("5pg effect");
-        window.addEventListener("scroll",onScr)
+        const handleScroll = throttle(()=>{
+            onScr()
+        },200)
+        window.addEventListener("scroll",handleScroll)
 
         return () => {
-            console.log("5pg cleanUp");
-            window.removeEventListener("scroll",onScr)
+            window.removeEventListener("scroll",handleScroll)
         };
     });
 

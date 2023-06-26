@@ -6,9 +6,8 @@ import "../css/main.css";
 import $ from 'jquery';
 
 
-
 const Main3pg = function(){
-
+    
     // 쓰로틀
     let prot = 0
     // 메인 3페이지 스크롤 이벤트
@@ -35,12 +34,6 @@ const Main3pg = function(){
             let font3pg = document.querySelector(".font3pg")
             let span3 = $(".font3pg span")
 
-            // sticky 높이값
-            // ma_3pg_img_part
-            // .css({
-            //     height:`${wi3_2.height()*3}px`
-            // })
-            
 
 
             // line 애니메이션
@@ -110,7 +103,7 @@ const Main3pg = function(){
             }
 
             // 초기화(스크롤 거꾸로 했을때)
-            if(scrSt > 30 || scrSt <7){
+            if(scrSt > 30 || scrSt <12){
                 // 비디오 사라짐
                 vidbg.removeClass("on")
                 vidbg.removeClass("on2")
@@ -139,11 +132,6 @@ const Main3pg = function(){
                     vidBx.addClass("on")
                 },400)
                 
-                
-                
-                // console.log(scrSt)
-                // 이미지 줄어듦
-                // console.log(scrSt)
                 ma_3pg_img.css({
                     aspectRatio:`1441/${800-dif/3}`,
                 })
@@ -202,13 +190,11 @@ const Main3pg = function(){
 
     
     useEffect(() => {
-        console.log("3pg 스크롤");
         window.addEventListener("scroll",scr3pg,{passive:true})
         return () => {
-            console.log("3pg 스크롤 cleanUp");
             window.removeEventListener("scroll",scr3pg)
         };
-    });
+    },[]);
 
     return(
         <>

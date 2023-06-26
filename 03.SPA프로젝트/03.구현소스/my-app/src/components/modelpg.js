@@ -34,7 +34,7 @@ const Model = function(){
             x.style.transform = `translateX(${mp}%)`
         })/// forEach ///
 
-        console.log(curSc/3)
+        // console.log(curSc/3)
         model_img.forEach((x,i)=>{
             if(i%3 === 2 && i===2){
                 x.style.clipPath = `inset(0 0 0 ${curSc/2.6-80}%)`
@@ -109,11 +109,14 @@ const Model = function(){
     } /// sortClick ///
 
     useEffect(() => {
-        window.addEventListener("scroll",scrm)
+        const handleScroll = throttle(()=>{
+            scrm()
+        },15)
+        window.addEventListener("scroll",handleScroll)
         modelTitle()
         return () => {
             console.log("model cleanUp 함수");
-            window.removeEventListener("scroll",scrm)
+            window.removeEventListener("scroll",handleScroll)
         };
     },[scrm]);
 
