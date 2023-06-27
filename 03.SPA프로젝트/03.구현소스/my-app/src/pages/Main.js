@@ -12,6 +12,7 @@ import Main5pg from "../components/main5pg";
 
 import MainPpg from "../components/mainpp";
 import ScrollComponent from "../components/throttle";
+import Loading from "../components/loading";
 
 
 
@@ -22,6 +23,7 @@ function Main(){
     return(
         <>
             <Common/>
+            <Loading/>
             <Main1pg/>
             {/* <MainPpg/> */}
             <Main2pg/>

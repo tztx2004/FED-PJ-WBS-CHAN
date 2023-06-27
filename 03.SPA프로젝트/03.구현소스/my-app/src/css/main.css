@@ -14,7 +14,11 @@
     background-position: center;
     background-size: 80%;
 
-    /* outline: 1px dashed red; */
+    opacity: 0;
+    transition: 0.8s;
+}
+.ma_1pg_img1_wrapper.on{
+    opacity: 1;
 }
 .ma_1pg_img1{
     width: 100%;
@@ -832,4 +836,28 @@ video{
     .wear_imgbx img {
         transform: translateY(100%) scale(3);
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+.pbox{
+    position: relative;
+    z-index: 9999;
+    width: 100%;
+    overflow: hidden;
+    height: 736px;
+}
+.pImg{
+    width: 100%;
+    position: absolute;
+    outline: 1px dashed red;
+    clip-path: inset(0 0 0 0%);
 }

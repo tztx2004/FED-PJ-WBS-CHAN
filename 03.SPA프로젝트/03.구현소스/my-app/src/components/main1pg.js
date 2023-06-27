@@ -32,7 +32,8 @@ function Main1pg(props) {
 
     useEffect(()=>{
         console.log("1p",window.innerWidth)
-        
+        const wraper = document.querySelector(".ma_1pg_img1_wrapper")
+        wraper.classList.add("on")
         mvbox2()
         return ()=>{
             console.log("1pg clear")

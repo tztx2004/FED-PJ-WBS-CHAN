@@ -132,7 +132,7 @@ const Main2pg = function(){
         // let numb_t = document.querySelector(".numb").offsetTop
         // console.log(curSc-ts)
 
-        if(curSc-ts>0){
+        if(curSc-ts>-150){
             pg2_line.css({
                 width:"100%",
             })
@@ -170,8 +170,8 @@ const Main2pg = function(){
     },[]);
     
     return(
-        <><div>
-            
+        <>
+            <div>
                 <div className="ma2_2pg_about">
                     <div className="ma_2pg_img">
                         <div className="about">
@@ -207,7 +207,7 @@ const Main2pg = function(){
                         <h3>{main_data.pg2.font}</h3>
                     </div>
                 </div>
-        </div>
+            </div>
             
         </>
     )
