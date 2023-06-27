@@ -10,6 +10,7 @@ const Main5pg = function(){
         const ma_5pg = document.querySelector(".ma_5pg")
         const dbx1 = document.querySelector(".dbx1")
         const chrBg = document.querySelectorAll(".chrBg")
+        const chrImg = document.querySelectorAll(".chrImg")
         const cbg1 = document.querySelectorAll(".cbg1")
         const cbg2 = document.querySelectorAll(".cbg2")
         const cbg3 = document.querySelectorAll(".cbg3")
@@ -28,7 +29,7 @@ const Main5pg = function(){
         const dbx1_h = dbx1.scrollHeight
 
         const stLine = dif5pg+dbx1_h*2
-
+        console.log(dif5pg+window.innerHeight/2,stLine)
         //// 첫줄 세트 ////
         if(stLine > 0){
             cbg1.forEach((x,i)=>{
@@ -123,6 +124,16 @@ const Main5pg = function(){
                 x.classList.remove("on")
             })
         }
+
+        /* 미디어쿼리 */
+        if(stLine<0 && dif5pg+window.innerHeight/2>0){
+            chrImg.forEach((x,i)=>{
+                x.classList.add("on")
+            })
+            chrBg.forEach((x,i)=>{
+                x.classList.add("on")
+            })
+        }
         
         // console.log(stLine)
     }//// onScr ////
@@ -137,6 +148,7 @@ const Main5pg = function(){
             window.removeEventListener("scroll",handleScroll)
         };
     });
+
 
     return(
         <>

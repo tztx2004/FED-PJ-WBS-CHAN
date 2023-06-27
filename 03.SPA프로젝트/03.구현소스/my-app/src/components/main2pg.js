@@ -76,7 +76,7 @@ const Main2pg = function(){
         // console.log(dif2pg)
 
         let mp = Math.ceil(curSc - start2pg);
-        console.log(mp/20)
+        // console.log(mp/20)
         
 
         
@@ -194,9 +194,6 @@ const Main2pg = function(){
                                 <img src="./images/main/aboutB_name.png" alt="이미지" />
                             </div>
                         </div>
-                        <div className="about1"></div>
-                        <div className="about2"></div>
-                        <div className="about3"></div>
                     </div>
                 </div>
                 <div className="ma_2pg_copy">

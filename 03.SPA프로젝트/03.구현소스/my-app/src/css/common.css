@@ -25,6 +25,7 @@ a {
     top: 0;
     z-index: 999;
     background: none;
+    overflow: hidden;
 }
 .nav{
     width: 100%;
@@ -58,6 +59,21 @@ a {
     transform: translateY(100%);
 }
 .header_text{
+    display: inline-block;
     width: 100%;
     background: none;
+    transform: translateY(100%);
+    transition: .4s;
+}
+
+@media (max-width:700px) {
+    .nav_text{
+        font-size: 1.3rem;
+    }
+    .Main{
+        font-size: 30px;
+    }
+    .header_text{
+        font-size: 14px;
+    }
 }

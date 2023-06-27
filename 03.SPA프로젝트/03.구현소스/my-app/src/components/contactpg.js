@@ -9,8 +9,6 @@ const ContactPage = function(){
     const contact_font = document.querySelector(".contact_font")
     
     const test = ()=>{
-        console.log("test!!!!!")
-        
         document.querySelectorAll(".contact_font span")
         .forEach((v,j)=>{
             setTimeout(()=>{

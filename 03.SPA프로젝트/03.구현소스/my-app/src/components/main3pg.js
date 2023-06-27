@@ -77,7 +77,7 @@ const Main3pg = function(){
             // 구간안에서 펼쳐짐
             else if(scrSt <= 44 &&  scrSt >= 10){
                 ma_3pg_img.css({
-                    top:"10%",
+                    // top:"10%",
                     display:"flex",
                     width:"80%",
                     position: "fixed",

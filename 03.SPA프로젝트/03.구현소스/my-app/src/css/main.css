@@ -781,3 +781,40 @@ video{
         opacity: 1;
     }
 }
+
+
+
+/* 미디어쿼리 */
+@media only screen and (max-width:700px) {
+    .ma_pg1_title {
+        font-size: 4vw;
+    }
+    .ma_pg1_font {
+        font-size: 2.2vw;
+    }
+
+    .detail_3pg h3{
+        width: 80%;
+    }
+    .ma_3pg_img{
+        top: 30%;
+        aspect-ratio: 3/4;
+    }
+
+    .wearbx{
+        height: 670px;
+        aspect-ratio: 0;
+    }
+    .wear_imgbx img {
+        transform: translateY(45%) scale(2);
+    }
+    .wear_wrap{
+        height: 4200px;
+    }
+    .chrbx{
+        aspect-ratio: 194/300;
+    }
+    .chrImg.on{
+        transform: translateY(100%) scale(3);
+    }
+}

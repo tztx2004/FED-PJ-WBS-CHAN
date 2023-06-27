@@ -12,6 +12,10 @@ let main_data = {
         font1:"MIX AND COMBINE TRAITS TO PERFECT THE IDEAL AI MODEL TO REPRESENT THE BRAND’S IDENTITY.",
         font2:"Create a one-of-a-kind AI model that combines the strengths of various models. Not only the face, but also the skin, hair color, body shape, etc. can be freely generated according to the brand."
     },
+    pg5:{
+        pc:[{},{}],
+        sp:[],
+    }
     
 }
 

@@ -31,11 +31,13 @@ function Main1pg(props) {
 
 
     useEffect(()=>{
-        // console.log("1p",moveBox)
+        console.log("1p",window.innerWidth)
+        
         mvbox2()
         return ()=>{
             console.log("1pg clear")
         }
+        
 
     },[])
     
