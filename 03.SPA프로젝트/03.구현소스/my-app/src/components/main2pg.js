@@ -89,7 +89,7 @@ const Main2pg = function(){
         if(mp>0 && mp/20 <150){
             $(".ma_2pg_img").css({
                 position: "fixed",
-                top: "10%",
+                // top: "10%",
                 zIndex: "9",
                 width: "100%",
             });// css //

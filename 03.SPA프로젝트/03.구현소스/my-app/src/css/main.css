@@ -793,6 +793,10 @@ video{
         font-size: 2.2vw;
     }
 
+    .ma_2pg_img{
+        top: 25%;
+    }
+
     .detail_3pg h3{
         width: 80%;
     }
@@ -800,6 +804,7 @@ video{
         top: 30%;
         aspect-ratio: 3/4;
     }
+    
 
     .wearbx{
         height: 670px;
@@ -815,6 +820,16 @@ video{
         aspect-ratio: 194/300;
     }
     .chrImg.on{
+        transform: translateY(100%) scale(3);
+    }
+}
+
+@media only screen and (max-width:500px) {
+    
+    .wearbx {
+        height: 84vh;
+    }
+    .wear_imgbx img {
         transform: translateY(100%) scale(3);
     }
 }
