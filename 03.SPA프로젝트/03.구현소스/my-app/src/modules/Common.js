@@ -16,6 +16,14 @@ function Common() {
     const SetH = () => {
         return <>{arr.map((x, i) => x)}</>;
     };
+
+    const onScrTop = ()=>{
+        window.scrollTo({
+            top:0,
+            left:0,
+            behavior:"smooth"
+        })
+    }
     useEffect(() => {
         setTimeout(() => {
             document.querySelector(".header_text").style.transform = "translateY(0%)";
@@ -29,10 +37,10 @@ function Common() {
             <header className="header">
                 <nav className="nav limitWidth">
                     <Link to={"/Models"}>
-                        <span className="Models nav_text">MODLES</span>
+                        <span className="Models nav_text" onClick={onScrTop}>MODLES</span>
                     </Link>
                     <Link to={"/Main"}>
-                        <span className="Main nav_text">AI MODELS</span>
+                        <span className="Main nav_text" onClick={onScrTop}>AI MODELS</span>
                     </Link>
                     <Link to={"/Contact"}>
                         <span className="Contact nav_text">CONTACT</span>

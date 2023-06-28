@@ -3,58 +3,53 @@ import { useLocation } from "react-router-dom";
 import "../css/main.css";
 import $ from "jquery";
 import main_data from "../data/main_data";
+import { throttle } from 'lodash';
 
 
 // 메인 1페이지 컴포넌트
 function Main1pg(props) {
     
-    // const moveBox = useRef()
-    
     // 가로로 흘러가는 박스
-    function mvbox2(){
-        const mv1 = document.querySelector(".mv1")
-        const mv2 = document.querySelector(".mv2")
-        const mv3 = document.querySelector(".mv3")
+    
+    const mvbox = (e)=>{
+        const wrapper = document.querySelector(".ma_1pg_img1_wrapper")
+        const ma_1pg_image = document.querySelector(".ma_1pg_image")
+        const wrapper_wid = wrapper.clientWidth
 
-        // setTimeout(()=>{
-        //     mv1.classList.add("on")
-        // },1000)
-        // setTimeout(()=>{
-        //     mv2.classList.add("on")
-        // },1500)
-        // setTimeout(()=>{
-        //     mv3.classList.add("on")
-        // },2000)
-
+        let scrX = e.offsetX
+        let sts = scrX/wrapper_wid*100
+        
+        ma_1pg_image.style.clipPath = `inset(0 0 0 ${sts}%)`
 
     }/// movebox ///
 
 
     useEffect(()=>{
-        console.log("1p",window.innerWidth)
-        const wraper = document.querySelector(".ma_1pg_img1_wrapper")
-        wraper.classList.add("on")
-        mvbox2()
-        return ()=>{
-            console.log("1pg clear")
-        }
+        const wrapper = document.querySelector(".ma_1pg_img1_wrapper")
+        // opacity 효과
+        wrapper.classList.add("on")
         
-
+        wrapper.addEventListener("mousemove",mvbox)
+        
+        return ()=>{
+            wrapper.removeEventListener("mousemove",mvbox)
+        }
     },[])
     
     return (
         <>
             <div className="ma_1pg_img1_wrapper">
-                <div className="ma_1pg_base ma_1pg_imgs"></div>
+                <div className="ma_1pg_base ma_1pg_imgs">
+                    <img className="ma_1pg_image" src="./images/main/kv_base_pc.jpg" alt="이미지"/>
+                </div>
                 <div className="cover"></div>
-                {/* <div className="mvbg"> */}
+                {/* <div className="mvbg"></div> */}
                 <div className="movebox_wrap">
                     <div className="moveBox mv1" ></div>
                     <div className="moveBox mv2" ></div>
                     <div className="moveBox mv3" ></div>
                 </div>
-                {/* </div> */}
-                {/* <div className="test"></div> */}
+
             </div>
 
             <div className="ma_pg1_copy">

@@ -29,7 +29,7 @@ const Main5pg = function(){
         const dbx1_h = dbx1.scrollHeight
 
         const stLine = dif5pg+dbx1_h*2
-        console.log(dif5pg+window.innerHeight/2,stLine)
+        // console.log(dif5pg+window.innerHeight/2,stLine)
         //// 첫줄 세트 ////
         if(stLine > 0){
             cbg1.forEach((x,i)=>{
