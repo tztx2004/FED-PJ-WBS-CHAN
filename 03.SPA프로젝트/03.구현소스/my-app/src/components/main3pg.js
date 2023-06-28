@@ -183,7 +183,7 @@ const Main3pg = function(){
                 })
             }
 
-        },250) // setTimeout //
+        },80) // setTimeout //
         
     }// scr3pg
 

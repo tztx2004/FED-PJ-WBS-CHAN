@@ -805,7 +805,23 @@ video{
 }
 
 @media only screen and (max-width:500px) {
-    
+    .ma_1pg_img1_wrapper{
+        width: 96vw;
+        margin: 0;
+        margin-top: 85px;
+    }
+    .ma_pg1_title{
+        font-size: 5vw;
+    }
+    .ma_pg1_font{
+        font-size: 3.2vw;
+    }
+
+    .ma2_2pg_about {
+        height: 2400px;
+    }
+
+
     .wearbx {
         height: 84vh;
     }
@@ -818,22 +834,3 @@ video{
 
 
 
-
-
-
-
-
-
-.pbox{
-    position: relative;
-    z-index: 9999;
-    width: 100%;
-    overflow: hidden;
-    height: 736px;
-}
-.pImg{
-    width: 100%;
-    position: absolute;
-    outline: 1px dashed red;
-    clip-path: inset(0 0 0 0%);
-}

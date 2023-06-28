@@ -9,7 +9,6 @@ function Models(){
         <>
             <Common/>
             <Model/>
-            {/* <Info/> */}
         </>
     )
 }

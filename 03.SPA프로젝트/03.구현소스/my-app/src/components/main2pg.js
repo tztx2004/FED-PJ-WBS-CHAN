@@ -78,13 +78,19 @@ const Main2pg = function(){
         let mp = Math.ceil(curSc - start2pg);
         // console.log(mp/20)
         
+        // console.log()
 
         
 
         // 최초 호출(실행 전 후)
         // if(mp/20<0 || mp/20 > 190) filterImg("pc");
         
-
+        if(window.innerWidth <500){
+            $(".ma_2pg_img").css({
+                width: "260%",
+            });// css //
+        }
+        
         // 실행 구간
         if(mp>0 && mp/20 <150){
             $(".ma_2pg_img").css({
@@ -92,9 +98,26 @@ const Main2pg = function(){
                 // top: "10%",
                 zIndex: "9",
                 width: "100%",
+                opacity:1
             });// css //
-            // $(".ma_2pg_img").addClass("on")
-
+            
+            /* 미디어쿼리 */
+            if(window.innerWidth <500){
+                $(".ma_2pg_img").css({
+                    width: "260%",
+                });// css //
+            
+                if($(".ma_2pg_img").offset().top+$(".ma_2pg_img").height()>$(".ma_2pg_copy").offset().top){
+                    $(".ma_2pg_img").css({
+                        opacity:0
+                    });// css //
+                }
+                else{
+                    $(".ma_2pg_img").css({
+                        opacity:1
+                    });// css //
+                }
+            }
             cover.css({
                 transform:`translateX(${-mp/10}%)`,
             })/// css ///
@@ -123,6 +146,7 @@ const Main2pg = function(){
             $(".ma_2pg_img").css({
                 position: "sticky",
             });
+
         }// else if //
 
         
@@ -148,6 +172,17 @@ const Main2pg = function(){
                 transform:"translateY(100%)"
             })
         } /// else ///
+
+        if(window.innerWidth <500){
+            if(curSc-ts>-500){
+                pg2_line.css({
+                    width:"100%",
+                })
+                ma_2pg_title.css({
+                    transform:"translateY(0%)"
+                })
+            } /// if ///
+        }
         
     } //// scr2pg ////
 
