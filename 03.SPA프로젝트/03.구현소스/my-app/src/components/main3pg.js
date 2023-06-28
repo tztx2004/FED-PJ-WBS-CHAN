@@ -63,7 +63,7 @@ const Main3pg = function(){
 
             // 기준 확인
             let scrSt = 50-dif/70;
-            console.log(scrSt)
+            // console.log(scrSt)
             // console.log(dif, scrSt)
 
             // 구간 밖에서 초기화

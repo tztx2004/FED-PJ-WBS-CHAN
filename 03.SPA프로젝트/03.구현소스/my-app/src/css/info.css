@@ -1,5 +1,8 @@
 @charset "utf-8";
-
+a{
+    text-decoration: none;
+    color: #000;
+}
 .Info{
     position: relative;
     bottom: 0;

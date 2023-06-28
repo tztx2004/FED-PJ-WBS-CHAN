@@ -7,7 +7,7 @@ import {throttle} from "lodash"
 
 
 const Model = function(){
-    console.log('model~~')
+    // console.log('model~~')
 
     function modelTitle(){
         const model_word = document.querySelectorAll(".model_word span")
@@ -115,7 +115,7 @@ const Model = function(){
         window.addEventListener("scroll",handleScroll)
         modelTitle()
         return () => {
-            console.log("model cleanUp 함수");
+            // console.log("model cleanUp 함수");
             window.removeEventListener("scroll",handleScroll)
         };
     },[scrm]);

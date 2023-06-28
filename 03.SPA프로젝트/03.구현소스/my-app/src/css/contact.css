@@ -5,13 +5,14 @@
 }
 .contact_font{
     position: relative;
-    width: 90%;
+    width: 95%;
     height: 30%;
-
     top: 30%;
-    left: 10%;
+    left: 2%;
     white-space: wrap;
     overflow: hidden;
+    display: flex;
+    gap: 23px;
 }
 .contact_font span{
     font-size: 12vw;

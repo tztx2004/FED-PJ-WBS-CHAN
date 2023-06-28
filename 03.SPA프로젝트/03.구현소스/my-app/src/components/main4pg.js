@@ -69,7 +69,7 @@ const Main4pg = function(){
         window.addEventListener("scroll",handleScroll)
         
         return () => {
-            console.log("4pg cleanUp 함수");
+            // console.log("4pg cleanUp 함수");
             window.removeEventListener("scroll",handleScroll)
         };
     },[]);

@@ -3,7 +3,7 @@ import $ from 'jquery';
 import { useEffect, useRef } from "react";
 
 const ContactPage = function(){
-    console.log("contact")
+    // console.log("contact")
 
     const contact_title = ["G","E","T"," ","I","N"," ","T","O","U","C","H"];
     const contact_font = document.querySelector(".contact_font")

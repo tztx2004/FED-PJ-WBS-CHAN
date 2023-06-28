@@ -10,7 +10,7 @@ function Info(){
                     <span className="bold_text">CARRERS</span>
                 </div>
                 <div className="officeInfo">
-                    AI_ SPA Project by Chan <br/>origin :
+                    AI_ SPA Project by Chan <br/>Origin :
                     <a href="https://www.ai-model.jp/">https://www.ai-model.jp/</a>
                 </div>
             </div>
