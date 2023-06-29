@@ -146,9 +146,20 @@ const Model = function(){
                 </div>
             </div>
             <div className="model_list">
-                {
+                {window.innerWidth > 500 &&
                     model_data.map((x,i)=>
                         <div key={i} style={{left:`${33*i}%`}} className="model_item">
+                            {
+                                x.images.map((v,j)=>
+                                    <img key={v} src={v} alt="이미지"/>
+                                )
+                            }
+                        </div>
+                    )
+                }
+                {window.innerWidth <= 500 &&
+                    model_data.map((x,i)=>
+                        <div key={i} style={{left:`${55*i}%`}} className="model_item">
                             {
                                 x.images.map((v,j)=>
                                     <img key={v} src={v} alt="이미지"/>

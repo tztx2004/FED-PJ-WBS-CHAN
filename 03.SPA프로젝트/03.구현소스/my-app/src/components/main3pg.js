@@ -33,6 +33,7 @@ const Main3pg = function(){
             let ma_3pg_img = $(".ma_3pg_img")
             let font3pg = document.querySelector(".font3pg")
             let span3 = $(".font3pg span")
+            const wrapper_3pg = document.querySelector(".wrapper_3pg")
 
 
 
@@ -77,11 +78,21 @@ const Main3pg = function(){
             // 구간안에서 펼쳐짐
             else if(scrSt <= 44 &&  scrSt >= 10){
                 ma_3pg_img.css({
-                    // top:"10%",
                     display:"flex",
                     width:"80%",
                     position: "fixed",
                 })
+            }
+            if(scrSt <= 50){
+                if(window.innerWidth<=500){
+                    ma_3pg_img.css({
+                        display: "flex",
+                        width: "100%",
+                        position: "fixed",
+                        aspectRatio: "3/4",
+                        paddingTop: "162px"
+                    })
+                }
             }
             // 사진애니메이션(분신술)
             if(curSc > picTop-400 && scrSt >= 30 && scrSt <= 50){
@@ -109,12 +120,17 @@ const Main3pg = function(){
                 vidbg.removeClass("on2")
                 vidBx.removeClass("on")
                 ma_3pg_img.css({
-                    transition:"none"
+                    transition:"none",
                 })
                 // 비율유지
-                if(scrSt > 30){
+                if(scrSt > 30 && window.innerWidth >500){
                     ma_3pg_img.css({
                         aspectRatio:"1441/800",
+                    })
+                }
+                if(window.innerWidth <=500){
+                    ma_3pg_img.css({
+                        position:"sticky"
                     })
                 }
             }/// if ///
@@ -131,10 +147,16 @@ const Main3pg = function(){
                 this.setTimeout(()=>{
                     vidBx.addClass("on")
                 },400)
-                
-                ma_3pg_img.css({
-                    aspectRatio:`1441/${800-dif/3}`,
-                })
+                if(window.innerWidth > 500){
+                    ma_3pg_img.css({
+                        aspectRatio:`1441/${800-dif/3}`,
+                    })
+                }
+                else if(window.innerWidth <= 500){
+                    ma_3pg_img.css({
+                        aspectRatio:`4/${3-dif/100}`,
+                    })
+                }
                 
 
                 // 영상 들어온 후 글씨효과
@@ -152,7 +174,7 @@ const Main3pg = function(){
                             },i*100)// setTimeout //
                         }
                     }) // forEach
-
+                    console.log(scrSt)
                 // 이미지 사라짐
                 if(scrSt <= 15){
                     ma_3pg_img.css({
@@ -164,6 +186,11 @@ const Main3pg = function(){
                 
 
             } // else if //
+            if(scrSt <=15 && window.innerWidth<=500){
+                ma_3pg_img.css({
+                    display:"none"
+                })
+            }
 
 
             // 3페이지 마지막 라인 대상
@@ -210,10 +237,11 @@ const Main3pg = function(){
                         <div className="ma_3pg_font1">{main_data.pg3.font1}</div>
                         <div className="ma_3pg_font2">{main_data.pg3.font2}</div>
                     </div>
-                    
                 </div>
                 <div className="ma_3pg_img_part">
-                    <div className="ma_3pg_img">
+                    {
+                    window.innerWidth > 500 &&
+                        <div className="ma_3pg_img">
                         <div className="ma_3pg_imgwrap wi3_1">
                             <img src="./images/main/fusion_center_pc.webp" alt=""/>
                         </div>
@@ -224,6 +252,23 @@ const Main3pg = function(){
                             <img src="./images/main/fusion_right_pc.webp" alt=""/>
                         </div>
                     </div>
+                    }
+                    {
+                    window.innerWidth <= 500 &&
+                        <div className="ma_3pg_img">
+                            <div className='wrapper_3pg'>
+                                <div className="ma_3pg_imgwrap wi3_1">
+                                    <img src="./images/main/fusion_center_pc.webp" alt=""/>
+                                </div>
+                                <div className="ma_3pg_imgwrap wi3_2">
+                                    <img src="./images/main/fusion_left_pc.webp" alt=""/>
+                                </div>
+                                <div className="ma_3pg_imgwrap wi3_3">
+                                    <img src="./images/main/fusion_right_pc.webp" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                    }
                     <div className="vidBx">
                         <video className="video" preload="auto" autoPlay loop="loop" muted="muted" volume="0">
                             <source src="./images/main/reel.mp4" type="video/mp4"/>

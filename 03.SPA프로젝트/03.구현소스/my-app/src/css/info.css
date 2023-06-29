@@ -20,7 +20,7 @@ a{
     
     height: 30%;
     width: 100%;
-
+    background: none;
     animation: spanAni 10s linear infinite;
 }
 .infoBan span{
@@ -41,4 +41,14 @@ a{
 }
 .bold_text{
     font-weight: bold;
+}
+
+@media screen and (max-width:500px) {
+    .infoBan span {
+        font-size: 4vw;
+    }
+    .Info{
+        padding: 6% 10%;
+        height: 100px;
+    }
 }

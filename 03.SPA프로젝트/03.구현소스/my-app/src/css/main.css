@@ -51,7 +51,6 @@
 .movebox_wrap{
     width: 100%;
     height: 100%;
-    outline: 1px dashed red;
     position: absolute;
     z-index: 99;
     background: none;
@@ -304,7 +303,7 @@
 }
 .ma_2pg_img{
     
-    top: 10%;
+    top: 0%;
     overflow: hidden;
     position: sticky;
     transition: .4s;
@@ -806,7 +805,7 @@ video{
 
 @media only screen and (max-width:500px) {
     .ma_1pg_img1_wrapper{
-        width: 96vw;
+        width: 100vw;
         margin: 0;
         margin-top: 85px;
     }
@@ -817,10 +816,46 @@ video{
         font-size: 3.2vw;
     }
 
+    .ma_2pg_img {
+        top: 5%;
+    }
     .ma2_2pg_about {
         height: 2400px;
     }
+    .about{
+        aspect-ratio: 40/43;
+    }
+    .about_cover{
+        background: none;
+        width: 100%;
+        aspect-ratio: 40/43;
+    }
+    .cv2{
+        left: 0%;
+    }
+    .cv3{
+        left: 0%;
+    }
 
+    .ma_3pg_img_part{
+        padding: 0;
+
+    }
+    .wrapper_3pg{
+        width: 100%;
+        overflow: hidden;
+        transform: scale(2);
+    }
+    .ma_3pg_img {
+        top: 20%;
+    }
+    
+    .vidBx.on video{
+        width: auto;
+    }
+    .detail_3pg{
+        height: 600px;
+    }
 
     .wearbx {
         height: 84vh;
@@ -828,6 +863,13 @@ video{
     .wear_imgbx img {
         transform: translateY(100%) scale(3);
     }
+    .wear_imgbx{
+        height: 86%;
+    }
+
+
+
+
 }
 
 

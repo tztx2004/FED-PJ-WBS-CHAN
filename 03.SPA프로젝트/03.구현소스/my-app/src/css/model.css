@@ -66,3 +66,15 @@
     position: absolute;
     width: 100%;
 }
+
+@media screen and (max-width:500px) {
+    .model_item {
+        width: 50%;
+        height: 500px;
+        position: fixed;
+        top: 36%;
+        margin: 0 4vw;
+        background: none;
+        transform: translateX(400%);
+    }
+}

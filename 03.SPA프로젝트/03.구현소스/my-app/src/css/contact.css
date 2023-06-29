@@ -38,3 +38,18 @@
     padding: 10px;
     text-align: center;
 }
+
+@media screen and (max-width:500px) {
+    .contact_font {
+        position: relative;
+        width: 70%;
+        height: 30%;
+        top: 30%;
+        left: 18%;
+        white-space: wrap;
+        overflow: hidden;
+        display: flex;
+        gap: 23px;
+        flex-wrap: wrap;
+    }
+}

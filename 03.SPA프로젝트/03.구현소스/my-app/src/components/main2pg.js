@@ -76,20 +76,9 @@ const Main2pg = function(){
         // console.log(dif2pg)
 
         let mp = Math.ceil(curSc - start2pg);
+        let ma2_2pg_about = document.querySelector(".ma2_2pg_about")
         // console.log(mp/20)
-        
-        // console.log()
 
-        
-
-        // 최초 호출(실행 전 후)
-        // if(mp/20<0 || mp/20 > 190) filterImg("pc");
-        
-        if(window.innerWidth <500){
-            $(".ma_2pg_img").css({
-                width: "260%",
-            });// css //
-        }
         
         // 실행 구간
         if(mp>0 && mp/20 <150){
@@ -100,46 +89,34 @@ const Main2pg = function(){
                 width: "100%",
                 opacity:1
             });// css //
-            
-            /* 미디어쿼리 */
-            if(window.innerWidth <500){
-                $(".ma_2pg_img").css({
-                    width: "260%",
-                });// css //
-            
-                if($(".ma_2pg_img").offset().top+$(".ma_2pg_img").height()>$(".ma_2pg_copy").offset().top){
-                    $(".ma_2pg_img").css({
-                        opacity:0
-                    });// css //
-                }
-                else{
-                    $(".ma_2pg_img").css({
-                        opacity:1
-                    });// css //
-                }
+
+            if(window.innerWidth>500){
+
+                cover.css({
+                    transform:`translateX(${-mp/10}%)`,
+                })/// css ///
+                cv1.css({
+                    backgroundPosition:`${-mp/20}% 0`,
+                })
+                cv2.css({
+                    backgroundPosition:`${50-mp/20}% 0`,
+                })
+                cv3.css({
+                    backgroundPosition:`${100-mp/20}% 0`,
+                })
+                cv4.css({
+                    backgroundPosition:`${150-mp/20}% 0`,
+                })
+                cv5.css({
+                    backgroundPosition:`${200-mp/20}% 0`,
+                })
+                cv6.css({
+                    backgroundPosition:`${250-mp/20}% 0`,
+                })
             }
-            cover.css({
-                transform:`translateX(${-mp/10}%)`,
-            })/// css ///
             
-            cv1.css({
-                backgroundPosition:`${-mp/20}% 0`,
-            })
-            cv2.css({
-                backgroundPosition:`${50-mp/20}% 0`,
-            })
-            cv3.css({
-                backgroundPosition:`${100-mp/20}% 0`,
-            })
-            cv4.css({
-                backgroundPosition:`${150-mp/20}% 0`,
-            })
-            cv5.css({
-                backgroundPosition:`${200-mp/20}% 0`,
-            })
-            cv6.css({
-                backgroundPosition:`${250-mp/20}% 0`,
-            })
+            
+            
         } // if // 
         // 실행구간 밖
         else if(mp/20<0 || mp/20 > 150) {
@@ -149,6 +126,25 @@ const Main2pg = function(){
 
         }// else if //
 
+        /* 미디어쿼리 */
+        if(window.innerWidth <= 500){
+            if(mp/20>87){
+                if($(".ma_2pg_img").offset().top+$(".ma_2pg_img").height()>$(".ma_2pg_copy").offset().top){
+                    $(".ma_2pg_img").css({
+                        opacity:0,
+                    });// css //
+                }
+            }
+            else{
+                
+            }
+            
+            let fp = (mp/ma2_2pg_about.clientHeight)*100
+            document.querySelectorAll(".about_cover").forEach((x,i)=>{
+                x.style.clipPath = `inset(0 ${2*fp-(2-i)*fp}% 0 0)`
+            })
+        }
+        
         
         // 라인 애니메이션
         // let numb_top = numb.offset().top
@@ -207,30 +203,52 @@ const Main2pg = function(){
     return(
         <>
             <div>
-                <div className="ma2_2pg_about">
-                    <div className="ma_2pg_img">
-                        <div className="about">
-                            <div className="about_cover cv1">
-                                <img src="./images/main/aboutC_name.png" alt="이미지" />
-                            </div>
-                            <div className="about_cover cv2">
-                                <img src="./images/main/aboutA_name.png" alt="이미지" />
-                            </div>
-                            <div className="about_cover cv3">
-                                <img src="./images/main/aboutB_name.png" alt="이미지" />
-                            </div>
-                            <div className="about_cover cv4">
-                                <img src="./images/main/aboutC_name.png" alt="이미지" />
-                            </div>
-                            <div className="about_cover cv5">
-                                <img src="./images/main/aboutA_name.png" alt="이미지" />
-                            </div>
-                            <div className="about_cover cv6">
-                                <img src="./images/main/aboutB_name.png" alt="이미지" />
+                {window.innerWidth >500 &&
+                    <div className="ma2_2pg_about">
+                        <div className="ma_2pg_img">
+                            <div className="about">
+                                <div className="about_cover cv1">
+                                    <img src="./images/main/aboutC_name.png" alt="이미지" />
+                                </div>
+                                <div className="about_cover cv2">
+                                    <img src="./images/main/aboutA_name.png" alt="이미지" />
+                                </div>
+                                <div className="about_cover cv3">
+                                    <img src="./images/main/aboutB_name.png" alt="이미지" />
+                                </div>
+                                <div className="about_cover cv4">
+                                    <img src="./images/main/aboutC_name.png" alt="이미지" />
+                                </div>
+                                <div className="about_cover cv5">
+                                    <img src="./images/main/aboutA_name.png" alt="이미지" />
+                                </div>
+                                <div className="about_cover cv6">
+                                    <img src="./images/main/aboutB_name.png" alt="이미지" />
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                }
+                {window.innerWidth <=500 &&
+                    <div className="ma2_2pg_about">
+                        <div className="ma_2pg_img">
+                            <div className="about">
+                                <div className="about_cover cv1">
+                                    <img src="./images/main/aboutC_sp@2x.jpg" alt="이미지" />
+                                    <img src="./images/main/aboutC_name.png" alt="이미지" />
+                                </div>
+                                <div className="about_cover cv2">
+                                    <img src="./images/main/aboutB_sp@2x.jpg" alt="이미지" />
+                                    <img src="./images/main/aboutB_name.png" alt="이미지" />
+                                </div>
+                                <div className="about_cover cv3">
+                                    <img src="./images/main/aboutA_sp@2x.jpg" alt="이미지" />
+                                    <img src="./images/main/aboutA_name.png" alt="이미지" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
                 <div className="ma_2pg_copy">
                     <div className="ma_2pg_title">
                         THE<br/> MODELS
@@ -242,6 +260,7 @@ const Main2pg = function(){
                         <h3>{main_data.pg2.font}</h3>
                     </div>
                 </div>
+                
             </div>
             
         </>
