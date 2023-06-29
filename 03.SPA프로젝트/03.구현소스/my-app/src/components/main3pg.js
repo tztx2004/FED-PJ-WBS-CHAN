@@ -49,6 +49,12 @@ const Main3pg = function(){
                 })
             }
 
+            if(window.innerWidth<=500){
+                ma_3pg_img.css({
+                    aspectRatio: "3/4",
+                    paddingTop: "162px",
+                })
+            }
 
             // 모아짐
             // 배경 1 2 들어옴
@@ -152,7 +158,7 @@ const Main3pg = function(){
                         aspectRatio:`1441/${800-dif/3}`,
                     })
                 }
-                else if(window.innerWidth <= 500){
+                if(window.innerWidth <= 500){
                     ma_3pg_img.css({
                         aspectRatio:`4/${3-dif/100}`,
                     })
