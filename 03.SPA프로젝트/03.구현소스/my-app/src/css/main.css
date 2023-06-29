@@ -630,7 +630,7 @@ video{
     position: sticky;
     top: 10%;
     /* height: 80vh; */
-    aspect-ratio: 1033/650;
+    aspect-ratio: 1033/550;
     overflow: hidden;
 
     /* outline: 1px dashed red; */
