@@ -4,7 +4,6 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    background-color: #f2f3f5;
 }
 html{
     font-size: 16px;
@@ -53,7 +52,7 @@ nav a{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background: url(../../public/images/macImage.jpg) no-repeat;
+  /* background: url(../../public/images/macImage.jpg) no-repeat; */
   background-size: 100%;
   background-position: center;
   
@@ -63,7 +62,7 @@ nav a{
   padding: 3vw;
   box-shadow: 0 0 2px #555;
   border-radius: 20px;
-  background: url(../../public/images/이력서사진3.jpg) no-repeat;
+  /* background: url(../../public/images/이력서사진3.jpg) no-repeat; */
   background-size: 100%;
   background-position: 0 -200px;
 }

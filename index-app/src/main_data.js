@@ -23,10 +23,10 @@ const main_data = [
         pinfo:"그림을 판매하는 페이지를 제작하였습니다. 실제 판매를 하고있지는 않으며, Vue.js와 jQuery를 통해 제작하였습니다.",
     },
     { // ai
-        psrc:"https://www.ai-model.jp/",
+        psrc:"https://spa-ai.vercel.app/Main",
         pimg:"./images/ai.png",
-        ptit:"AI MODELS(제작중)",
-        pinfo:`AI모델을 소개하는 페이지입니다. ReactJS로 제작 중이며 연결된 링크는 이번 제작에 대상으로 선정된 페이지입니다.`,
+        ptit:"AI MODELS",
+        pinfo:`AI모델을 소개하는 페이지입니다. ReactJs로 제작되었으며, 스크롤 이벤트를 통해 다양한 효과를 입힐 수 있었고, AI 모델을 효과적으로 표현하는 것을 목표로 했습니다.`,
     },
 ];
 
