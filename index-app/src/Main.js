@@ -1,5 +1,4 @@
 import './css/App.css';
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import $ from 'jquery'
 import main_data from './main_data';
