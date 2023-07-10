@@ -46,7 +46,7 @@ function App() {
         <section id='1' className='pg1'>
           <div className='pg1_wrap'>
             <div className='my_pic'>
-              <img src="./images/이력서사진2.jpg" alt="이미지"/>
+              {/* <img src="./images/이력서사진3.jpg" alt="이미지"/> */}
             </div>
             <div className='about_me'>
               <h1>
