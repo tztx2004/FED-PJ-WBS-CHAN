@@ -114,6 +114,7 @@ strong{
 }
 .portbx img{
   width: 100%;
+  border-radius: 20px;
 }
 .portImg{
   margin-bottom: 30px;
@@ -122,6 +123,7 @@ strong{
   display: flex;
   align-items: center;
   overflow: hidden;
+  border-radius: 20px;
 }
 .portTitle{
   font-size: 2vw;
